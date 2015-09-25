@@ -1,0 +1,38 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{xcolor} % for different colour comments
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{ND}{#1}}
+
+\begin{document}
+
+\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large Problem Statement}
+\author{Steven Palmer\\Emaad Fazal\\Chao Ye}
+\date{\today}
+	
+\maketitle
+
+\begin{center}
+\Large \bf Problem Statement
+\end{center}
+
+Realism in video games has become an important factor in the overall quality of games as perceived by the gaming community.  The game design process thus requires careful attention to detail not just in the development of the game concept, but also in the selection of features to be included to achieve the intended degree of realism.  There are many different aspects of a game that can contribute to the overall realism depending on the genre and type of game.  Game physics that accurately simulate reality, for example, is particularly important for many action and platformer type games.\\
+
+Courses with a focus on game design have become commonplace at most colleges and universities.  McMaster University is no exception and currently offers a game design course to its third-year software engineering students.  A game developed specifically as an example for this course could act as an excellent aid in the learning experience.  In particular, a game based on the open source Chipmunk2D physics library (which includes implementations of both simulated Newtonian physics and collision detection) could provide a useful demonstration on how the inclusion of realistic game physics enhances the gaming experience.\\
+
+Major stakeholders that would benefit from the completion of this project include the current and future instructors of the game design course at McMaster, as well as the students who will eventually take this course.  In order to ensure ease of use for all of those involved, the game software would have compatibility across the major PC operating systems (Windows, Linux, and Mac OS X).
+
+
+\end{document} 
