@@ -1,0 +1,74 @@
+\hypertarget{group__cp_b_b_b}{}\section{cp\+B\+B}
+\label{group__cp_b_b_b}\index{cp\+B\+B@{cp\+B\+B}}
+
+
+Chipmunk\textquotesingle{}s axis-\/aligned 2\+D bounding box type along with a few handy routines.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_b_b}{cp\+B\+B}
+\begin{DoxyCompactList}\small\item\em Chipmunk\textquotesingle{}s axis-\/aligned 2\+D bounding box type. (left, bottom, right, top) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_b_b_b_ga94835b3c44de11eae51d596f39a5fabc}{}typedef struct \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_ga94835b3c44de11eae51d596f39a5fabc}{cp\+B\+B}\label{group__cp_b_b_b_ga94835b3c44de11eae51d596f39a5fabc}
+
+\begin{DoxyCompactList}\small\item\em Chipmunk\textquotesingle{}s axis-\/aligned 2\+D bounding box type. (left, bottom, right, top) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_b_b_b_ga3282803074394675a42a881f5e965541}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_ga3282803074394675a42a881f5e965541}{cp\+B\+B\+New} (const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} l, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} b, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} r, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} t)\label{group__cp_b_b_b_ga3282803074394675a42a881f5e965541}
+
+\begin{DoxyCompactList}\small\item\em Convenience constructor for \hyperlink{structcp_b_b}{cp\+B\+B} structs. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga2c2321269da85794ab1ace999afc1485}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_ga2c2321269da85794ab1ace999afc1485}{cp\+B\+B\+New\+For\+Extents} (const \hyperlink{structcp_vect}{cp\+Vect} c, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} hw, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} hh)\label{group__cp_b_b_b_ga2c2321269da85794ab1ace999afc1485}
+
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{structcp_b_b}{cp\+B\+B} centered on a point with the given extents (half sizes). \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gaff0810056e31d1f3d66abf88dccf0f4d}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_gaff0810056e31d1f3d66abf88dccf0f4d}{cp\+B\+B\+New\+For\+Circle} (const \hyperlink{structcp_vect}{cp\+Vect} p, const \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} r)\label{group__cp_b_b_b_gaff0810056e31d1f3d66abf88dccf0f4d}
+
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{structcp_b_b}{cp\+B\+B} for a circle with the given position and radius. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gac4a5fd7846b67f8711d3afb7536adbd5}{}static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_b_b_b_gac4a5fd7846b67f8711d3afb7536adbd5}{cp\+B\+B\+Intersects} (const \hyperlink{structcp_b_b}{cp\+B\+B} a, const \hyperlink{structcp_b_b}{cp\+B\+B} b)\label{group__cp_b_b_b_gac4a5fd7846b67f8711d3afb7536adbd5}
+
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily a} and {\ttfamily b} intersect. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gae0f2d67ca77b4b510c1a9c3a744627ba}{}static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_b_b_b_gae0f2d67ca77b4b510c1a9c3a744627ba}{cp\+B\+B\+Contains\+B\+B} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_b_b}{cp\+B\+B} other)\label{group__cp_b_b_b_gae0f2d67ca77b4b510c1a9c3a744627ba}
+
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily other} lies completely within {\ttfamily bb}. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gaee3aab91cca0adbe8c830cac0951da6a}{}static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_b_b_b_gaee3aab91cca0adbe8c830cac0951da6a}{cp\+B\+B\+Contains\+Vect} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_vect}{cp\+Vect} v)\label{group__cp_b_b_b_gaee3aab91cca0adbe8c830cac0951da6a}
+
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily bb} contains {\ttfamily v}. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gacde4506e27649bb6773009c337266d0d}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_gacde4506e27649bb6773009c337266d0d}{cp\+B\+B\+Merge} (const \hyperlink{structcp_b_b}{cp\+B\+B} a, const \hyperlink{structcp_b_b}{cp\+B\+B} b)\label{group__cp_b_b_b_gacde4506e27649bb6773009c337266d0d}
+
+\begin{DoxyCompactList}\small\item\em Returns a bounding box that holds both bounding boxes. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gad995b2feaa55d6bc858e8f930a4ed325}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_gad995b2feaa55d6bc858e8f930a4ed325}{cp\+B\+B\+Expand} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_vect}{cp\+Vect} v)\label{group__cp_b_b_b_gad995b2feaa55d6bc858e8f930a4ed325}
+
+\begin{DoxyCompactList}\small\item\em Returns a bounding box that holds both {\ttfamily bb} and {\ttfamily v}. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga341e84758fe8fd212e6af09385ecece6}{}static \hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_b_b_b_ga341e84758fe8fd212e6af09385ecece6}{cp\+B\+B\+Center} (\hyperlink{structcp_b_b}{cp\+B\+B} bb)\label{group__cp_b_b_b_ga341e84758fe8fd212e6af09385ecece6}
+
+\begin{DoxyCompactList}\small\item\em Returns the center of a bounding box. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gadc31eb18f01b1200938b21ed7e35257a}{}static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_b_b_b_gadc31eb18f01b1200938b21ed7e35257a}{cp\+B\+B\+Area} (\hyperlink{structcp_b_b}{cp\+B\+B} bb)\label{group__cp_b_b_b_gadc31eb18f01b1200938b21ed7e35257a}
+
+\begin{DoxyCompactList}\small\item\em Returns the area of the bounding box. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga89f37acb475dd1dc1b6571282033c0f0}{}static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_b_b_b_ga89f37acb475dd1dc1b6571282033c0f0}{cp\+B\+B\+Merged\+Area} (\hyperlink{structcp_b_b}{cp\+B\+B} a, \hyperlink{structcp_b_b}{cp\+B\+B} b)\label{group__cp_b_b_b_ga89f37acb475dd1dc1b6571282033c0f0}
+
+\begin{DoxyCompactList}\small\item\em Merges {\ttfamily a} and {\ttfamily b} and returns the area of the merged bounding box. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gaf623a5ee2e14df8c002fd742b08686d1}{}static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_b_b_b_gaf623a5ee2e14df8c002fd742b08686d1}{cp\+B\+B\+Segment\+Query} (\hyperlink{structcp_b_b}{cp\+B\+B} bb, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b)\label{group__cp_b_b_b_gaf623a5ee2e14df8c002fd742b08686d1}
+
+\begin{DoxyCompactList}\small\item\em Returns the fraction along the segment query the \hyperlink{structcp_b_b}{cp\+B\+B} is hit. Returns I\+N\+F\+I\+N\+I\+T\+Y if it doesn\textquotesingle{}t hit. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga65157a1d957e6069aef614dca588a705}{}static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_b_b_b_ga65157a1d957e6069aef614dca588a705}{cp\+B\+B\+Intersects\+Segment} (\hyperlink{structcp_b_b}{cp\+B\+B} bb, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b)\label{group__cp_b_b_b_ga65157a1d957e6069aef614dca588a705}
+
+\begin{DoxyCompactList}\small\item\em Return true if the bounding box intersects the line segment with ends {\ttfamily a} and {\ttfamily b}. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_gac27ebb67e71268f471c2a4ad2658f23f}{}static \hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_b_b_b_gac27ebb67e71268f471c2a4ad2658f23f}{cp\+B\+B\+Clamp\+Vect} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_vect}{cp\+Vect} v)\label{group__cp_b_b_b_gac27ebb67e71268f471c2a4ad2658f23f}
+
+\begin{DoxyCompactList}\small\item\em Clamp a vector to a bounding box. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga0fbeae861bcd6e1ea09adeca277c5686}{}static \hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_b_b_b_ga0fbeae861bcd6e1ea09adeca277c5686}{cp\+B\+B\+Wrap\+Vect} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_vect}{cp\+Vect} v)\label{group__cp_b_b_b_ga0fbeae861bcd6e1ea09adeca277c5686}
+
+\begin{DoxyCompactList}\small\item\em Wrap a vector to a bounding box. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_b_b_b_ga37fcb8493c6e9175b0ec7fad10fd76ce}{}static \hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_b_b_b_ga37fcb8493c6e9175b0ec7fad10fd76ce}{cp\+B\+B\+Offset} (const \hyperlink{structcp_b_b}{cp\+B\+B} bb, const \hyperlink{structcp_vect}{cp\+Vect} v)\label{group__cp_b_b_b_ga37fcb8493c6e9175b0ec7fad10fd76ce}
+
+\begin{DoxyCompactList}\small\item\em Returns a bounding box offseted by {\ttfamily v}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Chipmunk\textquotesingle{}s axis-\/aligned 2\+D bounding box type along with a few handy routines. 
+

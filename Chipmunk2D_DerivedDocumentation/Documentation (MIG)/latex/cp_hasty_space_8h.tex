@@ -1,0 +1,74 @@
+\hypertarget{cp_hasty_space_8h}{}\section{cp\+Hasty\+Space.\+h File Reference}
+\label{cp_hasty_space_8h}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{cp_hasty_space_8h_abc755b2b3b42a6809b364af733c66cf6}{cp\+Hasty\+Space} \hyperlink{cp_hasty_space_8h_abc755b2b3b42a6809b364af733c66cf6}{cp\+Hasty\+Space}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcp_space}{cp\+Space} $\ast$ \hyperlink{cp_hasty_space_8h_a571758302f020b306c341a6b1260184e}{cp\+Hasty\+Space\+New} (void)
+\item 
+void \hyperlink{cp_hasty_space_8h_a6ba749e1c5c74a0fe3aad650ee2b5bbc}{cp\+Hasty\+Space\+Free} (\hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+void \hyperlink{cp_hasty_space_8h_a06d3274a0e99f762abd3dd796263ffda}{cp\+Hasty\+Space\+Set\+Threads} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, unsigned long threads)
+\item 
+unsigned long \hyperlink{cp_hasty_space_8h_a4ad8674860bb7eef12a3a0244c8bea72}{cp\+Hasty\+Space\+Get\+Threads} (\hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Returns the number of threads the solver is using to run. \end{DoxyCompactList}\item 
+void \hyperlink{cp_hasty_space_8h_af44aeca9b1b7594adcef606df4f47db3}{cp\+Hasty\+Space\+Step} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} dt)
+\begin{DoxyCompactList}\small\item\em When stepping a hasty space, you must use this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cp_hasty_space_8h_abc755b2b3b42a6809b364af733c66cf6}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space@{cp\+Hasty\+Space}}
+\index{cp\+Hasty\+Space@{cp\+Hasty\+Space}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Hasty\+Space} {\bf cp\+Hasty\+Space}}\label{cp_hasty_space_8h_abc755b2b3b42a6809b364af733c66cf6}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_hasty_space_8h_a6ba749e1c5c74a0fe3aad650ee2b5bbc}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space\+Free@{cp\+Hasty\+Space\+Free}}
+\index{cp\+Hasty\+Space\+Free@{cp\+Hasty\+Space\+Free}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space\+Free}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Hasty\+Space\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_hasty_space_8h_a6ba749e1c5c74a0fe3aad650ee2b5bbc}
+\hypertarget{cp_hasty_space_8h_a4ad8674860bb7eef12a3a0244c8bea72}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space\+Get\+Threads@{cp\+Hasty\+Space\+Get\+Threads}}
+\index{cp\+Hasty\+Space\+Get\+Threads@{cp\+Hasty\+Space\+Get\+Threads}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space\+Get\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long cp\+Hasty\+Space\+Get\+Threads (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_hasty_space_8h_a4ad8674860bb7eef12a3a0244c8bea72}
+
+
+Returns the number of threads the solver is using to run. 
+
+\hypertarget{cp_hasty_space_8h_a571758302f020b306c341a6b1260184e}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space\+New@{cp\+Hasty\+Space\+New}}
+\index{cp\+Hasty\+Space\+New@{cp\+Hasty\+Space\+New}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space\+New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Space}$\ast$ cp\+Hasty\+Space\+New (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cp_hasty_space_8h_a571758302f020b306c341a6b1260184e}
+Create a new hasty space. On A\+R\+M platforms that support N\+E\+O\+N, this will enable the vectorized solver. cp\+Hasty\+Space also supports multiple threads, but runs single threaded by default for determinism. \hypertarget{cp_hasty_space_8h_a06d3274a0e99f762abd3dd796263ffda}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space\+Set\+Threads@{cp\+Hasty\+Space\+Set\+Threads}}
+\index{cp\+Hasty\+Space\+Set\+Threads@{cp\+Hasty\+Space\+Set\+Threads}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space\+Set\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Hasty\+Space\+Set\+Threads (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{unsigned long}]{threads}
+\end{DoxyParamCaption}
+)}\label{cp_hasty_space_8h_a06d3274a0e99f762abd3dd796263ffda}
+Set the number of threads to use for the solver. Currently Chipmunk is limited to 2 threads as using more generally provides very minimal performance gains. Passing 0 as the thread count on i\+O\+S or O\+S X will cause Chipmunk to automatically detect the number of threads it should use. On other platforms passing 0 for the thread count will set 1 thread. \hypertarget{cp_hasty_space_8h_af44aeca9b1b7594adcef606df4f47db3}{}\index{cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}!cp\+Hasty\+Space\+Step@{cp\+Hasty\+Space\+Step}}
+\index{cp\+Hasty\+Space\+Step@{cp\+Hasty\+Space\+Step}!cp\+Hasty\+Space.\+h@{cp\+Hasty\+Space.\+h}}
+\subsubsection[{cp\+Hasty\+Space\+Step}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Hasty\+Space\+Step (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Float}}]{dt}
+\end{DoxyParamCaption}
+)}\label{cp_hasty_space_8h_af44aeca9b1b7594adcef606df4f47db3}
+
+
+When stepping a hasty space, you must use this function. 
+

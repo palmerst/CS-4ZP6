@@ -1,0 +1,29 @@
+\hypertarget{cp_poly_shape_8h}{}\section{cp\+Poly\+Shape.\+h File Reference}
+\label{cp_poly_shape_8h}\index{cp\+Poly\+Shape.\+h@{cp\+Poly\+Shape.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga3c45ef999add9db8c9d7115ace013b3e}{cp\+Poly\+Shape\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a polygon shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga35b3f6fc2cc964f289babcabc3e0ed1a}{cp\+Poly\+Shape\+Init} (\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$poly, \hyperlink{structcp_body}{cp\+Body} $\ast$body, int count, const \hyperlink{structcp_vect}{cp\+Vect} $\ast$verts, \hyperlink{structcp_transform}{cp\+Transform} transform, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\item 
+\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_gaa770a491ea664ace5581c88cca80c310}{cp\+Poly\+Shape\+Init\+Raw} (\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$poly, \hyperlink{structcp_body}{cp\+Body} $\ast$body, int count, const \hyperlink{structcp_vect}{cp\+Vect} $\ast$verts, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga1efdc8dbd304060b5e07bb732482aafa}{cp\+Poly\+Shape\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, int count, const \hyperlink{structcp_vect}{cp\+Vect} $\ast$verts, \hyperlink{structcp_transform}{cp\+Transform} transform, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga79088c28a4a292039ccd38014f6667ed}{cp\+Poly\+Shape\+New\+Raw} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, int count, const \hyperlink{structcp_vect}{cp\+Vect} $\ast$verts, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\item 
+\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_gac9ef09adb77a16dfff72ff5e60f29abd}{cp\+Box\+Shape\+Init} (\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$poly, \hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} width, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} height, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Initialize a box shaped polygon shape with rounded corners. \end{DoxyCompactList}\item 
+\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga7d8d6290beece9f96d9094ec13e9fbdc}{cp\+Box\+Shape\+Init2} (\hyperlink{structcp_poly_shape}{cp\+Poly\+Shape} $\ast$poly, \hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_b_b}{cp\+B\+B} box, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Initialize an offset box shaped polygon shape with rounded corners. \end{DoxyCompactList}\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_gabccd1670c039d4540d98365eebd0c467}{cp\+Box\+Shape\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} width, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} height, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a box shaped polygon shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{group__cp_poly_shape_ga0f67ca6d1f3123717d5d057149091cb9}{cp\+Box\+Shape\+New2} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_b_b}{cp\+B\+B} box, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize an offset box shaped polygon shape. \end{DoxyCompactList}\item 
+int \hyperlink{group__cp_poly_shape_gae57b293c0f088bb1ee4f379def4ff830}{cp\+Poly\+Shape\+Get\+Count} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the number of verts in a polygon shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_poly_shape_ga4301568bd2cef8973338d37fdfbeb12d}{cp\+Poly\+Shape\+Get\+Vert} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, int index)
+\begin{DoxyCompactList}\small\item\em Get the {\ttfamily ith} vertex of a polygon shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_poly_shape_ga0628f3107d3f1c30fdf7d082312a3411}{cp\+Poly\+Shape\+Get\+Radius} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the radius of a polygon shape. \end{DoxyCompactList}\end{DoxyCompactItemize}

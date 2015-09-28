@@ -1,0 +1,39 @@
+\hypertarget{group__cp_simple_motor}{}\section{cp\+Simple\+Motor}
+\label{group__cp_simple_motor}\index{cp\+Simple\+Motor@{cp\+Simple\+Motor}}
+
+
+Maintains a specific angular relative velocity between two objects.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_simple_motor_ga0b1689742ce8e31d9a4b3bcae83db2e7}{}typedef struct \hyperlink{structcp_simple_motor}{cp\+Simple\+Motor} \hyperlink{group__cp_simple_motor_ga0b1689742ce8e31d9a4b3bcae83db2e7}{cp\+Simple\+Motor}\label{group__cp_simple_motor_ga0b1689742ce8e31d9a4b3bcae83db2e7}
+
+\begin{DoxyCompactList}\small\item\em Opaque struct type for simple motors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_simple_motor_gac2da80bc913606d4c84d297e8d771a27}{}\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_simple_motor_gac2da80bc913606d4c84d297e8d771a27}{cp\+Constraint\+Is\+Simple\+Motor} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_simple_motor_gac2da80bc913606d4c84d297e8d771a27}
+
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a simple motor. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_simple_motor_ga4b97807c9c82377912fc7f40745c949c}{}\hyperlink{structcp_simple_motor}{cp\+Simple\+Motor} $\ast$ \hyperlink{group__cp_simple_motor_ga4b97807c9c82377912fc7f40745c949c}{cp\+Simple\+Motor\+Alloc} (void)\label{group__cp_simple_motor_ga4b97807c9c82377912fc7f40745c949c}
+
+\begin{DoxyCompactList}\small\item\em Allocate a simple motor. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_simple_motor_ga46771f0e76cc15df8b9f9832ddd0b1d5}{}\hyperlink{structcp_simple_motor}{cp\+Simple\+Motor} $\ast$ \hyperlink{group__cp_simple_motor_ga46771f0e76cc15df8b9f9832ddd0b1d5}{cp\+Simple\+Motor\+Init} (\hyperlink{structcp_simple_motor}{cp\+Simple\+Motor} $\ast$joint, \hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} rate)\label{group__cp_simple_motor_ga46771f0e76cc15df8b9f9832ddd0b1d5}
+
+\begin{DoxyCompactList}\small\item\em initialize a simple motor. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_simple_motor_ga66c3053590bd2166ed3ddb6e08fe1bf5}{}\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_simple_motor_ga66c3053590bd2166ed3ddb6e08fe1bf5}{cp\+Simple\+Motor\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} rate)\label{group__cp_simple_motor_ga66c3053590bd2166ed3ddb6e08fe1bf5}
+
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a simple motor. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_simple_motor_ga174d2ca2fda85aa5f82f972221ff6121}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_simple_motor_ga174d2ca2fda85aa5f82f972221ff6121}{cp\+Simple\+Motor\+Get\+Rate} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_simple_motor_ga174d2ca2fda85aa5f82f972221ff6121}
+
+\begin{DoxyCompactList}\small\item\em Get the rate of the motor. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_simple_motor_gaed1de73940fdf279fd2e52fc06dea716}{}void \hyperlink{group__cp_simple_motor_gaed1de73940fdf279fd2e52fc06dea716}{cp\+Simple\+Motor\+Set\+Rate} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} rate)\label{group__cp_simple_motor_gaed1de73940fdf279fd2e52fc06dea716}
+
+\begin{DoxyCompactList}\small\item\em Set the rate of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Maintains a specific angular relative velocity between two objects. 
+

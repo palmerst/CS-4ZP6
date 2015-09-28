@@ -1,0 +1,23 @@
+\hypertarget{cp_pivot_joint_8h}{}\section{cp\+Pivot\+Joint.\+h File Reference}
+\label{cp_pivot_joint_8h}\index{cp\+Pivot\+Joint.\+h@{cp\+Pivot\+Joint.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_pivot_joint_ga7d0141069828ec88194b06b1a7fc6a01}{cp\+Constraint\+Is\+Pivot\+Joint} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a pivot joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_pivot_joint}{cp\+Pivot\+Joint} $\ast$ \hyperlink{group__cp_pivot_joint_gac8ceffcbb474ba0ba021dee02eca5a09}{cp\+Pivot\+Joint\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a pivot joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_pivot_joint}{cp\+Pivot\+Joint} $\ast$ \hyperlink{group__cp_pivot_joint_gab6d0dac0ef12606f9e537bc811bf8bcf}{cp\+Pivot\+Joint\+Init} (\hyperlink{structcp_pivot_joint}{cp\+Pivot\+Joint} $\ast$joint, \hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Initialize a pivot joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_pivot_joint_ga56d3fd371a5f4688abcf0c279ad77a9d}{cp\+Pivot\+Joint\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} pivot)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a pivot joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_pivot_joint_gafbd0cc0e3c7b16598490be80060166c1}{cp\+Pivot\+Joint\+New2} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a pivot joint with specific anchors. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_pivot_joint_gae9ae0590413b869b2d1084697e34d828}{cp\+Pivot\+Joint\+Get\+Anchor\+A} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the location of the first anchor relative to the first body. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_pivot_joint_ga2a358a7ce43fe8cb8196d88160eba90f}{cp\+Pivot\+Joint\+Set\+Anchor\+A} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A)
+\begin{DoxyCompactList}\small\item\em Set the location of the first anchor relative to the first body. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_pivot_joint_ga4e5aae1aac5fbb74ba9ddc711bc82b45}{cp\+Pivot\+Joint\+Get\+Anchor\+B} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the location of the second anchor relative to the second body. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_pivot_joint_ga6369e0fa878f0dfba31b3c815f711f96}{cp\+Pivot\+Joint\+Set\+Anchor\+B} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Set the location of the second anchor relative to the second body. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,223 @@
+\hypertarget{cp_space__private_8h}{}\section{cp\+Space\+\_\+private.\+h File Reference}
+\label{cp_space__private_8h}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+{\ttfamily \#include \char`\"{}cp\+Hash\+Set\+\_\+private.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cp\+Array\+\_\+private.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cp\+Arbiter\+\_\+private.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chipmunk.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_space}{cp\+Space}
+\item 
+struct \hyperlink{structcp_post_step_callback}{cp\+Post\+Step\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cp_space__private_8h_a8ce77b364f6e4a75a92a56a5e19e3b28}{cp\+Assert\+Space\+Unlocked}(space)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{cp_space__private_8h_a0dcc2061b696a4f4563b6315d90651cd}{cp\+Contact\+Buffer\+Header} \hyperlink{cp_space__private_8h_a0dcc2061b696a4f4563b6315d90651cd}{cp\+Contact\+Buffer\+Header}
+\item 
+typedef void($\ast$ \hyperlink{cp_space__private_8h_a8e0aa38013a434872569c78cc1d068ef}{cp\+Space\+Arbiter\+Apply\+Impulse\+Func}) (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\item 
+typedef struct \hyperlink{structcp_post_step_callback}{cp\+Post\+Step\+Callback} \hyperlink{cp_space__private_8h_aaeaba59f52695cd4e00dcd895874387c}{cp\+Post\+Step\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cp_space__private_8h_ab21a67decb4def89f1ae51a4f3515f5a}{cp\+Space\+Set\+Static\+Body} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\item 
+void \hyperlink{cp_space__private_8h_a8e176380c29523cf12ab50790991df2f}{cp\+Space\+Process\+Components} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} dt)
+\item 
+void \hyperlink{cp_space__private_8h_a7775e9082a86cf6055766d1b64ac21d5}{cp\+Space\+Push\+Fresh\+Contact\+Buffer} (\hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+struct \hyperlink{structcp_contact}{cp\+Contact} $\ast$ \hyperlink{cp_space__private_8h_a0bf4457ec060fbc9189919c2c06932b8}{cp\+Contact\+Buffer\+Get\+Array} (\hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+void \hyperlink{cp_space__private_8h_aa3638e452b98c89bc4f7e6311dc4f2ea}{cp\+Space\+Push\+Contacts} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, int count)
+\item 
+\hyperlink{structcp_post_step_callback}{cp\+Post\+Step\+Callback} $\ast$ \hyperlink{cp_space__private_8h_a1997af00a03445e71ef42cd68a85e365}{cp\+Space\+Get\+Post\+Step\+Callback} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, void $\ast$key)
+\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{cp_space__private_8h_a8ca30a053ad66081721a97f43c284afc}{cp\+Space\+Arbiter\+Set\+Filter} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+void \hyperlink{cp_space__private_8h_ab1f1a2fa0eebab1ff4d7b9a7aea1b253}{cp\+Space\+Filter\+Arbiters} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_shape}{cp\+Shape} $\ast$filter)
+\item 
+void \hyperlink{cp_space__private_8h_ab301ae4a7e7fd85e5759a93801ffdc8c}{cp\+Space\+Activate\+Body} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\item 
+void \hyperlink{cp_space__private_8h_a5a2df4eccbd51b82607ab2689d8237db}{cp\+Space\+Lock} (\hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+void \hyperlink{cp_space__private_8h_a85215f704c176325d4201f1aa3595c2b}{cp\+Space\+Unlock} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} run\+Post\+Step)
+\item 
+static void \hyperlink{cp_space__private_8h_ac7822ff7a99d3629917c536e71be071d}{cp\+Space\+Uncache\+Arbiter} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\item 
+static \hyperlink{structcp_array}{cp\+Array} $\ast$ \hyperlink{cp_space__private_8h_ab21c43c43fa4798b419940ad687a21e4}{cp\+Space\+Array\+For\+Body\+Type} (\hyperlink{structcp_space}{cp\+Space} $\ast$space, \hyperlink{group__cp_body_ga3581b128fd3e2734952aeac8545fd5ca}{cp\+Body\+Type} type)
+\item 
+void \hyperlink{cp_space__private_8h_a5636c1591bf9f02857d6fc4bb8218fbe}{cp\+Shape\+Update\+Func} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, void $\ast$unused)
+\item 
+\hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D} \hyperlink{cp_space__private_8h_a3dde5d2054a2a4efead6fdf240907c50}{cp\+Space\+Collide\+Shapes} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$a, \hyperlink{structcp_shape}{cp\+Shape} $\ast$b, \hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D} id, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcp_collision_handler}{cp\+Collision\+Handler} \hyperlink{cp_space__private_8h_aaf1a8c7da64df69c3b4e5ee09662a6de}{cp\+Collision\+Handler\+Do\+Nothing}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cp_space__private_8h_a8ce77b364f6e4a75a92a56a5e19e3b28}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Assert\+Space\+Unlocked@{cp\+Assert\+Space\+Unlocked}}
+\index{cp\+Assert\+Space\+Unlocked@{cp\+Assert\+Space\+Unlocked}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Assert\+Space\+Unlocked}]{\setlength{\rightskip}{0pt plus 5cm}\#define cp\+Assert\+Space\+Unlocked(
+\begin{DoxyParamCaption}
+\item[{}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a8ce77b364f6e4a75a92a56a5e19e3b28}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{chipmunk_8h_a7858c9224d6970e67ae22dabe94a7704}{cpAssertHard}(!space->locked, \(\backslash\)
+    \textcolor{stringliteral}{"This operation cannot be done safely during a call to cpSpaceStep() or during a query. "} \(\backslash\)
+    \textcolor{stringliteral}{"Put these calls into a post-step callback."} \(\backslash\)
+    );
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cp_space__private_8h_a0dcc2061b696a4f4563b6315d90651cd}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Contact\+Buffer\+Header@{cp\+Contact\+Buffer\+Header}}
+\index{cp\+Contact\+Buffer\+Header@{cp\+Contact\+Buffer\+Header}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Contact\+Buffer\+Header}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Contact\+Buffer\+Header} {\bf cp\+Contact\+Buffer\+Header}}\label{cp_space__private_8h_a0dcc2061b696a4f4563b6315d90651cd}
+\hypertarget{cp_space__private_8h_aaeaba59f52695cd4e00dcd895874387c}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Post\+Step\+Callback@{cp\+Post\+Step\+Callback}}
+\index{cp\+Post\+Step\+Callback@{cp\+Post\+Step\+Callback}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Post\+Step\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Post\+Step\+Callback}  {\bf cp\+Post\+Step\+Callback}}\label{cp_space__private_8h_aaeaba59f52695cd4e00dcd895874387c}
+\hypertarget{cp_space__private_8h_a8e0aa38013a434872569c78cc1d068ef}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Arbiter\+Apply\+Impulse\+Func@{cp\+Space\+Arbiter\+Apply\+Impulse\+Func}}
+\index{cp\+Space\+Arbiter\+Apply\+Impulse\+Func@{cp\+Space\+Arbiter\+Apply\+Impulse\+Func}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Arbiter\+Apply\+Impulse\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cp\+Space\+Arbiter\+Apply\+Impulse\+Func) ({\bf cp\+Arbiter} $\ast$arb)}\label{cp_space__private_8h_a8e0aa38013a434872569c78cc1d068ef}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_space__private_8h_a0bf4457ec060fbc9189919c2c06932b8}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Contact\+Buffer\+Get\+Array@{cp\+Contact\+Buffer\+Get\+Array}}
+\index{cp\+Contact\+Buffer\+Get\+Array@{cp\+Contact\+Buffer\+Get\+Array}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Contact\+Buffer\+Get\+Array}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cp\+Contact}$\ast$ cp\+Contact\+Buffer\+Get\+Array (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a0bf4457ec060fbc9189919c2c06932b8}
+\hypertarget{cp_space__private_8h_a5636c1591bf9f02857d6fc4bb8218fbe}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Shape\+Update\+Func@{cp\+Shape\+Update\+Func}}
+\index{cp\+Shape\+Update\+Func@{cp\+Shape\+Update\+Func}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Update\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Shape\+Update\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{shape, }
+\item[{void $\ast$}]{unused}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a5636c1591bf9f02857d6fc4bb8218fbe}
+\hypertarget{cp_space__private_8h_ab301ae4a7e7fd85e5759a93801ffdc8c}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Activate\+Body@{cp\+Space\+Activate\+Body}}
+\index{cp\+Space\+Activate\+Body@{cp\+Space\+Activate\+Body}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Activate\+Body}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Activate\+Body (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Body} $\ast$}]{body}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_ab301ae4a7e7fd85e5759a93801ffdc8c}
+\hypertarget{cp_space__private_8h_a8ca30a053ad66081721a97f43c284afc}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Arbiter\+Set\+Filter@{cp\+Space\+Arbiter\+Set\+Filter}}
+\index{cp\+Space\+Arbiter\+Set\+Filter@{cp\+Space\+Arbiter\+Set\+Filter}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Arbiter\+Set\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Space\+Arbiter\+Set\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a8ca30a053ad66081721a97f43c284afc}
+\hypertarget{cp_space__private_8h_ab21c43c43fa4798b419940ad687a21e4}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Array\+For\+Body\+Type@{cp\+Space\+Array\+For\+Body\+Type}}
+\index{cp\+Space\+Array\+For\+Body\+Type@{cp\+Space\+Array\+For\+Body\+Type}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Array\+For\+Body\+Type}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf cp\+Array}$\ast$ cp\+Space\+Array\+For\+Body\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Body\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_space__private_8h_ab21c43c43fa4798b419940ad687a21e4}
+\hypertarget{cp_space__private_8h_a3dde5d2054a2a4efead6fdf240907c50}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Collide\+Shapes@{cp\+Space\+Collide\+Shapes}}
+\index{cp\+Space\+Collide\+Shapes@{cp\+Space\+Collide\+Shapes}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Collide\+Shapes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Collision\+I\+D} cp\+Space\+Collide\+Shapes (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{a, }
+\item[{{\bf cp\+Shape} $\ast$}]{b, }
+\item[{{\bf cp\+Collision\+I\+D}}]{id, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a3dde5d2054a2a4efead6fdf240907c50}
+\hypertarget{cp_space__private_8h_ab1f1a2fa0eebab1ff4d7b9a7aea1b253}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Filter\+Arbiters@{cp\+Space\+Filter\+Arbiters}}
+\index{cp\+Space\+Filter\+Arbiters@{cp\+Space\+Filter\+Arbiters}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Filter\+Arbiters}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Filter\+Arbiters (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Shape} $\ast$}]{filter}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_ab1f1a2fa0eebab1ff4d7b9a7aea1b253}
+\hypertarget{cp_space__private_8h_a1997af00a03445e71ef42cd68a85e365}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Get\+Post\+Step\+Callback@{cp\+Space\+Get\+Post\+Step\+Callback}}
+\index{cp\+Space\+Get\+Post\+Step\+Callback@{cp\+Space\+Get\+Post\+Step\+Callback}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Get\+Post\+Step\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Post\+Step\+Callback}$\ast$ cp\+Space\+Get\+Post\+Step\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{void $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a1997af00a03445e71ef42cd68a85e365}
+\hypertarget{cp_space__private_8h_a5a2df4eccbd51b82607ab2689d8237db}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Lock@{cp\+Space\+Lock}}
+\index{cp\+Space\+Lock@{cp\+Space\+Lock}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Lock}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a5a2df4eccbd51b82607ab2689d8237db}
+\hypertarget{cp_space__private_8h_a8e176380c29523cf12ab50790991df2f}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Process\+Components@{cp\+Space\+Process\+Components}}
+\index{cp\+Space\+Process\+Components@{cp\+Space\+Process\+Components}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Process\+Components}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Process\+Components (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Float}}]{dt}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a8e176380c29523cf12ab50790991df2f}
+\hypertarget{cp_space__private_8h_aa3638e452b98c89bc4f7e6311dc4f2ea}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Push\+Contacts@{cp\+Space\+Push\+Contacts}}
+\index{cp\+Space\+Push\+Contacts@{cp\+Space\+Push\+Contacts}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Push\+Contacts}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Push\+Contacts (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_aa3638e452b98c89bc4f7e6311dc4f2ea}
+\hypertarget{cp_space__private_8h_a7775e9082a86cf6055766d1b64ac21d5}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Push\+Fresh\+Contact\+Buffer@{cp\+Space\+Push\+Fresh\+Contact\+Buffer}}
+\index{cp\+Space\+Push\+Fresh\+Contact\+Buffer@{cp\+Space\+Push\+Fresh\+Contact\+Buffer}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Push\+Fresh\+Contact\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Push\+Fresh\+Contact\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a7775e9082a86cf6055766d1b64ac21d5}
+\hypertarget{cp_space__private_8h_ab21a67decb4def89f1ae51a4f3515f5a}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Set\+Static\+Body@{cp\+Space\+Set\+Static\+Body}}
+\index{cp\+Space\+Set\+Static\+Body@{cp\+Space\+Set\+Static\+Body}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Set\+Static\+Body}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Set\+Static\+Body (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Body} $\ast$}]{body}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_ab21a67decb4def89f1ae51a4f3515f5a}
+\hypertarget{cp_space__private_8h_ac7822ff7a99d3629917c536e71be071d}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Uncache\+Arbiter@{cp\+Space\+Uncache\+Arbiter}}
+\index{cp\+Space\+Uncache\+Arbiter@{cp\+Space\+Uncache\+Arbiter}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Uncache\+Arbiter}]{\setlength{\rightskip}{0pt plus 5cm}static void cp\+Space\+Uncache\+Arbiter (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_space__private_8h_ac7822ff7a99d3629917c536e71be071d}
+\hypertarget{cp_space__private_8h_a85215f704c176325d4201f1aa3595c2b}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Space\+Unlock@{cp\+Space\+Unlock}}
+\index{cp\+Space\+Unlock@{cp\+Space\+Unlock}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Space\+Unlock}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Space\+Unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Space} $\ast$}]{space, }
+\item[{{\bf cp\+Bool}}]{run\+Post\+Step}
+\end{DoxyParamCaption}
+)}\label{cp_space__private_8h_a85215f704c176325d4201f1aa3595c2b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{cp_space__private_8h_aaf1a8c7da64df69c3b4e5ee09662a6de}{}\index{cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}!cp\+Collision\+Handler\+Do\+Nothing@{cp\+Collision\+Handler\+Do\+Nothing}}
+\index{cp\+Collision\+Handler\+Do\+Nothing@{cp\+Collision\+Handler\+Do\+Nothing}!cp\+Space\+\_\+private.\+h@{cp\+Space\+\_\+private.\+h}}
+\subsubsection[{cp\+Collision\+Handler\+Do\+Nothing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Collision\+Handler} cp\+Collision\+Handler\+Do\+Nothing}\label{cp_space__private_8h_aaf1a8c7da64df69c3b4e5ee09662a6de}

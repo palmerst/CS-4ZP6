@@ -1,0 +1,426 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+      colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+
+\begin{document}
+
+\title{Changes Made to the Chipmunk Engine} 
+\author{Alex Halliwushka}
+\date{\today}
+	
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Purpose of Document}
+This document lists the changes that have been made to the
+the Chipmunk engine. The first section describes what has been
+changed in the code of the engine and the second section 
+describes the changes to the comments
+
+\section{Changes to the Code}
+This section lists the changes made to the code in the chipmunk
+engine.
+
+\subsection{chipmunk\_private}
+This file was split  into 8 seperate files to follow the seperation of concerns principle. 
+The 8 files are listed below:
+
+\begin{itemize}
+\item cpArbiter\_private
+\item cpArray\_private
+\item cpBody\_private
+\item cpConstraint\_private
+\item cpHashSet\_private
+\item cpShape\_private
+\item cpSpace\_private
+\item cpSpatialIndex\_private
+\end{itemize}
+
+\section{Changes to the Comments}
+This section lists the comments added to and/or the comments modified 
+in each file of the chipmunk engine. 
+
+\subsection{cpBody} 
+This section lists the comments added and modified  in the cpBody file
+
+\subsubsection{Comments Added}
+No comments were added to the cpBody file
+
+\subsubsection{Comments Modified}
+
+\begin{itemize}
+\item Changed  ``Set the position of a body'' to ``Get the position of a body'' above the function  cpBodyGetPosition
+\end{itemize}
+
+
+\subsection{cpConstraint} 
+This section lists the comments added and modified  in the cpConstraint file
+
+\subsubsection{Comments Added}
+
+\begin{itemize}
+\item Added a detailed description to the top of the file:   ``Constraints connect two cpBody objects together. cpConstraint is the base constraint struct that the other constraints build off of.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpConstraint file.
+
+\subsection{cpDampedRotarySpring} 
+This section lists the comments added and modified  in the cpDampedRotarySpring file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file:  ``Like a cpDampedSpring, but operates in a rotational fashion.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Get the damping of the spring." to ``Get the damped rotary spring force callback" above the function cpDampedRotarySpringGetSpringTorqueFunc
+\item Changed ``Set the damping of the spring." to ``Set the damped rotary spring force callback" above the function cpDampedRotarySpringSetSpringTorqueFunc
+\end{itemize}
+
+\subsection{cpDampedSpring} 
+This section lists the comments added and modified  in the cpDampedSpring file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``A spring with a damper.
+While a spring is not technically a constraint, the damper is. The spring forces are simply a convenience.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed  ``Check if constraint is a slide joint" to ``Check if constraint is a damped spring" above the function cpConstraintIsDampedSpring
+\item Changed ``Get the damping of the spring." to ``Get the damped spring force callback" above the function cpDampedSpringGetSpringForceFunc
+\item Changed ``Set the damping of the spring." to ``Set the damped spring force callback" above the function cpDampedSpringSetSpringForceFunc
+\end{itemize}
+
+\subsection{cpGearJoint} 
+This section lists the comments added and modified  in the cpGearJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Maintains a specific angular velocity between the two bodies.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a damped rotary springs" to ``Check if constraint is a gear joint" above the function cpConstraintIsGearJoint
+\item Changed ``Get the angular distance of each ratchet". to ``Get the ratio of a gear joint" above the function cpGearJointGetRatio
+\end{itemize}
+
+
+\subsection{cpGrooveJoint} 
+This section lists the comments added and modified  in the cpGrooveJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``'Similar to a pivot joint, but one of the anchors is a line segment that the pivot can slide in.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a slide joint" to ``Check if constraint is a groove joint" above the function cpConstraintIsGrooveJoint
+\end{itemize}
+
+
+\subsection{cpPinJoint} 
+This section lists the comments added and modified  in the cpPinJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``The two anchor points are always the same distance apart.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpPinJoint file.
+
+
+\subsection{cpPivotJoint} 
+This section lists the comments added and modified  in the cpPivotJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Pivot joints hold two points on two bodies together allowing them to rotate freely around the pivot.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a slide joint" to ``Check if constraint is a pivot joint" above the function cpConstraintIsPivotJoint
+\end{itemize}
+
+\subsection{cpPolyShape} 
+This section lists the comments added and modified  in the cpPolyShape file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file:``A convex polygon shape. Slowest, but most flexible collision shape.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpPolyShape file.
+
+
+\subsection{cpRatchetJoint} 
+This section lists the comments added and modified  in the cpRatchetJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Create rotary ratchets similar to a socket wrench. Forces one body to only follow one direction
+ of rotation from the other body.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a damped rotary springs" to ``Check if constraint is a ratchet joint" above the function cpConstraintIsRatchetJoint
+\item Changed ``Get the phase offset of the ratchet" to ``Set the phase offset of the ratchet" above the function cpRatchetJointSetPhase
+\end{itemize}
+
+
+\subsection{cpRotaryLimitJoint: } 
+This section lists the comments added and modified  in the cpRotaryLimitJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Constrains the bodies' orientations to be within a certain angle of each other.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a damped rotary springs" to ``Check if constraint is a rortary limit joint" above the function cpConstraintIsRotaryLimitJoint
+\item Changed ``Allocate a damped rotary limit joint" to ``Allocate a rotary limit joint" above the function cpRotaryLimitJointAlloc
+\item Changed ``Initialize a damped rotary limit joint" to ``Initialize a rotary limit joint" above the function cpRotaryLimitJointInit
+\item Changed ``Allocate and initialize a damped rotary limit joint" to ``Allocate and initialize a rotary limit joint" above the function cpRotaryLimitJointNew
+\item Changed ``Get the minimum distance the joint will maintain between the two anchors." to 
+		 ``Get the minimum orientation the joint will maintain between the two anchors.''  above the function cpRotaryLimitJointGetMin
+\item Changed ``Set the minimum distance the joint will maintain between the two anchors." to 
+		 ``Set the minimum orientation the joint will maintain between the two anchors." above the function cpRotaryLimitJointSetMin
+\item Changed ``Get the maximum distance the joint will maintain between the two anchors." to 
+		 ``Get the maximum orientation the joint will maintain between the two anchors." above the function cpRotaryLimitJointGetMax
+\item Changed ``Set the maximum distance the joint will maintain between the two anchors." to 
+		 ``Set the maximum orientation the joint will maintain between the two anchors." above the function cpRotaryLimitJointSetMax
+\end{itemize}
+
+
+\subsection{cpShape} 
+This section lists the comments added and modified  in the cpShape file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the cpCircleShape group : `` A perfect circle shape. Fastest and simplest collision shape.''
+\item Added a detailed description to the top of the cpSegmentShape group : ``Meant mainly as a static shape. Can be beveled in order to give them a thickness.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``The cpShape struct defines the shape of a rigid body."  to 
+``The cpShape struct defines the shape of a rigid body. cpShape is the base  struct that the other shapes build off of." 
+as the detailed description at the top of the file
+\end{itemize}
+
+\subsection{cpSimpleMotor} 
+This section lists the comments added and modified  in the cpSimpleMotor file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Maintains a specific angular relative velocity between two objects.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Check if constraint is a damped rotary springs" to ``Check if constraint is a simple motor" above the function cpConstraintIsSimpleMotor
+\item Changed ``Opaque struct type for damped rotary springs." to ``Opaque struct type for simple motors" above the definition of the struct cpSimpleMotor
+\end{itemize}
+
+
+\subsection{cpSlideJoint} 
+This section lists the comments added and modified  in the cpSlideJoint file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Slide joints hold the distance between points on two bodies between a minimum and a maximum.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpSlideJoint file.
+
+
+\subsection{cpSpace} 
+This section lists the comments added and modified  in the cpSpace file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the file: ``Containers for simulating objects in Chipmunk. Controls how all the rigid bodies, shapes and
+ constraints interact together.''
+\item Split up the cpSpaceGetIterations and cpSpaceSetIterations comment into two separate comments.
+\item Split up the cpSpaceGetGravity and cpSpaceSetGravity comment into two separate comments.
+\item Split up the cpSpaceGetDamping and cpSpaceSetDamping comment into two separate comments.
+\item Split up the cpSpaceGetIdleSpeedThreshold and cpSpaceSetIdleSpeedThreshold comment into two separate comments.
+\item Split up the cpSpaceGetSleepTimeThreshold and cpSpaceSetSleepTimeThreshold comment into two separate comments.
+\item Split up the cpSpaceGetCollisionSlop and cpSpaceSetCollisionSlop comment into two separate comments.
+\item Split up the cpSpaceGetCollisionBias and cpSpaceSetCollisionBias comment into two separate comments.
+\item Split up the cpSpaceGetCollisionPersistence and cpSpaceSetCollisionPersistence comment into two separate comments.
+\item Split up the cpSpaceGetUserData and cpSpaceSetUserData comment into two separate comments.
+\end{itemize}
+
+\subsubsection{Comments Modified}
+\begin{itemize}
+\item Changed ``Space/body iterator callback function type." to ``Space/shape iterator callback function type." above the callback function cpSpaceShapeIteratorFunc
+\item Changed ``Call @c func for each shape in the space." to `` Call @c func for each constraint in the space." above the function cpSpaceEachConstraint
+\item Changed ``Switch the space to use a spatial has as it's spatial index." to ``Switch the space to use a spatial hash as it's spatial index."above the function cpSpaceUseSpatialHash
+\end{itemize}
+
+
+\subsection{cpVect} 
+This section lists the comments added and modified  in the cpVect file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment to the cpMat2x2New function``Convenience constructor for cpMat2x2 structs.''
+\item Added a comment to the cpMat2x2Transform function``Multiply the matrix with a vector.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpVect file.
+
+
+\subsection{chipmunk} 
+This section lists the comments added and modified  in the chipmunk file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a detailed description to the top of the Misc group :``A set of miscellaneous functions for calculating the area, moment of inertia and other properties of shapes.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the chipmunk file.
+
+
+
+
+\subsection{cpArbiter\_private} 
+This section lists the comments added and modified  in the cpArbiter\_private file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment above the cpArbiterThread struct``A doubly linked list for the cpArbiter values.''
+\item  Added a comment above the cpArbiter struct``Tracks pairs of colliding shapes.''
+\item  Added a comment above the cpCollisionInfo  struct``Holds information about the collision.''
+\item  Added a comment above the cpContact  struct``Holds information about the contact points of the collision.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpArbiter\_private file.
+
+
+
+\subsection{cpSpace\_private} 
+This section lists the comments added and modified  in the cpSpace\_private file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment above the cpSpace struct``Containers for simulating objects in Chipmunk.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpSpace\_private file.
+
+
+
+\subsection{cpArray\_private} 
+This section lists the comments added and modified  in the cpArray\_private file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment above the cpArray struct``Chipmunk's array data structure.''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpArray\_private file.
+
+
+
+\subsection{cpShape\_private} 
+This section lists the comments added and modified  in the cpShape\_private file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment above the cpCircleShape  struct``A perfect circle shape.''
+\item Added a comment above the cpPolyShape  struct``A convex polygon shape.''
+\item Added a comment above the cpSemgmentShape  struct``A beveled (rounded) segment shape.''
+\item Added a comment above the cpShape  struct``The cpShape struct defines the shape of a rigid body''
+\item Added a comment above the cpShapeMassInfo  struct``Struct that holds information about the mass of the shape''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpShape\_private file.
+
+
+
+
+\subsection{cpConstraint\_private} 
+This section lists the comments added and modified  in the cpConstraint\_private file
+
+\subsubsection{Comments Added}
+\begin{itemize}
+\item Added a comment above the cpConstraintClass  struct``Struct that holds function callback pointers for constraints.''
+\item Added a comment above the cpPinJoint  struct``The two anchor points are always the same distance apart.''
+\item Added a comment above the cpSlideJoint  struct``Slide joints hold the distance between points on two bodies between a minimum and a maximum.''
+\item Added a comment above the cpPivotJoint  struct``Pivot joints hold two points on two bodies together allowing them to rotate freely around the pivot''
+\item Added a comment above the cpGrooveJoint  struct``Similar to a pivot joint, but one of the anchors is a line segment that the pivot can slide in''
+\item Added a comment above the cpDampedSpring  struct``A spring with a damper''
+\item Added a comment above the cpDampedRotarySpring  struct``Like a cpDampedSpring, but operates in a rotational fashion''
+\item Added a comment above the cpRotaryLimitJoint  struct``Constrains the bodies' orientations to be within a certain angle of each other''
+\item Added a comment above the cpRatchetJoint  struct``Create rotary ratchet similar to a socket wrench''
+\item Added a comment above the cpGearJoint  struct``Maintains a specific angular velocity between the two bodies''
+\item Added a comment above the cpSimpleMotor  struct``Maintains a specific angular relative velocity between two objects''
+\end{itemize}
+
+\subsubsection{Comments Modified}
+No comments were modified in the cpConstraint\_private file.
+
+\bibliography {Game Physics Library MG}{}
+\bibliographystyle {plain}
+
+\end{document}

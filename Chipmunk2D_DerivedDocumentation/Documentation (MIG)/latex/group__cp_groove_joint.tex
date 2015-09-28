@@ -1,0 +1,45 @@
+\hypertarget{group__cp_groove_joint}{}\section{cp\+Groove\+Joint}
+\label{group__cp_groove_joint}\index{cp\+Groove\+Joint@{cp\+Groove\+Joint}}
+
+
+Similar to a pivot joint, but one of the anchors is a line segment that the pivot can slide in.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_groove_joint_ga60d3e0fc171d82303d75bb911511cec5}{}\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_groove_joint_ga60d3e0fc171d82303d75bb911511cec5}{cp\+Constraint\+Is\+Groove\+Joint} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_groove_joint_ga60d3e0fc171d82303d75bb911511cec5}
+
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a groove joint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga019749a30c1717dda8166c55ea99c0d0}{}\hyperlink{structcp_groove_joint}{cp\+Groove\+Joint} $\ast$ \hyperlink{group__cp_groove_joint_ga019749a30c1717dda8166c55ea99c0d0}{cp\+Groove\+Joint\+Alloc} (void)\label{group__cp_groove_joint_ga019749a30c1717dda8166c55ea99c0d0}
+
+\begin{DoxyCompactList}\small\item\em Allocate a groove joint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_gabb45811c0a7daf98ac10e8c9b26c7a5a}{}\hyperlink{structcp_groove_joint}{cp\+Groove\+Joint} $\ast$ \hyperlink{group__cp_groove_joint_gabb45811c0a7daf98ac10e8c9b26c7a5a}{cp\+Groove\+Joint\+Init} (\hyperlink{structcp_groove_joint}{cp\+Groove\+Joint} $\ast$joint, \hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} groove\+\_\+a, \hyperlink{structcp_vect}{cp\+Vect} groove\+\_\+b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)\label{group__cp_groove_joint_gabb45811c0a7daf98ac10e8c9b26c7a5a}
+
+\begin{DoxyCompactList}\small\item\em Initialize a groove joint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga53011996f518e338c51c1f9bf9f8d674}{}\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_groove_joint_ga53011996f518e338c51c1f9bf9f8d674}{cp\+Groove\+Joint\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} groove\+\_\+a, \hyperlink{structcp_vect}{cp\+Vect} groove\+\_\+b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)\label{group__cp_groove_joint_ga53011996f518e338c51c1f9bf9f8d674}
+
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a groove joint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga42475ce8a3b9b62ba66bf99a1f4a9575}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_groove_joint_ga42475ce8a3b9b62ba66bf99a1f4a9575}{cp\+Groove\+Joint\+Get\+Groove\+A} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_groove_joint_ga42475ce8a3b9b62ba66bf99a1f4a9575}
+
+\begin{DoxyCompactList}\small\item\em Get the first endpoint of the groove relative to the first body. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga910111a5d88d7259812c283838195588}{}void \hyperlink{group__cp_groove_joint_ga910111a5d88d7259812c283838195588}{cp\+Groove\+Joint\+Set\+Groove\+A} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} groove\+A)\label{group__cp_groove_joint_ga910111a5d88d7259812c283838195588}
+
+\begin{DoxyCompactList}\small\item\em Set the first endpoint of the groove relative to the first body. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga1f497e2dbd015144d4e22a249129b6f2}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_groove_joint_ga1f497e2dbd015144d4e22a249129b6f2}{cp\+Groove\+Joint\+Get\+Groove\+B} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_groove_joint_ga1f497e2dbd015144d4e22a249129b6f2}
+
+\begin{DoxyCompactList}\small\item\em Get the first endpoint of the groove relative to the first body. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga3279be01f1e153cec1fe5172846d8994}{}void \hyperlink{group__cp_groove_joint_ga3279be01f1e153cec1fe5172846d8994}{cp\+Groove\+Joint\+Set\+Groove\+B} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} groove\+B)\label{group__cp_groove_joint_ga3279be01f1e153cec1fe5172846d8994}
+
+\begin{DoxyCompactList}\small\item\em Set the first endpoint of the groove relative to the first body. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga757e927ead4d7a46a176a9506bd00cec}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_groove_joint_ga757e927ead4d7a46a176a9506bd00cec}{cp\+Groove\+Joint\+Get\+Anchor\+B} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_groove_joint_ga757e927ead4d7a46a176a9506bd00cec}
+
+\begin{DoxyCompactList}\small\item\em Get the location of the second anchor relative to the second body. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_groove_joint_ga4eb105a8c2a48d6348369041c8ec0b97}{}void \hyperlink{group__cp_groove_joint_ga4eb105a8c2a48d6348369041c8ec0b97}{cp\+Groove\+Joint\+Set\+Anchor\+B} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)\label{group__cp_groove_joint_ga4eb105a8c2a48d6348369041c8ec0b97}
+
+\begin{DoxyCompactList}\small\item\em Set the location of the second anchor relative to the second body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Similar to a pivot joint, but one of the anchors is a line segment that the pivot can slide in. 
+

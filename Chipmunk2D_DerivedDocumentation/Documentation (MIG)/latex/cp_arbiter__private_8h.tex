@@ -1,0 +1,151 @@
+\hypertarget{cp_arbiter__private_8h}{}\section{cp\+Arbiter\+\_\+private.\+h File Reference}
+\label{cp_arbiter__private_8h}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+{\ttfamily \#include \char`\"{}chipmunk.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_arbiter_thread}{cp\+Arbiter\+Thread}
+\item 
+struct \hyperlink{structcp_contact}{cp\+Contact}
+\item 
+struct \hyperlink{structcp_collision_info}{cp\+Collision\+Info}
+\item 
+struct \hyperlink{structcp_arbiter}{cp\+Arbiter}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cp_arbiter__private_8h_a7aa54e4e4e1abf2b4638a70e6c436ed1}{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R}(bdy,  var)~for (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$var = bdy-\/$>$arbiter\+List; var; var = \hyperlink{cp_arbiter__private_8h_a04c9057dd273ed4dbc95dc4313e8bcda}{cp\+Arbiter\+Next}(var, bdy))
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196}{cp\+Arbiter\+State} \{ \\*
+\hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a0dfcb239ea91a969d8f317bdd4bbe0e7}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N}, 
+\hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ab1a1c40fa071cb1bd5540edf7c6de882}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L}, 
+\hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a8899b2b819bbfaa79cfa639f71e8f85e}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E}, 
+\hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ac811848170377ed47702ece117b7ccd5}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D}, 
+\\*
+\hyperlink{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a4043de51b46e8969995391813facbeb4}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$ \hyperlink{cp_arbiter__private_8h_a6641fdfd16ae284c6931779d7d2c9fbf}{cp\+Arbiter\+Init} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_shape}{cp\+Shape} $\ast$a, \hyperlink{structcp_shape}{cp\+Shape} $\ast$b)
+\item 
+static struct \hyperlink{structcp_arbiter_thread}{cp\+Arbiter\+Thread} $\ast$ \hyperlink{cp_arbiter__private_8h_a99896c578b2811450ef339e911b24979}{cp\+Arbiter\+Thread\+For\+Body} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\item 
+void \hyperlink{cp_arbiter__private_8h_a051c654f0b97c35359da9b67e9b33265}{cp\+Arbiter\+Unthread} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\item 
+void \hyperlink{cp_arbiter__private_8h_addc77223a69be8817e898bab6d5cbb13}{cp\+Arbiter\+Update} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, struct \hyperlink{structcp_collision_info}{cp\+Collision\+Info} $\ast$info, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\item 
+void \hyperlink{cp_arbiter__private_8h_a2286a969576f79a9c272c6e613632148}{cp\+Arbiter\+Pre\+Step} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} dt, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} bias, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} slop)
+\item 
+void \hyperlink{cp_arbiter__private_8h_a5682e5e0f6040b02cabbf7304158d48d}{cp\+Arbiter\+Apply\+Cached\+Impulse} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} dt\+\_\+coef)
+\item 
+void \hyperlink{cp_arbiter__private_8h_a7829897793efaaf7fe2bf134d9c2166b}{cp\+Arbiter\+Apply\+Impulse} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\item 
+static \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$ \hyperlink{cp_arbiter__private_8h_a04c9057dd273ed4dbc95dc4313e8bcda}{cp\+Arbiter\+Next} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$node, \hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cp_arbiter__private_8h_a7aa54e4e4e1abf2b4638a70e6c436ed1}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R}}
+\index{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+A\+R\+B\+I\+T\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{bdy, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~for ({\bf cp\+Arbiter} $\ast$var = bdy-\/$>$arbiter\+List; var; var = {\bf cp\+Arbiter\+Next}(var, bdy))}\label{cp_arbiter__private_8h_a7aa54e4e4e1abf2b4638a70e6c436ed1}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+State@{cp\+Arbiter\+State}}
+\index{cp\+Arbiter\+State@{cp\+Arbiter\+State}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cp\+Arbiter\+State}}\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N}}\item[{\em 
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a0dfcb239ea91a969d8f317bdd4bbe0e7}{}C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a0dfcb239ea91a969d8f317bdd4bbe0e7}
+}]\index{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L}}\item[{\em 
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ab1a1c40fa071cb1bd5540edf7c6de882}{}C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+R\+M\+A\+L\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ab1a1c40fa071cb1bd5540edf7c6de882}
+}]\index{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E}}\item[{\em 
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a8899b2b819bbfaa79cfa639f71e8f85e}{}C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+G\+N\+O\+R\+E\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a8899b2b819bbfaa79cfa639f71e8f85e}
+}]\index{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D}}\item[{\em 
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ac811848170377ed47702ece117b7ccd5}{}C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+H\+E\+D\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196ac811848170377ed47702ece117b7ccd5}
+}]\index{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D@{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D}}\item[{\em 
+\hypertarget{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a4043de51b46e8969995391813facbeb4}{}C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+A\+T\+E\+D\label{cp_arbiter__private_8h_a72c3b52ea8acfc57ac405317ce527196a4043de51b46e8969995391813facbeb4}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_arbiter__private_8h_a5682e5e0f6040b02cabbf7304158d48d}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Apply\+Cached\+Impulse@{cp\+Arbiter\+Apply\+Cached\+Impulse}}
+\index{cp\+Arbiter\+Apply\+Cached\+Impulse@{cp\+Arbiter\+Apply\+Cached\+Impulse}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Apply\+Cached\+Impulse}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Apply\+Cached\+Impulse (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Float}}]{dt\+\_\+coef}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_a5682e5e0f6040b02cabbf7304158d48d}
+\hypertarget{cp_arbiter__private_8h_a7829897793efaaf7fe2bf134d9c2166b}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Apply\+Impulse@{cp\+Arbiter\+Apply\+Impulse}}
+\index{cp\+Arbiter\+Apply\+Impulse@{cp\+Arbiter\+Apply\+Impulse}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Apply\+Impulse}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Apply\+Impulse (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_a7829897793efaaf7fe2bf134d9c2166b}
+\hypertarget{cp_arbiter__private_8h_a6641fdfd16ae284c6931779d7d2c9fbf}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Init@{cp\+Arbiter\+Init}}
+\index{cp\+Arbiter\+Init@{cp\+Arbiter\+Init}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Arbiter}$\ast$ cp\+Arbiter\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Shape} $\ast$}]{a, }
+\item[{{\bf cp\+Shape} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_a6641fdfd16ae284c6931779d7d2c9fbf}
+\hypertarget{cp_arbiter__private_8h_a04c9057dd273ed4dbc95dc4313e8bcda}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Next@{cp\+Arbiter\+Next}}
+\index{cp\+Arbiter\+Next@{cp\+Arbiter\+Next}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Next}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf cp\+Arbiter}$\ast$ cp\+Arbiter\+Next (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{node, }
+\item[{{\bf cp\+Body} $\ast$}]{body}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_arbiter__private_8h_a04c9057dd273ed4dbc95dc4313e8bcda}
+\hypertarget{cp_arbiter__private_8h_a2286a969576f79a9c272c6e613632148}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Pre\+Step@{cp\+Arbiter\+Pre\+Step}}
+\index{cp\+Arbiter\+Pre\+Step@{cp\+Arbiter\+Pre\+Step}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Pre\+Step}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Pre\+Step (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Float}}]{dt, }
+\item[{{\bf cp\+Float}}]{bias, }
+\item[{{\bf cp\+Float}}]{slop}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_a2286a969576f79a9c272c6e613632148}
+\hypertarget{cp_arbiter__private_8h_a99896c578b2811450ef339e911b24979}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Thread\+For\+Body@{cp\+Arbiter\+Thread\+For\+Body}}
+\index{cp\+Arbiter\+Thread\+For\+Body@{cp\+Arbiter\+Thread\+For\+Body}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Thread\+For\+Body}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf cp\+Arbiter\+Thread}$\ast$ cp\+Arbiter\+Thread\+For\+Body (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Body} $\ast$}]{body}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{cp_arbiter__private_8h_a99896c578b2811450ef339e911b24979}
+\hypertarget{cp_arbiter__private_8h_a051c654f0b97c35359da9b67e9b33265}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Unthread@{cp\+Arbiter\+Unthread}}
+\index{cp\+Arbiter\+Unthread@{cp\+Arbiter\+Unthread}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Unthread}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Unthread (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_a051c654f0b97c35359da9b67e9b33265}
+\hypertarget{cp_arbiter__private_8h_addc77223a69be8817e898bab6d5cbb13}{}\index{cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}!cp\+Arbiter\+Update@{cp\+Arbiter\+Update}}
+\index{cp\+Arbiter\+Update@{cp\+Arbiter\+Update}!cp\+Arbiter\+\_\+private.\+h@{cp\+Arbiter\+\_\+private.\+h}}
+\subsubsection[{cp\+Arbiter\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{struct {\bf cp\+Collision\+Info} $\ast$}]{info, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{cp_arbiter__private_8h_addc77223a69be8817e898bab6d5cbb13}

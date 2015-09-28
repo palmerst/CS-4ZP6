@@ -1,0 +1,21 @@
+int init_cpConstraintSuite(void);
+int clean_cpConstraintSuite(void);
+
+void test_cpConstraintGetSpace(void);
+void test_cpConstraintGetBodyA(void);
+void test_cpConstraintGetBodyB(void);
+void test_cpConstraintGetMaxForce(void);
+void test_cpConstraintSetMaxForce(void);
+void test_cpConstraintGetErrorBias(void);
+void test_cpConstraintSetErrorBias(void);
+void test_cpConstraintGetMaxBias(void);
+void test_cpConstraintSetMaxBias(void);
+void test_cpConstraintGetCollideBodies(void);
+void test_cpConstraintSetCollideBodies(void);
+void test_cpConstraintGetPreSolveFunc(void);
+void test_cpConstraintSetPreSolveFunc(void);
+void test_cpConstraintGetPostSolveFunc(void);
+void test_cpConstraintSetPostSolveFunc(void);
+void test_cpConstraintGetUserData(void);
+void test_cpConstraintSetUserData(void);
+void test_cpConstraintGetImpulse(void);

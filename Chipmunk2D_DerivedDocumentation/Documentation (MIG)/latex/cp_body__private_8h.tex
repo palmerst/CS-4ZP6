@@ -1,0 +1,69 @@
+\hypertarget{cp_body__private_8h}{}\section{cp\+Body\+\_\+private.\+h File Reference}
+\label{cp_body__private_8h}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+{\ttfamily \#include \char`\"{}chipmunk.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_body}{cp\+Body}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cp_body__private_8h_ac2e9193564143808d89204446f961170}{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T}(root,  var)~for (\hyperlink{structcp_body}{cp\+Body} $\ast$var = root; var; var = var-\/$>$sleeping.\+next)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cp_body__private_8h_a32726312f0229f09cf7ba8eb6b90917b}{cp\+Body\+Add\+Shape} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\item 
+void \hyperlink{cp_body__private_8h_a7a94262b9e8b1eccf958a0d75e34873f}{cp\+Body\+Remove\+Shape} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\item 
+void \hyperlink{cp_body__private_8h_a331b02e52f32b2600bdb11539fa74560}{cp\+Body\+Accumulate\+Mass\+From\+Shapes} (\hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\item 
+void \hyperlink{cp_body__private_8h_afb3bbb6ddc583cc24f5e784db17c4809}{cp\+Body\+Remove\+Constraint} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cp_body__private_8h_ac2e9193564143808d89204446f961170}{}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}!C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T}}
+\index{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T}!cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+\subsubsection[{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{root, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~for ({\bf cp\+Body} $\ast$var = root; var; var = var-\/$>$sleeping.\+next)}\label{cp_body__private_8h_ac2e9193564143808d89204446f961170}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_body__private_8h_a331b02e52f32b2600bdb11539fa74560}{}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}!cp\+Body\+Accumulate\+Mass\+From\+Shapes@{cp\+Body\+Accumulate\+Mass\+From\+Shapes}}
+\index{cp\+Body\+Accumulate\+Mass\+From\+Shapes@{cp\+Body\+Accumulate\+Mass\+From\+Shapes}!cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+\subsubsection[{cp\+Body\+Accumulate\+Mass\+From\+Shapes}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Body\+Accumulate\+Mass\+From\+Shapes (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body}
+\end{DoxyParamCaption}
+)}\label{cp_body__private_8h_a331b02e52f32b2600bdb11539fa74560}
+\hypertarget{cp_body__private_8h_a32726312f0229f09cf7ba8eb6b90917b}{}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}!cp\+Body\+Add\+Shape@{cp\+Body\+Add\+Shape}}
+\index{cp\+Body\+Add\+Shape@{cp\+Body\+Add\+Shape}!cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+\subsubsection[{cp\+Body\+Add\+Shape}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Body\+Add\+Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_body__private_8h_a32726312f0229f09cf7ba8eb6b90917b}
+\hypertarget{cp_body__private_8h_afb3bbb6ddc583cc24f5e784db17c4809}{}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}!cp\+Body\+Remove\+Constraint@{cp\+Body\+Remove\+Constraint}}
+\index{cp\+Body\+Remove\+Constraint@{cp\+Body\+Remove\+Constraint}!cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+\subsubsection[{cp\+Body\+Remove\+Constraint}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Body\+Remove\+Constraint (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Constraint} $\ast$}]{constraint}
+\end{DoxyParamCaption}
+)}\label{cp_body__private_8h_afb3bbb6ddc583cc24f5e784db17c4809}
+\hypertarget{cp_body__private_8h_a7a94262b9e8b1eccf958a0d75e34873f}{}\index{cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}!cp\+Body\+Remove\+Shape@{cp\+Body\+Remove\+Shape}}
+\index{cp\+Body\+Remove\+Shape@{cp\+Body\+Remove\+Shape}!cp\+Body\+\_\+private.\+h@{cp\+Body\+\_\+private.\+h}}
+\subsubsection[{cp\+Body\+Remove\+Shape}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Body\+Remove\+Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_body__private_8h_a7a94262b9e8b1eccf958a0d75e34873f}

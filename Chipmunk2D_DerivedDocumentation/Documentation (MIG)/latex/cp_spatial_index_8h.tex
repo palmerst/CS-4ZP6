@@ -1,0 +1,107 @@
+\hypertarget{cp_spatial_index_8h}{}\section{cp\+Spatial\+Index.\+h File Reference}
+\label{cp_spatial_index_8h}\index{cp\+Spatial\+Index.\+h@{cp\+Spatial\+Index.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index}
+\item 
+struct \hyperlink{structcp_spatial_index_class}{cp\+Spatial\+Index\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structcp_b_b}{cp\+B\+B}($\ast$ \hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func}) (void $\ast$obj)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_ga522e250b59a1802d3648085685d41f97}{cp\+Spatial\+Index\+Iterator\+Func}) (void $\ast$obj, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Spatial index/object iterator callback function type. \end{DoxyCompactList}\item 
+typedef \hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D}($\ast$ \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func}) (void $\ast$obj1, void $\ast$obj2, \hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D} id, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Spatial query callback function type. \end{DoxyCompactList}\item 
+typedef \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float}($\ast$ \hyperlink{group__cp_spatial_index_ga829ef5f6fd840ea31370d53db9045373}{cp\+Spatial\+Index\+Segment\+Query\+Func}) (void $\ast$obj1, void $\ast$obj2, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Spatial segment query callback function type. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structcp_spatial_index_class}{cp\+Spatial\+Index\+Class} \hyperlink{group__cp_spatial_index_ga0e6be503abc1229a5da339a30ee6f88e}{cp\+Spatial\+Index\+Class}
+\item 
+typedef struct \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} \hyperlink{group__cp_spatial_index_ga1af77c242def41e791d49350c809cc7f}{cp\+Spatial\+Index}
+\item 
+typedef struct \hyperlink{group__cp_spatial_index_ga3ff6ff3229f67d50c8a936fce831e047}{cp\+Space\+Hash} \hyperlink{group__cp_spatial_index_ga3ff6ff3229f67d50c8a936fce831e047}{cp\+Space\+Hash}
+\item 
+typedef struct \hyperlink{group__cp_spatial_index_ga8347b442aab8cc34989d11220846260a}{cp\+B\+B\+Tree} \hyperlink{group__cp_spatial_index_ga8347b442aab8cc34989d11220846260a}{cp\+B\+B\+Tree}
+\item 
+typedef \hyperlink{structcp_vect}{cp\+Vect}($\ast$ \hyperlink{group__cp_spatial_index_ga5e805ddbe3cab9b92a6fbd933ff6e6b0}{cp\+B\+B\+Tree\+Velocity\+Func}) (void $\ast$obj)
+\item 
+typedef struct \hyperlink{group__cp_spatial_index_gad24eda1cd6772ea93a036c766b787c3b}{cp\+Sweep1\+D} \hyperlink{group__cp_spatial_index_gad24eda1cd6772ea93a036c766b787c3b}{cp\+Sweep1\+D}
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gaaaf3c06d9176031f22ccd1f69a760ebb}{cp\+Spatial\+Index\+Destroy\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\item 
+typedef int($\ast$ \hyperlink{group__cp_spatial_index_gae98eded3b672a84bdae64ff61476d096}{cp\+Spatial\+Index\+Count\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_ga7c2c2ed1234f45f8b3e50cb79d23f882}{cp\+Spatial\+Index\+Each\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, \hyperlink{group__cp_spatial_index_ga522e250b59a1802d3648085685d41f97}{cp\+Spatial\+Index\+Iterator\+Func} func, void $\ast$data)
+\item 
+typedef \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ \hyperlink{group__cp_spatial_index_gad729c7d8dd9cd247b35727fc2aa2bc84}{cp\+Spatial\+Index\+Contains\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gab1a1e7d307a79fc97d47189bb0aea8a9}{cp\+Spatial\+Index\+Insert\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gaf943dffbd088c1f4809a254b0eb96860}{cp\+Spatial\+Index\+Remove\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gae8c6986404106d1b4717ef0a24463fe2}{cp\+Spatial\+Index\+Reindex\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_ga5109ec90ae7c99cf421d1b233db63900}{cp\+Spatial\+Index\+Reindex\+Object\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gad1b5f2682c09f5f4e5e48f751e8e25b6}{cp\+Spatial\+Index\+Reindex\+Query\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func} func, void $\ast$data)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_ga15683b78b71535766a2e69d203196549}{cp\+Spatial\+Index\+Query\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{structcp_b_b}{cp\+B\+B} bb, \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func} func, void $\ast$data)
+\item 
+typedef void($\ast$ \hyperlink{group__cp_spatial_index_gab91c6534f37f1a493c58934417b16f09}{cp\+Spatial\+Index\+Segment\+Query\+Impl}) (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} t\+\_\+exit, \hyperlink{group__cp_spatial_index_ga829ef5f6fd840ea31370d53db9045373}{cp\+Spatial\+Index\+Segment\+Query\+Func} func, void $\ast$data)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__cp_spatial_index_ga3ff6ff3229f67d50c8a936fce831e047}{cp\+Space\+Hash} $\ast$ \hyperlink{group__cp_spatial_index_ga61ba28bd31d8f7e19d331afae0ee76b9}{cp\+Space\+Hash\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a spatial hash. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_gac028d5b83798b0a9bbd4d0d29b9f7914}{cp\+Space\+Hash\+Init} (\hyperlink{group__cp_spatial_index_ga3ff6ff3229f67d50c8a936fce831e047}{cp\+Space\+Hash} $\ast$hash, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} celldim, int numcells, \hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Initialize a spatial hash. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_ga48c6a8a52184403547f5c185c2a758f6}{cp\+Space\+Hash\+New} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} celldim, int cells, \hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a spatial hash. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_spatial_index_ga71489134c15a3bcb1efb0913e765a3c1}{cp\+Space\+Hash\+Resize} (\hyperlink{group__cp_spatial_index_ga3ff6ff3229f67d50c8a936fce831e047}{cp\+Space\+Hash} $\ast$hash, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} celldim, int numcells)
+\item 
+\hyperlink{group__cp_spatial_index_ga8347b442aab8cc34989d11220846260a}{cp\+B\+B\+Tree} $\ast$ \hyperlink{group__cp_spatial_index_ga415b605cbf6dc64a6f519923bb14e223}{cp\+B\+B\+Tree\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a bounding box tree. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_ga2c7d3e7cda09354f2a15fce6c28e2a81}{cp\+B\+B\+Tree\+Init} (\hyperlink{group__cp_spatial_index_ga8347b442aab8cc34989d11220846260a}{cp\+B\+B\+Tree} $\ast$tree, \hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Initialize a bounding box tree. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_gadc8bdef1e33f3c238bf17394b94eacb6}{cp\+B\+B\+Tree\+New} (\hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a bounding box tree. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_spatial_index_ga299b4e2193ff1df336c925857334364f}{cp\+B\+B\+Tree\+Optimize} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\begin{DoxyCompactList}\small\item\em Perform a static top down optimization of the tree. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_spatial_index_gaf01118b5105cf3136d4ee6cf372539d5}{cp\+B\+B\+Tree\+Set\+Velocity\+Func} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, \hyperlink{group__cp_spatial_index_ga5e805ddbe3cab9b92a6fbd933ff6e6b0}{cp\+B\+B\+Tree\+Velocity\+Func} func)
+\begin{DoxyCompactList}\small\item\em Set the velocity function for the bounding box tree to enable temporal coherence. \end{DoxyCompactList}\item 
+\hyperlink{group__cp_spatial_index_gad24eda1cd6772ea93a036c766b787c3b}{cp\+Sweep1\+D} $\ast$ \hyperlink{group__cp_spatial_index_ga04e4015461583471c66a58e9d6874679}{cp\+Sweep1\+D\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a 1\+D sort and sweep broadphase. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_ga69af70bd9dbc39de7c98d677c872ca80}{cp\+Sweep1\+D\+Init} (\hyperlink{group__cp_spatial_index_gad24eda1cd6772ea93a036c766b787c3b}{cp\+Sweep1\+D} $\ast$sweep, \hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Initialize a 1\+D sort and sweep broadphase. \end{DoxyCompactList}\item 
+\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$ \hyperlink{group__cp_spatial_index_gaaec0552c5ec0a4014d8930c0203261d9}{cp\+Sweep1\+D\+New} (\hyperlink{group__cp_spatial_index_gaa8cf991cadcee1fbb6ee9379a0a6e0ea}{cp\+Spatial\+Index\+B\+B\+Func} bbfunc, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a 1\+D sort and sweep broadphase. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_spatial_index_ga13a62ecd13b6dbee7d4c8ae056e0f86f}{cp\+Spatial\+Index\+Free} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\begin{DoxyCompactList}\small\item\em Destroy and free a spatial index. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_spatial_index_ga8abb667968f231b2f87c7273d4b0e533}{cp\+Spatial\+Index\+Collide\+Static} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$dynamic\+Index, \hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$static\+Index, \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Collide the objects in {\ttfamily dynamic\+Index} against the objects in {\ttfamily static\+Index} using the query callback function. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_ga93050241206687a408b3fda47a3043b5}{cp\+Spatial\+Index\+Destroy} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\begin{DoxyCompactList}\small\item\em Destroy a spatial index. \end{DoxyCompactList}\item 
+static int \hyperlink{group__cp_spatial_index_ga6df52a5b71eb17a3eefd95f6fee50523}{cp\+Spatial\+Index\+Count} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\begin{DoxyCompactList}\small\item\em Get the number of objects in the spatial index. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_gaf26a213bc18ecac3eb75fbffcd799516}{cp\+Spatial\+Index\+Each} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, \hyperlink{group__cp_spatial_index_ga522e250b59a1802d3648085685d41f97}{cp\+Spatial\+Index\+Iterator\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Iterate the objects in the spatial index. {\ttfamily func} will be called once for each object. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_spatial_index_gabe87290682030b3de790eb99d515cc37}{cp\+Spatial\+Index\+Contains} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+static void \hyperlink{group__cp_spatial_index_ga64e1fb8e5d80db41daa3f7a2868f6cf5}{cp\+Spatial\+Index\+Insert} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+static void \hyperlink{group__cp_spatial_index_ga3c57a5ea8af5d34ed253a410641eabd2}{cp\+Spatial\+Index\+Remove} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\item 
+static void \hyperlink{group__cp_spatial_index_ga53a63b28ddc23833125af07f50824810}{cp\+Spatial\+Index\+Reindex} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index)
+\begin{DoxyCompactList}\small\item\em Perform a full reindex of a spatial index. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_ga2e1fdebe1cbc9271a387523f8835d56a}{cp\+Spatial\+Index\+Reindex\+Object} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value} hashid)
+\begin{DoxyCompactList}\small\item\em Reindex a single object in the spatial index. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_gaa812bf1ff2bfa9a0fcafc537be23e4a0}{cp\+Spatial\+Index\+Query} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{structcp_b_b}{cp\+B\+B} bb, \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Perform a rectangle query against the spatial index, calling {\ttfamily func} for each potential match. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_gae66f56fe8f12be66c696776d0430f18e}{cp\+Spatial\+Index\+Segment\+Query} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, void $\ast$obj, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} t\+\_\+exit, \hyperlink{group__cp_spatial_index_ga829ef5f6fd840ea31370d53db9045373}{cp\+Spatial\+Index\+Segment\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Perform a segment query against the spatial index, calling {\ttfamily func} for each potential match. \end{DoxyCompactList}\item 
+static void \hyperlink{group__cp_spatial_index_ga04f6ebfd6288fbf058c116c033ae9eae}{cp\+Spatial\+Index\+Reindex\+Query} (\hyperlink{structcp_spatial_index}{cp\+Spatial\+Index} $\ast$index, \hyperlink{group__cp_spatial_index_ga7bcf80d017b29d32d9f8011405b241f9}{cp\+Spatial\+Index\+Query\+Func} func, void $\ast$data)
+\end{DoxyCompactItemize}

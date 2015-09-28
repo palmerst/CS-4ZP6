@@ -1,0 +1,57 @@
+\hypertarget{cp_march_8h}{}\section{cp\+March.\+h File Reference}
+\label{cp_march_8h}\index{cp\+March.\+h@{cp\+March.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float}($\ast$ \hyperlink{cp_march_8h_abab264c2f933d03cce459e36c3f1352a}{cp\+March\+Sample\+Func}) (\hyperlink{structcp_vect}{cp\+Vect} point, void $\ast$data)
+\item 
+typedef void($\ast$ \hyperlink{cp_march_8h_a69644176bbed283e7a3f9caf2c016de7}{cp\+March\+Segment\+Func}) (\hyperlink{structcp_vect}{cp\+Vect} v0, \hyperlink{structcp_vect}{cp\+Vect} v1, void $\ast$data)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{cp\+March\+Soft} (\hyperlink{structcp_b_b}{cp\+B\+B} bb, unsigned long x\+\_\+samples, unsigned long y\+\_\+samples, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} threshold, \hyperlink{cp_march_8h_a69644176bbed283e7a3f9caf2c016de7}{cp\+March\+Segment\+Func} segment, void $\ast$segment\+\_\+data, \hyperlink{cp_march_8h_abab264c2f933d03cce459e36c3f1352a}{cp\+March\+Sample\+Func} sample, void $\ast$sample\+\_\+data)
+\item 
+void \hyperlink{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{cp\+March\+Hard} (\hyperlink{structcp_b_b}{cp\+B\+B} bb, unsigned long x\+\_\+samples, unsigned long y\+\_\+samples, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} threshold, \hyperlink{cp_march_8h_a69644176bbed283e7a3f9caf2c016de7}{cp\+March\+Segment\+Func} segment, void $\ast$segment\+\_\+data, \hyperlink{cp_march_8h_abab264c2f933d03cce459e36c3f1352a}{cp\+March\+Sample\+Func} sample, void $\ast$sample\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cp_march_8h_abab264c2f933d03cce459e36c3f1352a}{}\index{cp\+March.\+h@{cp\+March.\+h}!cp\+March\+Sample\+Func@{cp\+March\+Sample\+Func}}
+\index{cp\+March\+Sample\+Func@{cp\+March\+Sample\+Func}!cp\+March.\+h@{cp\+March.\+h}}
+\subsubsection[{cp\+March\+Sample\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf cp\+Float}($\ast$ cp\+March\+Sample\+Func) ({\bf cp\+Vect} point, void $\ast$data)}\label{cp_march_8h_abab264c2f933d03cce459e36c3f1352a}
+Function type used as a callback from the marching squares algorithm to sample an image function. It passes you the point to sample and your context pointer, and you return the density. \hypertarget{cp_march_8h_a69644176bbed283e7a3f9caf2c016de7}{}\index{cp\+March.\+h@{cp\+March.\+h}!cp\+March\+Segment\+Func@{cp\+March\+Segment\+Func}}
+\index{cp\+March\+Segment\+Func@{cp\+March\+Segment\+Func}!cp\+March.\+h@{cp\+March.\+h}}
+\subsubsection[{cp\+March\+Segment\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cp\+March\+Segment\+Func) ({\bf cp\+Vect} v0, {\bf cp\+Vect} v1, void $\ast$data)}\label{cp_march_8h_a69644176bbed283e7a3f9caf2c016de7}
+Function type used as a callback from the marching squares algorithm to output a line segment. It passes you the two endpoints and your context pointer. 
+
+\subsection{Function Documentation}
+\hypertarget{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{}\index{cp\+March.\+h@{cp\+March.\+h}!cp\+March\+Hard@{cp\+March\+Hard}}
+\index{cp\+March\+Hard@{cp\+March\+Hard}!cp\+March.\+h@{cp\+March.\+h}}
+\subsubsection[{cp\+March\+Hard}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+March\+Hard (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+B\+B}}]{bb, }
+\item[{unsigned long}]{x\+\_\+samples, }
+\item[{unsigned long}]{y\+\_\+samples, }
+\item[{{\bf cp\+Float}}]{threshold, }
+\item[{{\bf cp\+March\+Segment\+Func}}]{segment, }
+\item[{void $\ast$}]{segment\+\_\+data, }
+\item[{{\bf cp\+March\+Sample\+Func}}]{sample, }
+\item[{void $\ast$}]{sample\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}
+Trace an aliased curve of an image along a particular threshold. The given number of samples will be taken and spread across the bounding box area using the sampling function and context. The segment function will be called for each segment detected that lies along the density contour for {\ttfamily threshold}. \hypertarget{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{}\index{cp\+March.\+h@{cp\+March.\+h}!cp\+March\+Soft@{cp\+March\+Soft}}
+\index{cp\+March\+Soft@{cp\+March\+Soft}!cp\+March.\+h@{cp\+March.\+h}}
+\subsubsection[{cp\+March\+Soft}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+March\+Soft (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+B\+B}}]{bb, }
+\item[{unsigned long}]{x\+\_\+samples, }
+\item[{unsigned long}]{y\+\_\+samples, }
+\item[{{\bf cp\+Float}}]{threshold, }
+\item[{{\bf cp\+March\+Segment\+Func}}]{segment, }
+\item[{void $\ast$}]{segment\+\_\+data, }
+\item[{{\bf cp\+March\+Sample\+Func}}]{sample, }
+\item[{void $\ast$}]{sample\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}
+Trace an anti-\/aliased contour of an image along a particular threshold. The given number of samples will be taken and spread across the bounding box area using the sampling function and context. The segment function will be called for each segment detected that lies along the density contour for {\ttfamily threshold}. 

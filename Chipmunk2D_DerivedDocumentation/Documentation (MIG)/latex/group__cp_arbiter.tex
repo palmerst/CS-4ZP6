@@ -1,0 +1,246 @@
+\hypertarget{group__cp_arbiter}{}\section{cp\+Arbiter}
+\label{group__cp_arbiter}\index{cp\+Arbiter@{cp\+Arbiter}}
+
+
+The \hyperlink{structcp_arbiter}{cp\+Arbiter} struct tracks pairs of colliding shapes.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_contact_point_set}{cp\+Contact\+Point\+Set}
+\begin{DoxyCompactList}\small\item\em A struct that wraps up the important collision data for an arbiter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_arbiter_ga47cf449fcf6338737bc070f29bd286b5}{}\#define {\bfseries C\+P\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+T\+A\+C\+T\+S\+\_\+\+P\+E\+R\+\_\+\+A\+R\+B\+I\+T\+E\+R}~2\label{group__cp_arbiter_ga47cf449fcf6338737bc070f29bd286b5}
+
+\item 
+\hypertarget{group__cp_arbiter_gaf6cd3e6766178e14b1204774890518c7}{}\#define \hyperlink{group__cp_arbiter_gaf6cd3e6766178e14b1204774890518c7}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+G\+E\+T\+\_\+\+S\+H\+A\+P\+E\+S}(\+\_\+\+\_\+arb\+\_\+\+\_\+,  \+\_\+\+\_\+a\+\_\+\+\_\+,  \+\_\+\+\_\+b\+\_\+\+\_\+)~\hyperlink{structcp_shape}{cp\+Shape} $\ast$\+\_\+\+\_\+a\+\_\+\+\_\+, $\ast$\+\_\+\+\_\+b\+\_\+\+\_\+; \hyperlink{group__cp_arbiter_ga2efa3b9fe882a1a0218cff4ae1449ccd}{cp\+Arbiter\+Get\+Shapes}(\+\_\+\+\_\+arb\+\_\+\+\_\+, \&\+\_\+\+\_\+a\+\_\+\+\_\+, \&\+\_\+\+\_\+b\+\_\+\+\_\+);\label{group__cp_arbiter_gaf6cd3e6766178e14b1204774890518c7}
+
+\begin{DoxyCompactList}\small\item\em A macro shortcut for defining and retrieving the shapes from an arbiter. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga57ae85df3f77d0fb62fe5b5c77b3a28f}{}\#define \hyperlink{group__cp_arbiter_ga57ae85df3f77d0fb62fe5b5c77b3a28f}{C\+P\+\_\+\+A\+R\+B\+I\+T\+E\+R\+\_\+\+G\+E\+T\+\_\+\+B\+O\+D\+I\+E\+S}(\+\_\+\+\_\+arb\+\_\+\+\_\+,  \+\_\+\+\_\+a\+\_\+\+\_\+,  \+\_\+\+\_\+b\+\_\+\+\_\+)~\hyperlink{structcp_body}{cp\+Body} $\ast$\+\_\+\+\_\+a\+\_\+\+\_\+, $\ast$\+\_\+\+\_\+b\+\_\+\+\_\+; \hyperlink{group__cp_arbiter_gad5a9d27724cc0f06b0eee2b73ef9e79b}{cp\+Arbiter\+Get\+Bodies}(\+\_\+\+\_\+arb\+\_\+\+\_\+, \&\+\_\+\+\_\+a\+\_\+\+\_\+, \&\+\_\+\+\_\+b\+\_\+\+\_\+);\label{group__cp_arbiter_ga57ae85df3f77d0fb62fe5b5c77b3a28f}
+
+\begin{DoxyCompactList}\small\item\em A macro shortcut for defining and retrieving the bodies from an arbiter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_arbiter_ga8f84e4ad8c1289904b8030fa4949713e}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_arbiter_ga8f84e4ad8c1289904b8030fa4949713e}{cp\+Arbiter\+Get\+Restitution} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga8f84e4ad8c1289904b8030fa4949713e}
+
+\begin{DoxyCompactList}\small\item\em Get the restitution (elasticity) that will be applied to the pair of colliding objects. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga5486e6d8a0ea6b67300b19269d474646}{}void \hyperlink{group__cp_arbiter_ga5486e6d8a0ea6b67300b19269d474646}{cp\+Arbiter\+Set\+Restitution} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} restitution)\label{group__cp_arbiter_ga5486e6d8a0ea6b67300b19269d474646}
+
+\begin{DoxyCompactList}\small\item\em Override the restitution (elasticity) that will be applied to the pair of colliding objects. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga08381fa73b5db1359f6608b770757fd5}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_arbiter_ga08381fa73b5db1359f6608b770757fd5}{cp\+Arbiter\+Get\+Friction} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga08381fa73b5db1359f6608b770757fd5}
+
+\begin{DoxyCompactList}\small\item\em Get the friction coefficient that will be applied to the pair of colliding objects. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga052a22bbb0ff81d01329de9d53baa29b}{}void \hyperlink{group__cp_arbiter_ga052a22bbb0ff81d01329de9d53baa29b}{cp\+Arbiter\+Set\+Friction} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} friction)\label{group__cp_arbiter_ga052a22bbb0ff81d01329de9d53baa29b}
+
+\begin{DoxyCompactList}\small\item\em Override the friction coefficient that will be applied to the pair of colliding objects. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga4f9919eac87d054d11b095ba348ffffd}{}\hyperlink{structcp_vect}{cp\+Vect} {\bfseries cp\+Arbiter\+Get\+Surface\+Velocity} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga4f9919eac87d054d11b095ba348ffffd}
+
+\item 
+\hypertarget{group__cp_arbiter_ga880fecaa9ab34831ecd8b56a52fc9633}{}void {\bfseries cp\+Arbiter\+Set\+Surface\+Velocity} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_vect}{cp\+Vect} vr)\label{group__cp_arbiter_ga880fecaa9ab34831ecd8b56a52fc9633}
+
+\item 
+\hypertarget{group__cp_arbiter_ga9734f6ed4771350c607644ab5d4b93bd}{}\hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{group__cp_arbiter_ga9734f6ed4771350c607644ab5d4b93bd}{cp\+Arbiter\+Get\+User\+Data} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga9734f6ed4771350c607644ab5d4b93bd}
+
+\begin{DoxyCompactList}\small\item\em Get the user data pointer associated with this pair of colliding objects. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_arbiter_gafb98ad7393d2f0df7212bc8653a2a4ae}{cp\+Arbiter\+Set\+User\+Data} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Set a user data point associated with this pair of colliding objects. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_arbiter_ga521500a047cd9c10f7c6bfb64b3e4e50}{cp\+Arbiter\+Total\+Impulse} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\begin{DoxyCompactList}\small\item\em Calculate the total impulse including the friction that was applied by this arbiter. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_arbiter_ga292d7e349093c0eba4f14c7ce46956fa}{cp\+Arbiter\+Total\+K\+E} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\begin{DoxyCompactList}\small\item\em Calculate the amount of energy lost in a collision including static, but not dynamic friction. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_ga23c479da664722be4a87420822ff6591}{cp\+Arbiter\+Ignore} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)
+\begin{DoxyCompactList}\small\item\em Mark a collision pair to be ignored until the two objects separate. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_arbiter_ga2efa3b9fe882a1a0218cff4ae1449ccd}{cp\+Arbiter\+Get\+Shapes} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_shape}{cp\+Shape} $\ast$$\ast$a, \hyperlink{structcp_shape}{cp\+Shape} $\ast$$\ast$b)
+\begin{DoxyCompactList}\small\item\em Return the colliding shapes involved for this arbiter. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_arbiter_gad5a9d27724cc0f06b0eee2b73ef9e79b}{cp\+Arbiter\+Get\+Bodies} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_body}{cp\+Body} $\ast$$\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$$\ast$b)
+\begin{DoxyCompactList}\small\item\em Return the colliding bodies involved for this arbiter. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_gada18a6cf4d44ef1fea136f97f3351d66}{}\hyperlink{structcp_contact_point_set}{cp\+Contact\+Point\+Set} \hyperlink{group__cp_arbiter_gada18a6cf4d44ef1fea136f97f3351d66}{cp\+Arbiter\+Get\+Contact\+Point\+Set} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_gada18a6cf4d44ef1fea136f97f3351d66}
+
+\begin{DoxyCompactList}\small\item\em Return a contact set from an arbiter. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_arbiter_ga42b070a1444350ee824bd2c770366435}{cp\+Arbiter\+Set\+Contact\+Point\+Set} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_contact_point_set}{cp\+Contact\+Point\+Set} $\ast$set)
+\begin{DoxyCompactList}\small\item\em Replace the contact point set for an arbiter. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga18fc6adcc84fb76806c244c7ed3fb8a2}{}\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_ga18fc6adcc84fb76806c244c7ed3fb8a2}{cp\+Arbiter\+Is\+First\+Contact} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga18fc6adcc84fb76806c244c7ed3fb8a2}
+
+\begin{DoxyCompactList}\small\item\em Returns true if this is the first step a pair of objects started colliding. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga5b5e7f8f3838bb112a05ffa406c58177}{}\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_ga5b5e7f8f3838bb112a05ffa406c58177}{cp\+Arbiter\+Is\+Removal} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_ga5b5e7f8f3838bb112a05ffa406c58177}
+
+\begin{DoxyCompactList}\small\item\em Returns true if the separate callback is due to a shape being removed from the space. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_gad9422ed6f170a552d00105b83c587827}{}int \hyperlink{group__cp_arbiter_gad9422ed6f170a552d00105b83c587827}{cp\+Arbiter\+Get\+Count} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_gad9422ed6f170a552d00105b83c587827}
+
+\begin{DoxyCompactList}\small\item\em Get the number of contact points for this arbiter. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_gaa89bedd9c76d33dab137f548eced305a}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_arbiter_gaa89bedd9c76d33dab137f548eced305a}{cp\+Arbiter\+Get\+Normal} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb)\label{group__cp_arbiter_gaa89bedd9c76d33dab137f548eced305a}
+
+\begin{DoxyCompactList}\small\item\em Get the normal of the collision. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga86b3fe34acafb5da7534f65bbc5c9eec}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_arbiter_ga86b3fe34acafb5da7534f65bbc5c9eec}{cp\+Arbiter\+Get\+Point\+A} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, int i)\label{group__cp_arbiter_ga86b3fe34acafb5da7534f65bbc5c9eec}
+
+\begin{DoxyCompactList}\small\item\em Get the position of the {\ttfamily ith} contact point on the surface of the first shape. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_gac764f74c64d2a6d62e8f907b5172ab07}{}\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_arbiter_gac764f74c64d2a6d62e8f907b5172ab07}{cp\+Arbiter\+Get\+Point\+B} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, int i)\label{group__cp_arbiter_gac764f74c64d2a6d62e8f907b5172ab07}
+
+\begin{DoxyCompactList}\small\item\em Get the position of the {\ttfamily ith} contact point on the surface of the second shape. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga1f06a3ea7a1ca61020cec1664887cbee}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_arbiter_ga1f06a3ea7a1ca61020cec1664887cbee}{cp\+Arbiter\+Get\+Depth} (const \hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, int i)\label{group__cp_arbiter_ga1f06a3ea7a1ca61020cec1664887cbee}
+
+\begin{DoxyCompactList}\small\item\em Get the depth of the {\ttfamily ith} contact point. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_ga5eaf915d1119606a522fc543c2c6062f}{cp\+Arbiter\+Call\+Wildcard\+Begin\+A} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_ga33a591416326fd52fd768e183a84677d}{cp\+Arbiter\+Call\+Wildcard\+Begin\+B} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_gaa6f7421e10cd0f98bb0282d246fb7f7e}{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_arbiter_gac6f3f8d7b3628c7c9a0751ebebf1e3f3}{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga4a9b472b93005949f5830b9c7fd3e830}{}void \hyperlink{group__cp_arbiter_ga4a9b472b93005949f5830b9c7fd3e830}{cp\+Arbiter\+Call\+Wildcard\+Post\+Solve\+A} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_arbiter_ga4a9b472b93005949f5830b9c7fd3e830}
+
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga952aae395b21de90fc82386cd08e0052}{}void \hyperlink{group__cp_arbiter_ga952aae395b21de90fc82386cd08e0052}{cp\+Arbiter\+Call\+Wildcard\+Post\+Solve\+B} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_arbiter_ga952aae395b21de90fc82386cd08e0052}
+
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_ga640b99a8e1c01600e13cfa08b111dca4}{}void \hyperlink{group__cp_arbiter_ga640b99a8e1c01600e13cfa08b111dca4}{cp\+Arbiter\+Call\+Wildcard\+Separate\+A} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_arbiter_ga640b99a8e1c01600e13cfa08b111dca4}
+
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_arbiter_gae3b1e28a44ca59f71e80ec798ce034b7}{}void \hyperlink{group__cp_arbiter_gae3b1e28a44ca59f71e80ec798ce034b7}{cp\+Arbiter\+Call\+Wildcard\+Separate\+B} (\hyperlink{structcp_arbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_arbiter_gae3b1e28a44ca59f71e80ec798ce034b7}
+
+\begin{DoxyCompactList}\small\item\em If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{structcp_arbiter}{cp\+Arbiter} struct tracks pairs of colliding shapes. 
+
+They are also used in conjuction with collision handler callbacks allowing you to retrieve information on the collision or change it. A unique arbiter value is used for each pair of colliding objects. It persists until the shapes separate. 
+
+\subsection{Function Documentation}
+\hypertarget{group__cp_arbiter_ga5eaf915d1119606a522fc543c2c6062f}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Call\+Wildcard\+Begin\+A@{cp\+Arbiter\+Call\+Wildcard\+Begin\+A}}
+\index{cp\+Arbiter\+Call\+Wildcard\+Begin\+A@{cp\+Arbiter\+Call\+Wildcard\+Begin\+A}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Call\+Wildcard\+Begin\+A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Arbiter\+Call\+Wildcard\+Begin\+A (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga5eaf915d1119606a522fc543c2c6062f}
+
+
+If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. 
+
+You must decide how to handle the wildcard\textquotesingle{}s return value since it may disagree with the other wildcard handler\textquotesingle{}s return value or your own. \hypertarget{group__cp_arbiter_ga33a591416326fd52fd768e183a84677d}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Call\+Wildcard\+Begin\+B@{cp\+Arbiter\+Call\+Wildcard\+Begin\+B}}
+\index{cp\+Arbiter\+Call\+Wildcard\+Begin\+B@{cp\+Arbiter\+Call\+Wildcard\+Begin\+B}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Call\+Wildcard\+Begin\+B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Arbiter\+Call\+Wildcard\+Begin\+B (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga33a591416326fd52fd768e183a84677d}
+
+
+If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. 
+
+You must decide how to handle the wildcard\textquotesingle{}s return value since it may disagree with the other wildcard handler\textquotesingle{}s return value or your own. \hypertarget{group__cp_arbiter_gaa6f7421e10cd0f98bb0282d246fb7f7e}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A@{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A}}
+\index{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A@{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+A (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_gaa6f7421e10cd0f98bb0282d246fb7f7e}
+
+
+If you want a custom callback to invoke the wildcard callback for the first collision type, you must call this function explicitly. 
+
+You must decide how to handle the wildcard\textquotesingle{}s return value since it may disagree with the other wildcard handler\textquotesingle{}s return value or your own. \hypertarget{group__cp_arbiter_gac6f3f8d7b3628c7c9a0751ebebf1e3f3}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B@{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B}}
+\index{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B@{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Arbiter\+Call\+Wildcard\+Pre\+Solve\+B (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Space} $\ast$}]{space}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_gac6f3f8d7b3628c7c9a0751ebebf1e3f3}
+
+
+If you want a custom callback to invoke the wildcard callback for the second collision type, you must call this function explicitly. 
+
+You must decide how to handle the wildcard\textquotesingle{}s return value since it may disagree with the other wildcard handler\textquotesingle{}s return value or your own. \hypertarget{group__cp_arbiter_gad5a9d27724cc0f06b0eee2b73ef9e79b}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Get\+Bodies@{cp\+Arbiter\+Get\+Bodies}}
+\index{cp\+Arbiter\+Get\+Bodies@{cp\+Arbiter\+Get\+Bodies}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Get\+Bodies}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Get\+Bodies (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Body} $\ast$$\ast$}]{a, }
+\item[{{\bf cp\+Body} $\ast$$\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_gad5a9d27724cc0f06b0eee2b73ef9e79b}
+
+
+Return the colliding bodies involved for this arbiter. 
+
+The order of the cp\+Space.\+collision\+\_\+type the bodies are associated with values will match the order set when the collision handler was registered. \hypertarget{group__cp_arbiter_ga2efa3b9fe882a1a0218cff4ae1449ccd}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Get\+Shapes@{cp\+Arbiter\+Get\+Shapes}}
+\index{cp\+Arbiter\+Get\+Shapes@{cp\+Arbiter\+Get\+Shapes}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Get\+Shapes}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Get\+Shapes (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Shape} $\ast$$\ast$}]{a, }
+\item[{{\bf cp\+Shape} $\ast$$\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga2efa3b9fe882a1a0218cff4ae1449ccd}
+
+
+Return the colliding shapes involved for this arbiter. 
+
+The order of their cp\+Space.\+collision\+\_\+type values will match the order set when the collision handler was registered. \hypertarget{group__cp_arbiter_ga23c479da664722be4a87420822ff6591}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Ignore@{cp\+Arbiter\+Ignore}}
+\index{cp\+Arbiter\+Ignore@{cp\+Arbiter\+Ignore}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Ignore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Arbiter\+Ignore (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga23c479da664722be4a87420822ff6591}
+
+
+Mark a collision pair to be ignored until the two objects separate. 
+
+Pre-\/solve and post-\/solve callbacks will not be called, but the separate callback will be called. \hypertarget{group__cp_arbiter_ga42b070a1444350ee824bd2c770366435}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Set\+Contact\+Point\+Set@{cp\+Arbiter\+Set\+Contact\+Point\+Set}}
+\index{cp\+Arbiter\+Set\+Contact\+Point\+Set@{cp\+Arbiter\+Set\+Contact\+Point\+Set}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Set\+Contact\+Point\+Set}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Set\+Contact\+Point\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Contact\+Point\+Set} $\ast$}]{set}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga42b070a1444350ee824bd2c770366435}
+
+
+Replace the contact point set for an arbiter. 
+
+This can be a very powerful feature, but use it with caution! \hypertarget{group__cp_arbiter_gafb98ad7393d2f0df7212bc8653a2a4ae}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Set\+User\+Data@{cp\+Arbiter\+Set\+User\+Data}}
+\index{cp\+Arbiter\+Set\+User\+Data@{cp\+Arbiter\+Set\+User\+Data}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Set\+User\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Arbiter\+Set\+User\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Arbiter} $\ast$}]{arb, }
+\item[{{\bf cp\+Data\+Pointer}}]{user\+Data}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_gafb98ad7393d2f0df7212bc8653a2a4ae}
+
+
+Set a user data point associated with this pair of colliding objects. 
+
+If you need to perform any cleanup for this pointer, you must do it yourself, in the separate callback for instance. \hypertarget{group__cp_arbiter_ga521500a047cd9c10f7c6bfb64b3e4e50}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Total\+Impulse@{cp\+Arbiter\+Total\+Impulse}}
+\index{cp\+Arbiter\+Total\+Impulse@{cp\+Arbiter\+Total\+Impulse}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Total\+Impulse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Vect} cp\+Arbiter\+Total\+Impulse (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga521500a047cd9c10f7c6bfb64b3e4e50}
+
+
+Calculate the total impulse including the friction that was applied by this arbiter. 
+
+This function should only be called from a post-\/solve, post-\/step or cp\+Body\+Each\+Arbiter callback. \hypertarget{group__cp_arbiter_ga292d7e349093c0eba4f14c7ce46956fa}{}\index{cp\+Arbiter@{cp\+Arbiter}!cp\+Arbiter\+Total\+K\+E@{cp\+Arbiter\+Total\+K\+E}}
+\index{cp\+Arbiter\+Total\+K\+E@{cp\+Arbiter\+Total\+K\+E}!cp\+Arbiter@{cp\+Arbiter}}
+\subsubsection[{cp\+Arbiter\+Total\+K\+E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Float} cp\+Arbiter\+Total\+K\+E (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Arbiter} $\ast$}]{arb}
+\end{DoxyParamCaption}
+)}\label{group__cp_arbiter_ga292d7e349093c0eba4f14c7ce46956fa}
+
+
+Calculate the amount of energy lost in a collision including static, but not dynamic friction. 
+
+This function should only be called from a post-\/solve, post-\/step or cp\+Body\+Each\+Arbiter callback. 

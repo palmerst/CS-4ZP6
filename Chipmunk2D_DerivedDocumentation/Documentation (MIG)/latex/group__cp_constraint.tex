@@ -1,0 +1,99 @@
+\hypertarget{group__cp_constraint}{}\section{cp\+Constraint}
+\label{group__cp_constraint}\index{cp\+Constraint@{cp\+Constraint}}
+
+
+Constraints connect two \hyperlink{structcp_body}{cp\+Body} objects together.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_constraint_gaf6038a155d58f45d6ab977dd1b1398de}{}typedef void($\ast$ \hyperlink{group__cp_constraint_gaf6038a155d58f45d6ab977dd1b1398de}{cp\+Constraint\+Pre\+Solve\+Func}) (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_constraint_gaf6038a155d58f45d6ab977dd1b1398de}
+
+\begin{DoxyCompactList}\small\item\em Callback function type that gets called before solving a joint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga2208378297a7265d0cc69f31697961b9}{}typedef void($\ast$ \hyperlink{group__cp_constraint_ga2208378297a7265d0cc69f31697961b9}{cp\+Constraint\+Post\+Solve\+Func}) (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_space}{cp\+Space} $\ast$space)\label{group__cp_constraint_ga2208378297a7265d0cc69f31697961b9}
+
+\begin{DoxyCompactList}\small\item\em Callback function type that gets called after solving a joint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__cp_constraint_ga2c5c4d73886727485cb4d8c3e3ba1c15}{}void \hyperlink{group__cp_constraint_ga2c5c4d73886727485cb4d8c3e3ba1c15}{cp\+Constraint\+Destroy} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga2c5c4d73886727485cb4d8c3e3ba1c15}
+
+\begin{DoxyCompactList}\small\item\em Destroy a constraint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga396e66d86ca72615ed681dfed3673a6c}{}void \hyperlink{group__cp_constraint_ga396e66d86ca72615ed681dfed3673a6c}{cp\+Constraint\+Free} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga396e66d86ca72615ed681dfed3673a6c}
+
+\begin{DoxyCompactList}\small\item\em Destroy and free a constraint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gad61f8b14aafae45187be794fcf39b9b0}{}\hyperlink{structcp_space}{cp\+Space} $\ast$ \hyperlink{group__cp_constraint_gad61f8b14aafae45187be794fcf39b9b0}{cp\+Constraint\+Get\+Space} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_gad61f8b14aafae45187be794fcf39b9b0}
+
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{structcp_space}{cp\+Space} this constraint is added to. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga57beaffb8d2c54086f714f994f8e7bb5}{}\hyperlink{structcp_body}{cp\+Body} $\ast$ \hyperlink{group__cp_constraint_ga57beaffb8d2c54086f714f994f8e7bb5}{cp\+Constraint\+Get\+Body\+A} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga57beaffb8d2c54086f714f994f8e7bb5}
+
+\begin{DoxyCompactList}\small\item\em Get the first body the constraint is attached to. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga29de279f6066523f2b9e44a12532f898}{}\hyperlink{structcp_body}{cp\+Body} $\ast$ \hyperlink{group__cp_constraint_ga29de279f6066523f2b9e44a12532f898}{cp\+Constraint\+Get\+Body\+B} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga29de279f6066523f2b9e44a12532f898}
+
+\begin{DoxyCompactList}\small\item\em Get the second body the constraint is attached to. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gabf3dd5da523a9ff6f54d2f4e5231220d}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_constraint_gabf3dd5da523a9ff6f54d2f4e5231220d}{cp\+Constraint\+Get\+Max\+Force} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_gabf3dd5da523a9ff6f54d2f4e5231220d}
+
+\begin{DoxyCompactList}\small\item\em Get the maximum force that this constraint is allowed to use. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga006fc4aa97b69de20a3e4892b256087b}{}void \hyperlink{group__cp_constraint_ga006fc4aa97b69de20a3e4892b256087b}{cp\+Constraint\+Set\+Max\+Force} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max\+Force)\label{group__cp_constraint_ga006fc4aa97b69de20a3e4892b256087b}
+
+\begin{DoxyCompactList}\small\item\em Set the maximum force that this constraint is allowed to use. (defaults to I\+N\+F\+I\+N\+I\+T\+Y) \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga0de81143fea34d6a444e9fe832bdc33d}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_constraint_ga0de81143fea34d6a444e9fe832bdc33d}{cp\+Constraint\+Get\+Error\+Bias} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga0de81143fea34d6a444e9fe832bdc33d}
+
+\begin{DoxyCompactList}\small\item\em Get rate at which joint error is corrected. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_constraint_ga0cc61db3a9c8d7d5b5b86cfb291f8e4a}{cp\+Constraint\+Set\+Error\+Bias} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} error\+Bias)
+\begin{DoxyCompactList}\small\item\em Set rate at which joint error is corrected. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga59463cb910c59fb04102107795ca8c01}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_constraint_ga59463cb910c59fb04102107795ca8c01}{cp\+Constraint\+Get\+Max\+Bias} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga59463cb910c59fb04102107795ca8c01}
+
+\begin{DoxyCompactList}\small\item\em Get the maximum rate at which joint error is corrected. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga32234cacff6f51d15b34ac418f196066}{}void \hyperlink{group__cp_constraint_ga32234cacff6f51d15b34ac418f196066}{cp\+Constraint\+Set\+Max\+Bias} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max\+Bias)\label{group__cp_constraint_ga32234cacff6f51d15b34ac418f196066}
+
+\begin{DoxyCompactList}\small\item\em Set the maximum rate at which joint error is corrected. (defaults to I\+N\+F\+I\+N\+I\+T\+Y) \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gad6b565b8818eb48f2b1616b5d6035fac}{}\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_constraint_gad6b565b8818eb48f2b1616b5d6035fac}{cp\+Constraint\+Get\+Collide\+Bodies} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_gad6b565b8818eb48f2b1616b5d6035fac}
+
+\begin{DoxyCompactList}\small\item\em Get if the two bodies connected by the constraint are allowed to collide or not. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga25ca6ba57bc60cf1b78bf0d38e577ef5}{}void \hyperlink{group__cp_constraint_ga25ca6ba57bc60cf1b78bf0d38e577ef5}{cp\+Constraint\+Set\+Collide\+Bodies} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} collide\+Bodies)\label{group__cp_constraint_ga25ca6ba57bc60cf1b78bf0d38e577ef5}
+
+\begin{DoxyCompactList}\small\item\em Set if the two bodies connected by the constraint are allowed to collide or not. (defaults to cp\+False) \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gac38df5b06f2b7ae92bc420cd9c37397f}{}\hyperlink{group__cp_constraint_gaf6038a155d58f45d6ab977dd1b1398de}{cp\+Constraint\+Pre\+Solve\+Func} \hyperlink{group__cp_constraint_gac38df5b06f2b7ae92bc420cd9c37397f}{cp\+Constraint\+Get\+Pre\+Solve\+Func} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_gac38df5b06f2b7ae92bc420cd9c37397f}
+
+\begin{DoxyCompactList}\small\item\em Get the pre-\/solve function that is called before the solver runs. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga2710c481dba8d81702f84b7253ff5f4f}{}void \hyperlink{group__cp_constraint_ga2710c481dba8d81702f84b7253ff5f4f}{cp\+Constraint\+Set\+Pre\+Solve\+Func} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__cp_constraint_gaf6038a155d58f45d6ab977dd1b1398de}{cp\+Constraint\+Pre\+Solve\+Func} pre\+Solve\+Func)\label{group__cp_constraint_ga2710c481dba8d81702f84b7253ff5f4f}
+
+\begin{DoxyCompactList}\small\item\em Set the pre-\/solve function that is called before the solver runs. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga24419dea28768dcb41696ebd17f40124}{}\hyperlink{group__cp_constraint_ga2208378297a7265d0cc69f31697961b9}{cp\+Constraint\+Post\+Solve\+Func} \hyperlink{group__cp_constraint_ga24419dea28768dcb41696ebd17f40124}{cp\+Constraint\+Get\+Post\+Solve\+Func} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga24419dea28768dcb41696ebd17f40124}
+
+\begin{DoxyCompactList}\small\item\em Get the post-\/solve function that is called before the solver runs. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gae9d257bb382593a5bd7d2ebd8e54e1c6}{}void \hyperlink{group__cp_constraint_gae9d257bb382593a5bd7d2ebd8e54e1c6}{cp\+Constraint\+Set\+Post\+Solve\+Func} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__cp_constraint_ga2208378297a7265d0cc69f31697961b9}{cp\+Constraint\+Post\+Solve\+Func} post\+Solve\+Func)\label{group__cp_constraint_gae9d257bb382593a5bd7d2ebd8e54e1c6}
+
+\begin{DoxyCompactList}\small\item\em Set the post-\/solve function that is called before the solver runs. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga2474d191d371fa669203139d564956c9}{}\hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{group__cp_constraint_ga2474d191d371fa669203139d564956c9}{cp\+Constraint\+Get\+User\+Data} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_ga2474d191d371fa669203139d564956c9}
+
+\begin{DoxyCompactList}\small\item\em Get the user definable data pointer for this constraint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_ga9603ffac8ef73c7976e473af1b035d5f}{}void \hyperlink{group__cp_constraint_ga9603ffac8ef73c7976e473af1b035d5f}{cp\+Constraint\+Set\+User\+Data} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)\label{group__cp_constraint_ga9603ffac8ef73c7976e473af1b035d5f}
+
+\begin{DoxyCompactList}\small\item\em Set the user definable data pointer for this constraint. \end{DoxyCompactList}\item 
+\hypertarget{group__cp_constraint_gaef688fa4ccd8c90d3364cccd776b8e20}{}\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_constraint_gaef688fa4ccd8c90d3364cccd776b8e20}{cp\+Constraint\+Get\+Impulse} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)\label{group__cp_constraint_gaef688fa4ccd8c90d3364cccd776b8e20}
+
+\begin{DoxyCompactList}\small\item\em Get the last impulse applied by this constraint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constraints connect two \hyperlink{structcp_body}{cp\+Body} objects together. 
+
+\hyperlink{structcp_constraint}{cp\+Constraint} is the base constraint struct that the other constraints build off of. 
+
+\subsection{Function Documentation}
+\hypertarget{group__cp_constraint_ga0cc61db3a9c8d7d5b5b86cfb291f8e4a}{}\index{cp\+Constraint@{cp\+Constraint}!cp\+Constraint\+Set\+Error\+Bias@{cp\+Constraint\+Set\+Error\+Bias}}
+\index{cp\+Constraint\+Set\+Error\+Bias@{cp\+Constraint\+Set\+Error\+Bias}!cp\+Constraint@{cp\+Constraint}}
+\subsubsection[{cp\+Constraint\+Set\+Error\+Bias}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Constraint\+Set\+Error\+Bias (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Constraint} $\ast$}]{constraint, }
+\item[{{\bf cp\+Float}}]{error\+Bias}
+\end{DoxyParamCaption}
+)}\label{group__cp_constraint_ga0cc61db3a9c8d7d5b5b86cfb291f8e4a}
+
+
+Set rate at which joint error is corrected. 
+
+Defaults to pow(1.\+0 -\/ 0.\+1, 60.\+0) meaning that it will correct 10\% of the error every 1/60th of a second. 

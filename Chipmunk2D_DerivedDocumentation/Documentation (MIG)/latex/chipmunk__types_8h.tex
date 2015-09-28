@@ -1,0 +1,123 @@
+\hypertarget{chipmunk__types_8h}{}\section{chipmunk\+\_\+types.\+h File Reference}
+\label{chipmunk__types_8h}\index{chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$float.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_vect}{cp\+Vect}
+\item 
+struct \hyperlink{structcp_transform}{cp\+Transform}
+\begin{DoxyCompactList}\small\item\em Column major affine transform. \end{DoxyCompactList}\item 
+struct \hyperlink{structcp_mat2x2}{cp\+Mat2x2}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{chipmunk__types_8h_aefdf851464121796db01d27980fc7050}{C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S}~1
+\item 
+\#define \hyperlink{group__basic_types_gad6a505ab629d04f2722b5bd02b080289}{cpfsqrt}~sqrt
+\item 
+\#define \hyperlink{group__basic_types_ga91ad262063f562fe882c686038ade622}{cpfsin}~sin
+\item 
+\#define \hyperlink{group__basic_types_gab24e29862e14b71d2cdd60d5ecf6dfb7}{cpfcos}~cos
+\item 
+\#define \hyperlink{group__basic_types_gaa8cbcd374f1cf4ed859e1aeff42b1398}{cpfacos}~acos
+\item 
+\#define \hyperlink{group__basic_types_gaeae19031d0e96da4f0f8ca5b0953ffff}{cpfatan2}~atan2
+\item 
+\#define \hyperlink{group__basic_types_ga6874b96e60ba5336fd1866da8709aaf7}{cpfmod}~fmod
+\item 
+\#define \hyperlink{group__basic_types_gac0b8bda3f5a346ff9479e82f2e1249ab}{cpfexp}~exp
+\item 
+\#define \hyperlink{group__basic_types_ga353aa33aa775a59fd98882b1c9e786d1}{cpfpow}~pow
+\item 
+\#define \hyperlink{group__basic_types_ga30d18ca635a6f80c1b39114d394ce3ea}{cpffloor}~floor
+\item 
+\#define \hyperlink{group__basic_types_gaccf0915062d413aede408e4ef872b61d}{cpfceil}~ceil
+\item 
+\#define \hyperlink{group__basic_types_ga9885777f2bb284bc9148d0b8031e620e}{C\+P\+F\+L\+O\+A\+T\+\_\+\+M\+I\+N}~D\+B\+L\+\_\+\+M\+I\+N
+\item 
+\#define \hyperlink{group__basic_types_ga956e2723d559858d08644ac99146e910}{I\+N\+F\+I\+N\+I\+T\+Y}~(1e1000)
+\item 
+\#define \hyperlink{group__basic_types_gae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+P\+I}~3.\+14159265358979323846264338327950288
+\item 
+\#define \hyperlink{group__basic_types_ga9bf5d952c5c93c70f9e66c9794d406c9}{M\+\_\+\+E}~2.\+71828182845904523536028747135266250
+\item 
+\#define \hyperlink{group__basic_types_gae30fc24a6e711797b9d39efa0e999987}{cp\+True}~1
+\begin{DoxyCompactList}\small\item\em true value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__basic_types_ga4b0cfe38ff97abec3400f9bb7e18f21e}{cp\+False}~0
+\begin{DoxyCompactList}\small\item\em false value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__basic_types_gabd2870d269e0288b26b045c81a07acc8}{C\+P\+\_\+\+N\+O\+\_\+\+G\+R\+O\+U\+P}~((\hyperlink{group__basic_types_gacd811b1135a8f4a3e5cc019552b18b1a}{cp\+Group})0)
+\begin{DoxyCompactList}\small\item\em Value for cp\+Shape.\+group signifying that a shape is in no group. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__basic_types_ga591693fbd3ed24f3365ef7accf349d4f}{C\+P\+\_\+\+A\+L\+L\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S}~($\sim$(\hyperlink{group__basic_types_gae7ff94f62e00cae288c1991958822743}{cp\+Bitmask})0)
+\begin{DoxyCompactList}\small\item\em Value for cp\+Shape.\+layers signifying that a shape is in every layer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__basic_types_ga3c81e881eb469ffacbe318a5a991c5bc}{C\+P\+\_\+\+W\+I\+L\+D\+C\+A\+R\+D\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E}~($\sim$(\hyperlink{group__basic_types_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type})0)
+\begin{DoxyCompactList}\small\item\em cp\+Collision\+Type value internally reserved for hashing wildcard handlers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float}
+\item 
+typedef uintptr\+\_\+t \hyperlink{group__basic_types_gae7eb4775a9f43914a15553ca65a048f4}{cp\+Hash\+Value}
+\begin{DoxyCompactList}\small\item\em Hash value type. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D}
+\item 
+typedef unsigned char \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}
+\begin{DoxyCompactList}\small\item\em Chipmunk\textquotesingle{}s boolean type. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer}
+\begin{DoxyCompactList}\small\item\em Type used for user data pointers. \end{DoxyCompactList}\item 
+typedef uintptr\+\_\+t \hyperlink{group__basic_types_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type}
+\begin{DoxyCompactList}\small\item\em Type used for cp\+Space.\+collision\+\_\+type. \end{DoxyCompactList}\item 
+typedef uintptr\+\_\+t \hyperlink{group__basic_types_gacd811b1135a8f4a3e5cc019552b18b1a}{cp\+Group}
+\begin{DoxyCompactList}\small\item\em Type used for cp\+Shape.\+group. \end{DoxyCompactList}\item 
+typedef unsigned int \hyperlink{group__basic_types_gae7ff94f62e00cae288c1991958822743}{cp\+Bitmask}
+\begin{DoxyCompactList}\small\item\em Type used for \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} category and mask. \end{DoxyCompactList}\item 
+typedef unsigned int \hyperlink{group__basic_types_gaa24652c104082d0725066ea5ac7dc83f}{cp\+Timestamp}
+\begin{DoxyCompactList}\small\item\em Type used for various timestamps in Chipmunk. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structcp_vect}{cp\+Vect} \hyperlink{chipmunk__types_8h_a73949a426201f954804d6fddc4db62a5}{cp\+Vect}
+\item 
+typedef struct \hyperlink{structcp_transform}{cp\+Transform} \hyperlink{chipmunk__types_8h_a791fade841720cfafdab4ce332e286b4}{cp\+Transform}
+\begin{DoxyCompactList}\small\item\em Column major affine transform. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structcp_mat2x2}{cp\+Mat2x2} \hyperlink{chipmunk__types_8h_a8e96d973c8c8acfc641a56c602adda5a}{cp\+Mat2x2}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_gad9cec8f8dd3dff4189af02e605c348a6}{cpfmax} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} a, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} b)
+\begin{DoxyCompactList}\small\item\em Return the max of two cp\+Floats. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_gacd9e5acf99997b74b13d720f835a2c17}{cpfmin} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} a, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} b)
+\begin{DoxyCompactList}\small\item\em Return the min of two cp\+Floats. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_gabe82caff7ad41b0566f68405e2ca0f93}{cpfabs} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f)
+\begin{DoxyCompactList}\small\item\em Return the absolute value of a cp\+Float. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_ga2498b1f14da6398233b93e457d37327e}{cpfclamp} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} min, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max)
+\begin{DoxyCompactList}\small\item\em Clamp {\ttfamily f} to be between {\ttfamily min} and {\ttfamily max}. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_ga38c3cd79013de3c7452c02d4ae07f73e}{cpfclamp01} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f)
+\begin{DoxyCompactList}\small\item\em Clamp {\ttfamily f} to be between 0 and 1. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_gac4b6dc30e9ed3e2c9c8661102489c0c0}{cpflerp} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f1, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f2, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} t)
+\begin{DoxyCompactList}\small\item\em Linearly interpolate (or extrapolate) between {\ttfamily f1} and {\ttfamily f2} by {\ttfamily t} percent. \end{DoxyCompactList}\item 
+static \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__basic_types_ga191b1d47e2b846cad0ee54572b366f0d}{cpflerpconst} (\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f1, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} f2, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} d)
+\begin{DoxyCompactList}\small\item\em Linearly interpolate from {\ttfamily f1} to {\ttfamily f2} by no more than {\ttfamily d}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{chipmunk__types_8h_aefdf851464121796db01d27980fc7050}{}\index{chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}!C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S@{C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S}}
+\index{C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S@{C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S}!chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}}
+\subsubsection[{C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+\_\+\+U\+S\+E\+\_\+\+D\+O\+U\+B\+L\+E\+S~1}\label{chipmunk__types_8h_aefdf851464121796db01d27980fc7050}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{chipmunk__types_8h_a8e96d973c8c8acfc641a56c602adda5a}{}\index{chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}!cp\+Mat2x2@{cp\+Mat2x2}}
+\index{cp\+Mat2x2@{cp\+Mat2x2}!chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}}
+\subsubsection[{cp\+Mat2x2}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Mat2x2}  {\bf cp\+Mat2x2}}\label{chipmunk__types_8h_a8e96d973c8c8acfc641a56c602adda5a}
+\hypertarget{chipmunk__types_8h_a791fade841720cfafdab4ce332e286b4}{}\index{chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}!cp\+Transform@{cp\+Transform}}
+\index{cp\+Transform@{cp\+Transform}!chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}}
+\subsubsection[{cp\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Transform}  {\bf cp\+Transform}}\label{chipmunk__types_8h_a791fade841720cfafdab4ce332e286b4}
+
+
+Column major affine transform. 
+
+\hypertarget{chipmunk__types_8h_a73949a426201f954804d6fddc4db62a5}{}\index{chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}!cp\+Vect@{cp\+Vect}}
+\index{cp\+Vect@{cp\+Vect}!chipmunk\+\_\+types.\+h@{chipmunk\+\_\+types.\+h}}
+\subsubsection[{cp\+Vect}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Vect}  {\bf cp\+Vect}}\label{chipmunk__types_8h_a73949a426201f954804d6fddc4db62a5}

@@ -1,0 +1,25 @@
+\hypertarget{cp_pin_joint_8h}{}\section{cp\+Pin\+Joint.\+h File Reference}
+\label{cp_pin_joint_8h}\index{cp\+Pin\+Joint.\+h@{cp\+Pin\+Joint.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_pin_joint_ga1bfadaf29642d5a71302cf958e4969cb}{cp\+Constraint\+Is\+Pin\+Joint} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a pin joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_pin_joint}{cp\+Pin\+Joint} $\ast$ \hyperlink{group__cp_pin_joint_ga12e5fcaa7d39e47e6f1ac9777744fec5}{cp\+Pin\+Joint\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a pin joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_pin_joint}{cp\+Pin\+Joint} $\ast$ \hyperlink{group__cp_pin_joint_ga0f7cc8d23e3bc0695086d44447efd95c}{cp\+Pin\+Joint\+Init} (\hyperlink{structcp_pin_joint}{cp\+Pin\+Joint} $\ast$joint, \hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Initialize a pin joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_pin_joint_ga8f0880764b29094c3a6fccd857a2d77d}{cp\+Pin\+Joint\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a pin joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_pin_joint_gac0fa093c3d26e95c4d1e728d00d29378}{cp\+Pin\+Joint\+Get\+Anchor\+A} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the location of the first anchor relative to the first body. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_pin_joint_gaec992115ee39b135d8c4ed1daa4226bf}{cp\+Pin\+Joint\+Set\+Anchor\+A} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} anchor\+A)
+\begin{DoxyCompactList}\small\item\em Set the location of the first anchor relative to the first body. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_pin_joint_gac4d94a3a6e6a8e20838b6ceb60c474fc}{cp\+Pin\+Joint\+Get\+Anchor\+B} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the location of the second anchor relative to the second body. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_pin_joint_ga6c9a5505613f3b310b07e06d879c8020}{cp\+Pin\+Joint\+Set\+Anchor\+B} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{structcp_vect}{cp\+Vect} anchor\+B)
+\begin{DoxyCompactList}\small\item\em Set the location of the second anchor relative to the second body. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_pin_joint_ga8323ff5ff7b414a3e61885a0a0a77693}{cp\+Pin\+Joint\+Get\+Dist} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the distance the joint will maintain between the two anchors. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_pin_joint_ga460b8617cd1a3202fb94343b6a341a7e}{cp\+Pin\+Joint\+Set\+Dist} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} dist)
+\begin{DoxyCompactList}\small\item\em Set the distance the joint will maintain between the two anchors. \end{DoxyCompactList}\end{DoxyCompactItemize}

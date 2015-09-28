@@ -1,0 +1,186 @@
+\hypertarget{cp_shape__private_8h}{}\section{cp\+Shape\+\_\+private.\+h File Reference}
+\label{cp_shape__private_8h}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+{\ttfamily \#include \char`\"{}chipmunk.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_shape_mass_info}{cp\+Shape\+Mass\+Info}
+\item 
+struct \hyperlink{structcp_shape_class}{cp\+Shape\+Class}
+\item 
+struct \hyperlink{structcp_shape}{cp\+Shape}
+\item 
+struct \hyperlink{structcp_circle_shape}{cp\+Circle\+Shape}
+\item 
+struct \hyperlink{structcp_segment_shape}{cp\+Segment\+Shape}
+\item 
+struct \hyperlink{structcp_splitting_plane}{cp\+Splitting\+Plane}
+\item 
+struct \hyperlink{structcp_poly_shape}{cp\+Poly\+Shape}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cp_shape__private_8h_a5a284ce0583972511891ca3c84d6f78d}{M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N}~1e-\/5
+\item 
+\#define \hyperlink{cp_shape__private_8h_a358a20439df5c3db71b9e6ff3610b500}{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C}~6
+\item 
+\#define \hyperlink{cp_shape__private_8h_a56ef77763b71ef5cc04f0ee11235ddc5}{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E}(body,  var)~for(\hyperlink{structcp_shape}{cp\+Shape} $\ast$var = body-\/$>$shape\+List; var; var = var-\/$>$next)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ad}{cp\+Shape\+Type} \hyperlink{cp_shape__private_8h_af3b57024d5274acf6e777e44843d1c79}{cp\+Shape\+Type}
+\item 
+typedef \hyperlink{structcp_b_b}{cp\+B\+B}($\ast$ \hyperlink{cp_shape__private_8h_a83e21f47464db99f7851cd13afdd7352}{cp\+Shape\+Cache\+Data\+Impl}) (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_transform}{cp\+Transform} transform)
+\item 
+typedef void($\ast$ \hyperlink{cp_shape__private_8h_a141db0633ae738db3b51063841671ff2}{cp\+Shape\+Destroy\+Impl}) (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\item 
+typedef void($\ast$ \hyperlink{cp_shape__private_8h_a30544bff04b949208c63e6cd767b79ef}{cp\+Shape\+Point\+Query\+Impl}) (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} p, \hyperlink{structcp_point_query_info}{cp\+Point\+Query\+Info} $\ast$info)
+\item 
+typedef void($\ast$ \hyperlink{cp_shape__private_8h_a4fd68c53a976624124a2b4b3b43330dc}{cp\+Shape\+Segment\+Query\+Impl}) (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius, \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info} $\ast$info)
+\item 
+typedef struct \hyperlink{structcp_shape_class}{cp\+Shape\+Class} \hyperlink{cp_shape__private_8h_a1038324983fb53972888bdbcc4220a81}{cp\+Shape\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ad}{cp\+Shape\+Type} \{ \hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1adaa8bf80fc0e3318567ebdfd680b9d3ccd}{C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E}, 
+\hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada18eb50aa2592e4cfea3ecd280c9800df}{C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E}, 
+\hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada636f06614484e99e3bca955f7d036230}{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E}, 
+\hyperlink{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada464eb5b102da9904c57e61f1f7cc1de7}{C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{cp_shape__private_8h_acd2373619cfdd04bf1359f9dbb27c407}{cp\+Shape\+Init} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, const \hyperlink{structcp_shape_class}{cp\+Shape\+Class} $\ast$klass, \hyperlink{structcp_body}{cp\+Body} $\ast$body, struct \hyperlink{structcp_shape_mass_info}{cp\+Shape\+Mass\+Info} mass\+Info)
+\item 
+static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{cp_shape__private_8h_a549a18e2999a26515033fb06fcc2a77f}{cp\+Shape\+Active} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\item 
+struct \hyperlink{structcp_collision_info}{cp\+Collision\+Info} \hyperlink{cp_shape__private_8h_a1ee4e08bb0b635a65a315cab56ff7243}{cp\+Collide} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$a, const \hyperlink{structcp_shape}{cp\+Shape} $\ast$b, \hyperlink{group__basic_types_ga89d4043ca0567e947aaca19cf9600df5}{cp\+Collision\+I\+D} id, struct \hyperlink{structcp_contact}{cp\+Contact} $\ast$contacts)
+\item 
+static void \hyperlink{cp_shape__private_8h_ab323d4b8ab4efb9dde64211c70b06f8c}{Circle\+Segment\+Query} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} center, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} r1, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} r2, \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info} $\ast$info)
+\item 
+static \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{cp_shape__private_8h_a63ffe8c95b0ae194bf3c37d3326ad76f}{cp\+Shape\+Filter\+Reject} (\hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} a, \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} b)
+\item 
+void \hyperlink{cp_shape__private_8h_abc57de4accb5d11be28e7517bcd29ebd}{cp\+Loop\+Indexes} (const \hyperlink{structcp_vect}{cp\+Vect} $\ast$verts, int count, int $\ast$start, int $\ast$end)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cp_shape__private_8h_a56ef77763b71ef5cc04f0ee11235ddc5}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E}}
+\index{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+H\+A\+P\+E(
+\begin{DoxyParamCaption}
+\item[{}]{body, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~for({\bf cp\+Shape} $\ast$var = body-\/$>$shape\+List; var; var = var-\/$>$next)}\label{cp_shape__private_8h_a56ef77763b71ef5cc04f0ee11235ddc5}
+\hypertarget{cp_shape__private_8h_a358a20439df5c3db71b9e6ff3610b500}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C@{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C}}
+\index{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C@{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+A\+L\+L\+O\+C~6}\label{cp_shape__private_8h_a358a20439df5c3db71b9e6ff3610b500}
+\hypertarget{cp_shape__private_8h_a5a284ce0583972511891ca3c84d6f78d}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N@{M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N}}
+\index{M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N@{M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+G\+I\+C\+\_\+\+E\+P\+S\+I\+L\+O\+N~1e-\/5}\label{cp_shape__private_8h_a5a284ce0583972511891ca3c84d6f78d}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cp_shape__private_8h_a83e21f47464db99f7851cd13afdd7352}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Cache\+Data\+Impl@{cp\+Shape\+Cache\+Data\+Impl}}
+\index{cp\+Shape\+Cache\+Data\+Impl@{cp\+Shape\+Cache\+Data\+Impl}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Cache\+Data\+Impl}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf cp\+B\+B}($\ast$ cp\+Shape\+Cache\+Data\+Impl) ({\bf cp\+Shape} $\ast$shape, {\bf cp\+Transform} transform)}\label{cp_shape__private_8h_a83e21f47464db99f7851cd13afdd7352}
+\hypertarget{cp_shape__private_8h_a1038324983fb53972888bdbcc4220a81}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Class@{cp\+Shape\+Class}}
+\index{cp\+Shape\+Class@{cp\+Shape\+Class}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Class}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Shape\+Class} {\bf cp\+Shape\+Class}}\label{cp_shape__private_8h_a1038324983fb53972888bdbcc4220a81}
+\hypertarget{cp_shape__private_8h_a141db0633ae738db3b51063841671ff2}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Destroy\+Impl@{cp\+Shape\+Destroy\+Impl}}
+\index{cp\+Shape\+Destroy\+Impl@{cp\+Shape\+Destroy\+Impl}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Destroy\+Impl}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cp\+Shape\+Destroy\+Impl) ({\bf cp\+Shape} $\ast$shape)}\label{cp_shape__private_8h_a141db0633ae738db3b51063841671ff2}
+\hypertarget{cp_shape__private_8h_a30544bff04b949208c63e6cd767b79ef}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Point\+Query\+Impl@{cp\+Shape\+Point\+Query\+Impl}}
+\index{cp\+Shape\+Point\+Query\+Impl@{cp\+Shape\+Point\+Query\+Impl}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Point\+Query\+Impl}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cp\+Shape\+Point\+Query\+Impl) (const {\bf cp\+Shape} $\ast$shape, {\bf cp\+Vect} p, {\bf cp\+Point\+Query\+Info} $\ast$info)}\label{cp_shape__private_8h_a30544bff04b949208c63e6cd767b79ef}
+\hypertarget{cp_shape__private_8h_a4fd68c53a976624124a2b4b3b43330dc}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Segment\+Query\+Impl@{cp\+Shape\+Segment\+Query\+Impl}}
+\index{cp\+Shape\+Segment\+Query\+Impl@{cp\+Shape\+Segment\+Query\+Impl}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Segment\+Query\+Impl}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cp\+Shape\+Segment\+Query\+Impl) (const {\bf cp\+Shape} $\ast$shape, {\bf cp\+Vect} a, {\bf cp\+Vect} b, {\bf cp\+Float} radius, {\bf cp\+Segment\+Query\+Info} $\ast$info)}\label{cp_shape__private_8h_a4fd68c53a976624124a2b4b3b43330dc}
+\hypertarget{cp_shape__private_8h_af3b57024d5274acf6e777e44843d1c79}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Type@{cp\+Shape\+Type}}
+\index{cp\+Shape\+Type@{cp\+Shape\+Type}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf cp\+Shape\+Type}  {\bf cp\+Shape\+Type}}\label{cp_shape__private_8h_af3b57024d5274acf6e777e44843d1c79}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ad}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Type@{cp\+Shape\+Type}}
+\index{cp\+Shape\+Type@{cp\+Shape\+Type}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cp\+Shape\+Type}}\label{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ad}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E}}\item[{\em 
+\hypertarget{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1adaa8bf80fc0e3318567ebdfd680b9d3ccd}{}C\+P\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+S\+H\+A\+P\+E\label{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1adaa8bf80fc0e3318567ebdfd680b9d3ccd}
+}]\index{C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E}}\item[{\em 
+\hypertarget{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada18eb50aa2592e4cfea3ecd280c9800df}{}C\+P\+\_\+\+S\+E\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+P\+E\label{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada18eb50aa2592e4cfea3ecd280c9800df}
+}]\index{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E@{C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E}}\item[{\em 
+\hypertarget{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada636f06614484e99e3bca955f7d036230}{}C\+P\+\_\+\+P\+O\+L\+Y\+\_\+\+S\+H\+A\+P\+E\label{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada636f06614484e99e3bca955f7d036230}
+}]\index{C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S@{C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S@{C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S}}\item[{\em 
+\hypertarget{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada464eb5b102da9904c57e61f1f7cc1de7}{}C\+P\+\_\+\+N\+U\+M\+\_\+\+S\+H\+A\+P\+E\+S\label{cp_shape__private_8h_ad824c954bd34e6359278e583d1f3d1ada464eb5b102da9904c57e61f1f7cc1de7}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_shape__private_8h_ab323d4b8ab4efb9dde64211c70b06f8c}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!Circle\+Segment\+Query@{Circle\+Segment\+Query}}
+\index{Circle\+Segment\+Query@{Circle\+Segment\+Query}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{Circle\+Segment\+Query}]{\setlength{\rightskip}{0pt plus 5cm}static void Circle\+Segment\+Query (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{shape, }
+\item[{{\bf cp\+Vect}}]{center, }
+\item[{{\bf cp\+Float}}]{r1, }
+\item[{{\bf cp\+Vect}}]{a, }
+\item[{{\bf cp\+Vect}}]{b, }
+\item[{{\bf cp\+Float}}]{r2, }
+\item[{{\bf cp\+Segment\+Query\+Info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_shape__private_8h_ab323d4b8ab4efb9dde64211c70b06f8c}
+\hypertarget{cp_shape__private_8h_a1ee4e08bb0b635a65a315cab56ff7243}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Collide@{cp\+Collide}}
+\index{cp\+Collide@{cp\+Collide}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Collide}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cp\+Collision\+Info} cp\+Collide (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{a, }
+\item[{const {\bf cp\+Shape} $\ast$}]{b, }
+\item[{{\bf cp\+Collision\+I\+D}}]{id, }
+\item[{struct {\bf cp\+Contact} $\ast$}]{contacts}
+\end{DoxyParamCaption}
+)}\label{cp_shape__private_8h_a1ee4e08bb0b635a65a315cab56ff7243}
+\hypertarget{cp_shape__private_8h_abc57de4accb5d11be28e7517bcd29ebd}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Loop\+Indexes@{cp\+Loop\+Indexes}}
+\index{cp\+Loop\+Indexes@{cp\+Loop\+Indexes}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Loop\+Indexes}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Loop\+Indexes (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Vect} $\ast$}]{verts, }
+\item[{int}]{count, }
+\item[{int $\ast$}]{start, }
+\item[{int $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{cp_shape__private_8h_abc57de4accb5d11be28e7517bcd29ebd}
+\hypertarget{cp_shape__private_8h_a549a18e2999a26515033fb06fcc2a77f}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Active@{cp\+Shape\+Active}}
+\index{cp\+Shape\+Active@{cp\+Shape\+Active}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Active}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf cp\+Bool} cp\+Shape\+Active (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_shape__private_8h_a549a18e2999a26515033fb06fcc2a77f}
+\hypertarget{cp_shape__private_8h_a63ffe8c95b0ae194bf3c37d3326ad76f}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Filter\+Reject@{cp\+Shape\+Filter\+Reject}}
+\index{cp\+Shape\+Filter\+Reject@{cp\+Shape\+Filter\+Reject}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Filter\+Reject}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf cp\+Bool} cp\+Shape\+Filter\+Reject (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape\+Filter}}]{a, }
+\item[{{\bf cp\+Shape\+Filter}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{cp_shape__private_8h_a63ffe8c95b0ae194bf3c37d3326ad76f}
+\hypertarget{cp_shape__private_8h_acd2373619cfdd04bf1359f9dbb27c407}{}\index{cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}!cp\+Shape\+Init@{cp\+Shape\+Init}}
+\index{cp\+Shape\+Init@{cp\+Shape\+Init}!cp\+Shape\+\_\+private.\+h@{cp\+Shape\+\_\+private.\+h}}
+\subsubsection[{cp\+Shape\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Shape}$\ast$ cp\+Shape\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{shape, }
+\item[{const {\bf cp\+Shape\+Class} $\ast$}]{klass, }
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{struct {\bf cp\+Shape\+Mass\+Info}}]{mass\+Info}
+\end{DoxyParamCaption}
+)}\label{cp_shape__private_8h_acd2373619cfdd04bf1359f9dbb27c407}

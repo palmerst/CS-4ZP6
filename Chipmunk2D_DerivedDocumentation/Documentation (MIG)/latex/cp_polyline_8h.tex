@@ -1,0 +1,194 @@
+\hypertarget{cp_polyline_8h}{}\section{cp\+Polyline.\+h File Reference}
+\label{cp_polyline_8h}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_polyline}{cp\+Polyline}
+\item 
+struct \hyperlink{structcp_polyline_set}{cp\+Polyline\+Set}
+\begin{DoxyCompactList}\small\item\em Polyline sets are collections of polylines, generally built by \hyperlink{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{cp\+March\+Soft()} or \hyperlink{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{cp\+March\+Hard()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cp_polyline_8h_a47e18722a21b4f5bf5fa4e63a0d6421c}{cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A}~\hyperlink{cp_polyline_8h_a7b32dd7f1592b3914a69ace384b190ad}{cp\+Polyline\+Convex\+Decomposition}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcp_polyline}{cp\+Polyline} \hyperlink{cp_polyline_8h_a5c2aeddc6000bb94a5a76d41cfe234c5}{cp\+Polyline}
+\item 
+typedef struct \hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} \hyperlink{cp_polyline_8h_a2961fe81910e49ab6893114bd9f08ff0}{cp\+Polyline\+Set}
+\begin{DoxyCompactList}\small\item\em Polyline sets are collections of polylines, generally built by \hyperlink{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{cp\+March\+Soft()} or \hyperlink{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{cp\+March\+Hard()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cp_polyline_8h_a89dd44c02a739fc5a8be7061dfd5c710}{cp\+Polyline\+Free} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line)
+\begin{DoxyCompactList}\small\item\em Destroy and free a polyline instance. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{cp_polyline_8h_a156a84cd5fc8f0d76186a888f28ca78b}{cp\+Polyline\+Is\+Closed} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line)
+\begin{DoxyCompactList}\small\item\em Returns true if the first vertex is equal to the last. \end{DoxyCompactList}\item 
+\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$ \hyperlink{cp_polyline_8h_a3ec282cc470485a83ab16a88cd43da3a}{cp\+Polyline\+Simplify\+Curves} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} tol)
+\item 
+\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$ \hyperlink{cp_polyline_8h_aba77890224e1889da5ba1798c25346ca}{cp\+Polyline\+Simplify\+Vertexes} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} tol)
+\item 
+\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$ \hyperlink{cp_polyline_8h_ac8819f0853866daa710d783a8e3ac125}{cp\+Polyline\+To\+Convex\+Hull} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} tol)
+\begin{DoxyCompactList}\small\item\em Get the convex hull of a polyline as a looped polyline. \end{DoxyCompactList}\item 
+\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$ \hyperlink{cp_polyline_8h_aab6670e16773340f231ae4a8dbdfea7f}{cp\+Polyline\+Set\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a new polyline set. \end{DoxyCompactList}\item 
+\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$ \hyperlink{cp_polyline_8h_ab3fa32580811d0749788a028404d02e0}{cp\+Polyline\+Set\+Init} (\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$set)
+\begin{DoxyCompactList}\small\item\em Initialize a new polyline set. \end{DoxyCompactList}\item 
+\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$ \hyperlink{cp_polyline_8h_a70ec048ea9588053e663d8568735af2f}{cp\+Polyline\+Set\+New} (void)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a polyline set. \end{DoxyCompactList}\item 
+void \hyperlink{cp_polyline_8h_aa7c7c230ab4d7da2a8c20a649b1cf6d6}{cp\+Polyline\+Set\+Destroy} (\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$set, \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} free\+Polylines)
+\begin{DoxyCompactList}\small\item\em Destroy a polyline set. \end{DoxyCompactList}\item 
+void \hyperlink{cp_polyline_8h_aab7153f0a5f1e7667e59277103019c0c}{cp\+Polyline\+Set\+Free} (\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$set, \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} free\+Polylines)
+\begin{DoxyCompactList}\small\item\em Destroy and free a polyline set. \end{DoxyCompactList}\item 
+void \hyperlink{cp_polyline_8h_ad6cdc5b3d419c4653490114b89c93e2f}{cp\+Polyline\+Set\+Collect\+Segment} (\hyperlink{structcp_vect}{cp\+Vect} v0, \hyperlink{structcp_vect}{cp\+Vect} v1, \hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$lines)
+\item 
+\hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} $\ast$ \hyperlink{cp_polyline_8h_a7b32dd7f1592b3914a69ace384b190ad}{cp\+Polyline\+Convex\+Decomposition} (\hyperlink{structcp_polyline}{cp\+Polyline} $\ast$line, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} tol)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cp_polyline_8h_a47e18722a21b4f5bf5fa4e63a0d6421c}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A@{cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A}}
+\index{cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A@{cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define cp\+Polyline\+Convex\+Decomposition\+\_\+\+B\+E\+T\+A~{\bf cp\+Polyline\+Convex\+Decomposition}}\label{cp_polyline_8h_a47e18722a21b4f5bf5fa4e63a0d6421c}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cp_polyline_8h_a5c2aeddc6000bb94a5a76d41cfe234c5}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline@{cp\+Polyline}}
+\index{cp\+Polyline@{cp\+Polyline}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Polyline}  {\bf cp\+Polyline}}\label{cp_polyline_8h_a5c2aeddc6000bb94a5a76d41cfe234c5}
+\hypertarget{cp_polyline_8h_a2961fe81910e49ab6893114bd9f08ff0}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set@{cp\+Polyline\+Set}}
+\index{cp\+Polyline\+Set@{cp\+Polyline\+Set}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cp\+Polyline\+Set}  {\bf cp\+Polyline\+Set}}\label{cp_polyline_8h_a2961fe81910e49ab6893114bd9f08ff0}
+
+
+Polyline sets are collections of polylines, generally built by \hyperlink{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{cp\+March\+Soft()} or \hyperlink{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{cp\+March\+Hard()}. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_polyline_8h_a7b32dd7f1592b3914a69ace384b190ad}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Convex\+Decomposition@{cp\+Polyline\+Convex\+Decomposition}}
+\index{cp\+Polyline\+Convex\+Decomposition@{cp\+Polyline\+Convex\+Decomposition}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Convex\+Decomposition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline\+Set}$\ast$ cp\+Polyline\+Convex\+Decomposition (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line, }
+\item[{{\bf cp\+Float}}]{tol}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_a7b32dd7f1592b3914a69ace384b190ad}
+Get an approximate convex decomposition from a polyline. Returns a \hyperlink{structcp_polyline_set}{cp\+Polyline\+Set} of convex hulls that match the original shape to within \textquotesingle{}tol\textquotesingle{}. N\+O\+T\+E\+: If the input is a self intersecting polygon, the output might end up overly simplified. \hypertarget{cp_polyline_8h_a89dd44c02a739fc5a8be7061dfd5c710}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Free@{cp\+Polyline\+Free}}
+\index{cp\+Polyline\+Free@{cp\+Polyline\+Free}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Free}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Polyline\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_a89dd44c02a739fc5a8be7061dfd5c710}
+
+
+Destroy and free a polyline instance. 
+
+\hypertarget{cp_polyline_8h_a156a84cd5fc8f0d76186a888f28ca78b}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Is\+Closed@{cp\+Polyline\+Is\+Closed}}
+\index{cp\+Polyline\+Is\+Closed@{cp\+Polyline\+Is\+Closed}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Is\+Closed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Bool} cp\+Polyline\+Is\+Closed (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_a156a84cd5fc8f0d76186a888f28ca78b}
+
+
+Returns true if the first vertex is equal to the last. 
+
+\hypertarget{cp_polyline_8h_aab6670e16773340f231ae4a8dbdfea7f}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+Alloc@{cp\+Polyline\+Set\+Alloc}}
+\index{cp\+Polyline\+Set\+Alloc@{cp\+Polyline\+Set\+Alloc}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+Alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline\+Set}$\ast$ cp\+Polyline\+Set\+Alloc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_aab6670e16773340f231ae4a8dbdfea7f}
+
+
+Allocate a new polyline set. 
+
+\hypertarget{cp_polyline_8h_ad6cdc5b3d419c4653490114b89c93e2f}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+Collect\+Segment@{cp\+Polyline\+Set\+Collect\+Segment}}
+\index{cp\+Polyline\+Set\+Collect\+Segment@{cp\+Polyline\+Set\+Collect\+Segment}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+Collect\+Segment}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Polyline\+Set\+Collect\+Segment (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Vect}}]{v0, }
+\item[{{\bf cp\+Vect}}]{v1, }
+\item[{{\bf cp\+Polyline\+Set} $\ast$}]{lines}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_ad6cdc5b3d419c4653490114b89c93e2f}
+Add a line segment to a polyline set. A segment will either start a new polyline, join two others, or add to or loop an existing polyline. This is mostly intended to be used as a callback directly from \hyperlink{cp_march_8h_a2ebdef9bca4abd69207dace8ab0d90a3}{cp\+March\+Soft()} or \hyperlink{cp_march_8h_ac6a3cc85fdadaaff5e52182317af18df}{cp\+March\+Hard()}. \hypertarget{cp_polyline_8h_aa7c7c230ab4d7da2a8c20a649b1cf6d6}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+Destroy@{cp\+Polyline\+Set\+Destroy}}
+\index{cp\+Polyline\+Set\+Destroy@{cp\+Polyline\+Set\+Destroy}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+Destroy}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Polyline\+Set\+Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline\+Set} $\ast$}]{set, }
+\item[{{\bf cp\+Bool}}]{free\+Polylines}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_aa7c7c230ab4d7da2a8c20a649b1cf6d6}
+
+
+Destroy a polyline set. 
+
+\hypertarget{cp_polyline_8h_aab7153f0a5f1e7667e59277103019c0c}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+Free@{cp\+Polyline\+Set\+Free}}
+\index{cp\+Polyline\+Set\+Free@{cp\+Polyline\+Set\+Free}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+Free}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Polyline\+Set\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline\+Set} $\ast$}]{set, }
+\item[{{\bf cp\+Bool}}]{free\+Polylines}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_aab7153f0a5f1e7667e59277103019c0c}
+
+
+Destroy and free a polyline set. 
+
+\hypertarget{cp_polyline_8h_ab3fa32580811d0749788a028404d02e0}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+Init@{cp\+Polyline\+Set\+Init}}
+\index{cp\+Polyline\+Set\+Init@{cp\+Polyline\+Set\+Init}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline\+Set}$\ast$ cp\+Polyline\+Set\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline\+Set} $\ast$}]{set}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_ab3fa32580811d0749788a028404d02e0}
+
+
+Initialize a new polyline set. 
+
+\hypertarget{cp_polyline_8h_a70ec048ea9588053e663d8568735af2f}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Set\+New@{cp\+Polyline\+Set\+New}}
+\index{cp\+Polyline\+Set\+New@{cp\+Polyline\+Set\+New}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Set\+New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline\+Set}$\ast$ cp\+Polyline\+Set\+New (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_a70ec048ea9588053e663d8568735af2f}
+
+
+Allocate and initialize a polyline set. 
+
+\hypertarget{cp_polyline_8h_a3ec282cc470485a83ab16a88cd43da3a}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Simplify\+Curves@{cp\+Polyline\+Simplify\+Curves}}
+\index{cp\+Polyline\+Simplify\+Curves@{cp\+Polyline\+Simplify\+Curves}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Simplify\+Curves}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline}$\ast$ cp\+Polyline\+Simplify\+Curves (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line, }
+\item[{{\bf cp\+Float}}]{tol}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_a3ec282cc470485a83ab16a88cd43da3a}
+Returns a copy of a polyline simplified by using the Douglas-\/\+Peucker algorithm. This works very well on smooth or gently curved shapes, but not well on straight edged or angular shapes. \hypertarget{cp_polyline_8h_aba77890224e1889da5ba1798c25346ca}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+Simplify\+Vertexes@{cp\+Polyline\+Simplify\+Vertexes}}
+\index{cp\+Polyline\+Simplify\+Vertexes@{cp\+Polyline\+Simplify\+Vertexes}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+Simplify\+Vertexes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline}$\ast$ cp\+Polyline\+Simplify\+Vertexes (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line, }
+\item[{{\bf cp\+Float}}]{tol}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_aba77890224e1889da5ba1798c25346ca}
+Returns a copy of a polyline simplified by discarding \char`\"{}flat\char`\"{} vertexes. This works well on straigt edged or angular shapes, not as well on smooth shapes. \hypertarget{cp_polyline_8h_ac8819f0853866daa710d783a8e3ac125}{}\index{cp\+Polyline.\+h@{cp\+Polyline.\+h}!cp\+Polyline\+To\+Convex\+Hull@{cp\+Polyline\+To\+Convex\+Hull}}
+\index{cp\+Polyline\+To\+Convex\+Hull@{cp\+Polyline\+To\+Convex\+Hull}!cp\+Polyline.\+h@{cp\+Polyline.\+h}}
+\subsubsection[{cp\+Polyline\+To\+Convex\+Hull}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Polyline}$\ast$ cp\+Polyline\+To\+Convex\+Hull (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Polyline} $\ast$}]{line, }
+\item[{{\bf cp\+Float}}]{tol}
+\end{DoxyParamCaption}
+)}\label{cp_polyline_8h_ac8819f0853866daa710d783a8e3ac125}
+
+
+Get the convex hull of a polyline as a looped polyline. 
+

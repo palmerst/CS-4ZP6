@@ -1,0 +1,711 @@
+\documentclass[12pt]{article}
+
+\usepackage{bm}
+\usepackage{amsmath, mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{xr}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{booktabs}
+
+%\usepackage{refcheck}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+      colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\newcommand{\NN}[1]{{\color{red}#1}}
+\newcommand{\WSS}[1]{{\color{blue}#1}}
+
+\newcommand{\colZwidth}{1.0\textwidth}
+\newcommand{\blt}{- } %used for bullets in a list
+\newcommand{\colAwidth}{0.13\textwidth}
+\newcommand{\colBwidth}{0.82\textwidth}
+\newcommand{\colCwidth}{0.1\textwidth}
+\newcommand{\colDwidth}{0.05\textwidth}
+\newcommand{\colEwidth}{0.8\textwidth}
+\newcommand{\colFwidth}{0.17\textwidth}
+\newcommand{\colGwidth}{0.5\textwidth}
+\newcommand{\colHwidth}{0.28\textwidth}
+\newcounter{defnum} %Definition Number
+\newcommand{\dthedefnum}{GD\thedefnum}
+\newcommand{\dref}[1]{GD\ref{#1}}
+\newcounter{datadefnum} %Datadefinition Number
+\newcommand{\ddthedatadefnum}{DD\thedatadefnum}
+\newcommand{\ddref}[1]{DD\ref{#1}}
+\newcounter{theorynum} %Theory Number
+\newcommand{\tthetheorynum}{T\thetheorynum}
+\newcommand{\tref}[1]{T\ref{#1}}
+\newcounter{tablenum} %Table Number
+\newcommand{\tbthetablenum}{T\thetablenum}
+\newcommand{\tbref}[1]{TB\ref{#1}}
+\newcounter{assumpnum} %Assumption Number
+\newcommand{\atheassumpnum}{P\theassumpnum}
+\newcommand{\aref}[1]{A\ref{#1}}
+\newcounter{goalnum} %Goal Number
+\newcommand{\gthegoalnum}{P\thegoalnum}
+\newcommand{\gsref}[1]{GS\ref{#1}}
+\newcounter{instnum} %Instance Number
+\newcommand{\itheinstnum}{IM\theinstnum}
+\newcommand{\iref}[1]{IM\ref{#1}}
+\newcounter{reqnum} %Requirement Number
+\newcommand{\rthereqnum}{P\thereqnum}
+\newcommand{\rref}[1]{R\ref{#1}}
+\newcounter{lcnum} %Likely change number
+\newcommand{\lthelcnum}{LC\thelcnum}
+\newcommand{\lcref}[1]{LC\ref{#1}}
+
+\newcommand{\tclad}{T_\text{CL}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\progname}{SWHS}
+
+
+\usepackage{fullpage}
+
+\begin{document}
+
+\title{Verification and Validation Plan for Open Source Physics Game Library} 
+\author{Alex Halliwushka}
+\date{\today}
+	
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	1.) General Information 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{General Informationl}
+The following section provides an overview of the Verification and Validation (V\&V) Plan 
+for an open source physics library for video games. This section explains the purpose of this
+document, the scope of the system, common definitions, acronyms and abbreviations that are used
+in the document, and an overview of the following sections
+
+%1.1 Purpose
+\subsection{Purpose}
+The main purpose of this document is to describe the verification and validation 
+process that will be used to test an open source physics game library.
+This document is indented to be used as a reference for all future testing and will
+be used to increase confidence in the software implementation.  
+
+This document will be used as a starting point for the verification and validation report. The 
+test cases presented within this document will be executed and the output will be analyzed to 
+determine if the software is implemented correctly.  
+
+
+%1.2 Scope
+\subsection{Scope}
+
+
+%1.3  Definitions, Acronyms, and abbreviations 
+\subsection{Definitions, Acronyms, and Abbreviations }
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  QA		&Quality assurance\\
+  SRS		&Software requirements specification\\
+  V\&V		& Verification and validation\\
+  V\&VP 	& Verification and validation plan\\
+  V\&VR 	& Verification and validation report\\
+  \bottomrule
+\end{tabular}\\
+
+%1.4 Overview of Document
+\subsection{Overview of Document }
+The following sections provide more detail about the V\&V of an open source 2D phyiscs rigid body
+library. Information about the testing process is provided, and the software specifications
+that were discussed in the SRS document are stated.  The evaluation process that will be followed during 
+testing is outlined, and test cases for both the system testing and unit testing are provided 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	2.) Plan
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Plan}
+This section provides a description of the software that is being tested, the team that will
+perform the testing, the milestones for the testing phase, and the budget allocated to the testing. 
+
+%2.1 Software Description
+\subsection{Software Description}
+The software being tested is an open source 2D rigid body physics library used for games. Given the size, shape 
+and location from the user, the software constructs 2D rigid bodies and simulates how the rigid bodies react to 
+forces and how they interact with one another.  
+
+%2.2 Test Team
+\subsection{Test Team} 
+The team that will execute the test cases, write and review the V\&VR consist of:
+
+\begin{itemize}
+ \item Alex Halliwushka. 
+ \item Dr. Spencer Smith
+ \item Nolan Driessen
+\end{itemize}  
+
+%2.3 Milestones
+\subsection{Milestones}
+
+%2.3.1 Location
+\subsubsection{Location}
+The location that the testing will be performed is Hamilton Ontario. The institution that
+will be performing the testing is McMaster University. 
+
+
+%2.3.1 Dates and Deadlines
+\subsubsection{Dates and Deadlines}
+Test Case:
+~\newline
+The creation of the test cases for both system testing and unit testing is scheduled to begin June $1^\text{st}$ 2015.
+The deadline for the creation of the test cases is June 15th 2015. 
+~\newline
+~\newline
+Test Case Implementation:
+~\newline
+Implementing code for the automation of the unit testing is scheduled to being June 15th 2015. The implementation period
+is expected to last approximately two weeks and has a deadline of June 30th 2015.
+~\newline
+~\newline
+Verification and Validation Report:
+~\newline
+The writting of the V\&VR is scheduled to begin July 1st 2015 and end on July 15th 2015. 
+
+%2.4 Budget
+\subsection{Budget}
+The budget for the testing of this system is being funded by McMaster University and NSERC
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	3.) Software Specification
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ Software Specification}
+This section provides the functional requirements, the business tasks that the
+software is expected to complete, and the nonfunctional requirements, the
+qualities that the software is expected to exhibit.
+
+%3.1 Functional Requirements
+\subsection{Functional Requirements}
+
+\noindent
+\begin{itemize}
+\item Input the initial mass, velocities, positions, orientations, angular velocities, and constraints of objects  
+\item Verify that the inputs satisfy the requried physical constraints 
+\item Determine the position and velocities over a period of time of the 2D rigid bodies acted upon by gravity
+\item Determine the position and velocities over a period of time of 2D rigid bodies that have undergone a collision
+\item Determine the orientation and angular velocities over a period of time of the 2D rigid bodies
+\item Determine the position and velocities over a period of time of 2D rigid bodies with constraints or joints between them
+\end{itemize} 
+
+%3.2 Nonfunctional Requirements
+\subsection{Nonfunctional Requirements}
+Games are very resource intensive, so performance is a high priority.
+Other non-functional requirements that are a priority are: correctness,
+understandability, portability, reliability, and maintainability. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	4.) Evaluation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Evaluation}
+This section first presents the methods and constraints that are to be used during
+the evaluation process. This is followed by how the data obtained by the testing will be 
+evaluated, which includes: how the data will be recorded, how to move from one test
+to the next, and how to determine if the test was successful. 
+
+%4.1 Methods and Constraints
+\subsection{Methods and Constraints} 
+
+%4.1.1 Methodology
+\subsubsection{Methodology} 
+The testing of the physics game library will be seperated into two sections: system testing and unit testing.
+
+The system testing will be done manually, the tester will set up the initial conditions as described in the test cases
+and compare the actual results of the test to the expected results. If the results match then the test passed, otherwise
+the test failed.  
+
+The unit testing will be automated. The tester will implement the unit tests into the code using a unit testing framework. Once 
+the unit tests are implemented, the software will be run and any incorrect results will be outputted by the system
+
+% 4.1.2 Extent of Testing
+\subsubsection{Extent of Testing}
+The extent of testing that will be employed is extensive testing. The unit test cases below provide complete code coverage and 
+will increase confidence in the verification of the software. The system test cases increase confidence in the validation of the system
+
+% 4.1.3 Test Tools
+\subsubsection{Test Tools}
+A unit testing framework will be used to implement the unit test cases and run them automatically.
+
+% 4.1.4 Testing Constraints
+\subsubsection{Testing Constraints}
+There are currently no anticipated limitations on the testing
+
+% 4.2  Data Evaluation
+\subsection{Data Evaluation}
+
+% 4.2.1 Data Recording
+\subsubsection{Data Recording}
+After each test is run the results of the test should be recorded in the following format: 
+~\newline
+Test ID: 
+~\newline
+Input:
+~\newline
+Expected Output:
+~\newline
+Actual Output:
+~\newline
+Result: 
+
+% 4.2.2 Test Progression
+\subsubsection{Test Progression}
+
+For the system test cases: Follow the preperation instructions given for the test case to get the system
+initialized correctly. Follow the procedures given for the test case and use the inputs provided. Run the test and
+record the results, record any dsicrepancies between the actual output and the expected output. Move on to the next
+test case and repeat the process again.
+
+% 4.2.3 Testing Criteria
+\subsubsection{Testing Criteria}
+The actual results of each test will be evaluated against the expected results to see if the software is working as 
+intended.
+
+% 4.2.4 Test Data Reduction
+\subsubsection{Testing Data Reduction}
+The results of the test data will be evaluated on a PASS/FAIL basis. If the actual results match the expected
+results the test will be considered a PASS, otherwise the test is considered a FAIL. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	5.) System Test Description
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{System Test Description}
+
+%5.1 Test identifier 
+\subsection{Gravity with no initial velocity}
+% 5.1.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.1.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testGravity1}
+
+% 5.1.3 Expected Output
+\subsubsection{Expected Output}
+$v_\text{x}(t) = 0$ , $v_\text{y}(t) = -9.8t$ \\
+$p_\text{x}(t) = 0$ , $p_\text{y}(t) = 50 - 4.9t^{2}$
+ 
+% 5.1.4 Test  Procedures
+\subsubsection{Procedure}
+Record the position and velocity of the object as it falls. Determine if the 
+position and velocity follow the equations in the expected output.  
+
+% 5.1.5  Preperation
+\subsubsection{Preperation}
+Create an object and give it the initial values indicated in \ref{testGravity1}.
+Output the object's position and velocity at 0.5 s intervals.
+
+
+%5.2 Test identifier 
+\subsection{Gravity with initial velocity in y}
+% 5.2.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.2.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testGravity2}
+
+% 5.2.3 Expected Output
+\subsubsection{Expected Output}
+$v_\text{x}(t) = 0$ , $v_\text{y}(t) =  2 -9.8t$ \\
+$p_\text{x}(t) = 0$ , $p_\text{y}(t) = 50 + 2t - 4.9t^{2}$
+ 
+% 5.2.4 Test  Procedures
+\subsubsection{Procedure}
+Record the position and velocity of the object as it falls. Determine if the 
+position and velocity follow the equations in the expected output.  
+
+% 5.2.5  Preperation
+\subsubsection{Preperation}
+Create an object and give it the initial values indicated in \ref{testGravity2}.
+Output the object's position and velocity at 0.5 s intervals.
+
+
+%5.3 Test identifier 
+\subsection{Gravity with initial velocity in x}
+% 5.3.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.3.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testGravity3}
+
+% 5.3.3 Expected Output
+\subsubsection{Expected Output}
+$v_\text{x}(t) = 5.75$ , $v_\text{y}(t) = -9.8t$ \\
+$p_\text{x}(t) = 5.75t$ , $p_\text{y}(t) = 50 - 4.9t^{2}$
+ 
+% 5.3.4 Test  Procedures
+\subsubsection{Procedure}
+Record the position and velocity of the object as it falls. Determine if the 
+position and velocity follow the equations in the expected output.  
+
+% 5.3.5  Preperation
+\subsubsection{Preperation}
+Create an object and give it the initial values indicated in \ref{testGravity3}.
+Output the object's position and velocity at 0.5 s intervals.
+
+
+%5.4 Test identifier 
+\subsection{Gravity with initial velocity in x and y}
+% 5.4.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.4.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testGravity4}
+
+% 5.4.3 Expected Output
+\subsubsection{Expected Output}
+$v_\text{x}(t) = 15.9$ , $v_\text{y}(t) = 4.8  -9.8t$ \\
+$p_\text{x}(t) = 15.9t$ , $p_\text{y}(t) = 50 + 4.8t  -4.9t^{2}$
+ 
+% 5.4.4 Test  Procedures
+\subsubsection{Procedure}
+Record the position and velocity of the object as it falls. Determine if the 
+position and velocity follow the equations in the expected output.  
+
+% 5.4.5  Preperation
+\subsubsection{Preperation}
+Create an object and give it the initial values indicated in \ref{testGravity4}.
+Output the object's position and velocity at 0.5 s intervals.
+
+
+%5.5 Test identifier 
+\subsection{Parabolic motion with damping}
+% 5.5.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.5.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testGravity5}
+
+% 5.5.3 Expected Output
+\subsubsection{Expected Output}
+$v_\text{x}(t) = 6.32*(0.95)^{t}$ , $v_\text{y}(t) = -1.77*(0.95)^{t}  -9.8t$ \\
+$p_\text{x}(t) = 6.32t*(0.95)^{t}$ , $p_\text{y}(t) = 50  -1.77t*(0.95)^{t}  -4.9t^{2}$
+ 
+% 5.5.4 Test  Procedures
+\subsubsection{Procedure}
+Record the position and velocity of the object as it falls. Determine if the 
+position and velocity follow the equations in the expected output.  
+
+% 5.5.5  Preperation
+\subsubsection{Preperation}
+Create an object and give it the initial values indicated in \ref{testGravity5}.
+Output the object's position and velocity at 0.5 s intervals.
+
+
+
+%5.6 Test identifier 
+\subsection{Conservation of Momentum}
+% 5.6.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.6.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testCollision1}
+
+% 5.6.3 Expected Output
+\subsubsection{Expected Output}
+
+$m_\text{1}\bf{v}_\text{i1} + \textnormal{m}_\text{2}\bf{v}_\text{i2}=\textnormal{m}_\text{1}\bf{v}_\text{f1} + \textnormal{m}_\text{2}\bf{v}_\text{f2}$\\
+ $C_\text{R} = \bf \frac{v_\text{f2} - v_\text{f1}}{v_\text{i1} - v_\text{i2}}$\\
+
+\noindent
+rearranging and substituting the above two equations gives the velocity right after the collision:\\ 
+$v_\text{f1} =  \frac{m_\text{1}v_\text{i1} + m_\text{2}v_\text{i2}  + m_\text{2}( C_\text{R}(v_\text{i2} -v_\text{i1}))}{m_\text{1} + m_\text{2}} $
+$v_\text{f2} =  \frac{m_\text{1}v_\text{i1} + m_\text{2}v_\text{i2}  + m_\text{1}( C_\text{R}(v_\text{i1} -v_\text{i2}))}{m_\text{1} + m_\text{2}} $
+ 
+% 5.6.4 Test  Procedures
+\subsubsection{Procedure}
+Record the velocity of the objects right after they collide. Determine if the 
+velocities are equal to the values in the expected output.  
+
+% 5.6.5  Preperation
+\subsubsection{Preperation}
+Create two objects and give them the initial values indicated in \ref{testCollision1}.
+Output the objects' velocities right after the collision
+
+
+%5.6 Test identifier 
+\subsection{Perfectly Elastic Collision}
+% 5.6.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.6.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testCollision2}
+
+% 5.6.3 Expected Output
+\subsubsection{Expected Output}
+
+$m_\text{1}\bf{v}_\text{i1} + \textnormal{m}_\text{2}\bf{v}_\text{i2}=\textnormal{m}_\text{1}\bf{v}_\text{f1} + \textnormal{m}_\text{2}\bf{v}_\text{f2}$\\
+\noindent
+$\frac{1}{2}m_\text{1}v_\text{i1}^{2} + \frac{1}{2}m_\text{2}v_\text{i2}^{2} =  \frac{1}{2}m_\text{1}v_\text{f1}^{2} + \frac{1}{2}m_\text{2}v_\text{f2}^{2} $\\
+
+% 5.6.4 Test  Procedures
+\subsubsection{Procedure}
+Record the velocity of the objects right after they collide. Determine if the 
+velocities are equal to the values in the expected output.  
+
+% 5.6.5  Preperation
+\subsubsection{Preperation}
+Create two objects and give them the initial values indicated in \ref{testCollision2}.
+Output the objects' velocities right after the collision
+
+
+%5.7 Test identifier 
+\subsection{Rotation with no initial angular velocity}
+% 5.7.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.7.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testRotation1}
+
+% 5.7.3 Expected Output
+\subsubsection{Expected Output}
+
+$\omega(t) = \frac{\pi}{10}t$, 
+$\phi(t) = \frac{\pi}{4} + \frac{\pi}{20}t^2$
+
+% 5.7.4 Test  Procedures
+\subsubsection{Procedure}
+Record the orientation and the angular velcoity of the object as it rotates. Determine if the 
+orientation and the angular velocitiy follow the equations in the expected output.  
+
+% 5.7.5  Preperation
+\subsubsection{Preperation}
+Create an objects and give them the initial values indicated in \ref{testRotation1}.
+Output the objects' velocities right after the collision
+
+
+%5.8 Test identifier 
+\subsection{Rotation with angular velocity}
+% 5.8.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.8.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testRotation2}
+
+% 5.8.3 Expected Output
+\subsubsection{Expected Output}
+
+$\omega(t) = \frac{\pi}{3} - \frac{\pi}{12}t$, 
+$\phi(t) = \frac{\pi}{4} + \frac{\pi}{3}t + \frac{\pi}{24}t^2$
+
+% 5.8.4 Test  Procedures
+\subsubsection{Procedure}
+Record the orientation and the angular velcoity of the object as it rotates. Determine if the 
+orientation and the angular velocitiy follow the equations in the expected output.  
+
+% 5.8.5  Preperation
+\subsubsection{Preperation}
+Create an objects and give them the initial values indicated in \ref{testRotation2}.
+Output the objects' velocities right after the collision
+
+
+
+%5.9 Test identifier 
+\subsection{Rotation with damping}
+% 5.9.1 Means of Control
+\subsubsection{Means of Control}
+Manual
+% 5.9.2 Input
+\subsubsection{Input}
+Use the input stated in \ref{testRotation3}
+
+% 5.9.3 Expected Output
+\subsubsection{Expected Output}
+
+$\omega(t) = -\frac{\pi}{6}(0.77)^{t} - \frac{\pi}{8}t$, 
+$\phi(t) = \frac{\pi}{4} - \frac{\pi}{6}t(0.77)^{t} + \frac{\pi}{16}t^2$
+
+% 5.9.4 Test  Procedures
+\subsubsection{Procedure}
+Record the orientation and the angular velcoity of the object as it rotates. Determine if the 
+orientation and the angular velocitiy follow the equations in the expected output.  
+
+% 5.9.5  Preperation
+\subsubsection{Preperation}
+Create an objects and give them the initial values indicated in \ref{testRotation3}.
+Output the objects' velocities right after the collision
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	6.) Unit Test Description 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Unit Test Description}
+
+
+\subsection{Module Information}
+
+\subsubsection{Module Inputs}
+
+\subsubsection{Module Outputs}
+
+\subsubsection{Related Modules}
+
+\subsection{Test Data}
+
+\subsubsection{Inputs}
+
+\subsubsection{Expected Outputs}
+
+
+\bibliographystyle {plain}
+\bibliography {PCM_SRS}
+
+
+%%%%%%%%%%%%%%%%%%%
+%
+%	Appendix
+%
+%%%%%%%%%%%%%%%%%%%
+\section{Appendix}
+
+\subsection{Test for Gravity} \label{testGravity}
+The following test cases use:\\ \\
+$ \textbf p_\text{i} = \begin{bmatrix}
+	0\\
+	50\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent \\
+$ \textbf a = \begin{bmatrix}
+	0\\
+	-9.8\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent \\
+t = 0, 0.5, 1, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0
+
+\subsubsection{No Initial Velocity} \label{testGravity1}
+Use the values in \ref{testGravity} and an initial velocity of: \\ \\
+$ \textbf v_\text{i} = \begin{bmatrix}
+	0\\
+	0\\
+	\end{bmatrix}$\\
+	
+\subsubsection{Initial Velocity in y} \label{testGravity2}
+Use the values in \ref{testGravity} and an initial velocity of: \\ \\
+$ \textbf v_\text{i} = \begin{bmatrix} 
+	0\\
+	2.3\\
+	\end{bmatrix}$\\
+	
+\subsubsection{Initial Velocity in x} \label{testGravity3}
+Use the values in \ref{testGravity} and an initial velocity of: \\ \\
+$ \textbf v_\text{i} = \begin{bmatrix}
+	5.75\\
+	0\\
+	\end{bmatrix}$\\
+	
+\subsubsection{Initial Velocity in both x and y} \label{testGravity4}
+Use the values in \ref{testGravity} and an initial velocity of: \\ \\
+$ \textbf v_\text{i} = \begin{bmatrix}
+	15.9\\
+	4.8\\
+	\end{bmatrix}$\\
+	
+	
+\subsubsection{Parabolic Motion with Damping} \label{testGravity5}
+Use the values in \ref{testGravity}, an initial velocity of: \\ \\
+$ \textbf v_\text{i} = \begin{bmatrix}
+	6.32\\
+	-1.77\\
+	\end{bmatrix}$\\
+\noindent
+and a damping coeffiecient: $\zeta = 0.95$
+
+
+\subsection{Test for Collision} \label{testCollision}
+The following test cases use:\\ \\
+$ \textbf p_\text{i1} = \begin{bmatrix}
+	100.5\\
+	51.75\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent \\
+$ \textbf p_\text{i2} = \begin{bmatrix}
+	105\\
+	50\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent\\
+$ \textbf v_\text{i1} = \begin{bmatrix}
+	3.1\\
+	2.5\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent\\
+$ \textbf v_\text{i2} = \begin{bmatrix}
+	-5.4\\
+	1.2\\
+	\end{bmatrix}$\\
+~\newline 
+\noindent
+
+\subsubsection{Conservation of momentum} \label{testCollision1}
+Use the values in \ref{testCollision}, and $m_\text{1} = 5, m_\text{2} = 15.4, CR = 0.5$
+
+
+\subsubsection{Perfectly elastic collision} \label{testCollision2}
+Use the values in \ref{testCollision}, and  $m_\text{1} = 7.8, m_\text{2} = 20.1, CR = 1$
+	
+\subsection{Test for rotation} \label{testRotation}
+The folllowing test cases use:
+
+$ \textbf p_\text{i1} = \begin{bmatrix}
+	0\\
+	0\\
+	\end{bmatrix}$\\
+\noindent\\
+
+$\phi = \frac{\pi}{4}$
+
+\subsubsection{Rotation no initial angular velocity} \label{testRotation1}
+Use the values in \ref{testRotation}, and $\omega = 0 $ and  $ \alpha = \frac{\pi}{10} $
+
+\subsubsection{Rotation with angular velocity} \label{testRotation2}
+Use the values in \ref{testRotation}, and $\omega = \frac{\pi}{3} $ and  $ \alpha = -\frac{\pi}{12} $
+
+\subsubsection{Rotation with damping} \label{testRotation3}
+Use the values in \ref{testRotation}, and $\omega = -\frac{\pi}{6} $,  $ \alpha = \frac{\pi}{8}$ and $\zeta = 0.77 $
+\end{document}

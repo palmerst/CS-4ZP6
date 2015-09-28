@@ -1,0 +1,21 @@
+\hypertarget{cp_rotary_limit_joint_8h}{}\section{cp\+Rotary\+Limit\+Joint.\+h File Reference}
+\label{cp_rotary_limit_joint_8h}\index{cp\+Rotary\+Limit\+Joint.\+h@{cp\+Rotary\+Limit\+Joint.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_rotary_limit_joint_gaf586161a847e816e61cd44d1828e4957}{cp\+Constraint\+Is\+Rotary\+Limit\+Joint} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a rotary limit joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_rotary_limit_joint}{cp\+Rotary\+Limit\+Joint} $\ast$ \hyperlink{group__cp_rotary_limit_joint_ga188c8abeede5f9f878ec7a04e6d9af9b}{cp\+Rotary\+Limit\+Joint\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a damped rotary limit joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_rotary_limit_joint}{cp\+Rotary\+Limit\+Joint} $\ast$ \hyperlink{group__cp_rotary_limit_joint_ga3f849df8d2439c089147f48646f0a551}{cp\+Rotary\+Limit\+Joint\+Init} (\hyperlink{structcp_rotary_limit_joint}{cp\+Rotary\+Limit\+Joint} $\ast$joint, \hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} min, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max)
+\begin{DoxyCompactList}\small\item\em Initialize a damped rotary limit joint. \end{DoxyCompactList}\item 
+\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$ \hyperlink{group__cp_rotary_limit_joint_gaaa34430075cb2b674d73c66b667a4a36}{cp\+Rotary\+Limit\+Joint\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$a, \hyperlink{structcp_body}{cp\+Body} $\ast$b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} min, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a damped rotary limit joint. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_rotary_limit_joint_ga47c05e7be5cf5c04bbce64c36b772ccc}{cp\+Rotary\+Limit\+Joint\+Get\+Min} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the minimum distance the joint will maintain between the two anchors. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_rotary_limit_joint_ga05d5e5724e6c25c3c229b8106ea90836}{cp\+Rotary\+Limit\+Joint\+Set\+Min} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} min)
+\begin{DoxyCompactList}\small\item\em Set the minimum distance the joint will maintain between the two anchors. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_rotary_limit_joint_ga73a5032c961a58d22801ea07d728fd9a}{cp\+Rotary\+Limit\+Joint\+Get\+Max} (const \hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the maximum distance the joint will maintain between the two anchors. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_rotary_limit_joint_gaab19cc90af35a7a9f98339b4ad4ebee2}{cp\+Rotary\+Limit\+Joint\+Set\+Max} (\hyperlink{structcp_constraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} max)
+\begin{DoxyCompactList}\small\item\em Set the maximum distance the joint will maintain between the two anchors. \end{DoxyCompactList}\end{DoxyCompactItemize}

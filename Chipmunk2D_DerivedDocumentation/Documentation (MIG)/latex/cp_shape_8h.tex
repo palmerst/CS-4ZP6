@@ -1,0 +1,282 @@
+\hypertarget{cp_shape_8h}{}\section{cp\+Shape.\+h File Reference}
+\label{cp_shape_8h}\index{cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcp_point_query_info}{cp\+Point\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Point query info struct. \end{DoxyCompactList}\item 
+struct \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Segment query info struct. \end{DoxyCompactList}\item 
+struct \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter}
+\begin{DoxyCompactList}\small\item\em Fast collision filtering type that is used to determine if two objects collide before calling collision or query callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcp_point_query_info}{cp\+Point\+Query\+Info} \hyperlink{group__cp_shape_ga2264ed925aee1f67a414ff773bfe33ff}{cp\+Point\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Point query info struct. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info} \hyperlink{group__cp_shape_gadebeb6b5e42d369df368fd220aacd7e8}{cp\+Segment\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Segment query info struct. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} \hyperlink{group__cp_shape_gaa85aa81b58edce2acc7e06316d11875c}{cp\+Shape\+Filter}
+\begin{DoxyCompactList}\small\item\em Fast collision filtering type that is used to determine if two objects collide before calling collision or query callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} \hyperlink{group__cp_shape_ga897e6e7cf0cc8b627ef7e520880457f0}{cp\+Shape\+Filter\+New} (\hyperlink{group__basic_types_gacd811b1135a8f4a3e5cc019552b18b1a}{cp\+Group} group, \hyperlink{group__basic_types_gae7ff94f62e00cae288c1991958822743}{cp\+Bitmask} categories, \hyperlink{group__basic_types_gae7ff94f62e00cae288c1991958822743}{cp\+Bitmask} mask)
+\begin{DoxyCompactList}\small\item\em Create a new collision filter. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_gad4eff5be931cd7c3c5eaf9f431b73c9e}{cp\+Shape\+Destroy} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Destroy a shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga5c1eff1ffaf87dda1890fa46ccba38b3}{cp\+Shape\+Free} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Destroy and Free a shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_shape_ga8cff320455af31adba99b4ff70e085a9}{cp\+Shape\+Cache\+B\+B} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Update, cache and return the bounding box of a shape based on the body it\textquotesingle{}s attached to. \end{DoxyCompactList}\item 
+\hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_shape_ga24e873bad4887bf0956e475d2a19dbe9}{cp\+Shape\+Update} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_transform}{cp\+Transform} transform)
+\begin{DoxyCompactList}\small\item\em Update, cache and return the bounding box of a shape with an explicit transformation. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga6cca4a4d62cbede3b74302fcca3c10be}{cp\+Shape\+Point\+Query} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} p, \hyperlink{structcp_point_query_info}{cp\+Point\+Query\+Info} $\ast$out)
+\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_shape_ga65e617c7f8022ac0c31603ca9039b18c}{cp\+Shape\+Segment\+Query} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius, \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info} $\ast$info)
+\begin{DoxyCompactList}\small\item\em Perform a segment query against a shape. {\ttfamily info} must be a pointer to a valid \hyperlink{structcp_segment_query_info}{cp\+Segment\+Query\+Info} structure. \end{DoxyCompactList}\item 
+\hyperlink{structcp_contact_point_set}{cp\+Contact\+Point\+Set} \hyperlink{group__cp_shape_ga409bd7ae197af45bc6bc7fbef40cd09a}{cp\+Shapes\+Collide} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$a, const \hyperlink{structcp_shape}{cp\+Shape} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Return contact information about two shapes. \end{DoxyCompactList}\item 
+\hyperlink{structcp_space}{cp\+Space} $\ast$ \hyperlink{group__cp_shape_gaa9bbb21dc2cc57f9d44efdd9013fae0a}{cp\+Shape\+Get\+Space} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structcp_space}{cp\+Space} this body is added to. \end{DoxyCompactList}\item 
+\hyperlink{structcp_body}{cp\+Body} $\ast$ \hyperlink{group__cp_shape_gabf0a71b35488ed0a7c27d49701a472c9}{cp\+Shape\+Get\+Body} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structcp_body}{cp\+Body} this shape is connected to. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_gafae3ee0e0629b9598ddeecb723b82de8}{cp\+Shape\+Set\+Body} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_body}{cp\+Body} $\ast$body)
+\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga5d7f4b7e91b1e7062ae84acb41aa47ba}{cp\+Shape\+Get\+Mass} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the mass of the shape if you are having Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga16c60ccc31b32412d7eb5fd86ccb868c}{cp\+Shape\+Set\+Mass} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} mass)
+\begin{DoxyCompactList}\small\item\em Set the mass of this shape to have Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga9d75af12cca24782f024efcdf8929798}{cp\+Shape\+Get\+Density} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the density of the shape if you are having Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga67a640d42e192801d096ed5838ad658c}{cp\+Shape\+Set\+Density} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} density)
+\begin{DoxyCompactList}\small\item\em Set the density of this shape to have Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga879d6b7e7c33d0fa2abab3fabd3ed181}{cp\+Shape\+Get\+Moment} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the calculated moment of inertia for this shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_gae6907139a4570623b44421ed46465b84}{cp\+Shape\+Get\+Area} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the calculated area of this shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_shape_gafbd7eadc2c4e704c3865faa71f4aa8be}{cp\+Shape\+Get\+Center\+Of\+Gravity} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the centroid of this shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_b_b}{cp\+B\+B} \hyperlink{group__cp_shape_ga569699447fe658a3751a0c9f28347abf}{cp\+Shape\+Get\+B\+B} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the bounding box that contains the shape given it\textquotesingle{}s current position and angle. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cp_shape_ga2e235a7ecc0fac5e74a75df2e6a14d24}{cp\+Shape\+Get\+Sensor} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get if the shape is set to be a sensor or not. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_gae0a16abf7c060a31c53775a2396c294f}{cp\+Shape\+Set\+Sensor} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} sensor)
+\begin{DoxyCompactList}\small\item\em Set if the shape is a sensor or not. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga76ed22ee6920c51ed7fab1411af1aa51}{cp\+Shape\+Get\+Elasticity} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the elasticity of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga1a70bb8a3865672e8a72ca31b04dab5a}{cp\+Shape\+Set\+Elasticity} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} elasticity)
+\begin{DoxyCompactList}\small\item\em Set the elasticity of this shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{group__cp_shape_ga11fbbf292269a50faf2133ef4189e10a}{cp\+Shape\+Get\+Friction} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the friction of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_gaecf3e16558fc080673b13e4b2cc1589d}{cp\+Shape\+Set\+Friction} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} friction)
+\begin{DoxyCompactList}\small\item\em Set the friction of this shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{group__cp_shape_ga6041753827fc7fe7aca1232a36df830d}{cp\+Shape\+Get\+Surface\+Velocity} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the surface velocity of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_gae0b3d04de80a9ea2f86aa7bf31024543}{cp\+Shape\+Set\+Surface\+Velocity} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} surface\+Velocity)
+\begin{DoxyCompactList}\small\item\em Set the surface velocity of this shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{group__cp_shape_ga213f49ea717b8a2d5b3271b4aee168d4}{cp\+Shape\+Get\+User\+Data} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the user definable data pointer of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga98103410747b71fcd5fd6cf2ac7cff7d}{cp\+Shape\+Set\+User\+Data} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Set the user definable data pointer of this shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} \hyperlink{group__cp_shape_ga7f0afa7a634bbb0f6dd2177d3fb23e66}{cp\+Shape\+Get\+Collision\+Type} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Set the collision type of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga45d31a1d1054fef768eafe28fdffcaf5}{cp\+Shape\+Set\+Collision\+Type} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{group__basic_types_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} collision\+Type)
+\begin{DoxyCompactList}\small\item\em Get the collision type of this shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} \hyperlink{group__cp_shape_ga262e697de5ca5547b183d89a6728608f}{cp\+Shape\+Get\+Filter} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the collision filtering parameters of this shape. \end{DoxyCompactList}\item 
+void \hyperlink{group__cp_shape_ga16b40c3808b0246b1b5e29693ee7db42}{cp\+Shape\+Set\+Filter} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} filter)
+\begin{DoxyCompactList}\small\item\em Set the collision filtering parameters of this shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_circle_shape}{cp\+Circle\+Shape} $\ast$ \hyperlink{cp_shape_8h_a1f900cfea8f6bc75e4a35ffcde79d4d8}{cp\+Circle\+Shape\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a circle shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_circle_shape}{cp\+Circle\+Shape} $\ast$ \hyperlink{cp_shape_8h_aa876de579e4384d0c81a3dbf548f1cd5}{cp\+Circle\+Shape\+Init} (\hyperlink{structcp_circle_shape}{cp\+Circle\+Shape} $\ast$circle, \hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius, \hyperlink{structcp_vect}{cp\+Vect} offset)
+\begin{DoxyCompactList}\small\item\em Initialize a circle shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{cp_shape_8h_adeaa47f3137cf294338e148d17e27a9d}{cp\+Circle\+Shape\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius, \hyperlink{structcp_vect}{cp\+Vect} offset)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a circle shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{cp_shape_8h_a8bcfdcf3df340c9bd4142a47d8a7455d}{cp\+Circle\+Shape\+Get\+Offset} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the offset of a circle shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{cp_shape_8h_a540ca568512aa3f67a38d96da2c15652}{cp\+Circle\+Shape\+Get\+Radius} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the radius of a circle shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_segment_shape}{cp\+Segment\+Shape} $\ast$ \hyperlink{cp_shape_8h_a4f940714a5bf478747a4e9f36e76aff6}{cp\+Segment\+Shape\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a segment shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_segment_shape}{cp\+Segment\+Shape} $\ast$ \hyperlink{cp_shape_8h_a3365143869c36d74056cf385ad53bc9a}{cp\+Segment\+Shape\+Init} (\hyperlink{structcp_segment_shape}{cp\+Segment\+Shape} $\ast$seg, \hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Initialize a segment shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_shape}{cp\+Shape} $\ast$ \hyperlink{cp_shape_8h_aec8205ea24a70893adebd2f17ec88bb2}{cp\+Segment\+Shape\+New} (\hyperlink{structcp_body}{cp\+Body} $\ast$body, \hyperlink{structcp_vect}{cp\+Vect} a, \hyperlink{structcp_vect}{cp\+Vect} b, \hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} radius)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a segment shape. \end{DoxyCompactList}\item 
+void \hyperlink{cp_shape_8h_a4eccee9db9810d6a2a70cc26ff4f3d3f}{cp\+Segment\+Shape\+Set\+Neighbors} (\hyperlink{structcp_shape}{cp\+Shape} $\ast$shape, \hyperlink{structcp_vect}{cp\+Vect} prev, \hyperlink{structcp_vect}{cp\+Vect} next)
+\begin{DoxyCompactList}\small\item\em Let Chipmunk know about the geometry of adjacent segments to avoid colliding with endcaps. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{cp_shape_8h_a5e1459978881494972b881541b380f13}{cp\+Segment\+Shape\+Get\+A} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the first endpoint of a segment shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{cp_shape_8h_ad8b7fb241494e80c2e98f600c50f42a1}{cp\+Segment\+Shape\+Get\+B} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the second endpoint of a segment shape. \end{DoxyCompactList}\item 
+\hyperlink{structcp_vect}{cp\+Vect} \hyperlink{cp_shape_8h_a8b65c2206a69d35a927130cf3e079bdd}{cp\+Segment\+Shape\+Get\+Normal} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the normal of a segment shape. \end{DoxyCompactList}\item 
+\hyperlink{group__basic_types_gac1ed65573e035bf892505768c852d8d3}{cp\+Float} \hyperlink{cp_shape_8h_ab15ffae3bb5e4ce5d3b653cc44f6af57}{cp\+Segment\+Shape\+Get\+Radius} (const \hyperlink{structcp_shape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the first endpoint of a segment shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} \hyperlink{group__cp_shape_gaef9ee63420c81af95358f210ea29f7e4}{C\+P\+\_\+\+S\+H\+A\+P\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+A\+L\+L} = \{\hyperlink{group__basic_types_gabd2870d269e0288b26b045c81a07acc8}{C\+P\+\_\+\+N\+O\+\_\+\+G\+R\+O\+U\+P}, \hyperlink{group__basic_types_ga591693fbd3ed24f3365ef7accf349d4f}{C\+P\+\_\+\+A\+L\+L\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S}, \hyperlink{group__basic_types_ga591693fbd3ed24f3365ef7accf349d4f}{C\+P\+\_\+\+A\+L\+L\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S}\}
+\begin{DoxyCompactList}\small\item\em Collision filter value for a shape that will collide with anything except C\+P\+\_\+\+S\+H\+A\+P\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+N\+O\+N\+E. \end{DoxyCompactList}\item 
+static const \hyperlink{structcp_shape_filter}{cp\+Shape\+Filter} \hyperlink{group__cp_shape_ga9797bc5baffd39b2d9b8839cc0e1a271}{C\+P\+\_\+\+S\+H\+A\+P\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+N\+O\+N\+E} = \{\hyperlink{group__basic_types_gabd2870d269e0288b26b045c81a07acc8}{C\+P\+\_\+\+N\+O\+\_\+\+G\+R\+O\+U\+P}, $\sim$\hyperlink{group__basic_types_ga591693fbd3ed24f3365ef7accf349d4f}{C\+P\+\_\+\+A\+L\+L\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S}, $\sim$\hyperlink{group__basic_types_ga591693fbd3ed24f3365ef7accf349d4f}{C\+P\+\_\+\+A\+L\+L\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S}\}
+\begin{DoxyCompactList}\small\item\em Collision filter value for a shape that does not collide with anything. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{cp_shape_8h_a1f900cfea8f6bc75e4a35ffcde79d4d8}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Circle\+Shape\+Alloc@{cp\+Circle\+Shape\+Alloc}}
+\index{cp\+Circle\+Shape\+Alloc@{cp\+Circle\+Shape\+Alloc}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Circle\+Shape\+Alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Circle\+Shape}$\ast$ cp\+Circle\+Shape\+Alloc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a1f900cfea8f6bc75e4a35ffcde79d4d8}
+
+
+Allocate a circle shape. 
+
+\hypertarget{cp_shape_8h_a8bcfdcf3df340c9bd4142a47d8a7455d}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Circle\+Shape\+Get\+Offset@{cp\+Circle\+Shape\+Get\+Offset}}
+\index{cp\+Circle\+Shape\+Get\+Offset@{cp\+Circle\+Shape\+Get\+Offset}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Circle\+Shape\+Get\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Vect} cp\+Circle\+Shape\+Get\+Offset (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a8bcfdcf3df340c9bd4142a47d8a7455d}
+
+
+Get the offset of a circle shape. 
+
+\hypertarget{cp_shape_8h_a540ca568512aa3f67a38d96da2c15652}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Circle\+Shape\+Get\+Radius@{cp\+Circle\+Shape\+Get\+Radius}}
+\index{cp\+Circle\+Shape\+Get\+Radius@{cp\+Circle\+Shape\+Get\+Radius}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Circle\+Shape\+Get\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Float} cp\+Circle\+Shape\+Get\+Radius (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a540ca568512aa3f67a38d96da2c15652}
+
+
+Get the radius of a circle shape. 
+
+\hypertarget{cp_shape_8h_aa876de579e4384d0c81a3dbf548f1cd5}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Circle\+Shape\+Init@{cp\+Circle\+Shape\+Init}}
+\index{cp\+Circle\+Shape\+Init@{cp\+Circle\+Shape\+Init}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Circle\+Shape\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Circle\+Shape}$\ast$ cp\+Circle\+Shape\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Circle\+Shape} $\ast$}]{circle, }
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Float}}]{radius, }
+\item[{{\bf cp\+Vect}}]{offset}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_aa876de579e4384d0c81a3dbf548f1cd5}
+
+
+Initialize a circle shape. 
+
+\hypertarget{cp_shape_8h_adeaa47f3137cf294338e148d17e27a9d}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Circle\+Shape\+New@{cp\+Circle\+Shape\+New}}
+\index{cp\+Circle\+Shape\+New@{cp\+Circle\+Shape\+New}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Circle\+Shape\+New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Shape}$\ast$ cp\+Circle\+Shape\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Float}}]{radius, }
+\item[{{\bf cp\+Vect}}]{offset}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_adeaa47f3137cf294338e148d17e27a9d}
+
+
+Allocate and initialize a circle shape. 
+
+\hypertarget{cp_shape_8h_a4f940714a5bf478747a4e9f36e76aff6}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Alloc@{cp\+Segment\+Shape\+Alloc}}
+\index{cp\+Segment\+Shape\+Alloc@{cp\+Segment\+Shape\+Alloc}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Segment\+Shape}$\ast$ cp\+Segment\+Shape\+Alloc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a4f940714a5bf478747a4e9f36e76aff6}
+
+
+Allocate a segment shape. 
+
+\hypertarget{cp_shape_8h_a5e1459978881494972b881541b380f13}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Get\+A@{cp\+Segment\+Shape\+Get\+A}}
+\index{cp\+Segment\+Shape\+Get\+A@{cp\+Segment\+Shape\+Get\+A}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Get\+A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Vect} cp\+Segment\+Shape\+Get\+A (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a5e1459978881494972b881541b380f13}
+
+
+Get the first endpoint of a segment shape. 
+
+\hypertarget{cp_shape_8h_ad8b7fb241494e80c2e98f600c50f42a1}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Get\+B@{cp\+Segment\+Shape\+Get\+B}}
+\index{cp\+Segment\+Shape\+Get\+B@{cp\+Segment\+Shape\+Get\+B}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Get\+B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Vect} cp\+Segment\+Shape\+Get\+B (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_ad8b7fb241494e80c2e98f600c50f42a1}
+
+
+Get the second endpoint of a segment shape. 
+
+\hypertarget{cp_shape_8h_a8b65c2206a69d35a927130cf3e079bdd}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Get\+Normal@{cp\+Segment\+Shape\+Get\+Normal}}
+\index{cp\+Segment\+Shape\+Get\+Normal@{cp\+Segment\+Shape\+Get\+Normal}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Get\+Normal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Vect} cp\+Segment\+Shape\+Get\+Normal (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a8b65c2206a69d35a927130cf3e079bdd}
+
+
+Get the normal of a segment shape. 
+
+\hypertarget{cp_shape_8h_ab15ffae3bb5e4ce5d3b653cc44f6af57}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Get\+Radius@{cp\+Segment\+Shape\+Get\+Radius}}
+\index{cp\+Segment\+Shape\+Get\+Radius@{cp\+Segment\+Shape\+Get\+Radius}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Get\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Float} cp\+Segment\+Shape\+Get\+Radius (
+\begin{DoxyParamCaption}
+\item[{const {\bf cp\+Shape} $\ast$}]{shape}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_ab15ffae3bb5e4ce5d3b653cc44f6af57}
+
+
+Get the first endpoint of a segment shape. 
+
+\hypertarget{cp_shape_8h_a3365143869c36d74056cf385ad53bc9a}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Init@{cp\+Segment\+Shape\+Init}}
+\index{cp\+Segment\+Shape\+Init@{cp\+Segment\+Shape\+Init}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Segment\+Shape}$\ast$ cp\+Segment\+Shape\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Segment\+Shape} $\ast$}]{seg, }
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Vect}}]{a, }
+\item[{{\bf cp\+Vect}}]{b, }
+\item[{{\bf cp\+Float}}]{radius}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a3365143869c36d74056cf385ad53bc9a}
+
+
+Initialize a segment shape. 
+
+\hypertarget{cp_shape_8h_aec8205ea24a70893adebd2f17ec88bb2}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+New@{cp\+Segment\+Shape\+New}}
+\index{cp\+Segment\+Shape\+New@{cp\+Segment\+Shape\+New}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cp\+Shape}$\ast$ cp\+Segment\+Shape\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Body} $\ast$}]{body, }
+\item[{{\bf cp\+Vect}}]{a, }
+\item[{{\bf cp\+Vect}}]{b, }
+\item[{{\bf cp\+Float}}]{radius}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_aec8205ea24a70893adebd2f17ec88bb2}
+
+
+Allocate and initialize a segment shape. 
+
+\hypertarget{cp_shape_8h_a4eccee9db9810d6a2a70cc26ff4f3d3f}{}\index{cp\+Shape.\+h@{cp\+Shape.\+h}!cp\+Segment\+Shape\+Set\+Neighbors@{cp\+Segment\+Shape\+Set\+Neighbors}}
+\index{cp\+Segment\+Shape\+Set\+Neighbors@{cp\+Segment\+Shape\+Set\+Neighbors}!cp\+Shape.\+h@{cp\+Shape.\+h}}
+\subsubsection[{cp\+Segment\+Shape\+Set\+Neighbors}]{\setlength{\rightskip}{0pt plus 5cm}void cp\+Segment\+Shape\+Set\+Neighbors (
+\begin{DoxyParamCaption}
+\item[{{\bf cp\+Shape} $\ast$}]{shape, }
+\item[{{\bf cp\+Vect}}]{prev, }
+\item[{{\bf cp\+Vect}}]{next}
+\end{DoxyParamCaption}
+)}\label{cp_shape_8h_a4eccee9db9810d6a2a70cc26ff4f3d3f}
+
+
+Let Chipmunk know about the geometry of adjacent segments to avoid colliding with endcaps. 
+

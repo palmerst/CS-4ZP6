@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpHashSet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpSlideJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpSimpleMotor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpRotaryLimitJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpRatchetJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpPolyShape.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpPivotJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpPinJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpBody.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpArbiter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_chipmunk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpGrooveJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpGearJoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpDampedSpring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpDampedRotarySpring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cpConstraint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test_chipmunk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpArbiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpDampedRotarySpring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpDampedSpring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpGearJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpGrooveJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpPinJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpPivotJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpRatchetJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpRotaryLimitJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpSimpleMotor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpSlideJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpConstraint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpHashSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cpPolyShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
