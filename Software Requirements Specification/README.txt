@@ -1,1 +1,1 @@
-Many things need to be added.  This is just a preliminary draft to give some structure that can be worked with.  The Volare template is followed.
+v1.1  -- still adding a lot of content;   added use cases;  merging + editing of game description in progress
