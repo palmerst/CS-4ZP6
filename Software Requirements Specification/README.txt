@@ -1,1 +1,1 @@
-v1.2  -- major additions and revisions to use cases and requirements
+NOTE:  The Volere template was used.  The template was slightly modified in parts to better fit our project.
