@@ -15,6 +15,31 @@
     urlcolor=blue
 }
 \usepackage[singlelinecheck=off, skip=2pt, labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\graphicspath{ {image/} }
+
+
+
+%% the following adds another section level by redefining the paragraph
+%% source:  http://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+%% used for counting in event list
+\newcounter{EventList}
+\newcommand{\printEvent}{
+    \stepcounter{EventList}
+    \arabic{EventList}.
+}
+
+
 
 %% Comments
 \newif\ifcomments\commentstrue
@@ -30,6 +55,9 @@
 \newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
 \newcommand{\ds}[1]{\authornote{blue}{DS}{#1}}
 
+
+
+%% The following are used for pretty printing of events and requirements
 \makeatletter
 
 \define@cmdkey      [SRS] {req}     {use}       {}
@@ -44,24 +72,22 @@
 \define@cmdkey      [SRS] {req}     {supp}      {}
 \define@cmdkey      [SRS] {req}     {hist}      {}
 
-\define@cmdkey      [SRS] {usecase} {name}      {}
-\define@cmdkey      [SRS] {usecase} {trigger}   {}
-\define@cmdkey      [SRS] {usecase} {precond}   {}
-\define@cmdkey      [SRS] {usecase} {postcond}  {}
-\define@cmdkey      [SRS] {usecase} {actor}     {}
+\define@cmdkey      [SRS] {event} {name}      {}
+\define@cmdkey      [SRS] {event} {trigger}   {}
+\define@cmdkey      [SRS] {event} {precond}   {}
+\define@cmdkey      [SRS] {event} {postcond}  {}
 
-\newcounter{UseCaseNum}
-\newcommand{\usecase}[1]{
-\setkeys[SRS]{usecase}{#1}
-\refstepcounter{UseCaseNum}
+\newcounter{EventNum}
+\newcommand{\event}[1]{
+\setkeys[SRS]{event}{#1}
+\refstepcounter{EventNum}
 \begin{mdframed}
-\noindent {\bf Use Case \#:} \arabic{UseCaseNum}\\[\baselineskip]
+\noindent {\bf Event \#:} \arabic{EventNum}\\[\baselineskip]
 \begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
-{\bf Name:} & \cmdSRS@usecase@name\\
-{\bf Trigger:} & \cmdSRS@usecase@trigger\\
-{\bf Precondition:} & \cmdSRS@usecase@precond\\
-{\bf Postcondition:} & \cmdSRS@usecase@postcond\\
-{\bf Actor:} & \cmdSRS@usecase@actor
+{\bf Name:} & \cmdSRS@event@name\\
+{\bf Trigger:} & \cmdSRS@event@trigger\\
+{\bf Precondition:} & \cmdSRS@event@precond\\
+{\bf Postcondition:} & \cmdSRS@event@postcond
 \end{tabularx}
 \end{mdframed}
 }
@@ -72,7 +98,7 @@
 \setkeys[SRS]{req}{#1}
 \stepcounter{ReqNum}
 \begin{mdframed}
-\noindent {\bf Requirement \#:} \arabic{ReqNum} \tabto{4.4cm} {\bf Requirement Type:} \arabic{section}.\arabic{subsection} \tabto{9.9cm} {\bf Use Case:} \cmdSRS@req@use\\[\baselineskip]
+\noindent {\bf Requirement \#:} \arabic{ReqNum} \tabto{4.5cm} {\bf Requirement Type:} \arabic{section}.\arabic{subsection} \tabto{10cm} {\bf Event:} \cmdSRS@req@use\\[\baselineskip]
 \begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
 {\bf Description:} & \cmdSRS@req@desc\\
 {\bf Rationale:} & \cmdSRS@req@rationale\\
@@ -106,6 +132,7 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
+\listoffigures
 
 \begin{table}[bp]
 \caption*{\bf Revision History}
@@ -114,7 +141,7 @@
 \midrule
 October 7, 2015 & 1.0 & Created document\\
 October 7, 2015 & 1.1 & Major edits in progress\\
-October 8, 2015 & 1.2 & Major use-case \& reqs additions + revisions\\
+October 8, 2015 & 1.2 & Major event and reqs additions\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -139,32 +166,61 @@ The game consists of the game world, within which the hero and interact with ene
 
 \subsubsection{Game World}
 The maps, otherwise known as levels, provide an interactive way for the user to progress deeper into the game. Some maps have a beginning and end, like a 2-D Mario level, whereas certain levels are constant in their placement, however have more enemies.
- 
+
 The game world consists of a virtual environment in which the gameplay takes place.  This environment is made up of platforms which control where the hero and enemies are permitted to, as well as blockades which limit the possible movements of the hero throughout the game.   The maps have environmental hazards and objects which the user is able to interact with. Some objects, such as power ups, give the user temporary boosts while other map elements such as spikes and fire can cause damage to the user. Besides these two the user is also responsible for navigating around blockades placed on the level. This provides a challenge for the user as he navigates through the level.
 
 
 \subsubsection{The Hero}
-The hero is the protagonist of the game, and is controlled by the user.  The hero is able to move left or right and to jump in order to progress through the game.  The hero can interact with several objects in the game, such as enemies, blockades, and hazards.  When the hero comes into contact with an object an event is triggered.  Depending on the type of object, events include:
+The hero is the protagonist of the game, and is controlled by the user.  The hero is able to move left or right and to jump in order to progress through the game.  The hero can interact with several objects in the game.  These objects include enemies, obstacles, hazards, and items.  When the hero comes into contact with an object an event is triggered.  Depending on the type of object, events include:
 
 \begin{enumerate}
   \item If the object is an enemy the hero will lose health and be knocked back from the enemy.
   \item If the object in a blockade the hero will be stopped and unable to pass.
   \item If the object is an environmental hazard the hero will lose health and may be knock back depending on the type of hazard.  Spikes, for example, will cause a knock-back effect, whereas fire would not.
-  \item If the object is an item the hero will gain some bonus or ability.  
+  \item If the object is an item the hero will gain some bonus or ability.
 \end{enumerate}
 
-%  WE CAN PROBABLY LEAVE OUT THE WEAPON SYSTEM AT THIS POINT
+\paragraph{Movement}
+
+\paragraph{Attack}
+The hero is able to attack enemies using weapons.  The user has certain weapons which are given to him as artillery, however there are environmental weapons that the user may use for a temporary amount of time.
+Weapons have certain characteristics. These include fire rate, power, distance bullets can travel, and ammunition amount. The characteristics provide certain weapons with advantages over others. Environmental weapons have these characteristics too, however they
+
+Weapon types
+Weapon classes and types will update throughout game development
+
+Weapons are divided into three classes. These are pistols, shotguns, Rifles.   Each class of weapons has its own benefits and faults. Pistols are weak in terms of their power, however have infinite ammo. They are always available for the player to use. They provide a way for the user to conserve ammo in dire situations or use as a last ditch effort if ever no ammo is present in the other two classes. The second class of weapons are shotguns. Shotguns have a very short range, however they are the most powerful weapons in the game. They provide a fast way to get rid of a large amount of enemies at once. Their ammo is low in quantity. The last class of weapons are rifles. Rifles are great in terms they provide good range to hit enemies from far, they are more powerful then pistols but weaker then shotguns. They are relative good in the amount of ammo.
+
+Weapon situation
+The different classes of weapons allow the user to choose which weapon will provide the ideal fit for the situation at hand. Some weapons have a higher fire rate which allows the user to attack a horde of enemies at once. The trade-off is the damage of these weapons will be lower. Certain weapons fire in a projectile range so the user can attack enemies waiting around blockades. And certain weapons have high damage, but the trade-off is these weapons have a low fire rate or long reload time. Overall, the types of weapons vary in qualities that quality of their usage depending on the situation. If ten enemies surround you may want to use a high fire weapon, however if less enemies are involved you may want to use more damage to get rid of them quickly
+
+\paragraph{Statistics}
+The hero has a set of statistics that are .  The hero
+
+
+
+
+
 
 %The last important aspect of characters is how he uses weapons. The character will use weapons to defeat enemies. The character can cycle through weapons choosing his preferred weapon of choice.
 
 
 \subsubsection{The Enemies}
-	When an enemy is encountered during the game, combat may ensue if the user wishes to attack the enemy.  The use may also attempt to avoid the enemy altogether. Users can employ multiple different weapons to attack enemies. Enemies in their own capacity are capable of engaging in contact with the players. The enemies may use weapon or just come in contact with the player to instantiate damage. If the enemy weapons or the enemy itself come in contact with the user then the player loses health relative to the type of enemy it is. Different enemies deal different levels of damage. The stronger enemies may deal more damage, however are slower, whereas the weaker ones attack at a higher frequency but with less damage. The goal of the enemies is to completely make the users health reach zero.
+Enemies are found throughout the game and are .  When an enemy is encountered during the game, combat will ensue if the hero gets within a certain range.  The user may also attempt to avoid the enemy altogether.
+
+Enemies are in their own capacity are capable of engaging in contact with the players. The enemies may use weapon or just come in contact with the player to instantiate damage. If the enemy weapons or the enemy itself come in contact with the user then the player loses health relative to the type of enemy it is. Different enemies deal different levels of damage. The stronger enemies may deal more damage, however are slower, whereas the weaker ones attack at a higher frequency but with less damage. The goal of the enemies is to completely make the users health reach zero.
+
+\paragraph{Movement}
+Enemy movement is controlled by the game AI.  When the hero is within a certain range of an enemy, the game AI will respond by moving the enemy in a manner defined by the AI code.
+
+\paragraph{Attack}
+Enemy attacks are also controlled by the game AI.  When the hero is within a certain range of an enemy, the game AI will respond by .  Unlike the hero, the enemies do not use weapons, but instead have depending on the enemy type.
+
+\paragraph{Statistics}
+Enemy statistics are similar to hero statistics and affect
 
 Maps:
 
-%Weapon functionality :
-%Weapons provide a way for users and enemies to interact in combat. The user has certain weapons which are given to him as artillery, however there are environmental weapons that the user and enemies may use. Whomever reaches the environmental weapon first will get the weapon. Weapons have certain characteristics that allow the user to choose which weapon will vest suit the situation at hand. Some weapons have a higher fire rate which allows the user to attack a horde of enemies at once. The trade-off is the damage of these weapons will be lower. Certain weapons fire in a projectile range so the user can attack enemies waiting around blockades. And certain weapons have high damage, but the trade-off is these weapons have a low fire rate or long reload time. Overall, the types of weapons vary in qualities that quality of their usage depending on the situation. If ten enemies surround you may want to use a high fire weapon, however if less enemies are involved you may want to use more damage to get rid of them quickly
 
 
 \subsection{Mandated Constraints}
@@ -185,105 +241,166 @@ The terminology used in this project is given in \hyperref[tab:terminology]{Tabl
 \begin{tabularx}{\textwidth}{p{3cm}X}
 \toprule {\bf Term} & {\bf Definition}\\
 \midrule
-Boss & Important enemy with increased stats\\
 Bounds & The boundaries inside which game play occurs\\
-Character & A\\
-Enemy & Hostile NPC; normally attacks hero\\
+Enemy & Hostile character; attacks hero if hero is in range\\
 Hero & The main character of the game controlled by the user\\
-NPC & Non-playable character; may be friendly or hostile\\
+Weapon & Any \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Functional Requirements}
 \subsection{The Scope of the Work}
-\subsection{The Scope of the Product}
 
-\usecase{
+
+\subsection{The Scope of the Product}
+The flow diagram in \hyperref[fig:gameflow]{Figure~\ref*{fig:gameflow}} gives a rough representation of the operation of the envisioned game.  Ovals represent user interfaces and rectangles represent events.  The user interfaces include a main menu as well as an in-game menu, and an in-game interface in which all game play takes place.
+\begin{figure}
+\includegraphics[width=\textwidth]{game_flow}
+\caption{Flow diagram of the game.} \label{fig:gameflow}
+\end{figure}
+
+\begin{table}
+\caption{List of Events} \label{tab:events}
+\begin{tabularx}{\textwidth}{p{3cm}p{5cm}X}
+\toprule {\bf Event Name} & {\bf Inputs and Outputs} & {\bf Summary}\\
+\midrule
+\printEvent New Game & & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\event{
     name = New Game,
     trigger = The user selects to start a new game,
     precond = The main menu is open,
-    postcond = A new game commences,
-    actor = User
-} \label{usecase:newgame}
+    postcond = A new game commences
+} \label{event:newgame}
 
-\usecase{
+\event{
     name = Load Game,
     trigger = The user selects to load a game,
     precond = The main menu or in-game menu is open,
-    postcond = A saved game state is loaded and the game commences from that point,
-    actor = User
-} \label{usecase:loadgame}
+    postcond = A saved game state is loaded and the game commences from that point
+} \label{event:loadgame}
 
-\usecase{
+\event{
     name = Save Game,
     trigger = The user selects to save a game,
     precond = The in-game menu is open,
-    postcond = A saved game state is created,
-    actor = User
-} \label{usecase:savegame}
+    postcond = A saved game state is created
+} \label{event:savegame}
 
-\usecase{
+\event{
+    name = Exit to Main Menu,
+    trigger = The user selects exit game,
+    precond = The in-game menu is open,
+    postcond = Current game is ended and main menu is opened
+} \label{event:savegame}
+
+\event{
     name = Move Hero,
     trigger = Inputs from user related to controlling the hero movement,
     precond = In-game,
-    postcond = Hero moves according to input,
-    actor = User
-} \label{usecase:movehero}
+    postcond = Hero moves according to input
+} \label{event:movehero}
 
-\usecase{
-    name = Move Enemy,
-    trigger = Hero comes within specific distance of enemy,
-    precond = In-game,
-    postcond = Enemy moves according to game AI,
-    actor = Game AI
-} \label{usecase:movehero}
-
-\usecase{
+\event{
     name = Hero Attack,
     trigger = Inputs from user related to hero attack,
     precond = In-game,
-    postcond = Hero's currently selected attack is activated,
-    actor = User
-}  \label{usecase:enemyattack}
+    postcond = Hero's currently selected attack is activated
+}  \label{event:heroattack}
 
-\usecase{
+\event{
+    name = Change Weapon,
+    trigger = Input from user related to hero weapon (hotkeys),
+    precond = In-game,
+    postcond = Hero's currently active weapon is switched according to input
+} \label{event:changeweapon}
+
+\event{
+    name = User Contacts Hazard,
+    trigger = User comes into contact with hazard,
+    precond = In-game,
+    postcond = User is affected by the hazard
+} \label{event:userhazard}
+
+\event{
+    name = Hero Takes Damage,
+    trigger = Enemy contacts hazard or enemy is attacked by hero,
+    precond = In-game,
+    postcond = Enemy hit points are reduced
+} \label{event:enemydamaged}
+
+\event{
+    name = Hero is Defeated,
+    trigger = Hero hit points reach zero,
+    precond = In-game,
+    postcond = Current game is ended and main menu is opened
+} \label{event:enemydefeated}
+
+\event{
+    name = Move Enemy,
+    trigger = Hero comes within specific distance of enemy,
+    precond = In-game,
+    postcond = Enemy moves according to game AI
+} \label{event:moveenemy}
+
+\event{
     name = Enemy Attack,
     trigger = Hero comes within specific distance of enemy,
     precond = In-game,
-    postcond = Enemy attack is activated according to game AI,
-    actor = Game AI
-} \label{usecase:heroattack}
+    postcond = Enemy attack is activated according to game AI
+} \label{event:enemyattack}
 
-\usecase{
+\event{
+    name = Enemy Contacts Hazard,
+    trigger = Enemy comes into contact with hazard,
+    precond = In-game,
+    postcond = Enemy is damaged by the hazard
+} \label{event:enemyhazard}
+
+\event{
+    name = Enemy Takes Damage,
+    trigger = Enemy contacts hazard or enemy is attacked by hero,
+    precond = In-game,
+    postcond = Enemy hit points are reduced
+} \label{event:enemydamaged}
+
+\event{
+    name = Enemy is Defeated,
+    trigger = Enemy hit points reach zero,
+    precond = In-game,
+    postcond = Enemy is removed from the game
+} \label{event:enemydefeated}
+
+\event{
     name = Open In-game Menu,
     trigger = User input (hotkey),
     precond = In-game,
-    postcond = The in-game menu is opened,
-    actor = User
-} \label{usecase:openigmenu}
+    postcond = The in-game menu is opened
+} \label{event:openigmenu}
 
-\usecase{
+\event{
     name = Close In-game Menu,
     trigger = User selects close menu option,
     precond = In-game,
-    postcond = The in-game menu is opened,
-    actor = User
-} \label{usecase:closeigmenu}
+    postcond = The in-game menu is opened
+} \label{event:closeigmenu}
 
-\usecase{
+\event{
     name = Exit Game,
     trigger = The user selects exit game,
     precond = The main menu is open,
-    postcond = The application is terminated,
-    actor = User
-} \label{usecase:exitgame}
+    postcond = The application is terminated
+} \label{event:exitgame}
 
 
 \subsection{Functional Requirements}
 
 \req{
-        use = \ref{usecase:newgame},
+        use = \ref{event:newgame},
         desc = The \hyperref[tab:terminology]{user} shall have the ability to start a new game,
         rationale = The \hyperref[tab:terminology]{user} must be able to start a new game in order to play the game,
         orig = Steven Palmer,
@@ -297,7 +414,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:loadgame},
+        use = \ref{event:loadgame},
         desc = The \hyperref[tab:terminology]{user} shall have the ability to load a saved game state,
         rationale = The \hyperref[tab:terminology]{user} must be able to load his or her saved progress to continue the game,
         orig = Steven Palmer,
@@ -311,7 +428,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:savegame},
+        use = \ref{event:savegame},
         desc = The \hyperref[tab:terminology]{user} shall have the ability to save the current game state,
         rationale = The \hyperref[tab:terminology]{user} must be able to save his or her progress,
         orig = Steven Palmer,
@@ -325,7 +442,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:movehero},
+        use = \ref{event:movehero},
         desc = The user shall be able to move the \hyperref[tab:terminology]{hero} to the left and right,
         rationale = The \hyperref[tab:terminology]{hero} must be able to be moved left and right to navigate the game,
         orig = Steven Palmer,
@@ -339,7 +456,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:movehero},
+        use = \ref{event:movehero},
         desc = The user shall be able to make the \hyperref[tab:terminology]{hero} jump,
         rationale = The \hyperref[tab:terminology]{hero} must be able to jump to reach the intended areas of the game,
         orig = Steven Palmer,
@@ -353,7 +470,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:movehero},
+        use = \ref{event:movehero},
         desc = The \hyperref[tab:terminology]{hero} shall remain in \hyperref[tab:terminology]{bounds},
         rationale = The \hyperref[tab:terminology]{hero} must remain in the intended boundaries of play for the game to function properly,
         orig = Steven Palmer,
@@ -367,7 +484,33 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:openigmenu},
+        use = \ref{event:heroattack},
+        desc = An attack upon an enemy by the \hyperref[tab:terminology]{hero} shall cause the enemy's hit points to decrease,
+        rationale = The \hyperref[tab:terminology]{hero} must be able to damage enemies,
+        fit = \hyperref[tab:terminology]{Enemy} loses hit points upon being attacked,
+        sat = 3,
+        dissat = 5,
+        priority = High,
+        conf = None,
+        supp = None,
+        hist = {Created October 8, 2015}
+}
+
+\req{
+        use = \ref{event:heroattack},
+        desc = When an enemy's hit points reach zero due to,
+        rationale = The \hyperref[tab:terminology]{hero} must be able to damage enemies,
+        fit = \hyperref[tab:terminology]{Enemy} loses hit points upon being attacked,
+        sat = 3,
+        dissat = 5,
+        priority = High,
+        conf = None,
+        supp = None,
+        hist = {Created October 8, 2015}
+}
+
+\req{
+        use = \ref{event:openigmenu},
         desc = The \hyperref[tab:terminology]{user} shall be able to open the in-game menu while in-game,
         rationale = The in-game menu must be accessible to allow user to save/load games and exit to the main menu,
         orig = Steven Palmer,
@@ -381,7 +524,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:closeigmenu},
+        use = \ref{event:closeigmenu},
         desc = The \hyperref[tab:terminology]{user} shall be able to close the in-game menu,
         rationale = The in-game menu must have a way of being closed to resume game play,
         orig = Steven Palmer,
@@ -395,7 +538,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = {\ref{usecase:openigmenu}, \ref{usecase:closeigmenu}},
+        use = {\ref{event:openigmenu}, \ref{event:closeigmenu}},
         desc = All gameplay shall be paused when the in-game menu is open,
         rationale = The \hyperref[tab:terminology]{hero} should be safe from harm while accessing the in-game menu,
         orig = Steven Palmer,
@@ -409,7 +552,7 @@ NPC & Non-playable character; may be friendly or hostile\\
 }
 
 \req{
-        use = \ref{usecase:exitgame},
+        use = \ref{event:exitgame},
         desc = The \hyperref[tab:terminology]{user} shall have the ability to exit the application,
         rationale = The \hyperref[tab:terminology]{user} must be able to terminate the game when done playing,
         orig = Steven Palmer,
