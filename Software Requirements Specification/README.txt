@@ -1,1 +1,1 @@
-v1.1  -- still adding a lot of content;   added use cases;  merging + editing of game description in progress
+v1.2  -- major additions and revisions to use cases and requirements
