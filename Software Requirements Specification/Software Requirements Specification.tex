@@ -171,11 +171,15 @@ Other stakeholders include future instructors of the game design course or other
 \newpage
 \section{Project Description}
 \subsection{Game Overview}
-For this project an action-role playing type game will be created.  It will consist of a game world within which a user-controlled hero makes progress by defeating enemies.  The subsections that follow provide a more detailed explanation of the game.
+For this project an action-role playing type game
+\ds{don't say ``type" unless you're following it with ``of"}
+will be created.  It will consist of a game world within which a user-controlled hero makes progress by defeating enemies.  The subsections that follow provide a more detailed explanation of the game.
 
 \subsubsection{The Game World}
 The game world is the virtual environment in which all gameplay takes place.  This environment is made up of platforms which the hero and enemies are permitted to stand on, as well as obstacles which limit the possible movements of the hero throughout the game and hazards which can cause damage or unwanted effects to both the hero and enemies.
 
+\ds{Sounds very generic. You should be trying to set your game world apart.
+Is there a story? Theme? Some stylistic elements that are constrained?}
 
 \subsubsection{The Hero}
 The hero is the protagonist of the game, and is controlled by the user.
@@ -204,6 +208,9 @@ As the hero defeats enemies, his or her score is increased.  The amount by which
 Enemies are found throughout the game and are programmed to attack the hero with the goal of defeating him or her.  When an enemy is encountered during the game, combat will ensue if the hero gets within a certain range.  The user may attempt to avoid the enemy or to flee if he or she has come close enough to trigger combat.
 
 \paragraph{Movement}
+\ds{Even though you describe ``AI" in your naming conventions, you should still
+clarify what it means the first time it is seen prior to that section.}
+
 Enemy movement is controlled by the game AI.  When the hero is within a certain range of an enemy, the game AI will respond by moving the enemy in a manner defined in the game code.
 
 \paragraph{Attack}
@@ -214,6 +221,8 @@ Enemy attacks are also controlled by the game AI.  When the hero is within a cer
 \subsection{Mandated Constraints}
 
 The project is subject to the following mandated constraints:
+
+\ds{Include why these constraints are mandated. In this case, because of your client.}
 
 \begin{enumerate}
   \item The game must make significant use of the Chipmunk2D physics library.
@@ -253,7 +262,8 @@ A context diagram of the the work is given in \hyperref[fig:context]{Figure~\ref
 \includegraphics[width=\textwidth]{context}
 \caption{Context diagram of the work} \label{fig:context}
 \end{figure}
-
+\ds{You have no constraints on the input type. This should be 
+reflected in the diagram}
 
 \subsubsection{Work Partitioning}
 The flow diagram in \hyperref[fig:gameflow]{Figure~\ref*{fig:gameflow}} gives a rough representation of the operation of the envisioned game.  The user interfaces include a main menu as well as an in-game menu, and an in-game interface in which all game play takes place.  The events are listed in \hyperref[tab:events]{Table~\ref*{tab:events}}.
@@ -267,7 +277,7 @@ The flow diagram in \hyperref[fig:gameflow]{Figure~\ref*{fig:gameflow}} gives a 
 \begin{tabularx}{\textwidth}{p{0.5cm}>{\raggedright}p{3cm}>{\raggedright}p{3.5cm}>{\raggedright\arraybackslash}X}
 \toprule & {\bf Event Name} & {\bf Inputs/Outputs} & {\bf Summary}\\
 \midrule
-\printEvent & New Game & Mouse (in) & A new game is started\\
+\printEvent & New Game & Mouse (in) \ds{Not necessarily mouse} & A new game is started\\
 \printEvent & Load Game & Game File (in) & A game file is loaded\\
 \printEvent & Save Game & Game File (out) & A saved game file is created\\
 \printEvent & Exit to Main Menu & Mouse (in) & Exit from current game to main menu\\
@@ -419,7 +429,7 @@ Due to the nature of the project, the product use cases are essentially equivale
     postcond = The application is terminated
 } \label{event:exitgame}
 
-
+\ds{What about upgrading the hero? Completing the game? etc.}
 \subsection{Functional Requirements}
 
 \req{
@@ -764,6 +774,12 @@ Due to the nature of the project, the product use cases are essentially equivale
         hist = {Created October 8, 2015}
 }
 
+\ds{How many levels will there be? How does the player progress? What happens
+if the player beats the game?}
+
+\ds{All of your requirements (bar one) are high priority. This should not be 
+the case}
+
 \newpage
 \section{Non-functional Requirements}
 \subsection{Look and Feel Requirements}
@@ -779,7 +795,8 @@ Due to the nature of the project, the product use cases are essentially equivale
         supp = None,
         hist = {Created October 8, 2015}
 }
-
+\ds{What is the theme of the game? Is there a certain aesthetic you are
+aiming to achieve?}
 
 \subsection{Usability and Humanity Requirements}
 \req{
@@ -845,8 +862,13 @@ There are no legal requirements related to this project.
 \section{Project Issues}
 \subsection{Open Issues}
 There are no open issues at this time.  This section will be updated as required.
+
+\ds{What about finding your theme or determining how to create the RPG elements?}
+
 \subsection{Off-the-Shelf Solutions}
 There are no off-the-shelf solutions.
+\ds{What about open-source games created in Chipmunk2D?}
+
 \subsection{New Problems}
 No new problems are expected to arise as a result of this project.
 \subsection{Tasks}
@@ -868,6 +890,7 @@ The project will be broken down into the phases given in \hyperref[tab:phases]{T
 There is no product being replaced, and thus no migration is required.
 \subsection{Risks}
 There are no risks associated with this project.
+\ds{Are you sure?}
 \subsection{Costs}
 There are no costs associated with this project.
 \subsection{User Documentation and Training}
