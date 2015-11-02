@@ -99,6 +99,19 @@
 \end{mdframed}
 }
 
+\newcommand{\testautob}[1]{
+\setkeys[TP]{test}{#1}
+\refstepcounter{TestNum}
+\begin{mdframed}[linewidth=1pt]
+\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
+{\bf Test \getCurrentSectionNumber.\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
+{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
+{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
+{\bf Pass:} & \cmdTP@test@pass
+\end{tabularx}
+\end{mdframed}
+}
+
 \newcommand{\testmanual}[1]{
 \setkeys[TP]{test}{#1}
 \refstepcounter{TestNum}
@@ -142,6 +155,7 @@
 \midrule
 October 25, 2015 & 1.0 & Created document\\
 October 31, 2015 & 1.1 & Major additions to all sections\\
+November 1, 2015 & 1.2 & Final version for rev 0\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -177,7 +191,7 @@ The description of the tests that will be carried out are formatted in the follo
 \end{mdframed}
 
 \subsection{Automated Testing}
-Automated testing will be used for testing of the game mechanics system and will utilize both unit testing and coverage analysis.  tubs and drivers will not be used.  Instead, to ensure that testing can be performed
+Automated testing will be used for testing of the game mechanics system and will utilize both unit testing and coverage analysis.  Stubs and drivers will not be used due to the heavy use of side-effects in game code.  To ensure that unit testing can be run while the game mechanics are in development the test cases have been grouped into sections that can be fully implemented once certain subsets of the game mechanics systems are completed.
 
 \subsubsection{Testing Tools}
 The software tools that will be used to carry out the automated testing are listed in \hyperref[tab:tools]{Table~\ref*{tab:tools}}.
@@ -194,10 +208,11 @@ COVTOOL & Test coverage analyzer & Analysis of unit test coverage\\
 \end{table}
 
 \subsection{Manual Testing}
-Manual testing will be used for testing the implementation of the game 
+Manual tests will be used for all game testing not classified as mechanics (the time that would be required to develop automated tests for these test cases would be prohibitive).  The game development team will carry out these tests as the game is developed.
 
 \subsubsection{User Experience Testing}
-Manual testing will also be used to assess the user experience of the game.  User experience testing will be completed by a testing group consisting of $\hyperref[tab:constants]{\delta}$ individuals who were not involved in the development of the game.  The testing group will be given a copy of the game and asked to complete a survey after having played the game.  
+\label{sec:userexp}
+Manual testing will also be used to assess the user experience of the game.  User experience testing will be completed by a testing group consisting of $\hyperref[tab:constants]{\delta}$ individuals who were not involved in the development of the game.  The testing group will be given a copy of the game and asked to complete a survey (see \hyperref[sec:survey]{Appendix A}) after having played the game to provide feedback.  The testing group will be asked to complete the survey twice:  first in February (phase I) to provide initial feedback, and again in March (phase II) to provide feedback to assess improvements.
 
 
 \subsection{List of Constants}
@@ -209,35 +224,34 @@ Constants used in this document are listed in \hyperref[tab:constants]{Table~\re
 \midrule
 $\alpha$ & 5.0 & Hero walk speed\\
 $\beta$ & 3.0 & Hero run speed factor: run speed = $\alpha \times \beta$\\
-$\gamma$ & 100.0 & Projectile speed\\
-$\delta$ & 10 & Number of people in testing group\\
+$\lambda$ & 10.0 & Hero jump speed\\ 
+$\gamma$ & 200.0 & Projectile speed\\
+$\zeta$ & 5.0 & Enemy slow movement speed\\
+$\eta$ & 20.0 & Enemy medium movement speed\\
+$\theta$ & 50.0 & Enemy fast movement speed\\
+$\phi$ & 10.0 & Slow free fall speed\\
+$\chi$ & 50.0 & Medium free fall speed\\
+$\psi$ & 100.0 & Fast free fall speed\\
+$\omega$ & 1.5 & Knockback factor\\
+$\xi$ & 5.0 & Pistol damage\\
+$\pi$ & 10.0 & Shotgun damage\\
+$\rho$ & 25.0 & Rifle damage\\
+$\Xi$ & 2.0 & Enemy weak attack damage\\
+$\Pi$ & 5.0 & Enemy moderate attack damage\\
+$\Sigma$ & 10.0 & Enemy strong attack damage\\
 $\epsilon$ & 99\% & Coverage target\\
-$\zeta$ & 3.0 & Enemy slow movement speed\\
-$\eta$ & 10.0 & Enemy medium movement speed\\
-$\theta$ & 30.0 & Enemy fast movement speed\\
+$\sigma$ & 30 & Frame rate target\\
+$\delta$ & 10 & Number of people in testing group\\
+$\Theta$ & 6 & Phase I testing entertainment target\\
+$\Psi$ & 2 & Phase I testing challenge range\\
+$\Omega$ & 8 & Phase I testing controls target\\
+$\Phi$ & 10\% & Phase II testing improvement target\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Terminology}
-Terminology used in this document are listed in \hyperref[tab:terminology]{Table~\ref*{tab:terminology}}.
-\begin{table}[ht]
-\caption{List of terminology} \label{tab:terminology}
-\begin{tabularx}{\textwidth}{p{3cm}X}
-\toprule {\bf Term} & {\bf Definition}\\
-\midrule
-Ceiling & Horizontal obstacle that hero and enemies cannot pass through\\
-Floor & Horizontal obstacle that hero and enemies cannot pass through\\
-Hero & User-controlled character\\
-Platform & Horizontal obstacle that hero and enemies cannot pass through from above, but may pass through from below\\
-Space & Type defined in the Chipmunk2D library\\
-cpStepSpace & Chipmunk2D function which steps a space forward in time\\
-Wall & Vertical obstacle that hero and enemies cannot pass through\\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-
+\newpage
 \section{Proof of Concept Testing}
 \label{sec:poc}
 Before any serious development of the game begins, a proof of concept test will be carried out to show that the undertaking is feasible.  The remainder of this section describes the proof of concept test in detail.
@@ -257,10 +271,9 @@ For a proof of concept test we will produce a working prototype that can be run 
 The prototype will consist of a small room in which a hero character and enemies exist.  The room will be bounded by a floor below and walls on the left and right, all of which the hero and enemies cannot pass through.  The room will contain platforms which the hero and enemies cannot pass through from above, but may pass through from below when jumping.  A rough idea of the room is given in \hyperref[fig:room]{Figure~\ref*{fig:room}}.
 
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[width=0.75\textwidth]{demo}
 \caption{Proof of concept sketch} \label{fig:room}
-\end{center}
 \end{figure}
 
 The hero character will be represented by a blue rectangle and will be controlled by the user in the following ways:
@@ -274,7 +287,7 @@ The hero character will be represented by a blue rectangle and will be controlle
 Enemies will be represented by red rectangles and will not have any programmed AI (they will not move or attack).  The hero will be able to attack enemies with a projectile, which will knock them back when they are hit.  The hero and all enemies will be subject to gravity and will free-fall when there is no platform or boundary under them.
 
 \subsection{Proof of Concept Test}
-The proof of concept test is defined as a test case below.
+The proof of concept is given in test case format to adhere with the presentation of the other tests in this document.
 \testmanual{
     name = Proof of Concept,
     desc = Tests whether significant risks to the completion of the project can be overcome,
@@ -283,10 +296,10 @@ The proof of concept test is defined as a test case below.
     pass = {Successful development of a small demonstration which makes use of the Chipmunk2D physics engine and runs on Windows 7, Mac OS X, and Ubuntu}
 }
 
-
+\newpage
 \section{System Testing}
 \label{sec:testing}
-System testing is broken down into game mechanics testing and game design testing phases.  The game mechanics testing phase will be and will take place as the game mechanics system is being developed.  Once the game mechanics systems are in place, the game , which will consist.
+The testing of the system is broken down into game mechanics testing and game design testing phases.  The game mechanics will be developed and tested first.  Once the game mechanics systems are in place, the game design development and testing phase will begin.
 
 
 
@@ -301,9 +314,9 @@ The following tests will ensure that user inputs are handled properly.
     name = {Walk left, started from stationary},
     desc = Tests if the hero walks left when the corresponding input is received when the hero is initially stationary,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero object having x-velocity of zero in a chipmunk space,
+    init = Custom in-game state with a hero object having x-velocity of zero,
     input = Keyboard function called with simulated left key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\alpha}$
 }
 
@@ -311,9 +324,9 @@ The following tests will ensure that user inputs are handled properly.
     name = {Walk left, started from walking left},
     desc = Tests if the hero walks left when the corresponding input is received when the hero is initially walking left,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero object having x-velocity of $-\hyperref[tab:constants]{\alpha}$ in a chipmunk space,
+    init = Custom in-game state with a hero object having x-velocity of $-\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\alpha}$
 }
 
@@ -321,9 +334,9 @@ The following tests will ensure that user inputs are handled properly.
     name = {Walk left, started from running left},
     desc = Tests if the hero walks left when the corresponding input is received when the hero is initially running left,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero object having x-velocity of $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ in a chipmunk space,
+    init = Custom in-game state with a hero object having x-velocity of $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\alpha}$
 }
 
@@ -331,9 +344,9 @@ The following tests will ensure that user inputs are handled properly.
     name = {Run left, started from stationary},
     desc = Tests if the hero runs left when the corresponding input is received when the hero is initially stationary,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero object having x-velocity of zero in a chipmunk space,
+    init = Custom in-game state with a hero object having x-velocity of zero,
     input = Keyboard function called with simulated left key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -343,7 +356,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $-\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -353,7 +366,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -363,7 +376,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of zero,
     input = Keyboard function called with simulated right key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\alpha}$
 }
 
@@ -373,7 +386,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\alpha}$
 }
 
@@ -383,7 +396,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key down stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\alpha}$
 }
 
@@ -393,7 +406,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of zero,
     input = Keyboard function called with simulated right key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -403,7 +416,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -413,7 +426,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key down stroke modified by the shift key,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$
 }
 
@@ -423,7 +436,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $-\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key up stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is zero
 }
 
@@ -433,7 +446,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated left key up stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is zero
 }
 
@@ -443,7 +456,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key up stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is zero
 }
 
@@ -453,7 +466,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity of $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$,
     input = Keyboard function called with simulated right key up stroke,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is zero
 }
 
@@ -463,7 +476,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having y-velocity of zero and a bottom edge in contact with a static object,
     input = Keyboard function called with simulated space bar key down stroke,
-    output = Hero object y-velocity (side-effect),
+    output = Hero object y-velocity,
     pass = Hero object y-velocity is $\hyperref[tab:constants]{\lambda}$
 }
 
@@ -473,7 +486,7 @@ The following tests will ensure that user inputs are handled properly.
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having y-velocity of zero and a bottom edge not in contact with a static object,
     input = Keyboard function called with simulated space bar key down stroke,
-    output = Hero object y-velocity (side-effect),
+    output = Hero object y-velocity,
     pass = Hero object y-velocity is zero (unchanged)
 }
 
@@ -481,18 +494,18 @@ The following tests will ensure that user inputs are handled properly.
     name = Activate pistol weapon,
     desc = Tests if hero weapon is changed to pistol when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object,
+    init = Custom in-game state with a hero object,
     input = Keyboard function called with simulated `1' key down stroke,
-    output = Hero object (enum) weapon (side-effect),
+    output = Hero object (enum) weapon,
     pass = Hero object weapon is PISTOL
 }
 \testauto{
     name = Activate shotgun weapon,
     desc = Tests if hero weapon is changed to shotgun when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object,
+    init = Custom in-game state with a hero object,
     input = Keyboard function called with simulated `2' key down stroke,
-    output = Hero object (enum) weapon (side-effect),
+    output = Hero object (enum) weapon,
     pass = Hero object weapon is SHOTGUN
 }
 
@@ -500,9 +513,9 @@ The following tests will ensure that user inputs are handled properly.
     name = Activate rifle weapon,
     desc = Tests if hero weapon is changed to rifle when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object,
+    init = Custom in-game state with a hero object,
     input = Keyboard function called with simulated `3' key down stroke,
-    output = Hero object (enum) weapon (side-effect),
+    output = Hero object (enum) weapon,
     pass = Hero object weapon is RIFLE
 }
 
@@ -510,7 +523,7 @@ The following tests will ensure that user inputs are handled properly.
     name = Fire weapon left,
     desc = Tests if hero weapon is fired to the left when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object in a chipmunk space,
+    init = Custom in-game state with a hero object,
     input = Mouse function called with simulated left button down click with cursor located directly to the left of the hero object center,
     output = State of the space,
     pass = {Hero projectile object has been added to the space with velocity ($-\hyperref[tab:constants]{\gamma}$, 0)}
@@ -520,7 +533,7 @@ The following tests will ensure that user inputs are handled properly.
     name = Fire weapon up-left,
     desc = Tests if hero weapon is fired to the upper left when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object in a chipmunk space,
+    init = Custom in-game state with a hero object,
     input = Mouse function called with simulated left button down click with cursor located at a 45$^\circ$ angle (from the horizontal) to the upper left of the hero object center,
     output = State of the space,
     pass = {Hero projectile object has been added to the space with velocity ($-\sqrt{\frac{\hyperref[tab:constants]{\gamma}}{2}}$, $\sqrt{\frac{\hyperref[tab:constants]{\gamma}}{2}}$)}
@@ -530,7 +543,7 @@ The following tests will ensure that user inputs are handled properly.
     name = Fire weapon up,
     desc = Tests if hero weapon is fired upwards when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object in a chipmunk space,
+    init = Custom in-game state with a hero object,
     input = Mouse function called with simulated left button down click with cursor located directly above the hero object center,
     output = State of the space,
     pass = {Hero projectile object has been added to the space to the left of the hero object with velocity (0, $\hyperref[tab:constants]{\gamma}$)}
@@ -540,7 +553,7 @@ The following tests will ensure that user inputs are handled properly.
     name = Fire weapon up-right,
     desc = Tests if hero weapon is fired to the upper right when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object in a chipmunk space,
+    init = Custom in-game state with a hero object,
     input = Mouse function called with simulated left button down click with cursor located at a 45$^\circ$ angle (from the horizontal) to the upper right of the hero object center,
     output = State of the space,
     pass = {Hero projectile object has been added to the space with velocity ($\sqrt{\frac{\hyperref[tab:constants]{\gamma}}{2}}$, $\sqrt{\frac{\hyperref[tab:constants]{\gamma}}{2}}$)}
@@ -550,7 +563,7 @@ The following tests will ensure that user inputs are handled properly.
     name = Fire weapon right,
     desc = Tests if hero weapon is fired to the right when corresponding input is received,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object in a chipmunk space,
+    init = Custom in-game state with a hero object,
     input = Mouse function called with simulated left button down click with cursor located directly to the right of the hero object center,
     output = State of the space,
     pass = {Hero projectile object has been added to the space with velocity ($\hyperref[tab:constants]{\gamma}$, 0)}
@@ -563,9 +576,9 @@ The following tests will ensure that the collision detection system is working a
     name = Wall obstructs hero walking left,
     desc = Tests whether the hero is stopped by a wall object while walking left,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\alpha}$ situated directly to the right of a wall,
+    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\alpha}$ situated directly to the right of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -573,9 +586,9 @@ The following tests will ensure that the collision detection system is working a
     name = Wall obstructs hero running left,
     desc = Tests whether the hero is stopped by a wall object while running left,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the right of a wall,
+    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the right of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -583,9 +596,9 @@ The following tests will ensure that the collision detection system is working a
     name = Wall obstructs hero walking right,
     desc = Tests whether the hero is stopped by a wall object while walking right,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -593,9 +606,9 @@ The following tests will ensure that the collision detection system is working a
     name = Wall obstructs hero running right,
     desc = Tests whether the hero is stopped by a wall object while running right,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -603,59 +616,59 @@ The following tests will ensure that the collision detection system is working a
     name = Floor supports stationary hero,
     desc = Tests whether the hero is supported by a floor object,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with stationary hero object situated directly on top of a floor object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 0
+    output = Hero object y-velocity,
+    pass = Hero object y-velocity is 0
 }
 
 \testauto{
-    name = Floor supports stationary hero,
-    desc = Tests whether the hero is supported by a floor object,
+    name = {Floor stops hero in free fall, low speed},
+    desc = Tests whether the hero in low speed free fall is stopped by a floor object,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object with y-velocity $-\hyperref[tab:constants]{\phi}$ situated directly on top of a floor object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 0
+    output = Hero object y-velocity,
+    pass = Hero object y-velocity is 0
 }
 
 \testauto{
-    name = Floor supports stationary hero,
-    desc = Tests whether the hero is supported by a floor object,
+    name = {Floor stops hero in free fall, medium speed},
+    desc = Tests whether the hero in medium speed free fall is stopped by a floor object,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object with y-velocity $-\hyperref[tab:constants]{\chi}$ situated directly on top of a floor object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 0
+    output = Hero object y-velocity,
+    pass = Hero object y-velocity is 0
 }
 
 \testauto{
-    name = {Floor stops hero in freefall, low speed},
-    desc = Tests whether the hero object is stopped by a floor object while in slow freefall,
+    name = {Floor stops hero in free fall, high speed},
+    desc = Tests whether the hero in high speed free fall is stopped by a floor object,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object with y-velocity $-\hyperref[tab:constants]{\psi}$ situated directly on top of a floor object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 0
+    output = Hero object y-velocity,
+    pass = Hero object y-velocity is 0
 }
 
 \testauto{
     name = Ceiling obstructs hero jump,
-    desc = Tests whether the hero is supported by a floor object,
+    desc = Tests whether the hero is obstructed by a ceiling in mid jump,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\beta}\times\hyperref[tab:constants]{\alpha}$ situated directly to the left of a wall,
+    init = Custom in-game state with hero object having y-velocity $\hyperref[tab:constants]{\lambda}$ situated directly under a ceiling object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 0
+    output = Hero object y-velocity,
+    pass = Hero object y-velocity is less than or equal to 0
 }
 
 \testauto{
     name = {Wall obstructs enemy moving left, low speed},
     desc = Tests whether an enemy object is stopped by a wall object while moving left at low speed,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\zeta}$ situated directly to the right of a wall,
+    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\zeta}$ situated directly to the right of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -663,39 +676,39 @@ The following tests will ensure that the collision detection system is working a
     name = {Wall obstructs enemy moving left, medium speed},
     desc = Tests whether an enemy is stopped by a wall object while moving left at medium speed,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\eta}$ situated directly to the right of a wall,
+    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\eta}$ situated directly to the right of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
 \testauto{
     name = {Wall obstructs enemy moving left, high speed},
-    desc = Tests whether an enemy is stopped by a wall object while walking left,
+    desc = Tests whether an enemy is stopped by a wall object while moving left at high speed,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\theta}$ situated directly to the right of a wall,
+    init = Custom in-game state with hero object having x-velocity $-\hyperref[tab:constants]{\theta}$ situated directly to the right of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
 \testauto{
     name = {Wall obstructs enemy moving right, low speed},
-    desc = Tests whether an enemy is stopped by a wall object while running left,
+    desc = Tests whether an enemy is stopped by a wall object while moving right at low speed,
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with enemy object having x-velocity $\hyperref[tab:constants]{\zeta}$ situated directly to the left of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
 \testauto{
     name = {Wall obstructs enemy moving right, medium speed},
-    desc = Tests whether an enemy is stopped by a wall object while walking right,
+    desc = Tests whether an enemy is stopped by a wall object while moving right at medium speed,
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\eta}$ situated directly to the left of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
@@ -705,29 +718,79 @@ The following tests will ensure that the collision detection system is working a
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with hero object having x-velocity $\hyperref[tab:constants]{\theta}$ situated directly to the left of a wall object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
+    output = Hero object x-velocity,
     pass = Hero object x-velocity is 0
 }
 
+\testauto{
+    name = Floor supports stationary enemy,
+    desc = Tests whether an enemy is supported by a floor object,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a stationary enemy object situated directly on top of a floor object,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Enemy object y-velocity,
+    pass = Enemy object y-velocity is 0
+}
 
+\testauto{
+    name = {Floor stops enemy in free fall, low speed},
+    desc = Tests whether an enemy in low speed free fall is stopped by a floor object,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with an enemy object with y-velocity $-\hyperref[tab:constants]{\phi}$ situated directly on top of a floor object,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Enemy object y-velocity,
+    pass = Enemy object y-velocity is 0
+}
+
+\testauto{
+    name = {Floor stops enemy in free fall, medium speed},
+    desc = Tests whether an enemy in medium speed free fall is stopped by a floor object,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with an enemy object with y-velocity $-\hyperref[tab:constants]{\chi}$ situated directly on top of a floor object,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Enemy object y-velocity,
+    pass = Enemy object y-velocity is 0
+}
+
+\testauto{
+    name = {Floor stops enemy in free fall, high speed},
+    desc = Tests whether an enemy in high speed free fall is stopped by a floor object,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with an enemy object with y-velocity $-\hyperref[tab:constants]{\psi}$ situated directly on top of a floor object,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Enemy object y-velocity,
+    pass = Enemy object y-velocity is 0
+}
+
+\newpage
 \subsubsection{Dynamic Object Collision Testing}
 The following tests will ensure that the collisions between dynamic objects work as intended.
 
 \testauto{
-    name = Hero is knocked back when colliding with enemy,
-    desc = Tests whether a the hero is knocked back when an enemy is collided with,
+    name = Hero is knocked back when colliding with enemy from left,
+    desc = Tests whether a the hero is knocked back to the left when an enemy is collided with from the left,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero object with an x-velocity $-\hyperref[tab:constants]{\alpha}$ located directly to the right of an enemy object,
+    init = Custom in-game state with a hero object with an x-velocity $\hyperref[tab:constants]{\alpha}$ located directly to the left of a stationary enemy object,
     input = The chipmunk cpSpaceStep function is called,
-    output = Hero object x-velocity (side-effect),
-    pass = Hero object x-velocity is 
+    output = Hero object x-velocity,
+    pass = Hero object x-velocity is $-\hyperref[tab:constants]{\omega}\times\hyperref[tab:constants]{\alpha}$
+}
+
+\testauto{
+    name = Hero is knocked back when colliding with enemy from right,
+    desc = Tests whether a the hero is knocked back to the right when an enemy is collided with from the right,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a hero object with an x-velocity $-\hyperref[tab:constants]{\alpha}$ located directly to the right of a stationary enemy object,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Hero object x-velocity,
+    pass = Hero object x-velocity is $\hyperref[tab:constants]{\omega}\times\hyperref[tab:constants]{\alpha}$
 }
 
 \testauto{
     name = Hero projectile hits enemy,
     desc = Tests whether a projectile launched by the hero hits an enemy,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with a hero projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of an enemy object,
+    init = Custom in-game state with a hero projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a stationary enemy object,
     input = The chipmunk cpSpaceStep function is called,
     output = State of the space,
     pass = Hero projectile object is removed from the space
@@ -737,21 +800,24 @@ The following tests will ensure that the collisions between dynamic objects work
     name = Enemy projectile hits hero,
     desc = Tests whether a projectile launched by an enemy collides with the hero,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state with an enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of the hero object,
+    init = Custom in-game state with an enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of  a stationary hero object,
     input = The chipmunk cpSpaceStep function is called,
     output = State of the space,
     pass = Enemy projectile object is removed from the space
 }
 
+\newpage
 \subsubsection{Hit Points Testing}
+The following tests will ensure the proper functioning of the hit point system.
+
 \testauto{
     name = Enemy health reduced when hit by pistol,
     desc = Tests whether enemy health is properly reduced when hit by a pistol bullet,
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with a hero pistol projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of an enemy object with 100 hit points,
     input = The chipmunk cpSpaceStep function is called,
-    output = Enemy health (side effect),
-    pass = Enemy health is equal to $100-\xi$ 
+    output = Enemy health,
+    pass = Enemy health is equal to $100-\hyperref[tab:constants]{\xi}$ 
 }
 
 \testauto{
@@ -760,8 +826,8 @@ The following tests will ensure that the collisions between dynamic objects work
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with a hero shotgun projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of an enemy object with 100 hit points,
     input = The chipmunk cpSpaceStep function is called,
-    output = Enemy health (side effect),
-    pass = Enemy health is equal to $100-\pi$
+    output = Enemy health,
+    pass = Enemy health is equal to $100-\hyperref[tab:constants]{\pi}$
 }
 
 \testauto{
@@ -770,10 +836,61 @@ The following tests will ensure that the collisions between dynamic objects work
     type = {Unit Test (dynamic, automated)},
     init = Custom in-game state with a hero rifle projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of an enemy object with 100 hit points,
     input = The chipmunk cpSpaceStep function is called,
-    output = Enemy health (side effect),
-    pass = Enemy health is equal to $100-\rho$
+    output = Enemy health,
+    pass = Enemy health is equal to $100-\hyperref[tab:constants]{\rho}$
 }
 
+\testauto{
+    name = Enemy is killed when hit points reach zero,
+    desc = Tests whether an enemy is killed when hit points reach zero,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a hero pistol projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a an enemy object with 1 hit point,
+    input = The chipmunk cpSpaceStep function is called,
+    output = State of the space,
+    pass = Enemy object is removed from the space
+}
+
+\testauto{
+    name = Hero health reduced when hit by a weak enemy attack,
+    desc = Tests whether hero health is properly reduced when hit by a weak enemy attack,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a weak enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a hero object with 100 hit points,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Hero health,
+    pass = Hero health is equal to $100-\hyperref[tab:constants]{\Xi}$
+}
+
+\testauto{
+    name = Hero health reduced when hit by a moderate enemy attack,
+    desc = Tests whether hero health is properly reduced when hit by a moderate enemy attack,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a weak enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a hero object with 100 hit points,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Hero health,
+    pass = Hero health is equal to $100-\hyperref[tab:constants]{\Pi}$
+}
+
+\testauto{
+    name = Hero health reduced when hit by a strong enemy attack,
+    desc = Tests whether hero health is properly reduced when hit by a strong enemy attack,
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a weak enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a hero object with 100 hit points,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Hero health,
+    pass = Hero health is equal to $100-\hyperref[tab:constants]{\Sigma}$
+}
+
+\testauto{
+    name = Hero is killed when hit points reach zero,
+    desc = Tests whether hero is killed when hit points reach zero (game over),
+    type = {Unit Test (dynamic, automated)},
+    init = Custom in-game state with a weak enemy projectile object with an x-velocity $-\hyperref[tab:constants]{\gamma}$ located directly to the right of a hero object with 1 hit point,
+    input = The chipmunk cpSpaceStep function is called,
+    output = Game over flag,
+    pass = Game over flag is set
+}
+
+\newpage
 \subsubsection{Save/Load Testing}
 The following tests will ensure that the game's saving and loading functions work properly.
 
@@ -793,36 +910,36 @@ The following tests will ensure that the game's saving and loading functions wor
     type = {Unit Test (dynamic, automated)},
     init = Main menu state,
     input = Load game function is called with a non-existent file name,
-    output = File does not exist exception,
-    pass = File does not exist exception is thrown and handled
+    output = Exception,
+    pass = File does not exist exception is thrown
 }
 
 \testauto{
-    name = Load file from menu,
-    desc = Tests whether a saved game can be successfully loaded from the main menu,
+    name = {Load file from menu, file type invalid},
+    desc = Tests that exception is thrown if an invalid file is attempted to be loaded,
     type = {Unit Test (dynamic, automated)},
     init = Main menu state,
-    input = Load game function is called with file name,
-    output = Game state,
-    pass = Game state is equal to a predefined state that corresponds exactly to the file
+    input = Load game function is called with an invalid file,
+    output = Exception,
+    pass = File invalid exception is thrown
 }
 
 \testauto{
-    name = Load file from in-game,
-    desc = Tests whether a saved game can be successfully loaded while in-game,
+    name = Save game,
+    desc = Tests whether the game state can be successfully saved,
     type = {Unit Test (dynamic, automated)},
-    init = Custom in-game state different from that described by the saved game file,
-    input = Load game function is called with file name,
-    output = Game state,
-    pass = Game state is equal to a predefined state that corresponds exactly to the file
+    init = Custom in-game state,
+    input = Save game function is called with file name,
+    output = Game save file,
+    pass = Game save file is equal to a pre-existing file that corresponds exactly to the initial game state
 }
 
 
 
 \subsubsection{Unit Test Coverage}
-Once the game mechanics and all of the corresponding unit tests have been implemented, .  This will uncover portions of code that were not tested and allow for the design of additional
+Once the game mechanics and all of the corresponding unit tests have been implemented, a coverage test will be run in parallel with the unit testing.  This will uncover portions of code that were not tested and allow for the design of additional test cases if necessary.
 
-\testauto{
+\testautob{
     name = Game mechanics coverage,
     desc = Tests that the game mechanics unit testing adequately covers the game mechanics code,
     type = {Structural (dynamic, automated)},
@@ -832,8 +949,10 @@ Once the game mechanics and all of the corresponding unit tests have been implem
 
 
 \subsection{Game Design Testing}
-Once the game mechanics systems have been implemented and shown to be working correctly through the testing described in \hyperref[sec:mechanicstesting]{\S\ref*{sec:mechanicstesting}}, the game itself can be built on top.  The design of the game can be broken down into game world design, enemy artificial intelligence design, graphics, and sound.  Automated testing for this phase would be time-consuming and difficult to implement.  Therefore, all of the game design testing will consist of manual tests.
+Once the game mechanics systems have been implemented and shown to be working correctly through the testing described in \hyperref[sec:mechanicstesting]{\S\ref*{sec:mechanicstesting}}, the game itself can be built on top.  The design of the game can be broken down into the design of the game world, enemy artificial intelligence, graphics, and sound.  Automated testing for this phase would be time-consuming and difficult to implement.  Therefore, all of the game design testing will consist of manual tests.
 \subsubsection{Game World Testing}
+The following tests will be carried out to ensure that the game world is designed correctly.
+
 \testmanual{
     name = All areas reachable,
     desc = Tests that all areas of the game world that are intended to be reachable by the hero are in fact reachable by the hero,
@@ -847,24 +966,20 @@ Once the game mechanics systems have been implemented and shown to be working co
     desc = Tests that there are no areas of the game world that will cause the hero to become stuck (e.g. inescapable pits),
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = No areas are unreachable based on a thorough playthrough testing of the game
+    pass = There are no inescapable areas detected on a thorough playthrough testing of the game
 }
 
-\testmanual{
-    name = Game is ,
-    desc = Tests that there are no areas of the game world that will cause the hero to become stuck (e.g. inescapable pits),
-    type = {Functional (dynamic, manual)},
-    user = {Development team},
-    pass = Hero does not become stuck on playthrough testing .  Alpha testers and beta testers are asked to note down any
-}
 
 \subsubsection{Artificial Intelligence Testing}
+
+The following tests will be carried out to ensure that the enemy artificial intelligence systems are properly implemented.
+
 \testmanual{
     name = {Artificial intelligence, enemy movement general},
     desc = Tests that enemy movement routines work as intended when the hero is not in proximity,
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = All enemy types move according to the way the code describes when 
+    pass = All enemy types move as they were designed when the hero is not near
 }
 
 \testmanual{
@@ -872,7 +987,7 @@ Once the game mechanics systems have been implemented and shown to be working co
     desc = Tests that enemy movement routines work as intended when the hero is in proximity,
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = All enemy types move according to the way the code describes when 
+    pass = All enemy types move as they were designed when the hero is in proximity
 }
 
 \testmanual{
@@ -880,16 +995,48 @@ Once the game mechanics systems have been implemented and shown to be working co
     desc = Tests that enemy attack routines work as intended when the hero is in proximity,
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = All enemy types attack the hero according to the artificial intelligence code
+    pass = All enemy types attack in the way they were designed when the hero is in proximity
 }
 
 
 \subsubsection{Graphics Testing}
+The following tests will be carried out to ensure that the game graphics and animations are properly implemented.
 
+\testmanual{
+    name = Textures,
+    desc = Tests if textures are properly implemented,
+    type = {Functional (dynamic, manual)},
+    user = Development team,
+    pass = {In-game textures appear correct by inspection}
+}
+
+\testmanual{
+    name = Hero animations,
+    desc = Tests if hero movement/attack animations are properly implemented,
+    type = {Functional (dynamic, manual)},
+    user = Development team,
+    pass = {Hero animations appear correct by inspection and synch with inputs}
+}
+
+\testmanual{
+    name = Enemy animations,
+    desc = Tests if enemy movement/attack animations are properly implemented,
+    type = {Functional (dynamic, manual)},
+    user = Development team,
+    pass = Enemy animations appear correct by inspection 
+}
 
 
 \subsubsection{Audio Testing}
-The following tests will be carried out to ensure that game audio is properly implemented.
+The following tests will be carried out to ensure that the game audio is properly implemented.
+
+\testmanual{
+    name = Background music,
+    desc = Tests if background music is properly implemented,
+    type = {Functional (dynamic, manual)},
+    user = Development team,
+    pass = {Background music plays while in game}
+}
 
 \testmanual{
     name = Hero movement sounds,
@@ -928,55 +1075,37 @@ The following tests will be carried out to ensure that game audio is properly im
     desc = Tests if hero weapon sounds are properly implemented,
     type = {Functional (dynamic, manual)},
     user = Development team,
-    pass = Appropriate sounds play when hero fires weapon
+    pass = Appropriate sounds play when collisions take place
 }
 
 
-\subsection{General Testing}
-Throughout both of the system testing phases new code will be reviewed after each commit in an attempt to detect any visible errors.
-
-\testmanual{
-    name = Code review,
-    desc = Code is read through line by line while checking for errors,
-    type = {Structural (static, manual)},
-    user = Development team,
-    pass = No errors found/all errors fixed
-}
-
-
+\newpage
 \section{Requirements Testing}
 \label{sec:reqtesting}
 
-Testing will
+Once the system implementation is complete, testing will be performed to ensure that all requirements contained in the software requirements specification (SRS) document have been addressed.
 
 \subsection{Functional Requirements Testing}
-The functional requirements given in the software requirements specification document should all be implemented in the final version of the game.  Since these requirements contribute to the , explicit testing of the requirements should be
+The functional requirements given in the SRS document should all be implemented in the final version of the game.  Since all functional requirements are objective and should be a part of the overall system, this will be readily verifiable by using the SRS document as a checklist.
 
 \testmanual{
     name = Functional requirements are met,
-    desc = Game is compared with software requirements specification,
+    desc = Game is compared with SRS document to ensure functional requirements are met,
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = All functional requirements are met and tested under system testing
+    pass = All functional requirements are met
 }
 
 \subsection{Non-Functional Requirements Testing}
 The following tests will be carried out to ensure adherence to the non-functional requirements given in the software requirements specification.
 
-\testmanual{
-    name = {User experience, Phase I},
-    desc = Game is compared with software requirements specification,
-    type = {Structural (static, manual)},
-    user = {Testing group},
-    pass =
-}
 
 \testmanual{
-    name = {User experience, Phase II},
-    desc = Game is compared with software requirements specification,
-    type = {Structural (static, manual)},
-    user = {Testing group},
-    pass =
+    name = Operating system support,
+    desc = {The game runs on Windows 7, Mac OS X, and Ubuntu},
+    type = {Functional (dynamic, manual)},
+    user = {Development team},
+    pass = Game can be compiled and system tests all pass on each platform,
 }
 
 \testmanual{
@@ -984,11 +1113,48 @@ The following tests will be carried out to ensure adherence to the non-functiona
     desc = The game uses proper English and is free of any spelling or grammatical errors,
     type = {Functional (dynamic, manual)},
     user = {Development team},
-    pass = No spelling or grammatical errors are detected or all detected errors are corrected
+    pass = No spelling or grammatical errors are detected (or all detected errors are corrected)
+}
+
+\testmanual{
+    name = Hardware requirements,
+    desc = Tests for the minimum hardware requirements required to maintain an average frame rate of at least $\hyperref[tab:constants]{\sigma}$ frames per second,
+    type = {Functional (dynamic, manual)},
+    user = {Development team},
+    pass = A pass criterion is still being devised as of revision 0
 }
 
 
 
+\subsubsection{User Experience Testing}
+The following non-functional requirements will be tested via a user experience survey administered to a testing group (see \hyperref[sec:userexp]{\S\ref*{sec:userexp}}).
+
+\testmanual{
+    name = {Entertainment},
+    desc = Tests that the game is entertaining,
+    type = {Functional (dynamic, manual)},
+    user = {Testing group},
+    pass = {Phase I average survey score of at least $\hyperref[tab:constants]{\Theta}$; Phase II average survey score improves on Phase I score by $\hyperref[tab:constants]{\Phi}$}
+}
+
+\testmanual{
+    name = {Challenge},
+    desc = Tests that the game is adequately challenging (not too easy or too hard),
+    type = {Functional (dynamic, manual)},
+    user = {Testing group},
+    pass = {Phase I average survey score within $\hyperref[tab:constants]{\Psi}$ of 5; Phase II average survey score improves on Phase I score by $\hyperref[tab:constants]{\Phi}$}
+}
+
+\testmanual{
+    name = {Controls},
+    desc = Tests that the game controls are intuitive,
+    type = {Functional (dynamic, manual)},
+    user = {Testing group},
+    pass = {Phase I average survey score of at least $\hyperref[tab:constants]{\Omega}$; Phase II average survey score improves on Phase I score by $\hyperref[tab:constants]{\Phi}$}
+}
+
+
+\newpage
 \section{Timeline}
 \label{sec:timeline}
 This document is structured to roughly match the anticipated chronology of testing.  A proposed testing timeline is given in \hyperref[tab:timeline]{Table~\ref*{tab:timeline}}.
@@ -1005,10 +1171,11 @@ This document is structured to roughly match the anticipated chronology of testi
 12/10/2015 & Steven Palmer & Implementation of dynamic collision unit test cases\\[0.3\baselineskip]
 12/20/2015 & Chao Ye & Implementation of hit points unit test cases\\[0.3\baselineskip]
 12/20/2015 & Steven Palmer & Implementation of save/load unit test cases\\[0.3\baselineskip]
+12/30/2015 & Emaad Fazal & Implementation of coverage testing\\[0.3\baselineskip]
 01/20/2016 & Development team & Completion of game design testing\\[0.3\baselineskip]
-01/20/2016 & Development team & Completion of requirements testing\\[0.3\baselineskip]
-02/19/2016 & Testing group & Completion of user experience survey, phase I \\[0.3\baselineskip]
-03/19/2016 & Testing group & Completion of user experience survey, phase II\\
+01/20/2016 & Development team & Completion of requirements testing (excluding user experience related tests)\\[0.3\baselineskip]
+02/20/2016 & Testing group & Completion of user experience survey, phase I \\[0.3\baselineskip]
+03/20/2016 & Testing group & Completion of user experience survey, phase II\\
 \bottomrule
 \end{tabularx}
 \end{table}
