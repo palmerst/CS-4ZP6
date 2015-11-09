@@ -250,6 +250,7 @@ $\Phi$ & 10\% & Phase II testing improvement target\\
 \bottomrule
 \end{tabularx}
 \end{table}
+\ds{Nice!}
 
 \newpage
 \section{Proof of Concept Testing}
@@ -295,6 +296,10 @@ The proof of concept is given in test case format to adhere with the presentatio
     user = Game developers,
     pass = {Successful development of a small demonstration which makes use of the Chipmunk2D physics engine and runs on Windows 7, Mac OS X, and Ubuntu}
 }
+
+\ds{Your demonstration plan and proof of concept test could be merged into one section
+as they are describing the same thing. The PoC Test subsection is fairly sparse on its
+own}
 
 \newpage
 \section{System Testing}
@@ -1079,6 +1084,7 @@ The following tests will be carried out to ensure that the game audio is properl
 }
 
 
+
 \newpage
 \section{Requirements Testing}
 \label{sec:reqtesting}
@@ -1095,6 +1101,11 @@ The functional requirements given in the SRS document should all be implemented 
     user = {Development team},
     pass = All functional requirements are met
 }
+
+\ds{You should specify which of your test cases cover which of your requirements
+and then check to ensure all of your requirements are being covered. If they aren't,
+then you should create more test cases. Currently this section isn't really saying
+anything new.}
 
 \subsection{Non-Functional Requirements Testing}
 The following tests will be carried out to ensure adherence to the non-functional requirements given in the software requirements specification.
@@ -1122,9 +1133,8 @@ The following tests will be carried out to ensure adherence to the non-functiona
     type = {Functional (dynamic, manual)},
     user = {Development team},
     pass = A pass criterion is still being devised as of revision 0
+    \ds{Good. Don't forget to update it!}
 }
-
-
 
 \subsubsection{User Experience Testing}
 The following non-functional requirements will be tested via a user experience survey administered to a testing group (see \hyperref[sec:userexp]{\S\ref*{sec:userexp}}).
@@ -1180,7 +1190,9 @@ This document is structured to roughly match the anticipated chronology of testi
 \end{tabularx}
 \end{table}
 
-
+\ds{Do you have any tests for invalid inputs (other than saving/loading)?}
+\ds{As it reads now, it seems that the hero character will have all weapons available
+to them at all times. Is this intended? If not, you need more test cases.}
 
 \newpage
 \section{Appendix A:  Testing Survey}
