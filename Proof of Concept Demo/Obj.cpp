@@ -1,6 +1,7 @@
 #include "Obj.h"
 
-Boundary::Boundary(cpSpace* space, vertexList& staticMasterVertexBuffer, cpVect p1, cpVect p2){
+/*** Boundary object ***/
+Boundary::Boundary(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
     /*** Set physics data ***/
     body = cpSpaceAddBody(space, cpBodyNewStatic());
@@ -8,29 +9,35 @@ Boundary::Boundary(cpSpace* space, vertexList& staticMasterVertexBuffer, cpVect 
     shape = cpSpaceAddShape(space, cpBoxShapeNew(body, p2.x - p1.x, p2.y - p1.y, 0.1f));
 	cpShapeSetElasticity(shape, 0.5f);
 	cpShapeSetFriction(shape, 1.0f);
+	height = p2.y - p1.y;
+	width = p2.x - p1.x;
 
-    /*** Store geometry data ***/
-    bufferLocation.first = staticMasterVertexBuffer.size();
-    bufferLocation.len = 6;
-
-    staticMasterVertexBuffer.push_back(glm::vec3(p1.x, p1.y, 0));
-    staticMasterVertexBuffer.push_back(glm::vec3(p2.x, p1.y, 0));
-    staticMasterVertexBuffer.push_back(glm::vec3(p1.x, p2.y, 0));
-    staticMasterVertexBuffer.push_back(glm::vec3(p1.x, p2.y, 0));
-    staticMasterVertexBuffer.push_back(glm::vec3(p2.x, p1.y, 0));
-    staticMasterVertexBuffer.push_back(glm::vec3(p2.x, p2.y, 0));
+    /*** Link gpu data ***/
+    this->gpuData = gpuData;
 
 }
 
 
-Character::Character(cpSpace* space, glm::vec2 pos){
+/*** Generic dynamic object ***/
+DynamicObject::DynamicObject(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData){
 
     /*** Set physics data ***/
-    body = cpBodyNew(100, cpMomentForBox(100, 10, 20));
+    body = cpBodyNew(100, cpMomentForBox(100.0, 10.0, 20.0));
     cpSpaceAddBody(space, body);
     cpBodySetPosition(body, cpv(pos.x, pos.y));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, 9.8, 19.8, 0.01));
+    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, 10.0, 20.0, 0.01));
 	cpShapeSetElasticity(shape, 0.5f);
 	cpShapeSetFriction(shape, 1.0f);
+	height = 20.0;
+	width = 10.0;
 
+    /*** Link gpu data ***/
+    this->gpuData = gpuData;
 }
+
+
+//HeroObject::HeroObject(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData){
+//
+//
+//
+//}

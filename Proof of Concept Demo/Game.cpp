@@ -4,14 +4,18 @@
 #include <cstdlib>
 
 #include "Game.h"
+#include "ObjGPUData.h"
 
 Game::Game(){
 
-    /* Initialize the library */
+    /*** Initialize the library ***/
     if (!glfwInit())
         exit(1);
 
-    /* Create a windowed mode window and its OpenGL context */
+    /*** Use multisampling ***/
+    glfwWindowHint(GLFW_SAMPLES, 4);
+
+    /*** Create a windowed mode window and its OpenGL context ***/
     window = glfwCreateWindow(600, 600, "Untitled Game", NULL, NULL);
     if (!window)
     {
@@ -19,9 +23,10 @@ Game::Game(){
         exit(2);
     }
 
-    /* Make the window's context current */
+    /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
 
+    /*** Initialize glew ***/
     glewExperimental = true;
 	GLenum err = glewInit();
     if (GLEW_OK != err)
@@ -30,94 +35,75 @@ Game::Game(){
         exit(3);
 	}
 
+    /*** Enable depth testing for 3d rendering ***/
+	glEnable(GL_DEPTH_TEST);
+
+    /*** Register member function callbacks ***/
     glfwSetWindowUserPointer(window, this);
 
-    auto func = [](GLFWwindow* w, int width, int height)
+    auto wfunc = [](GLFWwindow* w, int width, int height)
     {
         static_cast<Game*>(glfwGetWindowUserPointer(w))->framebuffer_size_callback(w, width, height);
     };
 
+    glfwSetFramebufferSizeCallback(window, wfunc);
 
-    glfwSetFramebufferSizeCallback(window, func);
 
-    vertexList character;
-    character.push_back(glm::vec3(-5,10,0));
-    character.push_back(glm::vec3(-5,-10,0));
-    character.push_back(glm::vec3(5,-10,0));
-    character.push_back(glm::vec3(-5,10,0));
-    character.push_back(glm::vec3(5,-10,0));
-    character.push_back(glm::vec3(5,10,0));
-    masterObjectVertexList.push_back(character);
+    /*** Associate an environment with the game ***/
+    game = new Environment();
 
-    masterObjectVAOList.push_back(0);
-    masterObjectVBOList.push_back(0);
-    glGenVertexArrays(1, &masterObjectVAOList[0]);
-    glGenBuffers(1, &masterObjectVBOList[0]);
+    /*** Populate the environment                                   ***
+     *** This code will eventually be moved -- here is fine for PoC ***/
+    objMap.insert(std::pair<std::string, ObjGPUData*>("Hero", new ObjGPUData("./data/testchar", 3.1415f)));
+    objMap.insert(std::pair<std::string, ObjGPUData*>("Boundary", new ObjGPUData("./data/testbound")));
 
-    glBindVertexArray(masterObjectVAOList[0]);
+    game->addBoundary(cpv(-150,-100), cpv(-145,100), objMap.find("Boundary")->second);
+	game->addBoundary(cpv(-145,-100), cpv(145, -95), objMap.find("Boundary")->second);
+	game->addBoundary(cpv(145,-100), cpv(150,100), objMap.find("Boundary")->second);
+	game->addBoundary(cpv(15,0), cpv(70,5), objMap.find("Boundary")->second);
+	game->addBoundary(cpv(-55,-55), cpv(-10,-50), objMap.find("Boundary")->second);
+	game->addDynamicObject(glm::vec2(-77,80), objMap.find("Hero")->second);
+	game->addDynamicObject(glm::vec2(0,-30), objMap.find("Hero")->second);
+	game->addDynamicObject(glm::vec2(-44,55), objMap.find("Hero")->second);
+	game->addDynamicObject(glm::vec2(24,80), objMap.find("Hero")->second);
+	game->addDynamicObject(glm::vec2(44,50), objMap.find("Hero")->second);
+	game->addDynamicObject(glm::vec2(90,80), objMap.find("Hero")->second);
 
-    glBindBuffer(GL_ARRAY_BUFFER, masterObjectVBOList[0]);
-    glBufferData(GL_ARRAY_BUFFER, masterObjectVertexList[0].size() * sizeof(glm::vec3), &masterObjectVertexList[0][0], GL_STATIC_DRAW);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(
-        0,
-        3,
-        GL_FLOAT,
-        GL_FALSE,
-        0,
-        (void*)0
-    );
-
-    glBindVertexArray(0);
-
-    game = new Environment(&masterObjectVAOList);
-
-    game->addStaticObject(cpv(-100,-100), cpv(-95,100), STATIC_BOUNDARY);
-	game->addStaticObject(cpv(-95,-100), cpv(95, -95), STATIC_BOUNDARY);
-	game->addStaticObject(cpv(95,-100), cpv(100,100), STATIC_BOUNDARY);
-	game->addDynamicObject(glm::vec2(-77,80), DYNAMIC_CHARACTER);
-	game->addDynamicObject(glm::vec2(0,-30), DYNAMIC_CHARACTER);
-	game->addDynamicObject(glm::vec2(-44,55), DYNAMIC_CHARACTER);
-	game->addDynamicObject(glm::vec2(24,80), DYNAMIC_CHARACTER);
-	game->addDynamicObject(glm::vec2(44,50), DYNAMIC_CHARACTER);
-	game->addDynamicObject(glm::vec2(90,80), DYNAMIC_CHARACTER);
-
+    /*** Set time to current ***/
+    timeLast = glfwGetTime();
 }
 
 
+/*** Run game until terminated ***/
 void Game::run(){
-    /* Loop until the user closes the window */
+
     while (!glfwWindowShouldClose(window))
     {
-        /* Render here */
+        /*** Clear depth and color buffers ***/
         glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_DEPTH_BUFFER_BIT);
 
-        game->updateEnvironment();
+        /*** Update environment through elapsed time step and draw ***/
+        double timeCurrent = glfwGetTime();
+        game->updateEnvironment(timeCurrent - timeLast);
         game->drawEnvironment();
+        timeLast = timeCurrent;
 
-        /* Swap front and back buffers */
+        /*** Swap buffers ***/
         glfwSwapBuffers(window);
 
-        /* Poll for and process events */
+        /*** Poll for and process events ***/
         glfwPollEvents();
     }
 
     glfwTerminate();
 }
 
-
+/*** Resize window callback ***/
 void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    float wProj, hProj;
-    if(width <= height){
-        wProj = 100.0;
-        hProj = 100.0*((float)height/(float)width);
-    } else {
-        hProj = 100.0;
-        wProj = 100.0*((float)width/(float)height);
-    }
-
-    game->updateProjection(glm::ortho(-wProj, wProj, -hProj, hProj));
+    game->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 300.0f));
 }
+

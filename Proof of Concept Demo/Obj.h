@@ -4,20 +4,9 @@
 #include "include/chipmunk/chipmunk.h"
 #include "include/glm/glm.hpp"
 #include "include/glm/gtc/matrix_transform.hpp"
+#include "ObjGPUData.h"
 
 #include <vector>
-
-typedef std::vector<glm::vec3> vertexList;
-typedef std::vector<unsigned int> faceList;
-
-enum Static_Obj_Type {
-    STATIC_BOUNDARY,
-    STATIC_PLATFORM
-};
-
-enum Dynamic_Obj_Type {
-    DYNAMIC_CHARACTER
-};
 
 class Obj {
 
@@ -25,45 +14,24 @@ class Obj {
 
         cpBody* body;
         cpShape* shape;
+        ObjGPUData* gpuData;
+
+        float height, width;
 
 };
 
-class Static_Obj : public Obj {
+class Boundary : public Obj {
 
     public:
-
-        struct {
-            unsigned int first, len;
-        } bufferLocation;
+        Boundary(cpSpace*, cpVect, cpVect, ObjGPUData*);
 
 
 };
 
-class Boundary : public Static_Obj {
+class DynamicObject : public Obj {
 
     public:
-        Boundary(cpSpace*, vertexList&, cpVect, cpVect);
-
-
-};
-
-class Platform {
-
-};
-
-class Dynamic_Obj : public Obj {
-
-    public:
-
-        unsigned int masterIndex;
-
-};
-
-class Character : public Dynamic_Obj {
-
-    public:
-
-        Character(cpSpace*, glm::vec2);
+        DynamicObject(cpSpace*, glm::vec2, ObjGPUData*);
 
 };
 

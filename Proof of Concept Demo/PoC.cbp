@@ -3,6 +3,7 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="PoC" />
+		<Option makefile="makefile" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -29,9 +30,11 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-DGLEW_STATIC" />
 			<Add option="-DGLM_FORCE_RADIANS" />
+			<Add option="-DWIN32" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
@@ -43,14 +46,20 @@
 			<Add library="chipmunk" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="BoundaryGPUData.h" />
 		<Unit filename="Environment.cpp" />
 		<Unit filename="Environment.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="ImgLoader.cpp" />
+		<Unit filename="ImgLoader.h" />
 		<Unit filename="Loader.cpp" />
 		<Unit filename="Loader.h" />
 		<Unit filename="Obj.cpp" />
 		<Unit filename="Obj.h" />
+		<Unit filename="ObjGPUData.cpp" />
+		<Unit filename="ObjGPUData.h" />
+		<Unit filename="ObjPhysicsData.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
