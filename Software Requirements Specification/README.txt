@@ -1,1 +1,0 @@
-NOTE:  The Volere template was used.  The template was slightly modified in parts to better fit our project.
