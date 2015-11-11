@@ -1,9 +1,0 @@
-void test_cpMomentForCircle(void);
-void test_cpAreaForCircle(void);
-void test_cpMomentForSegment(void);
-void test_cpAreaForSegment(void);
-void test_cpMomentForPoly(void);
-void test_cpAreaForPoly(void);
-void test_cpCentroidForPoly(void);
-void test_cpMomentForBox(void);
-void test_cpMomentForBox2(void);

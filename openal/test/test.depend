@@ -37,7 +37,7 @@
 1447204449 source:d:\users\yc\desktop\study\codeblock\openal\test\main.c
 	"openaltest.h"
 
-1447204379 d:\users\yc\desktop\study\codeblock\openal\test\openaltest.h
+1447205836 d:\users\yc\desktop\study\codeblock\openal\test\openaltest.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -63,6 +63,6 @@
 	<AL/al.h>
 	<AL/alc.h>
 
-1447204221 source:d:\users\yc\desktop\study\codeblock\openal\test\openaltest.c
+1447205777 source:d:\users\yc\desktop\study\codeblock\openal\test\openaltest.c
 	"openaltest.h"
 

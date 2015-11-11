@@ -13,6 +13,6 @@
 //#include "openaltest.c"
 void init(void);
 ALuint make_al_buffer(char *szPath);
-ALuint make_al_source(ALuint buf);
+ALuint make_al_source(ALuint buf,ALint loop);
 void play(ALuint buffer,ALuint source,ALint source_state);
 

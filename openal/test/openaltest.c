@@ -33,7 +33,7 @@ ALuint make_al_buffer(char *szPath)
     return ret;
 }
 
-ALuint make_al_source(ALuint buf)//source able to invite more parm later but now set everything as default
+ALuint make_al_source(ALuint buf,ALint loop)//source able to invite more parm later but now set everything as default
 {
     ALuint ret = 0;
 
@@ -43,7 +43,7 @@ ALuint make_al_source(ALuint buf)//source able to invite more parm later but now
     alSourcef(ret, AL_GAIN, 1.0f);
     alSource3f(ret, AL_POSITION, 0.0f, 0.0f, 0.0f);
     alSource3f(ret, AL_VELOCITY, 0.0f, 0.0f, 0.0f);
-    alSourcei(ret, AL_LOOPING, AL_FALSE);
+    alSourcei(ret, AL_LOOPING, loop);
 
     return ret;
 }
