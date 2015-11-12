@@ -9,7 +9,7 @@ Environment::Environment(){
     /*** Set up space variables ***/
     envSpace = cpSpaceNew();
     cpSpaceSetIterations(envSpace, 10);
-	cpSpaceSetGravity(envSpace, cpv(0, -9.8));
+	cpSpaceSetGravity(envSpace, cpv(0, -100));
     cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
 
     /*** Load the shaders and store handle ***/

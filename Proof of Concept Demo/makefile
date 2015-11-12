@@ -9,7 +9,7 @@ CC = gcc
 CXX = g++
 LDFLAGS = -lGL -lGLU -lglut 
 CFLAGS = -Wall -g -Os
-CXXFLAGS = -Wall -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
+CXXFLAGS = -g -Os -Dlinux -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 EXEEXT=
 RM=rm
 
@@ -17,12 +17,14 @@ RM=rm
 ifeq "$(OS)" "Windows_NT"
 	EXEEXT=.exe #on windows applications must have .exe extension
 	RM=del #rm command for windows powershell
-    LDFLAGS = -Llib -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk
+    LDFLAGS = -Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk
+    CXXFLAGS = -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 else
 	# OS X
 	OS := $(shell uname)
 	ifeq ($(OS), Darwin)
-	        LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT
+	        LDFLAGS = -Llib/apple -framework Carbon -framework OpenGL -lglfw3 -lGLEW -lchipmunk
+            CXXFLAGS = -g -Os -DAPPLE -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 	endif
 endif
 

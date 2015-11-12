@@ -67,7 +67,7 @@
 	<GL/glext.h>
 	<GL/glu.h>
 
-1445528848 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\loader.cpp
+1445525248 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\loader.cpp
 	"include/GL/glew.h"
 	"Loader.h"
 	<fstream>
@@ -76,7 +76,7 @@
 	<string>
 	<cstdlib>
 
-1445528848 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\gl\glew.h
+1445525248 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\gl\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -85,12 +85,12 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1445528848 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\loader.h
+1445525248 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\loader.h
 
-1446012947 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\main.cpp
+1447258782 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\main.cpp
 	"Game.h"
 
-1445528848 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glfw\glfw3.h
+1445525248 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glfw\glfw3.h
 	<stddef.h>
 	<OpenGL/gl3.h>
 	<OpenGL/gl3ext.h>
@@ -117,7 +117,7 @@
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk.h
 	<stdlib.h>
 	<math.h>
 	<malloc.h>
@@ -135,36 +135,36 @@
 	"cpSpace.h"
 	"malloc.h"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk_types.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk_types.h
 	<stdint.h>
 	<float.h>
 	<math.h>
 	"TargetConditionals.h"
 	<ApplicationServices/ApplicationServices.h>
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpvect.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpvect.h
 	"chipmunk_types.h"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbb.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbb.h
 	"chipmunk_types.h"
 	"cpVect.h"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cptransform.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cptransform.h
 	"chipmunk_types.h"
 	"cpVect.h"
 	"cpBB.h"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspatialindex.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspatialindex.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cparbiter.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cparbiter.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbody.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbody.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpshape.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpshape.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppolyshape.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppolyshape.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpconstraint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpconstraint.h
 	"cpPinJoint.h"
 	"cpSlideJoint.h"
 	"cpPivotJoint.h"
@@ -176,27 +176,27 @@
 	"cpGearJoint.h"
 	"cpSimpleMotor.h"
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppinjoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppinjoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpslidejoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpslidejoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppivotjoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cppivotjoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgroovejoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgroovejoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedspring.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedspring.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedrotaryspring.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedrotaryspring.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cprotarylimitjoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cprotarylimitjoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpratchetjoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpratchetjoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgearjoint.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgearjoint.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpsimplemotor.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpsimplemotor.h
 
-1435850687 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspace.h
+1435847087 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspace.h
 
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\glm.hpp
 	"detail/_fixes.hpp"
@@ -240,7 +240,7 @@
 	"setup.hpp"
 	<cstdint>
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\setup.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\setup.hpp
 	<cassert>
 	<cuda.h>
 	<intrin.h>
@@ -265,7 +265,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\vec2.hpp
 	"detail/type_vec2.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
@@ -281,7 +281,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\vec3.hpp
 	"detail/type_vec3.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
@@ -293,7 +293,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\vec4.hpp
 	"detail/type_vec4.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.hpp
 	"setup.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -301,24 +301,24 @@
 	<cstddef>
 	"type_vec4.inl"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.inl
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.inl
 
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat2x2.hpp
 	"detail/type_mat2x2.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat2x2.inl"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.inl
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.inl
 
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat2x3.hpp
 	"detail/type_mat2x3.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -331,7 +331,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat2x4.hpp
 	"detail/type_mat2x4.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -344,7 +344,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat3x2.hpp
 	"detail/type_mat3x2.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -357,19 +357,19 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat3x3.hpp
 	"detail/type_mat3x3.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat3x3.inl"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.inl
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.inl
 
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat3x4.hpp
 	"detail/type_mat3x4.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -382,7 +382,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat4x2.hpp
 	"detail/type_mat4x2.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -395,7 +395,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat4x3.hpp
 	"detail/type_mat4x3.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -408,7 +408,7 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\mat4x4.hpp
 	"detail/type_mat4x4.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.hpp
 	"../fwd.hpp"
 	"type_vec4.hpp"
 	"type_mat.hpp"
@@ -435,7 +435,7 @@
 	"type_vec3.hpp"
 	"type_vec4.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.hpp
 	"../fwd.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -456,7 +456,7 @@
 	<cmath>
 	"func_exponential.inl"
 
-1396391262 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.inl
+1396387662 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.inl
 	"func_vector_relational.hpp"
 	"_vectorize.hpp"
 	<limits>
@@ -473,14 +473,14 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\common.hpp
 	"detail/func_common.hpp"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.hpp
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"type_int.hpp"
 	"_fixes.hpp"
 	"func_common.inl"
 
-1403284223 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.inl
+1403280623 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.inl
 	"func_vector_relational.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -496,7 +496,7 @@
 	"type_vec4.hpp"
 	"func_packing.inl"
 
-1403284223 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.inl
+1403280623 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.inl
 	"func_common.hpp"
 	"type_half.hpp"
 	"../fwd.hpp"
@@ -505,7 +505,7 @@
 	"setup.hpp"
 	"type_half.inl"
 
-1403284223 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_half.inl
+1403280623 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\type_half.inl
 
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\geometric.hpp
 	"detail/func_geometric.hpp"
@@ -514,7 +514,7 @@
 	"type_vec3.hpp"
 	"func_geometric.inl"
 
-1403284223 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.inl
+1403280623 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.inl
 	"func_exponential.hpp"
 	"func_common.hpp"
 	"type_vec2.hpp"
@@ -542,7 +542,7 @@
 	"../mat4x4.hpp"
 	"func_matrix.inl"
 
-1403357614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.inl
+1403354014 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.inl
 	"../geometric.hpp"
 	<limits>
 
@@ -556,7 +556,7 @@
 	"setup.hpp"
 	"func_integer.inl"
 
-1396391262 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.inl
+1396387662 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.inl
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -565,7 +565,7 @@
 	<intrin.h>
 	<limits>
 
-1403353113 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.hpp
+1403349513 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.hpp
 	"../mat4x4.hpp"
 	"../vec2.hpp"
 	"../vec3.hpp"
@@ -580,41 +580,46 @@
 1389479879 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtc\constants.inl
 	<limits>
 
-1403353113 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.inl
+1403349513 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.inl
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1445994582 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
+1447258782 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
 	"Obj.h"
 
-1446485221 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
+1447258782 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
 	"include/chipmunk/chipmunk.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
+	"ObjGPUData.h"
 	<vector>
 
-1446013589 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
+1447300057 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
 	"Environment.h"
+	"Loader.h"
 	<iostream>
 
-1446013547 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
+1447258782 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
 	"Obj.h"
-	"Loader.h"
+	"ObjGPUData.h"
 
-1446013547 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
+1447285469 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	<cstdio>
 	<cstdlib>
 	"Game.h"
+	"ObjGPUData.h"
 
-1446012271 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
+1447285414 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	"Environment.h"
+	"ObjGPUData.h"
+	<map>
 
 1446017189 source:c:\users\steve\documents\proof of concept demo\proof of concept demo\environment.cpp
 	"Environment.h"
@@ -2895,4 +2900,29 @@
 	<cstdlib>
 	"Game.h"
 	"ObjGPUData.h"
+
+1447258782 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447258782 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447258782 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447258782 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\imgloader.h
 

@@ -71,6 +71,7 @@ Game::Game(){
 
     /*** Set time to current ***/
     timeLast = glfwGetTime();
+    timeElapsed = 0;
 }
 
 
@@ -85,12 +86,15 @@ void Game::run(){
 
         /*** Update environment through elapsed time step and draw ***/
         double timeCurrent = glfwGetTime();
-        game->updateEnvironment(timeCurrent - timeLast);
-        game->drawEnvironment();
+        timeElapsed += timeCurrent - timeLast;
+        if(timeElapsed >= 0.01667){
+            game->updateEnvironment(0.01667);
+            game->drawEnvironment();
+            glfwSwapBuffers(window);
+            timeElapsed = 0;
+        }
         timeLast = timeCurrent;
 
-        /*** Swap buffers ***/
-        glfwSwapBuffers(window);
 
         /*** Poll for and process events ***/
         glfwPollEvents();

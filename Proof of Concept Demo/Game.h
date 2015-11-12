@@ -18,6 +18,7 @@ class Game {
     std::map<std::string, ObjGPUData*> objMap;
 
     double timeLast;
+    double timeElapsed;
 
     public:
         Game();
