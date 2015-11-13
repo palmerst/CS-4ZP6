@@ -81,20 +81,25 @@ void Game::run(){
     while (!glfwWindowShouldClose(window))
     {
         /*** Clear depth and color buffers ***/
-        glClear(GL_COLOR_BUFFER_BIT);
-        glClear(GL_DEPTH_BUFFER_BIT);
+        
 
         /*** Update environment through elapsed time step and draw ***/
         double timeCurrent = glfwGetTime();
         timeElapsed += timeCurrent - timeLast;
-        if(timeElapsed >= 0.01667){
-            game->updateEnvironment(0.01667);
-            game->drawEnvironment();
-            glfwSwapBuffers(window);
-            timeElapsed = 0;
-        }
         timeLast = timeCurrent;
 
+        if(timeElapsed >= 0.01667){
+            timeElapsed = 0;
+            glfwSwapBuffers(window);
+            glClear(GL_COLOR_BUFFER_BIT);
+            glClear(GL_DEPTH_BUFFER_BIT);
+            game->updateEnvironment(0.01667);
+            game->drawEnvironment();
+            timeCurrent = glfwGetTime();
+            timeElapsed += timeCurrent - timeLast;
+            timeLast = timeCurrent;
+        }
+        
 
         /*** Poll for and process events ***/
         glfwPollEvents();

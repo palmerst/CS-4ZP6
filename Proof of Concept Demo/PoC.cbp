@@ -44,7 +44,7 @@
 			<Add library="glu32" />
 			<Add library="gdi32" />
 			<Add library="chipmunk" />
-			<Add directory="lib" />
+			<Add directory="lib/win" />
 		</Linker>
 		<Unit filename="BoundaryGPUData.h" />
 		<Unit filename="Environment.cpp" />
