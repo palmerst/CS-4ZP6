@@ -3497,18 +3497,18 @@
 
 1447357013 c:\users\emaad_000\documents\github\cs-4zp6\proof of concept demo\imgloader.h
 
-1447360413 source:c:\github\cs-4zp6\proof of concept demo\environment.cpp
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\environment.cpp
 	"Environment.h"
 	"Loader.h"
 	<iostream>
 
-1447360413 c:\github\cs-4zp6\proof of concept demo\environment.h
+1447377379 d:\users\yc\desktop\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
 	"Obj.h"
 	"ObjGPUData.h"
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\gl\glew.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\gl\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -3517,7 +3517,7 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1447360373 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk.h
 	<stdlib.h>
 	<math.h>
 	<malloc.h>
@@ -3535,36 +3535,36 @@
 	"cpSpace.h"
 	"malloc.h"
 
-1447360373 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk_types.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\chipmunk_types.h
 	<stdint.h>
 	<float.h>
 	<math.h>
 	"TargetConditionals.h"
 	<ApplicationServices/ApplicationServices.h>
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpvect.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpvect.h
 	"chipmunk_types.h"
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbb.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpbb.h
 	"chipmunk_types.h"
 	"cpVect.h"
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cptransform.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cptransform.h
 	"chipmunk_types.h"
 	"cpVect.h"
 	"cpBB.h"
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspatialindex.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpspatialindex.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cparbiter.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cparbiter.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpbody.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpbody.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpshape.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpshape.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cppolyshape.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cppolyshape.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpconstraint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpconstraint.h
 	"cpPinJoint.h"
 	"cpSlideJoint.h"
 	"cpPivotJoint.h"
@@ -3576,36 +3576,36 @@
 	"cpGearJoint.h"
 	"cpSimpleMotor.h"
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cppinjoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cppinjoint.h
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpslidejoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpslidejoint.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cppivotjoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cppivotjoint.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgroovejoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpgroovejoint.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedspring.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedspring.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedrotaryspring.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpdampedrotaryspring.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cprotarylimitjoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cprotarylimitjoint.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpratchetjoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpratchetjoint.h
 
-1447360374 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpgearjoint.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpgearjoint.h
 
-1447360375 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpsimplemotor.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpsimplemotor.h
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspace.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\chipmunk\cpspace.h
 
-1447360413 c:\github\cs-4zp6\proof of concept demo\obj.h
+1447377379 d:\users\yc\desktop\cs-4zp6\proof of concept demo\obj.h
 	"include/chipmunk/chipmunk.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 	"ObjGPUData.h"
 	<vector>
 
-1447360386 c:\github\cs-4zp6\proof of concept demo\include\glm\glm.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\glm.hpp
 	"detail/_fixes.hpp"
 	<cmath>
 	<climits>
@@ -3634,20 +3634,20 @@
 	"vector_relational.hpp"
 	"integer.hpp"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\_fixes.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\_fixes.hpp
 	<cmath>
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\fwd.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\fwd.hpp
 	"detail/type_int.hpp"
 	"detail/type_float.hpp"
 	"detail/type_vec.hpp"
 	"detail/type_mat.hpp"
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_int.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_int.hpp
 	"setup.hpp"
 	<cstdint>
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\setup.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\setup.hpp
 	<cassert>
 	<cuda.h>
 	<intrin.h>
@@ -3657,50 +3657,50 @@
 	<pmmintrin.h>
 	<emmintrin.h>
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_float.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_float.hpp
 	"setup.hpp"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec.hpp
 	"precision.hpp"
 	"type_int.hpp"
 
-1447360380 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\precision.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\precision.hpp
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat.hpp
 	"precision.hpp"
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\vec2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\vec2.hpp
 	"detail/type_vec2.hpp"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec2.inl"
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\_swizzle.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\_swizzle.hpp
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\_swizzle_func.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\_swizzle_func.hpp
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec2.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\vec3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\vec3.hpp
 	"detail/type_vec3.hpp"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec3.inl"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec3.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\vec4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\vec4.hpp
 	"detail/type_vec4.hpp"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.hpp
 	"setup.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -3708,24 +3708,24 @@
 	<cstddef>
 	"type_vec4.inl"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec4.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat2x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat2x2.hpp
 	"detail/type_mat2x2.hpp"
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat2x2.inl"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x2.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat2x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat2x3.hpp
 	"detail/type_mat2x3.hpp"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -3733,12 +3733,12 @@
 	<limits>
 	"type_mat2x3.inl"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x3.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat2x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat2x4.hpp
 	"detail/type_mat2x4.hpp"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -3746,12 +3746,12 @@
 	<limits>
 	"type_mat2x4.inl"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat2x4.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat3x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat3x2.hpp
 	"detail/type_mat3x2.hpp"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -3759,24 +3759,24 @@
 	<limits>
 	"type_mat3x2.inl"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x2.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat3x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat3x3.hpp
 	"detail/type_mat3x3.hpp"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat3x3.inl"
 
-1447360382 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x3.inl
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\mat3x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat3x4.hpp
 	"detail/type_mat3x4.hpp"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -3784,12 +3784,12 @@
 	<limits>
 	"type_mat3x4.inl"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat3x4.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\mat4x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat4x2.hpp
 	"detail/type_mat4x2.hpp"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -3797,12 +3797,12 @@
 	<limits>
 	"type_mat4x2.inl"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x2.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\mat4x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat4x3.hpp
 	"detail/type_mat4x3.hpp"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -3810,12 +3810,12 @@
 	<limits>
 	"type_mat4x3.inl"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x3.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\mat4x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\mat4x4.hpp
 	"detail/type_mat4x4.hpp"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.hpp
 	"../fwd.hpp"
 	"type_vec4.hpp"
 	"type_mat.hpp"
@@ -3823,26 +3823,26 @@
 	<cstddef>
 	"type_mat4x4.inl"
 
-1447360383 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_mat4x4.inl
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\trigonometric.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\trigonometric.hpp
 	"detail/func_trigonometric.hpp"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_trigonometric.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_trigonometric.hpp
 	"func_trigonometric.inl"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_trigonometric.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_trigonometric.inl
 	"_vectorize.hpp"
 	<cmath>
 	<limits>
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\_vectorize.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\_vectorize.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.hpp
 	"../fwd.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -3850,12 +3850,12 @@
 	<cstddef>
 	"type_vec1.inl"
 
-1447360384 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_vec1.inl
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\exponential.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\exponential.hpp
 	"detail/func_exponential.hpp"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -3863,31 +3863,31 @@
 	<cmath>
 	"func_exponential.inl"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_exponential.inl
 	"func_vector_relational.hpp"
 	"_vectorize.hpp"
 	<limits>
 	<cassert>
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_vector_relational.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_vector_relational.hpp
 	"precision.hpp"
 	"setup.hpp"
 	"func_vector_relational.inl"
 
-1447360379 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_vector_relational.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_vector_relational.inl
 	<limits>
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\common.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\common.hpp
 	"detail/func_common.hpp"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_common.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"type_int.hpp"
 	"_fixes.hpp"
 	"func_common.inl"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_common.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_common.inl
 	"func_vector_relational.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -3895,43 +3895,43 @@
 	"_vectorize.hpp"
 	<limits>
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\packing.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\packing.hpp
 	"detail/func_packing.hpp"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.hpp
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"func_packing.inl"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_packing.inl
 	"func_common.hpp"
 	"type_half.hpp"
 	"../fwd.hpp"
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_half.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_half.hpp
 	"setup.hpp"
 	"type_half.inl"
 
-1447360381 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\type_half.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\type_half.inl
 
-1447360385 c:\github\cs-4zp6\proof of concept demo\include\glm\geometric.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\geometric.hpp
 	"detail/func_geometric.hpp"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.hpp
 	"type_vec3.hpp"
 	"func_geometric.inl"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_geometric.inl
 	"func_exponential.hpp"
 	"func_common.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"type_float.hpp"
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\matrix.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\matrix.hpp
 	"detail/func_matrix.hpp"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.hpp
 	"../detail/precision.hpp"
 	"../detail/setup.hpp"
 	"../detail/type_mat.hpp"
@@ -3949,21 +3949,21 @@
 	"../mat4x4.hpp"
 	"func_matrix.inl"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_matrix.inl
 	"../geometric.hpp"
 	<limits>
 
-1447360402 c:\github\cs-4zp6\proof of concept demo\include\glm\vector_relational.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\vector_relational.hpp
 	"detail/func_vector_relational.hpp"
 
-1447360401 c:\github\cs-4zp6\proof of concept demo\include\glm\integer.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\integer.hpp
 	"detail/func_integer.hpp"
 
-1447360377 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.hpp
 	"setup.hpp"
 	"func_integer.inl"
 
-1447360378 c:\github\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\detail\func_integer.inl
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -3972,7 +3972,7 @@
 	<intrin.h>
 	<limits>
 
-1447360387 c:\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.hpp
 	"../mat4x4.hpp"
 	"../vec2.hpp"
 	"../vec3.hpp"
@@ -3980,52 +3980,36 @@
 	"../gtc/constants.hpp"
 	"matrix_transform.inl"
 
-1447360386 c:\github\cs-4zp6\proof of concept demo\include\glm\gtc\constants.hpp
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\gtc\constants.hpp
 	"../detail/setup.hpp"
 	"constants.inl"
 
-1447360386 c:\github\cs-4zp6\proof of concept demo\include\glm\gtc\constants.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\gtc\constants.inl
 	<limits>
 
-1447360387 c:\github\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.inl
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glm\gtc\matrix_transform.inl
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1447360413 c:\github\cs-4zp6\proof of concept demo\objgpudata.h
+1447377379 d:\users\yc\desktop\cs-4zp6\proof of concept demo\objgpudata.h
 	<vector>
 	<string>
 	"include/GL/glew.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 
-1447360403 c:\github\cs-4zp6\proof of concept demo\loader.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\loader.h
 
-1447360413 source:c:\github\cs-4zp6\proof of concept demo\imgloader.cpp
-	<fstream>
-	<cstdlib>
-	"include/gl/glew.h"
-
-1447360403 source:c:\github\cs-4zp6\proof of concept demo\loader.cpp
-	"include/GL/glew.h"
-	"Loader.h"
-	<fstream>
-	<cstdio>
-	<vector>
-	<string>
-	<cstdlib>
-
-1447360414 source:c:\github\cs-4zp6\proof of concept demo\main.cpp
-	"Game.h"
-
-1447360413 c:\github\cs-4zp6\proof of concept demo\game.h
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
-	"Environment.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
 	"ObjGPUData.h"
-	<map>
 
-1447360376 c:\github\cs-4zp6\proof of concept demo\include\glfw\glfw3.h
+1447209460 d:\users\yc\desktop\cs-4zp6\proof of concept demo\include\glfw\glfw3.h
 	<stddef.h>
 	<OpenGL/gl3.h>
 	<OpenGL/gl3ext.h>
@@ -4044,7 +4028,34 @@
 	<GL/glext.h>
 	<GL/glu.h>
 
-1447360413 source:c:\github\cs-4zp6\proof of concept demo\objgpudata.cpp
+1447377379 d:\users\yc\desktop\cs-4zp6\proof of concept demo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Environment.h"
+	"ObjGPUData.h"
+	<map>
+
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447209460 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\main.cpp
+	"Game.h"
+
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\obj.cpp
+	"Obj.h"
+
+1447377379 source:d:\users\yc\desktop\cs-4zp6\proof of concept demo\objgpudata.cpp
 	"ObjGPUData.h"
 	"ImgLoader.h"
 	<vector>
@@ -4055,9 +4066,513 @@
 	<sstream>
 	<map>
 
-1447360413 c:\github\cs-4zp6\proof of concept demo\imgloader.h
+1447377379 d:\users\yc\desktop\cs-4zp6\proof of concept demo\imgloader.h
 
-1447373271 source:c:\github\cs-4zp6\proof of concept demo\game.cpp
+1447377379 source:d:\users\yc\desktop\proof of concept demo\environment.cpp
+	"Environment.h"
+	"Loader.h"
+	<iostream>
+
+1447377379 d:\users\yc\desktop\proof of concept demo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"ObjGPUData.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpspatialindex.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cparbiter.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpbody.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpshape.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cppolyshape.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cppinjoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpslidejoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cppivotjoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpgroovejoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpdampedspring.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpdampedrotaryspring.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cprotarylimitjoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpratchetjoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpgearjoint.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpsimplemotor.h
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\chipmunk\cpspace.h
+
+1447377379 d:\users\yc\desktop\proof of concept demo\obj.h
+	"include/chipmunk/chipmunk.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"ObjGPUData.h"
+	<vector>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\precision.hpp
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\_swizzle.hpp
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\_swizzle_func.hpp
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec2.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec3.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec4.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x2.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x3.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat2x4.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x2.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x3.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat3x4.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x2.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x3.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_mat4x4.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_vec1.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\type_half.inl
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\gtc\constants.inl
+	<limits>
+
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447377379 d:\users\yc\desktop\proof of concept demo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447209460 d:\users\yc\desktop\proof of concept demo\loader.h
+
+1447377379 source:d:\users\yc\desktop\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	<cstdio>
@@ -4065,6 +4580,1869 @@
 	"Game.h"
 	"ObjGPUData.h"
 
-1447372420 source:c:\github\cs-4zp6\proof of concept demo\obj.cpp
+1447209460 d:\users\yc\desktop\proof of concept demo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1447377379 d:\users\yc\desktop\proof of concept demo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Environment.h"
+	"ObjGPUData.h"
+	<map>
+
+1447377379 source:d:\users\yc\desktop\proof of concept demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447209460 source:d:\users\yc\desktop\proof of concept demo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1447377379 source:d:\users\yc\desktop\proof of concept demo\obj.cpp
+	"Obj.h"
+
+1447377379 source:d:\users\yc\desktop\proof of concept demo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447377379 d:\users\yc\desktop\proof of concept demo\imgloader.h
+
+1447378579 source:d:\users\yc\desktop\proof of concept demo\main.cpp
+	"Game.h"
+
+1447464402 source:f:\working\newgame\demo\environment.cpp
+	"Environment.h"
+	"Loader.h"
+	"gameInput.h"
+	<stdio.h>
+	<iostream>
+
+1447463989 f:\working\newgame\demo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"ObjGPUData.h"
+	"auxi_snd.h"
+
+1447209460 f:\working\newgame\demo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1447209460 f:\working\newgame\demo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447209460 f:\working\newgame\demo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpspatialindex.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cparbiter.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpbody.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpshape.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cppolyshape.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cppinjoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpslidejoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cppivotjoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpgroovejoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpdampedspring.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpdampedrotaryspring.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cprotarylimitjoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpratchetjoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpgearjoint.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpsimplemotor.h
+
+1447209460 f:\working\newgame\demo\include\chipmunk\cpspace.h
+
+1447462626 f:\working\newgame\demo\obj.h
+	"include/chipmunk/chipmunk.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"ObjGPUData.h"
+	<vector>
+
+1447209460 f:\working\newgame\demo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447209460 f:\working\newgame\demo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447209460 f:\working\newgame\demo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\precision.hpp
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\_swizzle.hpp
+
+1447209460 f:\working\newgame\demo\include\glm\detail\_swizzle_func.hpp
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec2.inl
+
+1447209460 f:\working\newgame\demo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec3.inl
+
+1447209460 f:\working\newgame\demo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec4.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x2.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x3.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat2x4.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x2.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x3.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat3x4.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x2.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x3.inl
+
+1447209460 f:\working\newgame\demo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_mat4x4.inl
+
+1447209460 f:\working\newgame\demo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_vec1.inl
+
+1447209460 f:\working\newgame\demo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\type_half.inl
+
+1447209460 f:\working\newgame\demo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447209460 f:\working\newgame\demo\include\glm\gtc\constants.inl
+	<limits>
+
+1447209460 f:\working\newgame\demo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447377379 f:\working\newgame\demo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447209460 f:\working\newgame\demo\loader.h
+
+1447377379 source:f:\working\newgame\demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447209460 source:f:\working\newgame\demo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1447382192 source:f:\working\newgame\demo\main.cpp
+	"Game.h"
+	<stdio.h>
+
+1447401558 f:\working\newgame\demo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Environment.h"
+	"ObjGPUData.h"
+	<map>
+
+1447209460 f:\working\newgame\demo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1447462626 source:f:\working\newgame\demo\obj.cpp
+	"Obj.h"
+
+1447377379 source:f:\working\newgame\demo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447377379 f:\working\newgame\demo\imgloader.h
+
+1447401558 source:f:\working\newgame\demo\game.cpp
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
+	"ObjGPUData.h"
+	"gameInput.h"
+
+1447401558 f:\working\newgame\demo\gameinput.h
+	"include/GLFW/glfw3.h"
+
+1447403753 source:f:\working\newgame\demo\gameinput.cpp
+	"gameInput.h"
+	<assert.h>
+
+1447421575 source:f:\working\newgame\demo\testobject.cpp
+	"TestObject.h"
+
+1447421530 f:\working\newgame\demo\testobject.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"include/glm/glm.hpp"
+
+1447463845 source:f:\working\newgame\demo\auxi_snd.cpp
+	"auxi_snd.h"
+	<stdlib.h>
+
+1447041398 f:\working\newgame\demo\auxi_snd.h
+	<alut.h>
+
+1446892011 f:\working\newgame\demo\openal\include\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<al.h>
+	<alc.h>
+
+1381207856 f:\working\newgame\demo\openal\include\alc.h
+
+1381207856 f:\working\newgame\demo\openal\include\al.h
+
+1447424179 source:d:\users\yc\downloads\demo\demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1447256260 source:d:\users\yc\downloads\demo\demo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1447256260 d:\users\yc\downloads\demo\demo\loader.h
+
+1447428992 source:d:\users\yc\downloads\demo\demo\main.cpp
+	"Game.h"
+	<stdio.h>
+
+1447448358 d:\users\yc\downloads\demo\demo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Environment.h"
+	"ObjGPUData.h"
+	<map>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1447543288 d:\users\yc\downloads\demo\demo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"ObjGPUData.h"
+	"auxi_snd.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpspatialindex.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cparbiter.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpbody.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpshape.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cppolyshape.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cppinjoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpslidejoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cppivotjoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpgroovejoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpdampedspring.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpdampedrotaryspring.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cprotarylimitjoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpratchetjoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpgearjoint.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpsimplemotor.h
+
+1447256260 d:\users\yc\downloads\demo\demo\include\chipmunk\cpspace.h
+
+1447542854 d:\users\yc\downloads\demo\demo\obj.h
+	"include/chipmunk/chipmunk.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"ObjGPUData.h"
+	<vector>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\precision.hpp
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\_swizzle.hpp
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\_swizzle_func.hpp
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec2.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec3.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec4.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x2.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x3.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat2x4.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x2.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x3.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat3x4.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x2.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x3.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_mat4x4.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_vec1.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\type_half.inl
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\gtc\constants.inl
+	<limits>
+
+1447256260 d:\users\yc\downloads\demo\demo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447424179 d:\users\yc\downloads\demo\demo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447088198 d:\users\yc\downloads\demo\demo\auxi_snd.h
+	<alut.h>
+
+1447424179 source:d:\users\yc\downloads\demo\demo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447424179 d:\users\yc\downloads\demo\demo\imgloader.h
+
+1446938811 d:\users\yc\downloads\demo\demo\openal\include\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<al.h>
+	<alc.h>
+
+1381251056 d:\users\yc\downloads\demo\demo\openal\include\alc.h
+
+1381251056 d:\users\yc\downloads\demo\demo\openal\include\al.h
+
+1447511466 source:d:\users\yc\downloads\demo\demo\environment.cpp
+	"Environment.h"
+	"Loader.h"
+	"gameInput.h"
+	<stdio.h>
+	<iostream>
+
+1447542523 d:\users\yc\downloads\demo\demo\gameinput.h
+	"include/GLFW/glfw3.h"
+
+1447515360 source:d:\users\yc\downloads\demo\demo\game.cpp
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
+	"ObjGPUData.h"
+	"gameInput.h"
+
+1447514803 source:d:\users\yc\downloads\demo\demo\gameinput.cpp
+	"gameInput.h"
+	<assert.h>
+
+1447515360 source:d:\users\yc\desktop\version 0\demo\game.cpp
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
+	"ObjGPUData.h"
+	"gameInput.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1447448358 d:\users\yc\desktop\version 0\demo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Environment.h"
+	"ObjGPUData.h"
+	<map>
+
+1447586538 d:\users\yc\desktop\version 0\demo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"ObjGPUData.h"
+	"auxi_snd.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpspatialindex.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cparbiter.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpbody.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpshape.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cppolyshape.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cppinjoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpslidejoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cppivotjoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpgroovejoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpdampedspring.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpdampedrotaryspring.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cprotarylimitjoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpratchetjoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpgearjoint.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpsimplemotor.h
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\chipmunk\cpspace.h
+
+1447580284 d:\users\yc\desktop\version 0\demo\obj.h
+	"include/chipmunk/chipmunk.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"ObjGPUData.h"
+	<vector>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\precision.hpp
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\_swizzle.hpp
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\_swizzle_func.hpp
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec2.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec3.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec4.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x2.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x3.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat2x4.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x2.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x3.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat3x4.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x2.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x3.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_mat4x4.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_vec1.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\type_half.inl
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\gtc\constants.inl
+	<limits>
+
+1447256260 d:\users\yc\desktop\version 0\demo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447424179 d:\users\yc\desktop\version 0\demo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447586900 d:\users\yc\desktop\version 0\demo\auxi_snd.h
+	<alut.h>
+
+1447585590 d:\users\yc\desktop\version 0\demo\gameinput.h
+	"include/GLFW/glfw3.h"
+
+1447424179 source:d:\users\yc\desktop\version 0\demo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/gl/glew.h"
+
+1447256260 source:d:\users\yc\desktop\version 0\demo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1447256260 d:\users\yc\desktop\version 0\demo\loader.h
+
+1447428992 source:d:\users\yc\desktop\version 0\demo\main.cpp
+	"Game.h"
+	<stdio.h>
+
+1447424179 source:d:\users\yc\desktop\version 0\demo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447424179 d:\users\yc\desktop\version 0\demo\imgloader.h
+
+1446938811 d:\users\yc\desktop\version 0\demo\openal\include\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<al.h>
+	<alc.h>
+
+1381251056 d:\users\yc\desktop\version 0\demo\openal\include\alc.h
+
+1381251056 d:\users\yc\desktop\version 0\demo\openal\include\al.h
+
+1447587009 source:d:\users\yc\desktop\version 0\demo\auxi_snd.cpp
+	"auxi_snd.h"
+	<stdlib.h>
+
+1447587032 source:d:\users\yc\desktop\version 0\demo\environment.cpp
+	"Environment.h"
+	"Loader.h"
+	"gameInput.h"
+	<stdio.h>
+	<iostream>
+
+1447580902 source:d:\users\yc\desktop\version 0\demo\gameinput.cpp
+	"gameInput.h"
+	<assert.h>
+
+1447580253 source:d:\users\yc\desktop\version 0\demo\obj.cpp
 	"Obj.h"
 

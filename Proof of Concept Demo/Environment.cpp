@@ -1,8 +1,10 @@
+
 #include "Environment.h"
 #include "Loader.h"
+#include "gameInput.h"
 
+#include <stdio.h>
 #include <iostream>
-
 
 Environment::Environment(){
 
@@ -39,8 +41,182 @@ Environment::Environment(){
 	mat_Projection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 300.0f);
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 	mat_View = glm::lookAt(glm::vec3(0.0f, 50.0f, 200.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+    gpuData = new ObjGPUData("./data/testchar", 3.1415f);
+	role = new RoleObject(envSpace,glm::vec2(-100,120),gpuData);    //initial character
+
+	snd_initialize();       //initial sound
+    m_bm = snd_new("bm.wav",1);         //load bgm
+    m_sound = snd_new("sound.wav",0);   //load sound
+
+    snd_play(m_bm);                     //play bgm
 }
 
+//clean
+Environment::~Environment()
+{
+    delete role;
+    delete gpuData;
+
+    size_t cnt = bullets.size();
+    for(size_t idx=0;idx<cnt;idx++)
+        delete bullets[idx];
+    bullets.clear();
+
+    snd_free(m_sound);
+    snd_free(m_bm);
+    snd_cleanup();
+}
+
+//test only see the input respond
+static void test_input_module(uint op)
+{
+    if(op&INPUT_OP_UP)
+        printf("up repeat!\n");
+    if(op&INPUT_OP_UP_START)
+        printf("up pressed!\n");
+    if(op&INPUT_OP_UP_STOP)
+        printf("up released!\n");
+
+    if(op&INPUT_OP_LEFT)
+        printf("left repeat!\n");
+    if(op&INPUT_OP_LEFT_START)
+        printf("left pressed!\n");
+    if(op&INPUT_OP_LEFT_STOP)
+        printf("left released!\n");
+
+    if(op&INPUT_OP_RIGHT)
+        printf("right repeat!\n");
+    if(op&INPUT_OP_RIGHT_START)
+        printf("right pressed!\n");
+    if(op&INPUT_OP_RIGHT_STOP)
+        printf("right released!\n");
+
+    if(op&INPUT_OP_DOWN)
+        printf("down repeat!\n");
+    if(op&INPUT_OP_DOWN_START)
+        printf("down pressed!\n");
+    if(op&INPUT_OP_DOWN_STOP)
+        printf("down released!\n");
+
+    if(op&INPUT_OP_A)
+        printf("button A repeat!\n");
+    if(op&INPUT_OP_A_START)
+        printf("button A pressed!\n");
+    if(op&INPUT_OP_A_STOP)
+        printf("button A released!\n");
+
+    if(op&INPUT_OP_B)
+        printf("button B repeat!\n");
+    if(op&INPUT_OP_B_START)
+        printf("button B pressed!\n");
+    if(op&INPUT_OP_B_STOP)
+        printf("button B released!\n");
+
+    if(op&INPUT_OP_C)
+        printf("button C repeat!\n");
+    if(op&INPUT_OP_C_START)
+        printf("button C pressed!\n");
+    if(op&INPUT_OP_C_STOP)
+        printf("button C released!\n");
+
+    if(op&INPUT_OP_D)
+        printf("button D repeat!\n");
+    if(op&INPUT_OP_D_START)
+        printf("button D pressed!\n");
+    if(op&INPUT_OP_D_STOP)
+        printf("button D released!\n");
+}
+
+void Environment::processUserInput(unsigned int operation)
+{
+    //test_input_module(operation);
+
+    if(operation&INPUT_OP_RIGHT_START || operation&INPUT_OP_RIGHT)  //right movement
+    {
+        printf("right pressed!\n");
+
+        cpVect curVec = cpBodyGetVelocity(role->body);
+        if(curVec.x >= 100.0)   //max speed
+            curVec.x = 100.0;
+        else
+        {   //x velocity
+            role->mAcceleration = cpv(20.0,0.0);
+            curVec.x += role->mAcceleration.x;
+            //curVec.y += role->mAcceleration.y;
+        }
+        cpBodySetVelocity(role->body,curVec);
+        role->dir = 1;//bullet direction
+    }
+    else if(operation&INPUT_OP_LEFT_START || operation&INPUT_OP_LEFT){   //left movement
+        printf("left pressed\!n");
+        printf("left pressed£¡\n");
+
+        cpVect curVec = cpBodyGetVelocity(role->body);
+        if(curVec.x <= -100.0)
+            curVec.x = -100.0;
+        else
+        {
+            role->mAcceleration = cpv(-20.0,0.0);
+            curVec.x += role->mAcceleration.x;
+            //curVec.y += role->mAcceleration.y;
+        }
+
+        cpBodySetVelocity(role->body,curVec);
+        role->dir = 2;
+    }
+    else
+    {   //de acceleration
+        cpVect curVec = cpBodyGetVelocity(role->body);
+        if(role->dir==1)
+        {
+
+            if(curVec.x <= 0.0)
+                curVec.x = 0.0;
+            else
+            {
+                role->mAcceleration = cpv(-10.0,0.0);
+                curVec.x += role->mAcceleration.x;
+                //curVec.y += role->mAcceleration.y;
+            }
+        }
+        else if(role->dir == 2)
+        {
+            if(curVec.x>= 0.0)
+                curVec.x = 0.0;
+            else
+            {
+                role->mAcceleration = cpv(10.0,0.0);
+                curVec.x += role->mAcceleration.x;
+                //curVec.y += role->mAcceleration.y;
+            }
+        }
+
+        cpBodySetVelocity(role->body,curVec);
+    }
+
+    //press c(j) to shot
+    if(operation&INPUT_OP_C_START || operation&INPUT_OP_C)
+    {
+        cpVect pos,velocity;        //bullet position
+        pos = cpBodyGetPosition(role->body);
+        if(role->dir == 1)      //base on main character, it will determine bullet direction
+        {
+            pos.x += 11.0;
+            velocity = cpv(350.0,0.0);  //bullet speed
+        }
+        else if(role->dir==2)
+        {
+            pos.x -= 11.0;
+            velocity = cpv(-350.0,0.0);
+        }
+        BulletObjet *tmp = new BulletObjet(envSpace,glm::vec2(pos.x,pos.y),gpuData);
+        cpBodySetVelocity(tmp->body,velocity);
+        bullets.push_back(tmp);
+        snd_play(m_sound);      //play sound
+    }
+
+}
 
 /*** Adds a box boundary from p1 (lower left) to p2 (upper right) ***
  *** Links to gpu data representing the boundary visuals          ***/
@@ -84,12 +260,16 @@ void Environment::drawEnvironment(){
         drawObj(boundaries[i], true);
 
     }
+    //draw main character
+    drawObj(*role);
+
+    size_t cnt = bullets.size();
+    for(size_t idx=0;idx<cnt;idx++)
+        drawObj(*bullets[idx]);
 
     /***  Unbind shaders and VAO ***/
     glBindVertexArray(0);
     glUseProgram(0);
-
-
 }
 
 /*** Draw an object ***/
@@ -116,12 +296,13 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
     glBindVertexArray(currentGPUObj->vertexArrayObj);
 
     /*** Iterate through all of the object pieces and render ***/
-    for(int i = 0; i < currentGPUObj->materialIndices.size()/2; i++){
+    int cnt = currentGPUObj->materialIndices.size() / 2;
+    for(int i = 0; i < cnt; i++){
 
         unsigned int first = (currentGPUObj->materialIndices)[i*2];
         unsigned int last;
 
-        if((2*i + 2) > (currentGPUObj->materialIndices.size() - 1))
+        if((2*i + 2) > (cnt - 1))
             last = currentGPUObj->fList.size();
         else
             last = (currentGPUObj->materialIndices)[i*2 + 2];
@@ -136,7 +317,10 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
         glUniform1i(currentGPUObj->texture_ID, 0);
 
         /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
-        glm::mat4 modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(pos.x, pos.y, 0.0f)) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * currentGPUObj->rotation * currentGPUObj->unitScale;
+        glm::mat4 modelMat = glm::translate(glm::mat4(1.0f),
+                    glm::vec3(pos.x, pos.y, 0.0f)) * glm::rotate(glm::mat4(1.0f),
+                    angle,
+                    glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * currentGPUObj->rotation * currentGPUObj->unitScale;
         glm::mat4 modelViewMat = mat_View*modelMat;
         glm::mat4 MVP = mat_Projection*modelViewMat;
 //            glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));

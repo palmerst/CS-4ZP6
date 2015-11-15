@@ -5,6 +5,7 @@
 
 #include "Game.h"
 #include "ObjGPUData.h"
+#include "gameInput.h"
 
 Game::Game(){
 
@@ -72,6 +73,15 @@ Game::Game(){
     /*** Set time to current ***/
     timeLast = glfwGetTime();
     timeElapsed = 0;
+
+    //init the game input
+    gameinput_initialze(window);
+}
+
+Game::~Game()
+{
+    //delet input model when game exit
+    gameinput_cleanup();
 }
 
 
@@ -81,25 +91,21 @@ void Game::run(){
     while (!glfwWindowShouldClose(window))
     {
         /*** Clear depth and color buffers ***/
-        
+        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_DEPTH_BUFFER_BIT);
 
         /*** Update environment through elapsed time step and draw ***/
         double timeCurrent = glfwGetTime();
         timeElapsed += timeCurrent - timeLast;
-        timeLast = timeCurrent;
-
         if(timeElapsed >= 0.01667){
-            timeElapsed = 0;
-            glfwSwapBuffers(window);
-            glClear(GL_COLOR_BUFFER_BIT);
-            glClear(GL_DEPTH_BUFFER_BIT);
+            //detect keyboard input
+            game->processUserInput(get_input_msg());
             game->updateEnvironment(0.01667);
             game->drawEnvironment();
-            timeCurrent = glfwGetTime();
-            timeElapsed += timeCurrent - timeLast;
-            timeLast = timeCurrent;
+            glfwSwapBuffers(window);
+            timeElapsed = 0;
         }
-        
+        timeLast = timeCurrent;
 
         /*** Poll for and process events ***/
         glfwPollEvents();

@@ -22,6 +22,7 @@ class Game {
 
     public:
         Game();
+        ~Game();
 
         /*** Run the game until application is terminated ***/
         void run();

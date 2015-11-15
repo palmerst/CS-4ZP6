@@ -5,7 +5,7 @@
 #include "include/chipmunk/chipmunk.h"
 #include "Obj.h"
 #include "ObjGPUData.h"
-
+#include "auxi_snd.h"
 
 /*** In game environment ***/
 
@@ -31,9 +31,16 @@ class Environment {
         /*** Draw an object ***/
         void drawObj(Obj, bool = false);
 
+        ObjGPUData *gpuData;                //main character and bullet's texture
+        RoleObject* role;                   //main character
+        std::vector<BulletObjet*> bullets;  //bullet
+        auxi_snd *m_bm;                     //backgrourd music
+        auxi_snd *m_sound;                  //bullet sound
+
     public:
 
         Environment();
+        ~Environment();
 
         /*** Adds a box boundary from p1 (lower left) to p2 (upper right) ***
          *** Links to gpu data representing the boundary visuals          ***/
@@ -50,6 +57,9 @@ class Environment {
 
         /*** Update projection matrix ***/
         void updateProjection(glm::mat4);
+
+        //input
+        void processUserInput(unsigned int operation);
 
 };
 

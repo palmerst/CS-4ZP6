@@ -1,5 +1,8 @@
 #include "Game.h"
 
+#include <stdio.h>
+
+//
 /*** For systems using nvidia optimus GPUs ***/
 extern "C" {
     __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;

@@ -14,7 +14,17 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="lib" />
+					<Add directory="openal/include" />
 				</Compiler>
+				<Linker>
+					<Add library="lib\win\libglew32.a" />
+					<Add library="lib\win\libglfw3.a" />
+					<Add library="lib\win\libchipmunk.a" />
+					<Add library="openal\lib\alut.lib" />
+					<Add library="openal\lib\openal32.lib" />
+					<Add directory="lib/win" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Demo" prefix_auto="1" extension_auto="1" />
@@ -26,6 +36,10 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="lib\win\libchipmunk.a" />
+					<Add library="lib\win\libglew32.a" />
+					<Add library="lib\win\libglfw3.a" />
+					<Add directory="lib/win" />
 				</Linker>
 			</Target>
 		</Build>
@@ -44,7 +58,7 @@
 			<Add library="glu32" />
 			<Add library="gdi32" />
 			<Add library="chipmunk" />
-			<Add directory="lib/win" />
+			<Add directory="lib" />
 		</Linker>
 		<Unit filename="BoundaryGPUData.h" />
 		<Unit filename="Environment.cpp" />
@@ -60,6 +74,10 @@
 		<Unit filename="ObjGPUData.cpp" />
 		<Unit filename="ObjGPUData.h" />
 		<Unit filename="ObjPhysicsData.h" />
+		<Unit filename="auxi_snd.cpp" />
+		<Unit filename="auxi_snd.h" />
+		<Unit filename="gameInput.cpp" />
+		<Unit filename="gameInput.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
