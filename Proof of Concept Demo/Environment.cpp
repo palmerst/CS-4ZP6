@@ -1,7 +1,6 @@
 
 #include "Environment.h"
 #include "Loader.h"
-#include "gameInput.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -40,14 +39,34 @@ Environment::Environment(){
     /*** Set up projection and view matrices -- these numbers will probably change ***/
 	mat_Projection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 300.0f);
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
-	mat_View = glm::lookAt(glm::vec3(0.0f, 50.0f, 200.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-    gpuData = new ObjGPUData("./data/testchar", 3.1415f);
-	role = new RoleObject(envSpace,glm::vec2(-100,120),gpuData);    //initial character
+
+
+    gpuMap.insert(std::pair<std::string, ObjGPUData*>("Hero", new ObjGPUData("./data/obj/testchar", 3.1415f)));
+    gpuMap.insert(std::pair<std::string, ObjGPUData*>("Enemy", new ObjGPUData("./data/obj/testenemy", 3.1415f)));
+    gpuMap.insert(std::pair<std::string, ObjGPUData*>("Boundary", new ObjGPUData("./data/obj/testbound")));
+    gpuMap.insert(std::pair<std::string, ObjGPUData*>("Bullet", new ObjGPUData("./data/obj/bullet")));
+
+    addBoundary(cpv(-150,-100), cpv(-145,100), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-145,-100), cpv(145, -95), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(145,-100), cpv(150,100), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(15,0), cpv(70,5), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-55,-55), cpv(-10,-50), gpuMap.find("Boundary")->second);
+    dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(0,-30), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(-44,55), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(24,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(44,50), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(90,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+
+
+    userControlObject = DynamicObject(envSpace, glm::vec2(-77,80), 100, 20, 0, 0, gpuMap.find("Hero")->second, true);
+
+    mat_View = glm::lookAt(glm::vec3(0.0f, 50.0f, 200.0f), glm::vec3(-77.0f, 80.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	snd_initialize();       //initial sound
-    m_bm = snd_new("bm.wav",1);         //load bgm
-    m_sound = snd_new("sound.wav",0);   //load sound
+    m_bm = snd_new("./data/sound/bm.wav",1);         //load bgm
+    m_bullet = snd_new("./data/sound/bullet.wav",0);   //load sound
+    m_jump = snd_new("./data/sound/jump.wav", 0);
 
     snd_play(m_bm);                     //play bgm
 }
@@ -55,167 +74,102 @@ Environment::Environment(){
 //clean
 Environment::~Environment()
 {
-    delete role;
-    delete gpuData;
 
-    size_t cnt = bullets.size();
-    for(size_t idx=0;idx<cnt;idx++)
-        delete bullets[idx];
-    bullets.clear();
-
-    snd_free(m_sound);
+    snd_free(m_bullet);
     snd_free(m_bm);
+    snd_free(m_jump);
     snd_cleanup();
 }
 
-//test only see the input respond
-static void test_input_module(uint op)
-{
-    if(op&INPUT_OP_UP)
-        printf("up repeat!\n");
-    if(op&INPUT_OP_UP_START)
-        printf("up pressed!\n");
-    if(op&INPUT_OP_UP_STOP)
-        printf("up released!\n");
+void Environment::processContinuousInput(){
 
-    if(op&INPUT_OP_LEFT)
-        printf("left repeat!\n");
-    if(op&INPUT_OP_LEFT_START)
-        printf("left pressed!\n");
-    if(op&INPUT_OP_LEFT_STOP)
-        printf("left released!\n");
+    if(keyStates[GLFW_KEY_A])
+    {
+        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        if(curVel.x <= -100.0)
+            return;
+        cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(-20.0, 0.0)));
+        return;
+    }
+    if(keyStates[GLFW_KEY_D])
+    {
+        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        if(curVel.x >= 100.0)
+            return;
+        cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(20.0, 0.0)));
+        return;
+    }
+    if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D])
+    {
+        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        if(curVel.x == 0)
+            return;
+        else
+        {
+            curVel.x /= 1.1;
+            if(curVel.x > -10 || curVel.x < 10)
+                curVel.x = 0;
+            cpBodySetVelocity(userControlObject.body, curVel);
+        }
+    }
 
-    if(op&INPUT_OP_RIGHT)
-        printf("right repeat!\n");
-    if(op&INPUT_OP_RIGHT_START)
-        printf("right pressed!\n");
-    if(op&INPUT_OP_RIGHT_STOP)
-        printf("right released!\n");
-
-    if(op&INPUT_OP_DOWN)
-        printf("down repeat!\n");
-    if(op&INPUT_OP_DOWN_START)
-        printf("down pressed!\n");
-    if(op&INPUT_OP_DOWN_STOP)
-        printf("down released!\n");
-
-    if(op&INPUT_OP_A)
-        printf("button A repeat!\n");
-    if(op&INPUT_OP_A_START)
-        printf("button A pressed!\n");
-    if(op&INPUT_OP_A_STOP)
-        printf("button A released!\n");
-
-    if(op&INPUT_OP_B)
-        printf("button B repeat!\n");
-    if(op&INPUT_OP_B_START)
-        printf("button B pressed!\n");
-    if(op&INPUT_OP_B_STOP)
-        printf("button B released!\n");
-
-    if(op&INPUT_OP_C)
-        printf("button C repeat!\n");
-    if(op&INPUT_OP_C_START)
-        printf("button C pressed!\n");
-    if(op&INPUT_OP_C_STOP)
-        printf("button C released!\n");
-
-    if(op&INPUT_OP_D)
-        printf("button D repeat!\n");
-    if(op&INPUT_OP_D_START)
-        printf("button D pressed!\n");
-    if(op&INPUT_OP_D_STOP)
-        printf("button D released!\n");
 }
 
-void Environment::processUserInput(unsigned int operation)
+void Environment::processKB(int key, int scancode, int action, int mods)
 {
-    //test_input_module(operation);
-
-    if(operation&INPUT_OP_RIGHT_START || operation&INPUT_OP_RIGHT)  //right movement
-    {
-        printf("right pressed!\n");
-
-        cpVect curVec = cpBodyGetVelocity(role->body);
-        if(curVec.x >= 100.0)   //max speed
-            curVec.x = 100.0;
-        else
-        {   //x velocity
-            role->mAcceleration = cpv(20.0,0.0);
-            curVec.x += role->mAcceleration.x;
-            //curVec.y += role->mAcceleration.y;
-        }
-        cpBodySetVelocity(role->body,curVec);
-        role->dir = 1;//bullet direction
-    }
-    else if(operation&INPUT_OP_LEFT_START || operation&INPUT_OP_LEFT){   //left movement
-        printf("left pressed\!n");
-        printf("left pressed£¡\n");
-
-        cpVect curVec = cpBodyGetVelocity(role->body);
-        if(curVec.x <= -100.0)
-            curVec.x = -100.0;
-        else
+    switch(key){
+    case GLFW_KEY_A:
         {
-            role->mAcceleration = cpv(-20.0,0.0);
-            curVec.x += role->mAcceleration.x;
-            //curVec.y += role->mAcceleration.y;
+            if(action == GLFW_PRESS)
+                keyStates[GLFW_KEY_A] = 1;
+            else if(action == GLFW_RELEASE)
+                keyStates[GLFW_KEY_A] = 0;
+            break;
         }
-
-        cpBodySetVelocity(role->body,curVec);
-        role->dir = 2;
-    }
-    else
-    {   //de acceleration
-        cpVect curVec = cpBodyGetVelocity(role->body);
-        if(role->dir==1)
+    case GLFW_KEY_D:
         {
-
-            if(curVec.x <= 0.0)
-                curVec.x = 0.0;
-            else
-            {
-                role->mAcceleration = cpv(-10.0,0.0);
-                curVec.x += role->mAcceleration.x;
-                //curVec.y += role->mAcceleration.y;
+            if(action == GLFW_PRESS)
+                keyStates[GLFW_KEY_D] = 1;
+            else if(action == GLFW_RELEASE)
+                keyStates[GLFW_KEY_D] = 0;
+            break;
+        }
+    case GLFW_KEY_SPACE:
+        {
+            cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+            if(curVel.y < 0.001 && curVel.y > -0.001){
+                cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(0.0, 115.0)));
+                snd_play(m_jump);
             }
+            break;
         }
-        else if(role->dir == 2)
-        {
-            if(curVec.x>= 0.0)
-                curVec.x = 0.0;
-            else
-            {
-                role->mAcceleration = cpv(10.0,0.0);
-                curVec.x += role->mAcceleration.x;
-                //curVec.y += role->mAcceleration.y;
-            }
-        }
-
-        cpBodySetVelocity(role->body,curVec);
+    default:
+        break;
     }
 
-    //press c(j) to shot
-    if(operation&INPUT_OP_C_START || operation&INPUT_OP_C)
-    {
-        cpVect pos,velocity;        //bullet position
-        pos = cpBodyGetPosition(role->body);
-        if(role->dir == 1)      //base on main character, it will determine bullet direction
-        {
-            pos.x += 11.0;
-            velocity = cpv(350.0,0.0);  //bullet speed
-        }
-        else if(role->dir==2)
-        {
-            pos.x -= 11.0;
-            velocity = cpv(-350.0,0.0);
-        }
-        BulletObjet *tmp = new BulletObjet(envSpace,glm::vec2(pos.x,pos.y),gpuData);
-        cpBodySetVelocity(tmp->body,velocity);
-        bullets.push_back(tmp);
-        snd_play(m_sound);      //play sound
-    }
+}
 
+
+void Environment::processMousePosition(float xpos, float ypos){
+    mouseX = xpos;
+    mouseY = ypos;
+}
+
+void Environment::processMouseClick(int button, int action, int mods, float winX, float winY){
+    winX -= 1;
+    winY -= 1;
+
+    if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS){
+        cpVect controlPos = cpBodyGetPosition(userControlObject.body);
+        cpVect mousePos = cpv(mouseX - winX/2, mouseY - winY/2);
+        cpVect bulletVel = cpvmult(cpvnormalize(mousePos),225.0);
+        cpFloat bulletAngle = cpvtoangle(mousePos) - 3.141592/2.0;
+        DynamicObject bullet = DynamicObject(envSpace, glm::vec2(controlPos.x, controlPos.y), 3, 3, 0.5, 1, gpuMap.find("Bullet")->second);
+        cpBodySetVelocity(bullet.body, bulletVel);
+        cpBodySetAngle(bullet.body, bulletAngle);
+        dynamicObjects.push_back(bullet);
+        snd_play(m_bullet);
+    }
 }
 
 /*** Adds a box boundary from p1 (lower left) to p2 (upper right) ***
@@ -226,17 +180,12 @@ void Environment::addBoundary(cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
 }
 
-/*** Adds a dynamic object with centroid at position pos and links to gpu data ***/
-void Environment::addDynamicObject(glm::vec2 pos, ObjGPUData* gpuData){
-
-    dynamicObjects.push_back(DynamicObject(envSpace, pos, gpuData));
-
-}
-
 /*** Step the space through time dt ***/
 void Environment::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
+    cpVect controlPos = cpBodyGetPosition(userControlObject.body);
+    mat_View = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 50.0f, 200.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 }
 
@@ -260,12 +209,9 @@ void Environment::drawEnvironment(){
         drawObj(boundaries[i], true);
 
     }
-    //draw main character
-    drawObj(*role);
 
-    size_t cnt = bullets.size();
-    for(size_t idx=0;idx<cnt;idx++)
-        drawObj(*bullets[idx]);
+    /*** Draw hero ***/
+    drawObj(userControlObject);
 
     /***  Unbind shaders and VAO ***/
     glBindVertexArray(0);
@@ -296,13 +242,12 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
     glBindVertexArray(currentGPUObj->vertexArrayObj);
 
     /*** Iterate through all of the object pieces and render ***/
-    int cnt = currentGPUObj->materialIndices.size() / 2;
-    for(int i = 0; i < cnt; i++){
+    for(int i = 0; i < currentGPUObj->materialIndices.size()/2; i++){
 
         unsigned int first = (currentGPUObj->materialIndices)[i*2];
         unsigned int last;
 
-        if((2*i + 2) > (cnt - 1))
+        if((2*i + 2) > (currentGPUObj->materialIndices.size() - 1))
             last = currentGPUObj->fList.size();
         else
             last = (currentGPUObj->materialIndices)[i*2 + 2];
@@ -317,10 +262,7 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
         glUniform1i(currentGPUObj->texture_ID, 0);
 
         /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
-        glm::mat4 modelMat = glm::translate(glm::mat4(1.0f),
-                    glm::vec3(pos.x, pos.y, 0.0f)) * glm::rotate(glm::mat4(1.0f),
-                    angle,
-                    glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * currentGPUObj->rotation * currentGPUObj->unitScale;
+        glm::mat4 modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(pos.x, pos.y, 0.0f)) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * currentGPUObj->rotation * currentGPUObj->unitScale;
         glm::mat4 modelViewMat = mat_View*modelMat;
         glm::mat4 MVP = mat_Projection*modelViewMat;
 //            glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
@@ -356,6 +298,9 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
                 glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_yz);
                 break;
             case 3:
+                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_xz);
+                break;
+            case 4:
                 glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_xz);
                 break;
             }

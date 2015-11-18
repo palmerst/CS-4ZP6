@@ -3,9 +3,12 @@
 
 #include "include/GL/glew.h"
 #include "include/chipmunk/chipmunk.h"
+#include "include/GLFW/glfw3.h"
 #include "Obj.h"
 #include "ObjGPUData.h"
 #include "auxi_snd.h"
+
+#include <map>
 
 /*** In game environment ***/
 
@@ -14,6 +17,12 @@ class Environment {
     private:
 
         cpSpace* envSpace;
+
+        /*** Object data for gpu calls ***/
+        std::map<std::string, ObjGPUData*> gpuMap;
+
+        /*** Sound objects ***/
+        std::map<std::string, auxi_snd*> soundMap;
 
         /*** Objects in environment ***/
         std::vector<Boundary> boundaries;
@@ -31,16 +40,23 @@ class Environment {
         /*** Draw an object ***/
         void drawObj(Obj, bool = false);
 
-        ObjGPUData *gpuData;                //main character and bullet's texture
-        RoleObject* role;                   //main character
-        std::vector<BulletObjet*> bullets;  //bullet
-        auxi_snd *m_bm;                     //backgrourd music
-        auxi_snd *m_sound;                  //bullet sound
+        /*** Controlled object ***/
+        DynamicObject userControlObject;
+
+
+        auxi_snd* m_bm;
+        auxi_snd* m_bullet;
+        auxi_snd* m_jump;
+
+        float mouseX, mouseY;
+
 
     public:
 
         Environment();
         ~Environment();
+
+        int keyStates[GLFW_KEY_LAST] = {0};
 
         /*** Adds a box boundary from p1 (lower left) to p2 (upper right) ***
          *** Links to gpu data representing the boundary visuals          ***/
@@ -58,8 +74,15 @@ class Environment {
         /*** Update projection matrix ***/
         void updateProjection(glm::mat4);
 
-        //input
-        void processUserInput(unsigned int operation);
+        /*** Input handling funcs ***/
+        void processKB(int, int, int, int);
+
+        void processContinuousInput();
+
+        void processMousePosition(float, float);
+        void processMouseClick(int, int, int, float, float);
+
+
 
 };
 

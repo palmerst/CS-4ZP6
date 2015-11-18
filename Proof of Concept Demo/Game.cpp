@@ -5,7 +5,6 @@
 
 #include "Game.h"
 #include "ObjGPUData.h"
-#include "gameInput.h"
 
 Game::Game(){
 
@@ -23,6 +22,9 @@ Game::Game(){
         glfwTerminate();
         exit(2);
     }
+
+    winX = 600;
+    winY = 600;
 
     /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
@@ -47,41 +49,39 @@ Game::Game(){
         static_cast<Game*>(glfwGetWindowUserPointer(w))->framebuffer_size_callback(w, width, height);
     };
 
+    auto kbfunc = [](GLFWwindow* w, int key, int scancode, int action, int mods)
+    {
+        static_cast<Game*>(glfwGetWindowUserPointer(w))->key_callback(w, key, scancode, action, mods);
+    };
+
+    auto mposfunc = [](GLFWwindow* w, double xpos, double ypos)
+    {
+        static_cast<Game*>(glfwGetWindowUserPointer(w))->mouse_pos_callback(w, xpos, ypos);
+    };
+
+    auto mbutfunc = [](GLFWwindow* w, int button, int action, int mods)
+    {
+        static_cast<Game*>(glfwGetWindowUserPointer(w))->mouse_button_callback(w, button, action, mods);
+    };
+
     glfwSetFramebufferSizeCallback(window, wfunc);
+    glfwSetKeyCallback(window, kbfunc);
+    glfwSetCursorPosCallback(window, mposfunc);
+    glfwSetMouseButtonCallback(window, mbutfunc);
 
 
     /*** Associate an environment with the game ***/
-    game = new Environment();
+    env = new Environment();
 
-    /*** Populate the environment                                   ***
-     *** This code will eventually be moved -- here is fine for PoC ***/
-    objMap.insert(std::pair<std::string, ObjGPUData*>("Hero", new ObjGPUData("./data/testchar", 3.1415f)));
-    objMap.insert(std::pair<std::string, ObjGPUData*>("Boundary", new ObjGPUData("./data/testbound")));
-
-    game->addBoundary(cpv(-150,-100), cpv(-145,100), objMap.find("Boundary")->second);
-	game->addBoundary(cpv(-145,-100), cpv(145, -95), objMap.find("Boundary")->second);
-	game->addBoundary(cpv(145,-100), cpv(150,100), objMap.find("Boundary")->second);
-	game->addBoundary(cpv(15,0), cpv(70,5), objMap.find("Boundary")->second);
-	game->addBoundary(cpv(-55,-55), cpv(-10,-50), objMap.find("Boundary")->second);
-	game->addDynamicObject(glm::vec2(-77,80), objMap.find("Hero")->second);
-	game->addDynamicObject(glm::vec2(0,-30), objMap.find("Hero")->second);
-	game->addDynamicObject(glm::vec2(-44,55), objMap.find("Hero")->second);
-	game->addDynamicObject(glm::vec2(24,80), objMap.find("Hero")->second);
-	game->addDynamicObject(glm::vec2(44,50), objMap.find("Hero")->second);
-	game->addDynamicObject(glm::vec2(90,80), objMap.find("Hero")->second);
 
     /*** Set time to current ***/
     timeLast = glfwGetTime();
     timeElapsed = 0;
-
-    //init the game input
-    gameinput_initialze(window);
 }
 
 Game::~Game()
 {
-    //delet input model when game exit
-    gameinput_cleanup();
+
 }
 
 
@@ -90,22 +90,23 @@ void Game::run(){
 
     while (!glfwWindowShouldClose(window))
     {
-        /*** Clear depth and color buffers ***/
-        glClear(GL_COLOR_BUFFER_BIT);
-        glClear(GL_DEPTH_BUFFER_BIT);
-
         /*** Update environment through elapsed time step and draw ***/
         double timeCurrent = glfwGetTime();
         timeElapsed += timeCurrent - timeLast;
-        if(timeElapsed >= 0.01667){
-            //detect keyboard input
-            game->processUserInput(get_input_msg());
-            game->updateEnvironment(0.01667);
-            game->drawEnvironment();
-            glfwSwapBuffers(window);
-            timeElapsed = 0;
-        }
         timeLast = timeCurrent;
+
+        if(timeElapsed >= 0.01667){
+            timeElapsed = 0;
+            glfwSwapBuffers(window);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            env->processContinuousInput();
+            env->updateEnvironment(0.01667);
+            env->drawEnvironment();
+            timeCurrent = glfwGetTime();
+            timeElapsed += timeCurrent - timeLast;
+            timeLast = timeCurrent;
+        }
+
 
         /*** Poll for and process events ***/
         glfwPollEvents();
@@ -119,6 +120,25 @@ void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    game->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 300.0f));
+    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 300.0f));
+
+    winX = width;
+    winY = height;
 }
 
+
+/*** Keyboard callback ***/
+void Game::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    env->processKB(key, scancode, action, mods);
+}
+
+void Game::mouse_pos_callback(GLFWwindow* window, float xpos, float ypos)
+{
+    env->processMousePosition(xpos, winY - ypos - 1);
+}
+
+void Game::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+    env->processMouseClick(button, action, mods, winX, winY);
+}

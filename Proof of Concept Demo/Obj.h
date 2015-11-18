@@ -31,27 +31,10 @@ class Boundary : public Obj {
 class DynamicObject : public Obj {
 
     public:
-        DynamicObject(cpSpace*, glm::vec2, ObjGPUData*);
+        DynamicObject();
+        DynamicObject(cpSpace*, glm::vec2, float, float, float, float, ObjGPUData*, bool = false);
 
 };
 
-//main character
-class RoleObject : public Obj
-{
-public:
-    RoleObject(cpSpace*, glm::vec2, ObjGPUData*);
-    ~RoleObject();
-
-    int dir; //record direction
-    cpVect mAcceleration;   //record acceleration
-};
-
-//bullet
-class BulletObjet : public Obj
-{
-public:
-    BulletObjet(cpSpace*, glm::vec2, ObjGPUData*);
-    ~BulletObjet();
-};
 
 #endif // STATIC_OBJ_H_INCLUDED

@@ -19,72 +19,28 @@ Boundary::Boundary(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
 
 /*** Generic dynamic object ***/
-DynamicObject::DynamicObject(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData){
+DynamicObject::DynamicObject(){
+    body = 0;
+    shape = 0;
+}
+
+DynamicObject::DynamicObject(cpSpace* space, glm::vec2 pos, float mass, float scale, float elast, float fric, ObjGPUData* gpuData, bool noRotation){
+
+    height = scale;
+	width = scale*gpuData->whRatio;
 
     /*** Set physics data ***/
-    body = cpBodyNew(100, cpMomentForBox(100.0, 10.0, 20.0));
+    if(noRotation)
+        body = cpBodyNew(mass, INFINITY);
+    else{
+        body = cpBodyNew(mass, cpMomentForBox(mass, width, height));
+    }
     cpSpaceAddBody(space, body);
     cpBodySetPosition(body, cpv(pos.x, pos.y));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, 10.0, 20.0, 0.01));
-	cpShapeSetElasticity(shape, 0.5f);
-	cpShapeSetFriction(shape, 1.0f);
-	height = 20.0;
-	width = 10.0;
+    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, width, height, 0.01));
+	cpShapeSetElasticity(shape, elast);
+	cpShapeSetFriction(shape, fric);
 
     /*** Link gpu data ***/
     this->gpuData = gpuData;
-}
-
-
-//HeroObject::HeroObject(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData){
-//
-//
-//
-//}
-
-//make main character
-RoleObject::RoleObject(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData)
-{
-    body = cpBodyNew(300, cpMomentForBox(300.0, 20.0, 40.0));
-    cpSpaceAddBody(space,body);
-    cpBodySetPosition(body, cpv(pos.x, pos.y));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, 20.0, 40.0, 0.01));
-    cpShapeSetElasticity(shape, 0.5f);
-    cpShapeSetFriction(shape, 1.0f);
-    height = 40.0;
-    width = 20.0;
-
-    this->gpuData = gpuData;
-
-    dir = 1;
-    mAcceleration = cpv(0.0,0.0);
-}
-
-//clean
-RoleObject::~RoleObject()
-{
-    cpBodyFree(body);
-    cpShapeFree(shape);
-}
-
-//make bullet
-BulletObjet::BulletObjet(cpSpace* space, glm::vec2 pos, ObjGPUData* gpuData)
-{
-    body = cpBodyNew(10, cpMomentForBox(10.0, 1.5, 3.0));
-    cpSpaceAddBody(space,body);
-    cpBodySetPosition(body, cpv(pos.x, pos.y));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, 1.5, 3.0, 0.01));
-    cpShapeSetElasticity(shape, 0.5f);
-    cpShapeSetFriction(shape, 1.0f);
-    height = 3.0;
-    width = 1.5;
-
-    this->gpuData = gpuData;
-}
-
-//clean
-BulletObjet::~BulletObjet()
-{
-    cpBodyFree(body);
-    cpShapeFree(shape);
 }

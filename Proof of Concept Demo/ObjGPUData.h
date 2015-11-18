@@ -67,6 +67,8 @@ class ObjGPUData
         glm::mat4 unitScale;
         glm::mat4 scaling;
         glm::mat4 rotation;
+
+        float whRatio;
 };
 
 #endif // OBJECT_H

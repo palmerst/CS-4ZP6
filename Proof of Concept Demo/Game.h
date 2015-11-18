@@ -12,13 +12,15 @@
 class Game {
 
     GLFWwindow* window;
-    Environment* game;
+    Environment* env;
 
     /*** Map of object gpu data (keys = string descriptions) ***/
     std::map<std::string, ObjGPUData*> objMap;
 
     double timeLast;
     double timeElapsed;
+
+    float winX, winY;
 
     public:
         Game();
@@ -29,6 +31,9 @@ class Game {
 
         /*** Resize callback ***/
         void framebuffer_size_callback(GLFWwindow*, int, int);
+        void key_callback(GLFWwindow*, int, int, int, int);
+        void mouse_pos_callback(GLFWwindow*, float, float);
+        void mouse_button_callback(GLFWwindow*, int, int, int);
 
 };
 
