@@ -6455,8 +6455,8 @@
 	"auxi_snd.h"
 	<stdlib.h>
 
-1447782843 c:\github\cs-4zp6\proof of concept demo\auxi_snd.h
-	<alut.h>
+1447863886 c:\github\cs-4zp6\proof of concept demo\auxi_snd.h
+	"include/AL/alut.h"
 
 1447782880 c:\github\cs-4zp6\proof of concept demo\openal\include\alut.h
 	<alc.h>
@@ -6470,19 +6470,20 @@
 
 1447782880 c:\github\cs-4zp6\proof of concept demo\openal\include\al.h
 
-1447782848 source:c:\github\cs-4zp6\proof of concept demo\environment.cpp
+1447872377 source:c:\github\cs-4zp6\proof of concept demo\environment.cpp
 	"Environment.h"
 	"Loader.h"
-	"gameInput.h"
 	<stdio.h>
 	<iostream>
 
-1447782848 c:\github\cs-4zp6\proof of concept demo\environment.h
+1447868609 c:\github\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
+	"include/GLFW/glfw3.h"
 	"Obj.h"
 	"ObjGPUData.h"
 	"auxi_snd.h"
+	<map>
 
 1447782851 c:\github\cs-4zp6\proof of concept demo\include\gl\glew.h
 	<stddef.h>
@@ -6574,7 +6575,7 @@
 
 1447782851 c:\github\cs-4zp6\proof of concept demo\include\chipmunk\cpspace.h
 
-1447782877 c:\github\cs-4zp6\proof of concept demo\obj.h
+1447872982 c:\github\cs-4zp6\proof of concept demo\obj.h
 	"include/chipmunk/chipmunk.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
@@ -6968,7 +6969,7 @@
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1447782879 c:\github\cs-4zp6\proof of concept demo\objgpudata.h
+1447863886 c:\github\cs-4zp6\proof of concept demo\objgpudata.h
 	<vector>
 	<string>
 	"include/GL/glew.h"
@@ -6999,16 +7000,15 @@
 	<GL/glext.h>
 	<GL/glu.h>
 
-1447782848 source:c:\github\cs-4zp6\proof of concept demo\game.cpp
+1447863886 source:c:\github\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	<cstdio>
 	<cstdlib>
 	"Game.h"
 	"ObjGPUData.h"
-	"gameInput.h"
 
-1447782848 c:\github\cs-4zp6\proof of concept demo\game.h
+1447863886 c:\github\cs-4zp6\proof of concept demo\game.h
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	"Environment.h"
@@ -7037,10 +7037,11 @@
 	"Game.h"
 	<stdio.h>
 
-1447782877 source:c:\github\cs-4zp6\proof of concept demo\obj.cpp
+1447873459 source:c:\github\cs-4zp6\proof of concept demo\obj.cpp
 	"Obj.h"
+	<iostream>
 
-1447782879 source:c:\github\cs-4zp6\proof of concept demo\objgpudata.cpp
+1447863886 source:c:\github\cs-4zp6\proof of concept demo\objgpudata.cpp
 	"ObjGPUData.h"
 	"ImgLoader.h"
 	<vector>
@@ -7674,4 +7675,16 @@
 1447782880 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\al.h
 
 1447782880 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alc.h
+
+1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	"al.h"
+	"alc.h"
+
+1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\al.h
+
+1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\alc.h
 

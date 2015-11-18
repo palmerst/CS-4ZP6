@@ -25,8 +25,8 @@ class Environment {
         std::map<std::string, auxi_snd*> soundMap;
 
         /*** Objects in environment ***/
-        std::vector<Boundary> boundaries;
-        std::vector<DynamicObject> dynamicObjects;
+        std::vector<Boundary*> boundaries;
+        std::vector<DynamicObject*> dynamicObjects;
 
         /*** Shader handles/identifiers ***/
         GLuint shaderProgram;
@@ -41,7 +41,7 @@ class Environment {
         void drawObj(Obj, bool = false);
 
         /*** Controlled object ***/
-        DynamicObject userControlObject;
+        DynamicObject* userControlObject;
 
 
         auxi_snd* m_bm;

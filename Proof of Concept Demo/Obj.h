@@ -8,6 +8,19 @@
 
 #include <vector>
 
+#define OBJ_BOUNDARY 0x0001
+#define OBJ_ENEMY 0x0002
+#define OBJ_HERO 0x0004
+#define OBJ_HERO_BULLET 0x0008
+
+
+void setCollisionHandlers(cpSpace*);
+
+int begin_single_deletion_collision(cpArbiter*, cpSpace*, cpDataPointer);
+int begin_enemy_bullet_collision(cpArbiter*, cpSpace*, cpDataPointer);
+
+void deleteObject(cpSpace *space, void *obj, void *data);
+
 class Obj {
 
     public:
@@ -17,6 +30,8 @@ class Obj {
         ObjGPUData* gpuData;
 
         float height, width;
+
+        bool draw;
 
 };
 
@@ -32,7 +47,7 @@ class DynamicObject : public Obj {
 
     public:
         DynamicObject();
-        DynamicObject(cpSpace*, glm::vec2, float, float, float, float, ObjGPUData*, bool = false);
+        DynamicObject(cpSpace*, glm::vec2, float, float, float, float, ObjGPUData*, int, bool = false);
 
 };
 

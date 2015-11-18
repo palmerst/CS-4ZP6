@@ -41,6 +41,7 @@ Environment::Environment(){
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 
 
+    setCollisionHandlers(envSpace);
 
     gpuMap.insert(std::pair<std::string, ObjGPUData*>("Hero", new ObjGPUData("./data/obj/testchar", 3.1415f)));
     gpuMap.insert(std::pair<std::string, ObjGPUData*>("Enemy", new ObjGPUData("./data/obj/testenemy", 3.1415f)));
@@ -52,14 +53,14 @@ Environment::Environment(){
 	addBoundary(cpv(145,-100), cpv(150,100), gpuMap.find("Boundary")->second);
 	addBoundary(cpv(15,0), cpv(70,5), gpuMap.find("Boundary")->second);
 	addBoundary(cpv(-55,-55), cpv(-10,-50), gpuMap.find("Boundary")->second);
-    dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(0,-30), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
-	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(-44,55), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
-	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(24,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
-	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(44,50), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
-	dynamicObjects.push_back(DynamicObject(envSpace, glm::vec2(90,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, true));
+    dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(0,-30), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(-44,55), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(24,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(44,50), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(90,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
 
 
-    userControlObject = DynamicObject(envSpace, glm::vec2(-77,80), 100, 20, 0, 0, gpuMap.find("Hero")->second, true);
+    userControlObject = new DynamicObject(envSpace, glm::vec2(-77,80), 100, 20, 0, 0, gpuMap.find("Hero")->second, OBJ_HERO, true);
 
     mat_View = glm::lookAt(glm::vec3(0.0f, 50.0f, 200.0f), glm::vec3(-77.0f, 80.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
@@ -85,23 +86,23 @@ void Environment::processContinuousInput(){
 
     if(keyStates[GLFW_KEY_A])
     {
-        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x <= -100.0)
             return;
-        cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(-20.0, 0.0)));
+        cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(-20.0, 0.0)));
         return;
     }
     if(keyStates[GLFW_KEY_D])
     {
-        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x >= 100.0)
             return;
-        cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(20.0, 0.0)));
+        cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(20.0, 0.0)));
         return;
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D])
     {
-        cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x == 0)
             return;
         else
@@ -109,7 +110,7 @@ void Environment::processContinuousInput(){
             curVel.x /= 1.1;
             if(curVel.x > -10 || curVel.x < 10)
                 curVel.x = 0;
-            cpBodySetVelocity(userControlObject.body, curVel);
+            cpBodySetVelocity(userControlObject->body, curVel);
         }
     }
 
@@ -136,9 +137,9 @@ void Environment::processKB(int key, int scancode, int action, int mods)
         }
     case GLFW_KEY_SPACE:
         {
-            cpVect curVel = cpBodyGetVelocity(userControlObject.body);
+            cpVect curVel = cpBodyGetVelocity(userControlObject->body);
             if(curVel.y < 0.001 && curVel.y > -0.001){
-                cpBodySetVelocity(userControlObject.body, cpvadd(curVel, cpv(0.0, 115.0)));
+                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 115.0)));
                 snd_play(m_jump);
             }
             break;
@@ -160,13 +161,13 @@ void Environment::processMouseClick(int button, int action, int mods, float winX
     winY -= 1;
 
     if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS){
-        cpVect controlPos = cpBodyGetPosition(userControlObject.body);
+        cpVect controlPos = cpBodyGetPosition(userControlObject->body);
         cpVect mousePos = cpv(mouseX - winX/2, mouseY - winY/2);
         cpVect bulletVel = cpvmult(cpvnormalize(mousePos),225.0);
         cpFloat bulletAngle = cpvtoangle(mousePos) - 3.141592/2.0;
-        DynamicObject bullet = DynamicObject(envSpace, glm::vec2(controlPos.x, controlPos.y), 3, 3, 0.5, 1, gpuMap.find("Bullet")->second);
-        cpBodySetVelocity(bullet.body, bulletVel);
-        cpBodySetAngle(bullet.body, bulletAngle);
+        DynamicObject* bullet = new DynamicObject(envSpace, glm::vec2(controlPos.x, controlPos.y), 3, 3, 0.5, 1, gpuMap.find("Bullet")->second, OBJ_HERO_BULLET);
+        cpBodySetVelocity(bullet->body, bulletVel);
+        cpBodySetAngle(bullet->body, bulletAngle);
         dynamicObjects.push_back(bullet);
         snd_play(m_bullet);
     }
@@ -176,7 +177,7 @@ void Environment::processMouseClick(int button, int action, int mods, float winX
  *** Links to gpu data representing the boundary visuals          ***/
 void Environment::addBoundary(cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
-    boundaries.push_back(Boundary(envSpace, p1, p2, gpuData));
+    boundaries.push_back(new Boundary(envSpace, p1, p2, gpuData));
 
 }
 
@@ -184,7 +185,7 @@ void Environment::addBoundary(cpVect p1, cpVect p2, ObjGPUData* gpuData){
 void Environment::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
-    cpVect controlPos = cpBodyGetPosition(userControlObject.body);
+    cpVect controlPos = cpBodyGetPosition(userControlObject->body);
     mat_View = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 50.0f, 200.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 }
@@ -199,19 +200,21 @@ void Environment::drawEnvironment(){
     /*** Draw all dynamic objects ***/
     for(int i = 0; i < dynamicObjects.size(); i++){
 
-        drawObj(dynamicObjects[i]);
+        if(dynamicObjects[i]->draw)
+            drawObj(*dynamicObjects[i]);
 
     }
 
     /*** Draw all boundaries ***/
     for(int i = 0; i < boundaries.size(); i++){
 
-        drawObj(boundaries[i], true);
+        if(boundaries[i]->draw)
+            drawObj(*boundaries[i], true);
 
     }
 
     /*** Draw hero ***/
-    drawObj(userControlObject);
+    drawObj(*userControlObject);
 
     /***  Unbind shaders and VAO ***/
     glBindVertexArray(0);
