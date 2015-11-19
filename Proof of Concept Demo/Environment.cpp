@@ -10,8 +10,8 @@ Environment::Environment(){
     /*** Set up space variables ***/
     envSpace = cpSpaceNew();
     cpSpaceSetIterations(envSpace, 10);
-	cpSpaceSetGravity(envSpace, cpv(0, -100));
-    cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
+	cpSpaceSetGravity(envSpace, cpv(0, -150));
+  //  cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
 
     /*** Load the shaders and store handle ***/
     shaderProgram = loadShaders("objectVertex.glsl", "objectFragment.glsl");
@@ -48,16 +48,26 @@ Environment::Environment(){
     gpuMap.insert(std::pair<std::string, ObjGPUData*>("Boundary", new ObjGPUData("./data/obj/testbound")));
     gpuMap.insert(std::pair<std::string, ObjGPUData*>("Bullet", new ObjGPUData("./data/obj/bullet")));
 
-    addBoundary(cpv(-150,-100), cpv(-145,100), gpuMap.find("Boundary")->second);
+    addBoundary(cpv(-150,150), cpv(150, 155), gpuMap.find("Boundary")->second);
+    addBoundary(cpv(-150,-100), cpv(-145,150), gpuMap.find("Boundary")->second);
 	addBoundary(cpv(-145,-100), cpv(145, -95), gpuMap.find("Boundary")->second);
-	addBoundary(cpv(145,-100), cpv(150,100), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(145,-100), cpv(150,150), gpuMap.find("Boundary")->second);
 	addBoundary(cpv(15,0), cpv(70,5), gpuMap.find("Boundary")->second);
-	addBoundary(cpv(-55,-55), cpv(-10,-50), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-145, -70), cpv(-105, -65), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-75,-55), cpv(-40,-50), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-45,-50), cpv(-40,-10), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-40,-15), cpv(-10,-10), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-145,35), cpv(-40, 40), gpuMap.find("Boundary")->second);
+	addBoundary(cpv(-70,80), cpv(145, 85), gpuMap.find("Boundary")->second);
+
     dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(0,-30), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
 	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(-44,55), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
 	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(24,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
-	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(44,50), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(-130,-50), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
 	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(90,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+    dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(90,130), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(0,130), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
+	dynamicObjects.push_back(new DynamicObject(envSpace, glm::vec2(-120,80), 100, 20, 0.5, 1, gpuMap.find("Enemy")->second, OBJ_ENEMY, true));
 
 
     userControlObject = new DynamicObject(envSpace, glm::vec2(-77,80), 100, 20, 0, 0, gpuMap.find("Hero")->second, OBJ_HERO, true);
@@ -89,7 +99,7 @@ void Environment::processContinuousInput(){
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x <= -100.0)
             return;
-        cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(-20.0, 0.0)));
+        cpBodySetForce(userControlObject->body, cpv(-30000.0, 0.0));
         return;
     }
     if(keyStates[GLFW_KEY_D])
@@ -97,7 +107,7 @@ void Environment::processContinuousInput(){
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x >= 100.0)
             return;
-        cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(20.0, 0.0)));
+        cpBodySetForce(userControlObject->body, cpv(30000.0, 0.0));
         return;
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D])

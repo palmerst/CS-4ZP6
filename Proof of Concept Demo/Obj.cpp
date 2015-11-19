@@ -7,6 +7,8 @@ void setCollisionHandlers(cpSpace* space){
     colHand->beginFunc = (cpCollisionBeginFunc) begin_enemy_bullet_collision;
     colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_BOUNDARY);
     colHand->beginFunc = (cpCollisionBeginFunc) begin_single_deletion_collision;
+  //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_ENEMY);
+  //  colHand->beginFunc = (cpCollisionBeginFunc) begin_knockback;
 }
 
 int begin_single_deletion_collision(cpArbiter *arb, cpSpace *space, void *unused)
@@ -31,22 +33,29 @@ int begin_enemy_bullet_collision(cpArbiter *arb, cpSpace *space, void *unused)
   cpVect enemyVel = cpBodyGetVelocity(enemy->body);
   cpBodySetVelocity(enemy->body, cpvadd(enemyVel, cpvmult(cpvnormalize(bulVel), 150.0)));
 
-std::cout << "ENEMY BULLET COLLISION BEFORE POST CALLBACK REGISTRATION" << std::endl;
   cpSpaceAddPostStepCallback(space, (cpPostStepFunc)deleteObject, a, cpShapeGetUserData(a));
-std::cout << "ENEMY BULLET COLLISION END" << std::endl;
+
+  return 0;
+}
+
+int begin_knockback(cpArbiter *arb, cpSpace *space, void *unused)
+{
+  cpShape *a, *b;
+  cpArbiterGetShapes(arb, &a, &b);
+
+  DynamicObject* hero = static_cast<DynamicObject*> (cpShapeGetUserData(a));
+
+  cpVect heroVel = cpBodyGetVelocity(hero->body);
+
+  cpBodySetVelocity(hero->body, cpvmult(cpvnormalize(cpvneg(heroVel)), 150.0));
+
   return 0;
 }
 
 
 void deleteObject(cpSpace *space, void *obj, void *data){
 
-    std::cout << "ENTERING delete" << std::endl;
-
     DynamicObject* temp = static_cast<DynamicObject*>(data);
-
-    std::cout << temp << std::endl;
-
-    std::cout << "IT GOT HERE" << std::endl;
 
     if(cpSpaceContainsShape(space, temp->shape))
         cpSpaceRemoveShape(space, temp->shape);
@@ -54,8 +63,6 @@ void deleteObject(cpSpace *space, void *obj, void *data){
         cpSpaceRemoveBody(space, temp->body);
 
     temp->draw = false;
-
-    std::cout << "BUT NOT HERE" << std::endl;
 }
 
 
