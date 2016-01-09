@@ -1,0 +1,11 @@
+All of this did not have any texture on it yet just mesh
+wheel=circular saw blade
+trigger=switch
+Spring(Still try to find a why to do so, its require animation)
+Spear(A single spear use for projectile)
+Spears(Multiple spears are use for trap can jump out after player trigger something)it can be a combo 
+as spears trap's base. speartrapobj is the result of combo those two.
+Spikes(Will do later)
+Axe=Swinging Axe
+Rock is a drop down hazard will cause damage to main character, and can roll over the incline. To chase
+player.
