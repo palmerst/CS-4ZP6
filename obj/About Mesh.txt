@@ -11,13 +11,16 @@ Spear(A single spear use for projectile)[Can damage player, trigger by switch or
 
 Spears(Multiple spears are use for trap can jump out after player trigger something)it can be a combo 
 as spears trap's base. speartrapobj is the result of combo those two.[It was save, trigger by Player stand 
-there a while or by switch]
+touch it, after a while spears will pop out then it becaome dangerous to player, will become safe again 
+after a while]
 
 Spikes[Basic hazard will cause damage on player when touch it]
 
 Axe=Swinging Axe[Will cause damage when tough it, will change its danger zoon]
 
-Rock is a drop down hazard will cause damage to main character, and can roll over the incline. To chase
+Rock is a drop down hazard will cause damage to character, and can roll over the incline. To chase
 player.[it should create a tensity game enviroment, make player must move fast]
 
 Door[Use to transport to other level or other side at map].
+
+Ice road(Did not done it)[Only can accelerate or decelerate on this road]
