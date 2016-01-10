@@ -1,8 +1,4 @@
 All of this did not have any texture on it yet just mesh
-wheel=circular saw blade
-trigger=switch
-Spring(Still try to find a why to do so, its require animation)
-Spear(A single spear use for projectile)
 
 wheel=circular saw blade[cause damage when character tough it]
 
@@ -14,15 +10,14 @@ character directly to hazard]
 Spear(A single spear use for projectile)[Can damage player, trigger by switch or automatic shot player]
 
 Spears(Multiple spears are use for trap can jump out after player trigger something)it can be a combo 
-as spears trap's base. speartrapobj is the result of combo those two.
-Spikes(Will do later)
-Axe=Swinging Axe
 as spears trap's base. speartrapobj is the result of combo those two.[It was save, trigger by Player stand 
 there a while or by switch]
 
-Spikes(Will do later)[Basic hazard will cause damage on player when touch it]
+Spikes[Basic hazard will cause damage on player when touch it]
 
 Axe=Swinging Axe[Will cause damage when tough it, will change its danger zoon]
 
 Rock is a drop down hazard will cause damage to main character, and can roll over the incline. To chase
-player.player.[it should create a tensity game enviroment, make player must move fast]
+player.[it should create a tensity game enviroment, make player must move fast]
+
+Door[Use to transport to other level or other side at map].
