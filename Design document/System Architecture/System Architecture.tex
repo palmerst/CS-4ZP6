@@ -83,13 +83,14 @@
 \listoffigures
 
 
-\begin{table}[bp]
+\begin{table}[hTB]
 \caption*{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 January 10, 2015 & 1.0 & Created document\\
 January 11, 2015 & 1.1 & Major additions to all sections\\
+January 11, 2015 & 1.2 & rev0 final version\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -100,55 +101,100 @@ January 11, 2015 & 1.1 & Major additions to all sections\\
 
 \section{Introduction}
 \subsection{Overview}
-This document is provides a  .  The document is split into two parts:  the system architecture which gives a more general overview of the design goal and intended module interactions, as well as the detailed design which covers the intended implementation in greater detail.
+This document is provides a synopsis of our proposed design considerations that will be used to implement our game.  The document is split into two parts:  the system architecture which gives a more general overview of the design goal and intended module interactions, as well as the detailed design which covers the intended implementation in greater detail.
 
 
 
 \subsection{Document Template}
-The Parnas template of the Module Guide and Module Interface Specification was followed in creating this document.  Adherence to this template was not , and in some cases the provided marking scheme was used .
+The Parnas template of the Module Guide and Module Interface Specification was followed in creating this document.  Adherence to this template was not 100\%, and in some cases the provided marking scheme was used as a supplement to modify the template.
 
 
 \section{Design Principle}
-The Model-View-Controller architectural pattern will be used as the main principle of design for this project.  As such the main consideration of the design is to fully separate the operation of the game in terms of user control, the audiovisual output, and the game model. 
+The Model-View-Controller architectural pattern will be used as the main principle of design for this project.  As such the main consideration of the design will be to fully separate the operation of the game in terms of user control, the audiovisual output, and the game model.  Using this model will allow for efficient implementation and testing of functional requirements because it will enable testing of the core game code in isolation from the input and output mechanisms (the majority of functional requirements relate to the game code).
 
 
 
 \section{Anticipated Changes}
 \subsection{Likely Changes}
-The following changes are likely to occur as the project 
+The following changes are likely to occur as the project proceeds:
 \begin{enumerate}[label=AC\arabic*]
   \item The number of object classes will likely be expanded.  Currently the game objects (characters, traps, platforms, etc.) are represented as generic static, dynamic, and kinematic object classes.  Further class specialization may be useful.
-  \item Changes to the 
-  \item 
+  \item Changes to the way in which levels are implemented in the code are likely.
+  \item Changes to the way objects interact are likely.
+  \item Additional controls will likely be added.
+  \item Changes to the scoring system are likely.
 \end{enumerate}
 
 \subsection{Unlikely Changes}
+The following changes are unlikely to occur:
 \begin{enumerate}[label=UC\arabic*]
   \item The way sound files are loaded and stored is unlikely to change.
   \item The way object files are loaded and stored as GPU data is unlikely to change. 
   \item The way shader files are loaded and stored is unlikely to change.
-  \item 
 \end{enumerate}
 
 \section{Module Decomposition}
-Module decomposition 
+The decomposition of the project into modules with respect to the model-view-controller design principle is given in the following subsections.
 
 \subsection{Modules}
-The following modules 
+The modules that will be used to implement the game are given in \hyperref[tab:modules]{Table~\ref*{tab:modules}}.  
+
+\begin{table}[h]
+\caption{\bf Proposed Modules} \label{tab:modules}
+\begin{tabularx}{\textwidth}{p{3cm}p{6cm}X}
+\toprule {\bf Module} & {\bf Function} & {\bf Design Principle}\\
+\midrule
+Game & Links user input to game code & Controller\\
+ObjGPUData & Loads and stores object gpu data & Model\\
+Obj & Stores game object information & Model\\
+Environment & Core of the game; handles gamestate & Model\\
+Sound & Loads and stores sounds & Model\\
+Shader & Loads and stores shaders & Model\\
+Hardware & Outputs audiovisual & View\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 
 \subsection{Uses Diagram}
-\begin{figure}[hB]
+A uses diagram is given in \hyperref[fig:usesdiagram]{Figure~\ref*{fig:usesdiagram}} to show how the modules will interact.  This diagram has been partitioned to show how the modules fit the model-view-controller design principle.
+\begin{figure}[hTB]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{usesdiagram}
-\caption{Uses diagram with MVC partitioning.} \label{fig:room}
+\caption{Uses diagram with MVC partitioning.} \label{fig:usesdiagram}
 \end{center}
 \end{figure}
 
 \section{Traceability}
 \subsection{Requirements}
-\subsection{Changes}
+A traceability matrix showing the correspondence between requirements and modules is given in \hyperref[tab:reqtrace]{Table~\ref*{tab:reqtrace}}.  Please note that this table will be completed once the requirements document has been updated since our game has changed drastically (before rev0 demonstration).
 
+\begin{table}[h]
+\caption{\bf Requirements Traceability} \label{tab:reqtrace}
+\begin{tabularx}{\textwidth}{p{4cm}X}
+\toprule {\bf Requirement} & {\bf Module}\\
+\midrule
+to be completed&\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Changes}
+A traceability matrix showing the correspondence between likely changes and modules is given in \hyperref[tab:changetrace]{Table~\ref*{tab:changetrace}}.
+
+\begin{table}[h]
+\caption{\bf Changes Traceability} \label{tab:changetrace}
+\begin{tabularx}{\textwidth}{p{4cm}X}
+\toprule {\bf Change} & {\bf Module}\\
+\midrule
+\hyperref[sec:changes]{AC1} & Obj\\
+\hyperref[sec:changes]{AC2} & Environment\\
+\hyperref[sec:changes]{AC3} & Obj\\
+\hyperref[sec:changes]{AC4} & Game, Environment\\
+\hyperref[sec:changes]{AC5} & Environment\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 
 
