@@ -57,7 +57,7 @@ It will be completed by all three of us. Everyone will come up with a design and
                 <depend id="115" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="76" name="Enemies/Hazards" color="#000000" meeting="false" start="2016-01-11" duration="6" complete="21" expand="false">
+        <task id="76" name="Enemies/Hazards" color="#000000" meeting="false" start="2016-01-11" duration="5" complete="21" expand="false">
             <task id="104" name="Enemies/Hazards" color="#ff0000" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2016-01-11" duration="5" complete="30" priority="2" expand="true">
                 <notes><![CDATA[This task involves All three of us creating diffrent obstacles for our game. The intent is we need to create obstacles that will be compativle with the game to use. Level development cannot be done without this part completed. It is the last necessary component before actual level design may begin.
 
@@ -65,17 +65,8 @@ It will be completed by all three of us. Everyone will come up with a design and
 
 This will be done by all three of us]]></notes>
                 <depend id="85" type="2" difference="0" hardness="Strong"/>
-                <depend id="110" type="2" difference="0" hardness="Strong"/>
                 <depend id="115" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="110" name="Hazard Hit Detection" color="#8cb6ce" meeting="false" start="2016-01-18" duration="1" complete="0" expand="true">
-                <notes><![CDATA[Every Hazard once created must have a hit detection. This isnt too hard as it is already done from the proof of concept demo. Howver whenever we create an object usinhg belnder we need to add it to chipmunks hit detection. Constraint is the hazard must be created before hand. This should be done fairly quickly.
-
-
-
-This will be done by Emaad]]></notes>
-                <depend id="85" type="2" difference="0" hardness="Strong"/>
-                <depend id="115" type="2" difference="0" hardness="Strong"/>
+                <depend id="149" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
         <task id="69" name="User HP" color="#8cb6ce" meeting="false" start="2016-01-18" duration="1" complete="0" expand="false">
@@ -97,10 +88,19 @@ it will be completed by Chao]]></notes>
 
 This will be done by all three of us.]]></notes>
             </task>
-            <task id="126" name="Unit Testing" meeting="false" start="2016-01-11" duration="1" complete="0" expand="true">
+            <task id="126" name="Unit Testing" meeting="false" start="2016-01-11" duration="1" complete="0" expand="false">
                 <task id="128" name="Input testing" color="#8cb6ce" meeting="false" start="2016-01-11" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Testing for corrrect input/output]]></notes>
                 </task>
+            </task>
+            <task id="149" name="Hazard Hit Detection" color="#8cb6ce" meeting="false" start="2016-01-18" duration="1" complete="0" expand="true">
+                <notes><![CDATA[Every Hazard once created must have a hit detection. This isnt too hard as it is already done from the proof of concept demo. Howver whenever we create an object usinhg belnder we need to add it to chipmunks hit detection. Constraint is the hazard must be created before hand. This should be done fairly quickly.
+
+
+
+This will be done by Emaad]]></notes>
+                <depend id="85" type="2" difference="0" hardness="Strong"/>
+                <depend id="115" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
         <task id="140" name="After Revision 0 work" color="#000000" meeting="false" start="2016-02-01" duration="10" complete="0" expand="false">
@@ -124,8 +124,8 @@ This will be done by all three of us.]]></notes>
     <allocations>
         <allocation task-id="104" resource-id="0" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="91" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="110" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="115" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="149" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="104" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="91" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="69" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
