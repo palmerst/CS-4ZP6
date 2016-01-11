@@ -1,0 +1,125 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{xcolor} % for different colour comments
+\usepackage{tabto}
+\usepackage{mdframed}
+\mdfsetup{nobreak=true}
+\usepackage{xkeyval}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[skip=2pt, labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%% the following adds another section level by redefining the paragraph
+%% source:  http://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{DS}{#1}}
+
+
+
+
+\newcommand{\getCurrentSectionNumber}{%
+  \ifnum\c@section=0 %
+  \thechapter
+  \else
+  \ifnum\c@subsection=0 %
+  \thesection
+  \else
+  \ifnum\c@subsubsection=0 %
+  \thesubsection
+  \else
+  \thesubsubsection
+  \fi
+  \fi
+  \fi
+}
+
+
+
+\makeatother
+
+
+
+\begin{document}
+\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large System Architecture}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\date{\today}
+	
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+
+\begin{table}[bp]
+\caption*{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+January 10, 2015 & 1.0 & Created document\\
+January 11, 2015 & 1.1 & Major additions to all sections\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+This document is intended to .  The document is split into two parts:  the system architecture which gives a more general overview , as well as the detailed design which covers
+
+
+
+\section{Anticipated Changes}
+\subsection{Likely Changes}
+The following changes are considered t
+\begin{enumerate}
+  \item 
+  \item 
+  \item 
+\end{enumerate}
+
+\subsection{Unlikely Changes}
+\begin{enumerate}
+  \item 
+  \item 
+  \item 
+\end{enumerate}
+
+\section{
+
+
+
+\end{document}

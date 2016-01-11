@@ -1,0 +1,155 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{xcolor} % for different colour comments
+\usepackage{tabto}
+\usepackage{mdframed}
+\mdfsetup{nobreak=true}
+\usepackage{xkeyval}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[skip=2pt, labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{enumitem}
+
+%% the following adds another section level by redefining the paragraph
+%% source:  http://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{DS}{#1}}
+
+
+
+
+\newcommand{\getCurrentSectionNumber}{%
+  \ifnum\c@section=0 %
+  \thechapter
+  \else
+  \ifnum\c@subsection=0 %
+  \thesection
+  \else
+  \ifnum\c@subsubsection=0 %
+  \thesubsection
+  \else
+  \thesubsubsection
+  \fi
+  \fi
+  \fi
+}
+
+
+
+\makeatother
+
+
+
+\begin{document}
+\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large System Architecture}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\date{\today}
+	
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+
+\begin{table}[bp]
+\caption*{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+January 10, 2015 & 1.0 & Created document\\
+January 11, 2015 & 1.1 & Major additions to all sections\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+\subsection{Overview}
+This document is provides a  .  The document is split into two parts:  the system architecture which gives a more general overview of the design goal and intended module interactions, as well as the detailed design which covers the intended implementation in greater detail.
+
+
+
+\subsection{Document Template}
+The Parnas template of the Module Guide and Module Interface Specification was followed in creating this document.  Adherence to this template was not , and in some cases the provided marking scheme was used .
+
+
+\section{Design Principle}
+The Model-View-Controller architectural pattern will be used as the main principle of design for this project.  As such the main consideration of the design is to fully separate the operation of the game in terms of user control, the audiovisual output, and the game model. 
+
+
+
+\section{Anticipated Changes}
+\subsection{Likely Changes}
+The following changes are likely to occur as the project 
+\begin{enumerate}[label=AC\arabic*]
+  \item The number of object classes will likely be expanded.  Currently the game objects (characters, traps, platforms, etc.) are represented as generic static, dynamic, and kinematic object classes.  Further class specialization may be useful.
+  \item Changes to the 
+  \item 
+\end{enumerate}
+
+\subsection{Unlikely Changes}
+\begin{enumerate}[label=UC\arabic*]
+  \item The way sound files are loaded and stored is unlikely to change.
+  \item The way object files are loaded and stored as GPU data is unlikely to change. 
+  \item The way shader files are loaded and stored is unlikely to change.
+  \item 
+\end{enumerate}
+
+\section{Module Decomposition}
+Module decomposition 
+
+\subsection{Modules}
+The following modules 
+
+
+\subsection{Uses Diagram}
+\begin{figure}[hB]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{usesdiagram}
+\caption{Uses diagram with MVC partitioning.} \label{fig:room}
+\end{center}
+\end{figure}
+
+\section{Traceability}
+\subsection{Requirements}
+\subsection{Changes}
+
+
+
+
+\end{document}
