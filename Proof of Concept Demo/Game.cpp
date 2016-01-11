@@ -1,16 +1,21 @@
 #include "include/GL/glew.h"
 #include "include/GLFW/glfw3.h"
+#include "include/AL/alut.h"
 #include <cstdio>
 #include <cstdlib>
 
 #include "Game.h"
 #include "ObjGPUData.h"
 
+
 Game::Game(){
 
-    /*** Initialize the library ***/
+    /*** Initialize glfw ***/
     if (!glfwInit())
+    {
+        printf("Failed to initialize GLFW");
         exit(1);
+    }
 
     /*** Use multisampling ***/
     glfwWindowHint(GLFW_SAMPLES, 4);
@@ -37,6 +42,39 @@ Game::Game(){
         fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
         exit(3);
 	}
+
+	/*** Initialize OpenAL ***/
+    int OPENAL_OK = 1;
+
+	alutInit(0,NULL);
+
+	// Clear the error code.
+	alGetError();
+
+    //source setting
+	ALfloat listenerPosition[] = {0.0f, 0.0f, 0.0f};
+	ALfloat listenerVelocity[] = {0.0f, 0.0f, 0.0f};
+	ALfloat listenerOrientation[] = {0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f};
+
+	alListenerfv(AL_POSITION,listenerPosition);
+	if (alGetError()!=AL_NO_ERROR)
+		OPENAL_OK = 0;
+
+	alListenerfv(AL_VELOCITY,listenerVelocity);
+	if (alGetError()!=AL_NO_ERROR)
+		OPENAL_OK = 0;
+
+	alListenerfv(AL_ORIENTATION,listenerOrientation);
+	if (alGetError()!=AL_NO_ERROR)
+		OPENAL_OK = 0;
+
+    if(!OPENAL_OK)
+    {
+        printf("Failed to initialize OpenAL");
+        exit(4);
+    }
+
+    printf("TEST");
 
     /*** Enable depth testing for 3d rendering ***/
 	glEnable(GL_DEPTH_TEST);
@@ -71,7 +109,7 @@ Game::Game(){
 
 
     /*** Associate an environment with the game ***/
-    env = new Environment();
+    env = new Stage();
 
 
     /*** Set time to current ***/

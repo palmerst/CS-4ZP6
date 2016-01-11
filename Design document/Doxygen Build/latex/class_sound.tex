@@ -1,0 +1,51 @@
+\hypertarget{class_sound}{}\section{Sound Class Reference}
+\label{class_sound}\index{Sound@{Sound}}
+
+
+{\ttfamily \#include $<$Sound.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_a0b3f0e0944d4f58f722f9477d07c40a3}{Sound} (char $\ast$path, int loop)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_sound}{Sound} constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_sound_a0907389078bf740be2a5763366ad3376}{$\sim$\+Sound} ()\hypertarget{class_sound_a0907389078bf740be2a5763366ad3376}{}\label{class_sound_a0907389078bf740be2a5763366ad3376}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_sound}{Sound} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_sound_aad595b0dc5459e110b53a4e6b2adb0e4}{play} ()\hypertarget{class_sound_aad595b0dc5459e110b53a4e6b2adb0e4}{}\label{class_sound_aad595b0dc5459e110b53a4e6b2adb0e4}
+
+\begin{DoxyCompactList}\small\item\em Plays the sound data contained in the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+A\+Luint \hyperlink{class_sound_abb059a11593afdbaa0b0682daf453bd0}{audio\+Buffer}\hypertarget{class_sound_abb059a11593afdbaa0b0682daf453bd0}{}\label{class_sound_abb059a11593afdbaa0b0682daf453bd0}
+
+\begin{DoxyCompactList}\small\item\em Binding id for sound data storage. \end{DoxyCompactList}\item 
+A\+Luint \hyperlink{class_sound_a17cbdf208c4c6a0cfe34ce80aa2c297d}{audio\+Source}\hypertarget{class_sound_a17cbdf208c4c6a0cfe34ce80aa2c297d}{}\label{class_sound_a17cbdf208c4c6a0cfe34ce80aa2c297d}
+
+\begin{DoxyCompactList}\small\item\em Binding id for position, velocity, etc. of sound source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_sound}{Sound} class loads and stores sound data. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sound@{Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Sound@{Sound}}
+\subsubsection[{\texorpdfstring{Sound(char $\ast$path, int loop)}{Sound(char *path, int loop)}}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+::\+Sound (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{int}]{loop}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sound_a0b3f0e0944d4f58f722f9477d07c40a3}{}\label{class_sound_a0b3f0e0944d4f58f722f9477d07c40a3}
+
+
+\hyperlink{class_sound}{Sound} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the sound file that should be loaded. \\
+\hline
+{\em loop} & Non-\/zero if the sound should be played as an infinite loop. \\
+\hline
+\end{DoxyParams}

@@ -1,4 +1,4 @@
-#version 400 core
+#version 330 core
 
 // This shader source is found in the OpenGL 4.0 Shading Language Cookbook by David Wolff pg 198-203
 

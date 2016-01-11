@@ -586,41 +586,44 @@
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1447910231 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
+1452497398 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
 	"Obj.h"
 	<iostream>
 
-1447910231 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
+1452504539 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
 	"include/chipmunk/chipmunk.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 	"ObjGPUData.h"
 	<vector>
 
-1447909094 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
+1452497398 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
 	"Environment.h"
 	"Loader.h"
+	"Shader.h"
 	<stdio.h>
 	<iostream>
 
-1447906600 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
+1452504263 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
 	"include/GLFW/glfw3.h"
 	"Obj.h"
 	"ObjGPUData.h"
-	"auxi_snd.h"
+	"Sound.h"
+	"Shader.h"
 	<map>
 
-1447906600 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
+1452496786 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
+	"include/AL/alut.h"
 	<cstdio>
 	<cstdlib>
 	"Game.h"
 	"ObjGPUData.h"
 
-1447906600 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
+1452500111 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	"Environment.h"
@@ -2907,7 +2910,7 @@
 	"Game.h"
 	"ObjGPUData.h"
 
-1447906613 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.h
+1452502410 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.h
 	<vector>
 	<string>
 	"include/GL/glew.h"
@@ -7662,7 +7665,7 @@
 	"auxi_snd.h"
 	<stdlib.h>
 
-1447906597 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\auxi_snd.h
+1452487070 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\auxi_snd.h
 	"include/AL/alut.h"
 
 1447906600 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alut.h
@@ -7688,4 +7691,22 @@
 1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\al.h
 
 1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\alc.h
+
+1452503665 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\sound.h
+	"include/AL/alut.h"
+
+1452488463 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\sound.cpp
+	"Sound.h"
+	<cstdlib>
+	<cstdio>
+
+1452504257 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.h
+	"include/GL/glew.h"
+	<map>
+	<string>
+
+1452493285 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.cpp
+	"Shader.h"
+	"Loader.h"
+	<iostream>
 

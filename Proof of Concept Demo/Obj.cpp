@@ -67,7 +67,7 @@ void deleteObject(cpSpace *space, void *obj, void *data){
 
 
 /*** Boundary object ***/
-Boundary::Boundary(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData){
+StaticObject::StaticObject(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
     /*** Set physics data ***/
     body = cpSpaceAddBody(space, cpBodyNewStatic());

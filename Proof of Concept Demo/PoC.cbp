@@ -66,8 +66,10 @@
 		<Unit filename="Obj.h" />
 		<Unit filename="ObjGPUData.cpp" />
 		<Unit filename="ObjGPUData.h" />
-		<Unit filename="auxi_snd.cpp" />
-		<Unit filename="auxi_snd.h" />
+		<Unit filename="Shader.cpp" />
+		<Unit filename="Shader.h" />
+		<Unit filename="Sound.cpp" />
+		<Unit filename="Sound.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

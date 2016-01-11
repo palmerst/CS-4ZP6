@@ -1,11 +1,11 @@
-
 #include "Environment.h"
 #include "Loader.h"
+#include "Shader.h"
 
 #include <stdio.h>
 #include <iostream>
 
-Environment::Environment(){
+Stage::Stage(){
 
     /*** Set up space variables ***/
     envSpace = cpSpaceNew();
@@ -14,27 +14,34 @@ Environment::Environment(){
   //  cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
 
     /*** Load the shaders and store handle ***/
-    shaderProgram = loadShaders("objectVertex.glsl", "objectFragment.glsl");
 
-    /*** Associate identifiers with locations in shader ***/
-	MVP_ID = glGetUniformLocation(shaderProgram, "MVP");
-    MV_ID = glGetUniformLocation(shaderProgram, "ModelViewMatrix");
-    M_ID = glGetUniformLocation(shaderProgram, "ModelMatrix");
-    P_ID = glGetUniformLocation(shaderProgram, "ProjectionMatrix");
-    N_ID = glGetUniformLocation(shaderProgram, "NormalMatrix");
-    MTL_KA_ID = glGetUniformLocation(shaderProgram, "Material.Ka");
-    MTL_KD_ID = glGetUniformLocation(shaderProgram, "Material.Kd");
-    MTL_KS_ID = glGetUniformLocation(shaderProgram, "Material.Ks");
-    MTL_SHINE_ID = glGetUniformLocation(shaderProgram, "Material.shine");
-    LPOS_ID = glGetUniformLocation(shaderProgram, "Light.Position");
-    LA_ID = glGetUniformLocation(shaderProgram, "Light.La");
-    LD_ID = glGetUniformLocation(shaderProgram, "Light.Ld");
-    LS_ID = glGetUniformLocation(shaderProgram, "Light.Ls");
-    texture_ID = glGetUniformLocation(shaderProgram, "myTextureSampler");
-    subroutine_object = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "object");
-    subroutine_boundary_xy = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xy");
-    subroutine_boundary_yz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_yz");
-    subroutine_boundary_xz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xz");
+    shaderMap.insert(std::pair<std::string, Shader*>("BoundaryXY", new Shader("vBoundaryXY.glsl", "fUniversal.glsl")));
+    shaderMap.insert(std::pair<std::string, Shader*>("BoundaryXZ", new Shader("vBoundaryXZ.glsl", "fUniversal.glsl")));
+    shaderMap.insert(std::pair<std::string, Shader*>("BoundaryYZ", new Shader("vBoundaryYZ.glsl", "fUniversal.glsl")));
+    shaderMap.insert(std::pair<std::string, Shader*>("Object", new Shader("vObject.glsl", "fUniversal.glsl")));
+
+
+//    shaderProgram = loadShaders("objectVertex.glsl", "objectFragment.glsl");
+//
+//    /*** Associate identifiers with locations in shader ***/
+//	MVP_ID = glGetUniformLocation(shaderProgram, "MVP");
+//    MV_ID = glGetUniformLocation(shaderProgram, "ModelViewMatrix");
+//    M_ID = glGetUniformLocation(shaderProgram, "ModelMatrix");
+//    P_ID = glGetUniformLocation(shaderProgram, "ProjectionMatrix");
+//    N_ID = glGetUniformLocation(shaderProgram, "NormalMatrix");
+//    MTL_KA_ID = glGetUniformLocation(shaderProgram, "Material.Ka");
+//    MTL_KD_ID = glGetUniformLocation(shaderProgram, "Material.Kd");
+//    MTL_KS_ID = glGetUniformLocation(shaderProgram, "Material.Ks");
+//    MTL_SHINE_ID = glGetUniformLocation(shaderProgram, "Material.shine");
+//    LPOS_ID = glGetUniformLocation(shaderProgram, "Light.Position");
+//    LA_ID = glGetUniformLocation(shaderProgram, "Light.La");
+//    LD_ID = glGetUniformLocation(shaderProgram, "Light.Ld");
+//    LS_ID = glGetUniformLocation(shaderProgram, "Light.Ls");
+//    texture_ID = glGetUniformLocation(shaderProgram, "myTextureSampler");
+//    subroutine_object = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "object");
+//    subroutine_boundary_xy = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xy");
+//    subroutine_boundary_yz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_yz");
+//    subroutine_boundary_xz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xz");
 
     /*** Set up projection and view matrices -- these numbers will probably change ***/
 	mat_Projection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 300.0f);
@@ -74,25 +81,20 @@ Environment::Environment(){
 
     mat_View = glm::lookAt(glm::vec3(0.0f, 50.0f, 200.0f), glm::vec3(-77.0f, 80.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-	snd_initialize();       //initial sound
-    m_bm = snd_new("./data/sound/bm.wav",1);         //load bgm
-    m_bullet = snd_new("./data/sound/bullet.wav",0);   //load sound
-    m_jump = snd_new("./data/sound/jump.wav", 0);
+    soundMap.insert(std::pair<std::string, Sound*>("Background", new Sound("./data/sound/bm.wav", 1)));
+    soundMap.insert(std::pair<std::string, Sound*>("Bullet", new Sound("./data/sound/bullet.wav", 0)));
+    soundMap.insert(std::pair<std::string, Sound*>("Jump", new Sound("./data/sound/jump.wav", 0)));
 
-    snd_play(m_bm);                     //play bgm
+    soundMap.find("Background")->second->play();                     //play bgm
 }
 
 //clean
-Environment::~Environment()
+Stage::~Stage()
 {
 
-    snd_free(m_bullet);
-    snd_free(m_bm);
-    snd_free(m_jump);
-    snd_cleanup();
 }
 
-void Environment::processContinuousInput(){
+void Stage::processContinuousInput(){
 
     if(keyStates[GLFW_KEY_A])
     {
@@ -126,7 +128,7 @@ void Environment::processContinuousInput(){
 
 }
 
-void Environment::processKB(int key, int scancode, int action, int mods)
+void Stage::processKB(int key, int scancode, int action, int mods)
 {
     switch(key){
     case GLFW_KEY_A:
@@ -150,7 +152,7 @@ void Environment::processKB(int key, int scancode, int action, int mods)
             cpVect curVel = cpBodyGetVelocity(userControlObject->body);
             if(curVel.y < 0.001 && curVel.y > -0.001){
                 cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 115.0)));
-                snd_play(m_jump);
+                soundMap.find("Jump")->second->play();
             }
             break;
         }
@@ -161,12 +163,12 @@ void Environment::processKB(int key, int scancode, int action, int mods)
 }
 
 
-void Environment::processMousePosition(float xpos, float ypos){
+void Stage::processMousePosition(float xpos, float ypos){
     mouseX = xpos;
     mouseY = ypos;
 }
 
-void Environment::processMouseClick(int button, int action, int mods, float winX, float winY){
+void Stage::processMouseClick(int button, int action, int mods, float winX, float winY){
     winX -= 1;
     winY -= 1;
 
@@ -179,20 +181,20 @@ void Environment::processMouseClick(int button, int action, int mods, float winX
         cpBodySetVelocity(bullet->body, bulletVel);
         cpBodySetAngle(bullet->body, bulletAngle);
         dynamicObjects.push_back(bullet);
-        snd_play(m_bullet);
+        soundMap.find("Bullet")->second->play();
     }
 }
 
 /*** Adds a box boundary from p1 (lower left) to p2 (upper right) ***
  *** Links to gpu data representing the boundary visuals          ***/
-void Environment::addBoundary(cpVect p1, cpVect p2, ObjGPUData* gpuData){
+void Stage::addBoundary(cpVect p1, cpVect p2, ObjGPUData* gpuData){
 
-    boundaries.push_back(new Boundary(envSpace, p1, p2, gpuData));
+    boundaries.push_back(new StaticObject(envSpace, p1, p2, gpuData));
 
 }
 
 /*** Step the space through time dt ***/
-void Environment::updateEnvironment(double dt){
+void Stage::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
@@ -202,10 +204,13 @@ void Environment::updateEnvironment(double dt){
 
 
 /*** Draw all objects/boundaries in the environment ***/
-void Environment::drawEnvironment(){
+void Stage::drawEnvironment(){
 
-    /***  Bind the shader program ***/
-    glUseProgram(shaderProgram);
+    /***  Bind the object shader program ***/
+    Shader* nextShader;
+    nextShader = shaderMap.find("Object")->second;
+    changeShader(nextShader);
+    glUseProgram(nextShader->shaderProgram);
 
     /*** Draw all dynamic objects ***/
     for(int i = 0; i < dynamicObjects.size(); i++){
@@ -215,6 +220,9 @@ void Environment::drawEnvironment(){
 
     }
 
+    /*** Draw hero ***/
+    drawObj(*userControlObject);
+
     /*** Draw all boundaries ***/
     for(int i = 0; i < boundaries.size(); i++){
 
@@ -223,16 +231,13 @@ void Environment::drawEnvironment(){
 
     }
 
-    /*** Draw hero ***/
-    drawObj(*userControlObject);
-
     /***  Unbind shaders and VAO ***/
     glBindVertexArray(0);
     glUseProgram(0);
 }
 
 /*** Draw an object ***/
-void Environment::drawObj(Obj currentObj, bool isBoundary){
+void Stage::drawObj(Obj currentObj, bool isBoundary){
 
     ObjGPUData* currentGPUObj = currentObj.gpuData;
 
@@ -248,7 +253,6 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
         modelScale = glm::vec3(currentObj.width, currentObj.height, 50.0f);
     } else {
         modelScale = glm::vec3(currentObj.height);
-        glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_object);
     }
 
     /*** Bind VAO associated w/ object ***/
@@ -256,6 +260,28 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
 
     /*** Iterate through all of the object pieces and render ***/
     for(int i = 0; i < currentGPUObj->materialIndices.size()/2; i++){
+
+        if(isBoundary){
+            Shader* nextShader;
+            switch(i){
+                case 0:
+                    nextShader = shaderMap.find("BoundaryYZ")->second;
+                    break;
+                case 1:
+                    nextShader = shaderMap.find("BoundaryXY")->second;
+                    break;
+                case 2:
+                    nextShader = shaderMap.find("BoundaryYZ")->second;
+                    break;
+                case 3:
+                    nextShader = shaderMap.find("BoundaryXZ")->second;
+                    break;
+                case 4:
+                    nextShader = shaderMap.find("BoundaryXZ")->second;
+                    break;
+            }
+            changeShader(nextShader);
+        }
 
         unsigned int first = (currentGPUObj->materialIndices)[i*2];
         unsigned int last;
@@ -272,18 +298,18 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
         glBindTexture(GL_TEXTURE_2D, (currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].texture);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glUniform1i(currentGPUObj->texture_ID, 0);
+        glUniform1i(currentShader->uniformIDMap.find("myTextureSampler")->second, 0);
 
         /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
         glm::mat4 modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(pos.x, pos.y, 0.0f)) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * currentGPUObj->rotation * currentGPUObj->unitScale;
         glm::mat4 modelViewMat = mat_View*modelMat;
         glm::mat4 MVP = mat_Projection*modelViewMat;
 //            glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
-        glUniformMatrix4fv(MVP_ID, 1, GL_FALSE, &MVP[0][0]);
+        glUniformMatrix4fv(currentShader->uniformIDMap.find("MVP")->second, 1, GL_FALSE, &MVP[0][0]);
 //            glUniformMatrix4fv(MV_ID, 1, GL_FALSE, &modelViewMat[0][0]);
 //            glUniformMatrix4fv(P_ID, 1, GL_FALSE, &mat_Projection[0][0]);
 //            glUniformMatrix3fv(N_ID, 1, GL_FALSE, &normalMat[0][0]);
-        glUniformMatrix4fv(M_ID, 1, GL_FALSE, &modelMat[0][0]);
+        glUniformMatrix4fv(currentShader->uniformIDMap.find("ModelMatrix")->second, 1, GL_FALSE, &modelMat[0][0]);
 //
 //            //  Pass material info to shaders
 //            glUniform3fv(currentGPUObj->MTL_KA_ID, 1, &((currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].Ka)[0]);
@@ -298,26 +324,6 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
 //            glUniform3fv(obj->LD_ID, 1, &sunLightLd[0]);
 //            glUniform3fv(obj->LS_ID, 1, &sunLightLs[0]);
 
-        /*** Call subroutines for boundaries (texture is applied differently -- tiled for boundaries) ***/
-        if(isBoundary){
-            switch(i){
-            case 0:
-                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_yz);
-                break;
-            case 1:
-                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_xy);
-                break;
-            case 2:
-                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_yz);
-                break;
-            case 3:
-                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_xz);
-                break;
-            case 4:
-                glUniformSubroutinesuiv(GL_VERTEX_SHADER, 1, &subroutine_boundary_xz);
-                break;
-            }
-        }
 
         /*** Render the object piece ***/
         glDrawElements(GL_TRIANGLES, totalElements, GL_UNSIGNED_INT, (void*)(first * sizeof(GLuint)));
@@ -329,4 +335,12 @@ void Environment::drawObj(Obj currentObj, bool isBoundary){
 /*** Update the projection matrix ***/
 void Environment::updateProjection(glm::mat4 newProjection){
     mat_Projection = newProjection;
+}
+
+
+void Environment::changeShader(Shader* nextShader){
+    if(currentShader != nextShader){
+        glUseProgram(nextShader->shaderProgram);
+        currentShader = nextShader;
+    }
 }

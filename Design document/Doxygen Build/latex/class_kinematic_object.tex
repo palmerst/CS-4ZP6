@@ -1,0 +1,52 @@
+\hypertarget{class_kinematic_object}{}\section{Kinematic\+Object Class Reference}
+\label{class_kinematic_object}\index{Kinematic\+Object@{Kinematic\+Object}}
+
+
+{\ttfamily \#include $<$Obj.\+h$>$}
+
+Inheritance diagram for Kinematic\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kinematic_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_kinematic_object_a1ca8df2b3de129f3c820629b9a7ce039}{Kinematic\+Object} (cp\+Space $\ast$space, cp\+Vect p1, cp\+Vect p2, \hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$\hyperlink{class_obj_a33a9a5371319a410f7d2d395a7ef2423}{gpu\+Data}, int type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_dynamic_object}{Dynamic\+Object} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_kinematic_object}{Kinematic\+Object} class is derived from the \hyperlink{class_obj}{Obj} class. This type of object has features of both static objects and dynamic objects and is generally used for moving platforms. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Kinematic\+Object@{Kinematic\+Object}!Kinematic\+Object@{Kinematic\+Object}}
+\index{Kinematic\+Object@{Kinematic\+Object}!Kinematic\+Object@{Kinematic\+Object}}
+\subsubsection[{\texorpdfstring{Kinematic\+Object(cp\+Space $\ast$space, cp\+Vect p1, cp\+Vect p2, Obj\+G\+P\+U\+Data $\ast$gpu\+Data, int type)}{KinematicObject(cpSpace *space, cpVect p1, cpVect p2, ObjGPUData *gpuData, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}Kinematic\+Object\+::\+Kinematic\+Object (
+\begin{DoxyParamCaption}
+\item[{cp\+Space $\ast$}]{space, }
+\item[{cp\+Vect}]{p1, }
+\item[{cp\+Vect}]{p2, }
+\item[{{\bf Obj\+G\+P\+U\+Data} $\ast$}]{gpu\+Data, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_kinematic_object_a1ca8df2b3de129f3c820629b9a7ce039}{}\label{class_kinematic_object_a1ca8df2b3de129f3c820629b9a7ce039}
+
+
+\hyperlink{class_dynamic_object}{Dynamic\+Object} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & Chipmunk 2D space to attach object to \\
+\hline
+{\em p1} & Bottom left coordinate of bounding box \\
+\hline
+{\em p2} & Upper right coordinate of bounding box \\
+\hline
+{\em gpu\+Data} & Pointer to the gpu data associated with the object \\
+\hline
+{\em type} & Type of object (different values affect collision routines) \\
+\hline
+\end{DoxyParams}
