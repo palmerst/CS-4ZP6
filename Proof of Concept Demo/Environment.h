@@ -126,7 +126,7 @@ class Stage : public Environment {
     public:
 
 
-        Stage();  //!< Stage constructor.
+        Stage(int count, char** argv);  //!< Stage constructor.
 
         ~Stage();  //!< Stage destructor.
 

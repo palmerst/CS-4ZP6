@@ -43,7 +43,7 @@ struct ObjGPUData::FullVertex{
 };
 
 
-ObjGPUData::ObjGPUData(char* objFile, float angle)
+ObjGPUData::ObjGPUData(const char* objFile, float angle)
 {
     loadObject(objFile);
 
@@ -122,7 +122,7 @@ ObjGPUData::ObjGPUData(char* objFile, float angle)
 }
 
 
-void ObjGPUData::loadObject(char* fileName) {
+void ObjGPUData::loadObject(const char* fileName) {
     std::string folderName = fileName;
 
     for(int i = folderName.size() - 1; i >= 0; i--){

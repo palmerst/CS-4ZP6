@@ -4,14 +4,16 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 
-Stage::Stage(){
+Stage::Stage(int count, char** argv){
 
     /*** Set up space variables ***/
     envSpace = cpSpaceNew();
     cpSpaceSetIterations(envSpace, 10);
 	cpSpaceSetGravity(envSpace, cpv(0, -150));
   //  cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
+
 
     /*** Load the shaders and store handle ***/
 

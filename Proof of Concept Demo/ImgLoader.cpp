@@ -1,6 +1,6 @@
 #include <fstream>
 #include <cstdlib>
-#include "include/gl/glew.h"
+#include "include/GL/glew.h"
 
 /******************************************************************************************************************************
  ***  Loads DDS file type images for use as textures                                                                        ***
@@ -36,8 +36,6 @@ GLuint loadImage(const char* imageFileName){
     unsigned int size = *(unsigned int*)&(headerBuffer[20]);
     unsigned int mipMapCount = *(unsigned int*)&(headerBuffer[28]);
     unsigned int fourCC = *(unsigned int*)&(headerBuffer[84]);
-
-    delete(headerBuffer);
 
     unsigned char* dataBuffer;
 

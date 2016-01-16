@@ -8,7 +8,7 @@
 #include "ObjGPUData.h"
 
 
-Game::Game(){
+Game::Game(int count, char** argv){
 
     /*** Initialize glfw ***/
     if (!glfwInit())
@@ -109,7 +109,7 @@ Game::Game(){
 
 
     /*** Associate an environment with the game ***/
-    env = new Stage();
+    env = new Stage(count, argv);
 
 
     /*** Set time to current ***/

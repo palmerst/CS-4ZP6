@@ -32,7 +32,7 @@ class ObjGPUData
         /*!
           \param fileName Name (without extension) of the .obj and .mtl files
         */
-        void loadObject(char* fileName);
+        void loadObject(const char* fileName);
 
         //! Converts string to .obj file datatype (dataType).
         /*!
@@ -55,7 +55,7 @@ class ObjGPUData
           \param objFile Object and material file path (these should have the same name) without extension
           \param angle Initial y-axis rotation in radians (optional:  default 0.0)
         */
-        ObjGPUData(char* objFile, float angle = 0.0f);
+        ObjGPUData(const char* objFile, float angle = 0.0f);
 
         class Material{
         public:

@@ -27,7 +27,7 @@ class Game {
     float winY;     //!< Stores y-coordinate maximum of the window
 
     public:
-        Game();         //!< Game class constructor
+        Game(int, char**);         //!< Game class constructor
         ~Game();        //!< Game class destructor
 
         void run();     //!< Runs the game until the application is terminated (infinite loop)

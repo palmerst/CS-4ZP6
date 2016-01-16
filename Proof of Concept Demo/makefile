@@ -20,11 +20,15 @@ ifeq "$(OS)" "Windows_NT"
     LDFLAGS = -Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lalut -lOpenAL32.dll
     CXXFLAGS = -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S), Linux)
+		LDFLAGS = -Llib/linux -lglfw3 -lGLEW -lGL -lchipmunk -lalut -lopenal -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lpthread -ldl -Wl,-Rlib/linux
+		CXXFLAGS = -g -Os -DLINUX -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
+	endif
 	# OS X
-	OS := $(shell uname)
-	ifeq ($(OS), Darwin)
-	        LDFLAGS = -Llib/apple -framework Carbon -framework OpenGL -lglfw3 -lGLEW -lchipmunk
-            CXXFLAGS = -g -Os -DAPPLE -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
+	ifeq ($(UNAME_S), Darwin)
+    LDFLAGS = -Llib/apple -framework Carbon -framework OpenGL -lglfw3 -lGLEW -lchipmunk
+    CXXFLAGS = -g -Os -DAPPLE -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 	endif
 endif
 
