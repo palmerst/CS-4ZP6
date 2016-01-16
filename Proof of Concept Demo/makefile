@@ -17,7 +17,7 @@ RM=rm
 ifeq "$(OS)" "Windows_NT"
 	EXEEXT=.exe #on windows applications must have .exe extension
 	RM=del #rm command for windows powershell
-    LDFLAGS = -Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk
+    LDFLAGS = -Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lalut -lOpenAL32.dll
     CXXFLAGS = -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
 else
 	# OS X
@@ -29,7 +29,7 @@ else
 endif
 
 #change the 't1' name to the name you want to call your application
-PROGRAM_NAME := 3DEnvSim
+PROGRAM_NAME := Demo
 C_SRCS := $(wildcard *.c)
 CXX_SRCS := $(wildcard *.cpp)
 C_OBJS := $(C_SRCS:.c=.o)
