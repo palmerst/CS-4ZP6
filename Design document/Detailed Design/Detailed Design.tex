@@ -114,7 +114,10 @@ Several files will be included as part of the game, and will be required for the
 Library initialization failures, especially GLEW initialization errors, may occur when the game is attempted to be run on a system with outdated hardware.  These types of errors will produce an error message followed by termination of the game application.  All errors of this type will be considered unrecoverable.
 
 \subsection{Unexpected Errors}
-No other errors are expected to occur given that the game code \emph{should} restrict bad states from occurring.  User inputs will be well defined and tested for errors.  Other user inputs (i.e. keys that are not used in controlling the game) have no programmed function and as a result should have no effect when pressed.  It is still likely, however, that unexpected errors will occur from time to time due to uncaught bugs that rarely execute or external factors (driver error, memory error, etc.).  These unexpected errors are not handled and will likely cause the game to crash.
+No other errors are expected to occur given that the game code \emph{should} restrict bad states from occurring. 
+\ds{Get rid of the ``should".}
+
+ User inputs will be well defined and tested for errors.  Other user inputs (i.e. keys that are not used in controlling the game) have no programmed function and as a result should have no effect when pressed.  It is still likely, however, that unexpected errors will occur from time to time due to uncaught bugs that rarely execute or external factors (driver error, memory error, etc.).  These unexpected errors are not handled and will likely cause the game to crash.
 
 \section{User Interface Elements}
 
@@ -122,7 +125,7 @@ No other errors are expected to occur given that the game code \emph{should} res
 The game will consist of two general types of user interfaces:  menus and game stages/levels.  Examples of what these interfaces will look like along with some of their key features are given in the following subsections.
 
 \subsubsection{Menu}
-The main menu of the game will be the level select screen.  An example of what this screen will look like is given in  \hyperref[fig:levelselect]{Table~\ref*{fig:levelselect}}.
+The main menu of the game will be the level select screen.  An example of what this screen will look like is given in  \hyperref[fig:levelselect]{Table~\ref*{fig:levelselect}}. \ds{Should say ``Figure"}
 
 \newpage
 
