@@ -1,10 +1,10 @@
-# Blender MTL File: 'spear trap base.blend'
+# Blender MTL File: 'spikes.blend'
 # Material Count: 1
 
 newmtl Material.001
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
-Kd 0.288214 0.291282 0.300599
+Kd 0.015079 0.002757 0.002283
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
