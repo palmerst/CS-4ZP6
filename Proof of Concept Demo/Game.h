@@ -3,7 +3,7 @@
 
 #include "include/GL/glew.h"
 #include "include/GLFW/glfw3.h"
-#include "Environment.h"
+#include "Stage.h"
 #include "ObjGPUData.h"
 #include <map>
 

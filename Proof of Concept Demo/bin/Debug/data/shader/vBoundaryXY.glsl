@@ -14,6 +14,6 @@ out vec2 UV;
 
 void main(){
 	gl_Position =  MVP * vec4(vertexPosition, 1.0);
-	UV = (ModelMatrix * vec4(vertexPosition, 1.0)).yz/200.0f;
+	UV = (ModelMatrix * vec4(vertexPosition, 1.0)).xy/2000.0f;
 }
 

@@ -2,119 +2,100 @@
 
 #include <iostream>
 
-void setCollisionHandlers(cpSpace* space){
-    cpCollisionHandler* colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_ENEMY);
-    colHand->beginFunc = (cpCollisionBeginFunc) begin_enemy_bullet_collision;
-    colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_BOUNDARY);
-    colHand->beginFunc = (cpCollisionBeginFunc) begin_single_deletion_collision;
-  //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_ENEMY);
-  //  colHand->beginFunc = (cpCollisionBeginFunc) begin_knockback;
-}
+glm::mat4 Obj::matProjection = glm::mat4();
+glm::mat4 Obj::matView = glm::mat4();
+ObjGPUDataStore Obj::gpuStore;
+ShaderStore Obj::shaderStore;
+Shader* Obj::currentShader = 0;
 
-int begin_single_deletion_collision(cpArbiter *arb, cpSpace *space, void *unused)
-{
-  cpShape *a, *b;
-  cpArbiterGetShapes(arb, &a, &b);
+void Obj::render(glm::vec3 pos, float angle, bool isBoundary){
 
-  cpSpaceAddPostStepCallback(space, (cpPostStepFunc)deleteObject, a, cpShapeGetUserData(a));
+    for(int q = 0; q < gpuDataCount; q++){
 
-  return 0;
-}
+        ObjGPUData* gpuData = gpuDataList[q];
+        Shader* requiredShader = shaderList[q];
 
-int begin_enemy_bullet_collision(cpArbiter *arb, cpSpace *space, void *unused)
-{
-  cpShape *a, *b;
-  cpArbiterGetShapes(arb, &a, &b);
-
-  DynamicObject* enemy = static_cast<DynamicObject*> (cpShapeGetUserData(b));
-  DynamicObject* bullet = static_cast<DynamicObject*> (cpShapeGetUserData(a));
-
-  cpVect bulVel = cpBodyGetVelocity(bullet->body);
-  cpVect enemyVel = cpBodyGetVelocity(enemy->body);
-  cpBodySetVelocity(enemy->body, cpvadd(enemyVel, cpvmult(cpvnormalize(bulVel), 150.0)));
-
-  cpSpaceAddPostStepCallback(space, (cpPostStepFunc)deleteObject, a, cpShapeGetUserData(a));
-
-  return 0;
-}
-
-int begin_knockback(cpArbiter *arb, cpSpace *space, void *unused)
-{
-  cpShape *a, *b;
-  cpArbiterGetShapes(arb, &a, &b);
-
-  DynamicObject* hero = static_cast<DynamicObject*> (cpShapeGetUserData(a));
-
-  cpVect heroVel = cpBodyGetVelocity(hero->body);
-
-  cpBodySetVelocity(hero->body, cpvmult(cpvnormalize(cpvneg(heroVel)), 150.0));
-
-  return 0;
-}
+        if(currentShader != requiredShader){
+            glUseProgram(requiredShader->shaderProgram);
+            currentShader = requiredShader;
+        }
 
 
-void deleteObject(cpSpace *space, void *obj, void *data){
+        /*** Bind VAO associated w/ object ***/
+        glBindVertexArray(gpuData->vertexArrayObj);
 
-    DynamicObject* temp = static_cast<DynamicObject*>(data);
+        /*** Iterate through all of the object pieces and render ***/
+        for(int i = 0; i < gpuData->materialIndices.size()/2; i++){
 
-    if(cpSpaceContainsShape(space, temp->shape))
-        cpSpaceRemoveShape(space, temp->shape);
-    if(cpSpaceContainsBody(space, temp->body))
-        cpSpaceRemoveBody(space, temp->body);
+//            if(isBoundary){
+//                Shader* nextShader;
+//                switch(i){
+//                    case 0:
+//                        nextShader = shaderMap.find("BoundaryYZ")->second;
+//                        break;
+//                    case 1:
+//                        nextShader = shaderMap.find("BoundaryXY")->second;
+//                        break;
+//                    case 2:
+//                        nextShader = shaderMap.find("BoundaryYZ")->second;
+//                        break;
+//                    case 3:
+//                        nextShader = shaderMap.find("BoundaryXZ")->second;
+//                        break;
+//                    case 4:
+//                        nextShader = shaderMap.find("BoundaryXZ")->second;
+//                        break;
+//                }
+//                changeShader(nextShader);
+//            }
 
-    temp->draw = false;
-}
+            unsigned int first = (gpuData->materialIndices)[i*2];
+            unsigned int last;
+
+            if((2*i + 2) > (gpuData->materialIndices.size() - 1))
+                last = gpuData->fList.size();
+            else
+                last = (gpuData->materialIndices)[i*2 + 2];
+
+            unsigned int totalElements = last - first;
+
+            /***  Bind the textures required by the object piece ***/
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, (gpuData->materials)[(gpuData->materialIndices)[i*2 + 1]].texture);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+            glUniform1i(currentShader->uniformIDMap.find("myTextureSampler")->second, 0);
+
+            /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
+            glm::mat4 modelMat = glm::translate(glm::mat4(1.0f), pos) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+            glm::mat4 modelViewMat = matView*modelMat;
+            glm::mat4 MVP = matProjection*modelViewMat;
+    //            glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
+            glUniformMatrix4fv(currentShader->uniformIDMap.find("MVP")->second, 1, GL_FALSE, &MVP[0][0]);
+    //            glUniformMatrix4fv(MV_ID, 1, GL_FALSE, &modelViewMat[0][0]);
+    //            glUniformMatrix4fv(P_ID, 1, GL_FALSE, &mat_Projection[0][0]);
+    //            glUniformMatrix3fv(N_ID, 1, GL_FALSE, &normalMat[0][0]);
+            glUniformMatrix4fv(currentShader->uniformIDMap.find("ModelMatrix")->second, 1, GL_FALSE, &modelMat[0][0]);
+    //
+    //            //  Pass material info to shaders
+    //            glUniform3fv(currentGPUObj->MTL_KA_ID, 1, &((currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].Ka)[0]);
+    //            glUniform3fv(currentGPUObj->MTL_KD_ID, 1, &((currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].Kd)[0]);
+    //            glUniform3fv(currentGPUObj->MTL_KS_ID, 1, &((currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].Ks)[0]);
+    //            glUniform1f(currentGPUObj->MTL_SHINE_ID, (currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].shine);
+
+            //  Pass light info to shaders
+    //            glm::vec4 sunLightPos_ViewSpace = viewMat * sunLightPos;    //  Transform sun position to view space
+    //            glUniform4fv(obj->LPOS_ID, 1, &sunLightPos_ViewSpace[0]);
+    //            glUniform3fv(obj->LA_ID, 1, &sunLightLa[0]);
+    //            glUniform3fv(obj->LD_ID, 1, &sunLightLd[0]);
+    //            glUniform3fv(obj->LS_ID, 1, &sunLightLs[0]);
 
 
-/*** Boundary object ***/
-StaticObject::StaticObject(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData){
+            /*** Render the object piece ***/
+            glDrawElements(GL_TRIANGLES, totalElements, GL_UNSIGNED_INT, (void*)(first * sizeof(GLuint)));
 
-    /*** Set physics data ***/
-    body = cpSpaceAddBody(space, cpBodyNewStatic());
-    cpBodySetPosition(body, cpvlerp(p1,p2,0.50f));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, p2.x - p1.x, p2.y - p1.y, 0.1f));
-	cpShapeSetElasticity(shape, 0.5f);
-	cpShapeSetFriction(shape, 1.0f);
-	height = p2.y - p1.y;
-	width = p2.x - p1.x;
+        }
 
-	cpShapeSetCollisionType(shape, OBJ_BOUNDARY);
-
-    /*** Link gpu data ***/
-    this->gpuData = gpuData;
-
-    draw = true;
-
-}
-
-
-/*** Generic dynamic object ***/
-DynamicObject::DynamicObject(){
-    body = 0;
-    shape = 0;
-}
-
-DynamicObject::DynamicObject(cpSpace* space, glm::vec2 pos, float mass, float scale, float elast, float fric, ObjGPUData* gpuData, int type, bool noRotation){
-
-    height = scale;
-	width = scale*gpuData->whRatio;
-
-    /*** Set physics data ***/
-    if(noRotation)
-        body = cpBodyNew(mass, INFINITY);
-    else{
-        body = cpBodyNew(mass, cpMomentForBox(mass, width, height));
     }
-    cpSpaceAddBody(space, body);
-    cpBodySetPosition(body, cpv(pos.x, pos.y));
-    shape = cpSpaceAddShape(space, cpBoxShapeNew(body, width, height, 0.01));
-	cpShapeSetElasticity(shape, elast);
-	cpShapeSetFriction(shape, fric);
-	cpShapeSetUserData(shape, this);
-    cpShapeSetCollisionType(shape, type);
 
-    /*** Link gpu data ***/
-    this->gpuData = gpuData;
-
-    draw = true;
 }
