@@ -1,7 +1,7 @@
 #ifndef BOUNDARY_H_INCLUDED
 #define BOUNDARY_H_INCLUDED
 
-#include "StaticObject.h"
+#include "Surface.h"
 
 enum BSurface {
 
@@ -9,7 +9,7 @@ enum BSurface {
 
 };
 
-class Boundary : public StaticObject {
+class Boundary : public Surface {
 
     public:
 

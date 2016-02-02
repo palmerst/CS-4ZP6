@@ -6,9 +6,8 @@
 void setCollisionHandlers(cpSpace*);
 
 int begin_single_deletion_collision(cpArbiter*, cpSpace*, cpDataPointer);
-int begin_enemy_bullet_collision(cpArbiter*, cpSpace*, cpDataPointer);
+int begin_hero_boulder_collision(cpArbiter*, cpSpace*, cpDataPointer);
 int begin_knockback(cpArbiter*, cpSpace*, void*);
-
 
 void deleteObject(cpSpace *space, void *obj, void *data);
 

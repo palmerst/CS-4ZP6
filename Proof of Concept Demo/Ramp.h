@@ -1,9 +1,9 @@
 #ifndef RAMP_H_INCLUDED
 #define RAMP_H_INCLUDED
 
-#include "StaticObject.h"
+#include "Surface.h"
 
-class Ramp : public StaticObject {
+class Ramp : public Surface {
 
     public:
 

@@ -22,7 +22,7 @@ class DynamicObject : public PhysicsObject {
           \param type Type of object (different values affect collision routines)
           \param noRotation Flag to ignore angular momentum in the physics calculations (default = false)
         */
-        DynamicObject(float scale, std::string gpuPath, std::string vPath, std::string fPath);
+        DynamicObject(float x, float y, float scale, float mass, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath);
 
 };
 

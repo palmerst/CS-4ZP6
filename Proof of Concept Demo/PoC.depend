@@ -590,7 +590,7 @@
 	"Obj.h"
 	<iostream>
 
-1454393701 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
+1454409975 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 	"include/glm/gtx/transform2.hpp"
@@ -8393,10 +8393,11 @@
 1454315766 /home/steve/Desktop/Github/CS-4ZP6/Proof of Concept Demo/Stage.h
 	"Environment.h"
 
-1454371686 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.cpp
+1454405743 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.cpp
 	"CollisionHandlers.h"
+	"Hero.h"
 
-1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.h
+1454405242 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.h
 	"PhysicsObject.h"
 
 1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\physicsobject.h
@@ -8412,13 +8413,14 @@
 	<map>
 	"Shader.h"
 
-1454393724 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.cpp
+1454407866 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.cpp
 	"DynamicObject.h"
+	<cmath>
 
-1454371614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.h
+1454406748 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.h
 	"PhysicsObject.h"
 
-1454387440 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\includeobjects.h
+1454410505 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\includeobjects.h
 	"Boulder.h"
 	"Boundary.h"
 	"Hero.h"
@@ -8426,12 +8428,14 @@
 	"Platform.h"
 	"Ramp.h"
 	"Skybox.h"
+	"Spear.h"
+	"Spikes.h"
 	"Wall.h"
 
-1454393711 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.h
-	"StaticObject.h"
+1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.h
+	"Surface.h"
 
-1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.h
+1454404498 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.h
 	"DynamicObject.h"
 
 1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\movingplatform.h
@@ -8440,19 +8444,19 @@
 1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\kinematicobject.h
 	"PhysicsObject.h"
 
-1454363950 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.h
-	"StaticObject.h"
+1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.h
+	"Surface.h"
 
-1454393274 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.h
+1454410331 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.h
 	"PhysicsObject.h"
 
-1454363950 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.h
-	"StaticObject.h"
+1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.h
+	"Surface.h"
 
-1454387947 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.h
+1454410870 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.h
 	"Environment.h"
 
-1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.cpp
+1454407555 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.cpp
 	"Hero.h"
 
 1454357220 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudatastore.cpp
@@ -8461,26 +8465,26 @@
 1454367029 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\physicsobject.cpp
 	"PhysicsObject.h"
 
-1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.cpp
+1454409755 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.cpp
 	"Platform.h"
 
 1454354347 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shaderstore.cpp
 	"ShaderStore.h"
 
-1454397387 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.cpp
+1454412854 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.cpp
 	"Stage.h"
 
-1454393274 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.cpp
+1454409755 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.cpp
 	"StaticObject.h"
 
-1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.cpp
+1454409755 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.cpp
 	"Wall.h"
 
-1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.cpp
+1454409894 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.cpp
 	"Ramp.h"
 
-1454363991 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.h
-	"StaticObject.h"
+1454409909 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.h
+	"Surface.h"
 
 1447906610 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtx\transform2.hpp
 	"../glm.hpp"
@@ -8499,7 +8503,7 @@
 1454371672 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boulder.h
 	"DynamicObject.h"
 
-1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boulder.cpp
+1454406748 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boulder.cpp
 	"Boulder.h"
 
 1454400508 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\skybox.h
@@ -8514,6 +8518,24 @@
 1454387440 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\standardobject.cpp
 	"StandardObject.h"
 
-1454399961 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.cpp
+1454411612 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.cpp
 	"Boundary.h"
+
+1454412854 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\spear.h
+	"DynamicObject.h"
+
+1454412854 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\spear.cpp
+	"Spear.h"
+
+1454409881 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\surface.h
+	"StaticObject.h"
+
+1454410682 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\spikes.cpp
+	"Spikes.h"
+
+1454409954 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\spikes.h
+	"StaticObject.h"
+
+1454410006 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\surface.cpp
+	"Surface.h"
 

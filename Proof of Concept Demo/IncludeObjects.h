@@ -8,6 +8,8 @@
 #include "Platform.h"
 #include "Ramp.h"
 #include "Skybox.h"
+#include "Spear.h"
+#include "Spikes.h"
 #include "Wall.h"
 
 #endif // INCLUDEOBJECTS_H_INCLUDED

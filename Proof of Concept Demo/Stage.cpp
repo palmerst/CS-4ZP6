@@ -41,31 +41,27 @@ Stage::Stage(int count, char** argv){
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 
 
-  //  setCollisionHandlers(envSpace);
+    setCollisionHandlers(envSpace);
 
     /** STAGE DESIGN GOES BELOW HERE **/
 
 	physicsObjects.push_back(new Platform(-1500, 1500, 1525));
 	physicsObjects.push_back(new Platform(-1450, 1450, -975));
 	physicsObjects.push_back(new Platform(150, 700, 25));
-	physicsObjects.push_back(new Platform(-1450, -1050, -675));
-	physicsObjects.push_back(new Platform(-750, -400, -525));
 
-	physicsObjects.push_back(new Ramp(-100, 500, -125, -300));
 
 	physicsObjects.push_back(new Platform(-1450, -400, 375));
 	physicsObjects.push_back(new Platform(-700, 1450, 825));
 
-	physicsObjects.push_back(new Wall(-1000, 1500, -1475));
+	physicsObjects.push_back(new Wall(-200, 1500, -1475));
 	physicsObjects.push_back(new Ramp(1450, 4500, -975, 500));
-	physicsObjects.push_back(new Wall(-500, -100, -425));
 
 	physicsObjects.push_back(new Boulder(4200, 900));
+	physicsObjects.push_back(new Spears(-1750, 2000));
+    physicsObjects.push_back(new Spikes(-800, -950));
 
-	physicsObjects.push_back(new Boundary(-30000, 30000, -1000, BS_SAND));
-
+	boundary = new Boundary(-30000, 30000, -950, BS_SAND);
     userControlObject = new Hero(-770, 800);
-
     skybox = new Skybox(0, 0, 1);
 
     /** STAGE DESIGN GOES ABOVE HERE **/
@@ -182,7 +178,7 @@ void Stage::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
-    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 500.0f, 2000.0f), glm::vec3(controlPos.x, -1000.0f, -10000.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 500.0f, 2000.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 }
 
@@ -194,8 +190,8 @@ void Stage::drawEnvironment(){
     glDepthMask(GL_FALSE);
     glFrontFace(GL_CW);
     static_cast<StandardObject*>(skybox)->render();
-    glDepthMask(GL_TRUE);
     glFrontFace(GL_CCW);
+    glDepthMask(GL_TRUE);
 
 
     /*** Draw all dynamic objects ***/
@@ -216,8 +212,7 @@ void Stage::drawEnvironment(){
     /*** Draw hero ***/
     userControlObject->render();
 
-
-
+    static_cast<PhysicsObject*>(boundary)->render();
 
 }
 

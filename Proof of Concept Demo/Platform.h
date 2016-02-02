@@ -1,9 +1,9 @@
 #ifndef PLATFORM_H_INCLUDED
 #define PLATFORM_H_INCLUDED
 
-#include "StaticObject.h"
+#include "Surface.h"
 
-class Platform : public StaticObject {
+class Platform : public Surface {
 
     public:
 

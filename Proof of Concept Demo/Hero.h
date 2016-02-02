@@ -9,6 +9,8 @@ class Hero : public DynamicObject {
 
         Hero(float x, float y);
 
+        cpVect startPos;
+
 };
 
 

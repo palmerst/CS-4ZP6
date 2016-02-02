@@ -42,6 +42,7 @@
 		</Linker>
 		<Unit filename="Boulder.cpp" />
 		<Unit filename="Boulder.h" />
+		<Unit filename="Boundary.cpp" />
 		<Unit filename="Boundary.h" />
 		<Unit filename="CollisionHandlers.cpp" />
 		<Unit filename="CollisionHandlers.h" />
@@ -82,12 +83,18 @@
 		<Unit filename="Sound.cpp" />
 		<Unit filename="Sound.h" />
 		<Unit filename="SoundStore.h" />
+		<Unit filename="Spear.cpp" />
+		<Unit filename="Spear.h" />
+		<Unit filename="Spikes.cpp" />
+		<Unit filename="Spikes.h" />
 		<Unit filename="Stage.cpp" />
 		<Unit filename="Stage.h" />
 		<Unit filename="StandardObject.cpp" />
 		<Unit filename="StandardObject.h" />
 		<Unit filename="StaticObject.cpp" />
 		<Unit filename="StaticObject.h" />
+		<Unit filename="Surface.cpp" />
+		<Unit filename="Surface.h" />
 		<Unit filename="Wall.cpp" />
 		<Unit filename="Wall.h" />
 		<Unit filename="main.cpp" />

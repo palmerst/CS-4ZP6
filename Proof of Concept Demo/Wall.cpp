@@ -1,6 +1,6 @@
 #include "Wall.h"
 
-Wall::Wall(float y1, float y2, float xmid, float thickness) : StaticObject(cpv(xmid-thickness/2,y1), cpv(xmid+thickness/2,y2), false, thickness){
+Wall::Wall(float y1, float y2, float xmid, float thickness) : Surface(cpv(xmid-thickness/2,y1), cpv(xmid+thickness/2,y2), false, thickness){
 
 
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_top", 0, false));

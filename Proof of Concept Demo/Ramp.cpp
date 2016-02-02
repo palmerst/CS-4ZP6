@@ -1,6 +1,6 @@
 #include "Ramp.h"
 
-Ramp::Ramp(float x1, float x2, float y1mid, float y2mid, float thickness) : StaticObject(cpv(x1,y1mid-thickness/2), cpv(x2,y2mid+thickness/2), true, thickness){
+Ramp::Ramp(float x1, float x2, float y1mid, float y2mid, float thickness) : Surface(cpv(x1,y1mid-thickness/2), cpv(x2,y2mid+thickness/2), true, thickness){
 
 
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_top", 0, false));

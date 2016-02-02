@@ -1,9 +1,9 @@
 #ifndef WALL_H_INCLUDED
 #define WALL_H_INCLUDED
 
-#include "StaticObject.h"
+#include "Surface.h"
 
-class Wall : public StaticObject {
+class Wall : public Surface {
 
     public:
 
