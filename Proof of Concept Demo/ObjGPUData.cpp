@@ -43,7 +43,7 @@ struct ObjGPUData::FullVertex{
 };
 
 
-ObjGPUData::ObjGPUData(const char* objFile, float angle)
+ObjGPUData::ObjGPUData(const char* objFile, float angle, bool scalingMode)
 {
     loadObject(objFile);
 
@@ -96,28 +96,31 @@ ObjGPUData::ObjGPUData(const char* objFile, float angle)
 
     glBindVertexArray(0);
 
-    float minX = 0, maxX = 0;
-    float minY = 0, maxY = 0;
+    if(scalingMode){
+        float minX = 0, maxX = 0;
+        float minY = 0, maxY = 0;
 
-    for(int i = 0; i < vList.size(); i++){
+        for(int i = 0; i < vList.size(); i++){
 
-        if(vList[i][0] < minX)
-            minX = vList[i][0];
-        else if(vList[i][0] > maxX)
-            maxX = vList[i][0];
+            if(vList[i][0] < minX)
+                minX = vList[i][0];
+            else if(vList[i][0] > maxX)
+                maxX = vList[i][0];
 
-        if(vList[i][1] < minY)
-            minY = vList[i][1];
-        else if(vList[i][1] > maxY)
-            maxY = vList[i][1];
+            if(vList[i][1] < minY)
+                minY = vList[i][1];
+            else if(vList[i][1] > maxY)
+                maxY = vList[i][1];
 
+        }
+
+        whRatio = (maxX - minX)/(maxY - minY);
+
+        float scaleFactor = 1.0f/(maxY - minY);
+
+        unitScale = glm::scale(glm::mat4(1.0f), glm::vec3(scaleFactor));
     }
 
-    whRatio = (maxX - minX)/(maxY - minY);
-
-    float scaleFactor = 1.0f/(maxY - minY);
-
-    unitScale = glm::scale(glm::mat4(1.0f), glm::vec3(scaleFactor));
     rotation = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 1, 0));
 }
 

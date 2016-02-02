@@ -15,7 +15,7 @@ class StaticObject : public PhysicsObject {
           \param p2 Upper right coordinate of bounding box
           \param gpuData Pointer to the gpu data associated with the object
         */
-        StaticObject(cpVect p1, cpVect p2, int type);
+        StaticObject(cpVect p1, cpVect p2, bool isRamp, float thickness = 50.0f);
 
 
 };

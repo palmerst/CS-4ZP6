@@ -13,6 +13,9 @@ class Stage : public Environment {
 
         /*** Objects in environment ***/
         std::vector<PhysicsObject*> physicsObjects;
+        std::vector<StandardObject*> standardObjects;
+
+        Skybox* skybox;
 
         float stageTime;     //!< Time elapsed since beginning the stage.
 

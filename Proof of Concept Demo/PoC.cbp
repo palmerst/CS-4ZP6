@@ -14,12 +14,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="lib" />
-					<Add directory="openal/include" />
 				</Compiler>
-				<Linker>
-					<Add directory="lib/win" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Demo" prefix_auto="1" extension_auto="1" />
@@ -31,45 +26,70 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add directory="lib/win" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
+			<Add option='[[if(PLATFORM == PLATFORM_GTK ) { print(&quot;-DLINUX&quot;); } else if(PLATFORM == PLATFORM_MSW) { print(&quot;-DWIN32&quot;); }; ]]' />
 			<Add option="-DGLEW_STATIC" />
 			<Add option="-DGLM_FORCE_RADIANS" />
-			<Add option="-DWIN32" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add library="glfw3" />
-			<Add library="glew32" />
-			<Add library="opengl32" />
-			<Add library="glu32" />
-			<Add library="gdi32" />
-			<Add library="chipmunk" />
-			<Add library="alut" />
-			<Add library="openal32" />
-			<Add directory="lib/win" />
+			<Add option='[[if(PLATFORM == PLATFORM_MSW) {print(&quot;-Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lalut -lopenal32&quot;); } else if(PLATFORM == PLATFORM_GTK ) {print(&quot;-Llib/linux -lglfw3 -lGLEW -lGL -lchipmunk -lalut -lopenal -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lpthread -ldl -Wl,-R../../lib/linux&quot;); };]]' />
 		</Linker>
+		<Unit filename="Boulder.cpp" />
+		<Unit filename="Boulder.h" />
+		<Unit filename="Boundary.h" />
+		<Unit filename="CollisionHandlers.cpp" />
+		<Unit filename="CollisionHandlers.h" />
+		<Unit filename="DynamicObject.cpp" />
+		<Unit filename="DynamicObject.h" />
 		<Unit filename="Environment.cpp" />
 		<Unit filename="Environment.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="Hero.cpp" />
+		<Unit filename="Hero.h" />
 		<Unit filename="ImgLoader.cpp" />
 		<Unit filename="ImgLoader.h" />
+		<Unit filename="IncludeObjects.h" />
+		<Unit filename="KinematicObject.h" />
 		<Unit filename="Loader.cpp" />
 		<Unit filename="Loader.h" />
+		<Unit filename="Menu.h" />
+		<Unit filename="MovingPlatform.h" />
 		<Unit filename="Obj.cpp" />
 		<Unit filename="Obj.h" />
 		<Unit filename="ObjGPUData.cpp" />
 		<Unit filename="ObjGPUData.h" />
+		<Unit filename="ObjGPUDataStore.cpp" />
+		<Unit filename="ObjGPUDataStore.h" />
+		<Unit filename="PhysicsObject.cpp" />
+		<Unit filename="PhysicsObject.h" />
+		<Unit filename="Platform.cpp" />
+		<Unit filename="Platform.h" />
+		<Unit filename="Ramp.cpp" />
+		<Unit filename="Ramp.h" />
 		<Unit filename="Shader.cpp" />
 		<Unit filename="Shader.h" />
+		<Unit filename="ShaderStore.cpp" />
+		<Unit filename="ShaderStore.h" />
+		<Unit filename="Skybox.cpp" />
+		<Unit filename="Skybox.h" />
 		<Unit filename="Sound.cpp" />
 		<Unit filename="Sound.h" />
+		<Unit filename="SoundStore.h" />
+		<Unit filename="Stage.cpp" />
+		<Unit filename="Stage.h" />
+		<Unit filename="StandardObject.cpp" />
+		<Unit filename="StandardObject.h" />
+		<Unit filename="StaticObject.cpp" />
+		<Unit filename="StaticObject.h" />
+		<Unit filename="Wall.cpp" />
+		<Unit filename="Wall.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

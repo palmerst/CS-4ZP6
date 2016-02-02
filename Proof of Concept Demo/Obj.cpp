@@ -8,9 +8,9 @@ ObjGPUDataStore Obj::gpuStore;
 ShaderStore Obj::shaderStore;
 Shader* Obj::currentShader = 0;
 
-void Obj::render(glm::vec3 pos, float angle, bool isBoundary){
+void Obj::render(glm::vec3 pos, float angle){
 
-    for(int q = 0; q < gpuDataCount; q++){
+    for(int q = 0; q < gpuDataList.size(); q++){
 
         ObjGPUData* gpuData = gpuDataList[q];
         Shader* requiredShader = shaderList[q];
@@ -26,28 +26,6 @@ void Obj::render(glm::vec3 pos, float angle, bool isBoundary){
 
         /*** Iterate through all of the object pieces and render ***/
         for(int i = 0; i < gpuData->materialIndices.size()/2; i++){
-
-//            if(isBoundary){
-//                Shader* nextShader;
-//                switch(i){
-//                    case 0:
-//                        nextShader = shaderMap.find("BoundaryYZ")->second;
-//                        break;
-//                    case 1:
-//                        nextShader = shaderMap.find("BoundaryXY")->second;
-//                        break;
-//                    case 2:
-//                        nextShader = shaderMap.find("BoundaryYZ")->second;
-//                        break;
-//                    case 3:
-//                        nextShader = shaderMap.find("BoundaryXZ")->second;
-//                        break;
-//                    case 4:
-//                        nextShader = shaderMap.find("BoundaryXZ")->second;
-//                        break;
-//                }
-//                changeShader(nextShader);
-//            }
 
             unsigned int first = (gpuData->materialIndices)[i*2];
             unsigned int last;
@@ -67,15 +45,31 @@ void Obj::render(glm::vec3 pos, float angle, bool isBoundary){
             glUniform1i(currentShader->uniformIDMap.find("myTextureSampler")->second, 0);
 
             /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
-            glm::mat4 modelMat = glm::translate(glm::mat4(1.0f), pos) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+            glm::mat4 modelMat;
+            if(transformOverrides)
+                modelMat = glm::translate(glm::mat4(1.0f), pos + translationOverrideList[q]) * shearOverrideList[q] * glm::rotate(glm::mat4(1.0f), angle + rotationOverrideList[q], glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+            else
+                modelMat = glm::translate(glm::mat4(1.0f), pos) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
             glm::mat4 modelViewMat = matView*modelMat;
             glm::mat4 MVP = matProjection*modelViewMat;
     //            glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
-            glUniformMatrix4fv(currentShader->uniformIDMap.find("MVP")->second, 1, GL_FALSE, &MVP[0][0]);
-    //            glUniformMatrix4fv(MV_ID, 1, GL_FALSE, &modelViewMat[0][0]);
+
+            std::map<std::string, GLuint>::iterator uniformID;
+            std::map<std::string, GLuint>::iterator mapEnd = currentShader->uniformIDMap.end();
+
+            uniformID = currentShader->uniformIDMap.find("MVP");
+            if(uniformID != mapEnd)
+                glUniformMatrix4fv(currentShader->uniformIDMap.find("MVP")->second, 1, GL_FALSE, &MVP[0][0]);
+
+//            uniformID = currentShader->uniformIDMap.find("ModelMatrix");
+//            if(uniformID != mapEnd)
+//                glUniformMatrix4fv(currentShader->uniformIDMap.find("ModelMatrix")->second, 1, GL_FALSE, &modelMat[0][0]);
     //            glUniformMatrix4fv(P_ID, 1, GL_FALSE, &mat_Projection[0][0]);
     //            glUniformMatrix3fv(N_ID, 1, GL_FALSE, &normalMat[0][0]);
-            glUniformMatrix4fv(currentShader->uniformIDMap.find("ModelMatrix")->second, 1, GL_FALSE, &modelMat[0][0]);
+
+            uniformID = currentShader->uniformIDMap.find("ModelMatrix");
+            if(uniformID != mapEnd)
+                glUniformMatrix4fv(currentShader->uniformIDMap.find("ModelMatrix")->second, 1, GL_FALSE, &modelMat[0][0]);
     //
     //            //  Pass material info to shaders
     //            glUniform3fv(currentGPUObj->MTL_KA_ID, 1, &((currentGPUObj->materials)[(currentGPUObj->materialIndices)[i*2 + 1]].Ka)[0]);

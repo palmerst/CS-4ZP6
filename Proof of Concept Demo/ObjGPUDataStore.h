@@ -14,7 +14,7 @@ class ObjGPUDataStore{
 
         ObjGPUDataStore();
 
-        ObjGPUData* add(std::string path, float angle = 0.0);
+        ObjGPUData* add(std::string path, float angle = 0.0, bool scalingMode = true);
         ObjGPUData* get(std::string path);
 
 };

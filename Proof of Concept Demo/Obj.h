@@ -3,6 +3,7 @@
 
 #include "include/glm/glm.hpp"
 #include "include/glm/gtc/matrix_transform.hpp"
+#include "include/glm/gtx/transform2.hpp"
 #include "ObjGPUDataStore.h"
 #include "ShaderStore.h"
 
@@ -10,7 +11,7 @@
 #include <string>
 
 #define OBJ_BOUNDARY 0x0001
-#define OBJ_ENEMY 0x0002
+#define OBJ_BOULDER 0x0002
 #define OBJ_HERO 0x0004
 #define OBJ_HERO_BULLET 0x0008
 
@@ -29,9 +30,13 @@ class Obj {
 
         static Shader* currentShader;
 
-        int gpuDataCount;
         std::vector<ObjGPUData*> gpuDataList;
         std::vector<Shader*> shaderList;
+
+        bool transformOverrides = false;
+        std::vector<glm::vec3> translationOverrideList;
+        std::vector<float> rotationOverrideList;
+        std::vector<glm::mat4> shearOverrideList;
     //    ObjGPUData* gpuData;    //!< Pointer to the gpu data associated with the object.
 
         float height;           //!< Height of the object.
@@ -39,9 +44,9 @@ class Obj {
 
         glm::vec3 modelScale;
 
-        bool draw;              //!< Flag for whether the object should be drawn or not.
+        bool draw = true;              //!< Flag for whether the object should be drawn or not.
 
-        void render(glm::vec3 pos, float angle, bool isBoundary);
+        void render(glm::vec3 pos, float angle);
 };
 
 

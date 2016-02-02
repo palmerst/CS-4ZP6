@@ -37,12 +37,11 @@ Stage::Stage(int count, char** argv){
 //    subroutine_boundary_xz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xz");
 
     /*** Set up projection and view matrices -- these numbers will probably change ***/
-	mat_Projection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 3000.0f);
-	Obj::matProjection = mat_Projection;
+	Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 18000.0f);
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 
 
-    setCollisionHandlers(envSpace);
+  //  setCollisionHandlers(envSpace);
 
     /** STAGE DESIGN GOES BELOW HERE **/
 
@@ -51,15 +50,23 @@ Stage::Stage(int count, char** argv){
 	physicsObjects.push_back(new Platform(150, 700, 25));
 	physicsObjects.push_back(new Platform(-1450, -1050, -675));
 	physicsObjects.push_back(new Platform(-750, -400, -525));
-	physicsObjects.push_back(new Platform(-400, -100, -125));
+
+	physicsObjects.push_back(new Ramp(-100, 500, -125, -300));
+
 	physicsObjects.push_back(new Platform(-1450, -400, 375));
 	physicsObjects.push_back(new Platform(-700, 1450, 825));
 
 	physicsObjects.push_back(new Wall(-1000, 1500, -1475));
-	physicsObjects.push_back(new Wall(-1000, 1500, 1475));
+	physicsObjects.push_back(new Ramp(1450, 4500, -975, 500));
 	physicsObjects.push_back(new Wall(-500, -100, -425));
 
+	physicsObjects.push_back(new Boulder(4200, 900));
+
+	physicsObjects.push_back(new Boundary(-30000, 30000, -1000, BS_SAND));
+
     userControlObject = new Hero(-770, 800);
+
+    skybox = new Skybox(0, 0, 1);
 
     /** STAGE DESIGN GOES ABOVE HERE **/
 
@@ -134,7 +141,7 @@ void Stage::processKB(int key, int scancode, int action, int mods)
     case GLFW_KEY_SPACE:
         {
             cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-            if(curVel.y < 0.01 && curVel.y > -0.01){
+            if(curVel.y < 0.5 && curVel.y > -0.5){
                 cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
                 soundMap.find("Jump")->second->play();
             }
@@ -175,14 +182,20 @@ void Stage::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
-    mat_View = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 500.0f, 2000.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-    Obj::matView = mat_View;
+    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 500.0f, 2000.0f), glm::vec3(controlPos.x, -1000.0f, -10000.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 }
 
 
 /*** Draw all objects/boundaries in the environment ***/
 void Stage::drawEnvironment(){
+
+    /*** Draw skybox ***/
+    glDepthMask(GL_FALSE);
+    glFrontFace(GL_CW);
+    static_cast<StandardObject*>(skybox)->render();
+    glDepthMask(GL_TRUE);
+    glFrontFace(GL_CCW);
 
 
     /*** Draw all dynamic objects ***/
@@ -193,13 +206,23 @@ void Stage::drawEnvironment(){
 
     }
 
+    /*** Draw all standard objects ***/
+    for(int i = 0; i < standardObjects.size(); i++){
+
+        if(standardObjects[i]->draw)
+            standardObjects[i]->render();
+    }
+
     /*** Draw hero ***/
     userControlObject->render();
+
+
+
 
 }
 
 
 /*** Update the projection matrix ***/
 void Environment::updateProjection(glm::mat4 newProjection){
-    mat_Projection = newProjection;
+    Obj::matProjection = newProjection;
 }

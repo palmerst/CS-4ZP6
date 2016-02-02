@@ -74,10 +74,13 @@ Game::Game(int count, char** argv){
         exit(4);
     }
 
-    printf("TEST");
-
     /*** Enable depth testing for 3d rendering ***/
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 
     /*** Register member function callbacks ***/
     glfwSetWindowUserPointer(window, this);
@@ -158,7 +161,7 @@ void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 300.0f));
+    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 18000.0f));
 
     winX = width;
     winY = height;

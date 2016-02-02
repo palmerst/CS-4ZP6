@@ -87,7 +87,7 @@
 
 1447906611 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\loader.h
 
-1447906612 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\main.cpp
+1453019955 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\main.cpp
 	"Game.h"
 	<stdio.h>
 
@@ -586,35 +586,38 @@
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1452497398 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
+1454398868 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
 	"Obj.h"
 	<iostream>
 
-1452505589 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
-	"include/chipmunk/chipmunk.h"
+1454393701 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.h
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
-	"ObjGPUData.h"
+	"include/glm/gtx/transform2.hpp"
+	"ObjGPUDataStore.h"
+	"ShaderStore.h"
 	<vector>
+	<string>
 
-1452497398 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
+1454354347 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.cpp
 	"Environment.h"
 	"Loader.h"
 	"Shader.h"
 	<stdio.h>
 	<iostream>
+	<string>
 
-1452505647 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
 	"include/GLFW/glfw3.h"
-	"Obj.h"
+	"IncludeObjects.h"
 	"ObjGPUData.h"
 	"Sound.h"
 	"Shader.h"
 	<map>
 
-1452971555 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
+1454397900 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	"include/AL/alut.h"
@@ -623,10 +626,10 @@
 	"Game.h"
 	"ObjGPUData.h"
 
-1452500111 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.h
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
-	"Environment.h"
+	"Stage.h"
 	"ObjGPUData.h"
 	<map>
 
@@ -2910,19 +2913,19 @@
 	"Game.h"
 	"ObjGPUData.h"
 
-1452504602 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.h
+1454355073 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.h
 	<vector>
 	<string>
 	"include/GL/glew.h"
 	"include/glm/glm.hpp"
 	"include/glm/gtc/matrix_transform.hpp"
 
-1447906600 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\imgloader.cpp
+1453019954 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\imgloader.cpp
 	<fstream>
 	<cstdlib>
-	"include/gl/glew.h"
+	"include/GL/glew.h"
 
-1447906613 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.cpp
+1454364813 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudata.cpp
 	"ObjGPUData.h"
 	"ImgLoader.h"
 	<vector>
@@ -7668,13 +7671,9 @@
 1452487070 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\auxi_snd.h
 	"include/AL/alut.h"
 
-1403775918 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alut.h
-	<alc.h>
-	<al.h>
-	<OpenAL/alc.h>
-	<OpenAL/al.h>
-	<AL/al.h>
-	<AL/alc.h>
+1452975940 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alut.h
+	"alc.h"
+	"al.h"
 
 1447333624 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\al.h
 
@@ -7700,12 +7699,12 @@
 	<cstdlib>
 	<cstdio>
 
-1452505782 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.h
+1454397701 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.h
 	"include/GL/glew.h"
 	<map>
 	<string>
 
-1452493285 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.cpp
+1454397701 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shader.cpp
 	"Shader.h"
 	"Loader.h"
 	<iostream>
@@ -8393,4 +8392,128 @@
 
 1454315766 /home/steve/Desktop/Github/CS-4ZP6/Proof of Concept Demo/Stage.h
 	"Environment.h"
+
+1454371686 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.cpp
+	"CollisionHandlers.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\collisionhandlers.h
+	"PhysicsObject.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\physicsobject.h
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"CollisionHandlers.h"
+
+1454357220 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudatastore.h
+	<map>
+	"ObjGPUData.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shaderstore.h
+	<map>
+	"Shader.h"
+
+1454393724 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.cpp
+	"DynamicObject.h"
+
+1454371614 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\dynamicobject.h
+	"PhysicsObject.h"
+
+1454387440 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\includeobjects.h
+	"Boulder.h"
+	"Boundary.h"
+	"Hero.h"
+	"MovingPlatform.h"
+	"Platform.h"
+	"Ramp.h"
+	"Skybox.h"
+	"Wall.h"
+
+1454393711 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.h
+	"StaticObject.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.h
+	"DynamicObject.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\movingplatform.h
+	"KinematicObject.h"
+
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\kinematicobject.h
+	"PhysicsObject.h"
+
+1454363950 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.h
+	"StaticObject.h"
+
+1454393274 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.h
+	"PhysicsObject.h"
+
+1454363950 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.h
+	"StaticObject.h"
+
+1454387947 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.h
+	"Environment.h"
+
+1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.cpp
+	"Hero.h"
+
+1454357220 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\objgpudatastore.cpp
+	"ObjGPUDataStore.h"
+
+1454367029 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\physicsobject.cpp
+	"PhysicsObject.h"
+
+1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\platform.cpp
+	"Platform.h"
+
+1454354347 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\shaderstore.cpp
+	"ShaderStore.h"
+
+1454397387 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.cpp
+	"Stage.h"
+
+1454393274 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\staticobject.cpp
+	"StaticObject.h"
+
+1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.cpp
+	"Wall.h"
+
+1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.cpp
+	"Ramp.h"
+
+1454363991 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\ramp.h
+	"StaticObject.h"
+
+1447906610 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtx\transform2.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"transform2.inl"
+
+1447906610 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtx\transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1447906610 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtx\transform.inl
+
+1447906610 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\glm\gtx\transform2.inl
+
+1454371672 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boulder.h
+	"DynamicObject.h"
+
+1454394865 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boulder.cpp
+	"Boulder.h"
+
+1454400508 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\skybox.h
+	"StandardObject.h"
+
+1454387440 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\standardobject.h
+	"Obj.h"
+
+1454400508 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\skybox.cpp
+	"Skybox.h"
+
+1454387440 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\standardobject.cpp
+	"StandardObject.h"
+
+1454399961 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\boundary.cpp
+	"Boundary.h"
 

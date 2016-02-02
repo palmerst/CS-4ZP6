@@ -22,6 +22,8 @@ Shader::Shader(const char* vShader, const char* fShader){
         uniformIDMap.insert(std::pair<std::string, GLuint>(uniformName, glGetUniformLocation(shaderProgram, name)));
     }
 
+
+
 }
 
 //

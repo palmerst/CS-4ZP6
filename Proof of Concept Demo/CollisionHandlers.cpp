@@ -1,7 +1,7 @@
 #include "CollisionHandlers.h"
 
 void setCollisionHandlers(cpSpace* space){
-    cpCollisionHandler* colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_ENEMY);
+    cpCollisionHandler* colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_BOULDER);
     colHand->beginFunc = (cpCollisionBeginFunc) begin_enemy_bullet_collision;
     colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_BOUNDARY);
     colHand->beginFunc = (cpCollisionBeginFunc) begin_single_deletion_collision;

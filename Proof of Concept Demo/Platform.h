@@ -7,7 +7,7 @@ class Platform : public StaticObject {
 
     public:
 
-        Platform(float x1, float x2, float ymid);
+        Platform(float x1, float x2, float ymid, float thickness = 50.0f);
 
 };
 

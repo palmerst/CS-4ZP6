@@ -55,7 +55,7 @@ class ObjGPUData
           \param objFile Object and material file path (these should have the same name) without extension
           \param angle Initial y-axis rotation in radians (optional:  default 0.0)
         */
-        ObjGPUData(const char* objFile, float angle = 0.0f);
+        ObjGPUData(const char* objFile, float angle = 0.0f, bool scalingMode = true);
 
         class Material{
         public:

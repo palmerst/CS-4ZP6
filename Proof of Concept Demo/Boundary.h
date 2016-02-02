@@ -1,9 +1,20 @@
 #ifndef BOUNDARY_H_INCLUDED
 #define BOUNDARY_H_INCLUDED
 
-//class Boundary : public StaticObject {
-//
-//
-//};
+#include "StaticObject.h"
+
+enum BSurface {
+
+    BS_SAND
+
+};
+
+class Boundary : public StaticObject {
+
+    public:
+
+        Boundary(float x1, float x2, float y, BSurface surfaceType);
+
+};
 
 #endif // BOUNDARY_H_INCLUDED
