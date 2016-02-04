@@ -7,7 +7,7 @@ class Spikes : public StaticObject {
 
     public:
 
-        Spikes(float x, float y);
+        Spikes(float x, float y, float rotation = 0.0f);
 
 };
 

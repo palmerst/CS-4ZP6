@@ -64,18 +64,23 @@ class ObjGPUData
             GLfloat shine;
             glm::vec3 Ka, Kd, Ks;
             GLuint texture;
+            GLuint bump;
             std::string textureName;
+            std::string bumpName;
             bool textureSet;
+            bool bumpSet;
 
             Material(std::string materialName){
                 this->materialName = materialName;
                 textureSet = false;
+                bumpSet = false;
             }
         };  //!< Class for storing material information loaded from .mtl file
 
         std::vector<glm::vec3> vList;           //!< Stores vertex coordinates loaded from .obj file
         std::vector<glm::vec2> vTextureList;    //!< Stores texture coordinates loaded from .obj file
         std::vector<glm::vec3> vNormalList;     //!< Stores vertex normals loaded from .obj file
+        std::vector<glm::vec4> vTangentList;
         std::vector<GLuint> fList;              //!< Stores faces loaded from .obj file
         std::vector<int> materialIndices;       //!< Marks divisions of different materials given in the .obj file (and defined in .mtl file)
         std::vector<Material> materials;        //!< Stores material information loaded from .mtl file
@@ -85,14 +90,9 @@ class ObjGPUData
         GLuint vertexBuffer;        //!< Name to bind the vertex buffer object
         GLuint textureBuffer;       //!< Name to bind the texture coordinate buffer object
         GLuint normalBuffer;        //!< Name to bind the vertex normal buffer object
-//        GLuint shaderProgram;
-//        GLuint texture_ID;
-//        GLuint MVP_ID, MV_ID, P_ID, N_ID;
-//        GLuint MTL_KA_ID, MTL_KD_ID, MTL_KS_ID, MTL_SHINE_ID;
-//        GLuint LPOS_ID, LA_ID, LD_ID, LS_ID;
+        GLuint tangentBuffer;
 
         glm::mat4 unitScale;        //!< Scaling factor to adjust object to size 1.0 in y-axis (height)
-//        glm::mat4 scaling;
         glm::mat4 rotation;         //!< Rotation about y-axis to adjust objects initial rotational centering (if required:  this is what the optional constructor argument sets)
 
         float whRatio;              //!< Ratio of maximum x-axis vertex separation (width) to maximum y-axis vertex separation (height)

@@ -27,6 +27,13 @@ class Obj {
         static glm::mat4 matProjection;
         static glm::mat4 matView;
 
+
+        static glm::vec4 primaryLightPos;
+        static glm::vec3 primaryLightLa;
+        static glm::vec3 primaryLightLd;
+        static glm::vec3 primaryLightLs;
+
+
         static ObjGPUDataStore gpuStore;
         static ShaderStore shaderStore;
         static SoundStore soundStore;

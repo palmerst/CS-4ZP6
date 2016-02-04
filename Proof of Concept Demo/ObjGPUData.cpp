@@ -26,6 +26,7 @@ enum ObjGPUData::mtlDataType : short {
     mtlDataKD,
     mtlDataKS,
     mtlDataMAP,
+    mtlDataBUMP,
     mtlDataNEWMTL,
     mtlDataUNKNOWN
 };
@@ -84,6 +85,19 @@ ObjGPUData::ObjGPUData(const char* objFile, float angle, bool scalingMode)
     glVertexAttribPointer(
         2,
         3,
+        GL_FLOAT,
+        GL_FALSE,
+        0,
+        (void*)0
+    );
+
+    glGenBuffers(1, &tangentBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, tangentBuffer);
+    glBufferData(GL_ARRAY_BUFFER, vTangentList.size() * sizeof(glm::vec4), &vTangentList[0], GL_STATIC_DRAW);
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(
+        3,
+        4,
         GL_FLOAT,
         GL_FALSE,
         0,
@@ -227,6 +241,39 @@ void ObjGPUData::loadObject(const char* fileName) {
                 }
                 materials.back().texture = loadImage((folderName + valString).c_str());
                 materials.back().textureSet = true;
+                valString.clear();
+                break;
+            }
+
+            case mtlDataType::mtlDataBUMP:
+            {
+                if(materials.back().bumpSet)
+                    break;
+                getline(mtlFile, valString);
+                int fileNameLocation = valString.find_last_of("/\\");
+                if(fileNameLocation != -1)
+                    valString = valString.substr(fileNameLocation + 1);
+                while(valString[0] == ' ' || valString[0] == '\t')
+                    valString = valString.substr(1);
+                if(valString.size() < 4 || valString.substr(valString.size() - 4) != ".dds"){
+                    valString = valString.substr(0, valString.find_last_of('.') + 1);
+                    valString += "dds";
+                }
+                materials.back().bumpName = valString;
+                bool bumpExists = false;
+                for(int i = 0; i < materials.size() - 1; i++){
+                    if(materials[i].bumpName == valString){
+                        bumpExists = true;
+                        materials.back().bump = materials[i].bump;
+                        break;
+                    }
+                }
+                if(bumpExists){
+                    valString.clear();
+                    break;
+                }
+                materials.back().bump = loadImage((folderName + valString).c_str());
+                materials.back().bumpSet = true;
                 valString.clear();
                 break;
             }
@@ -426,6 +473,67 @@ void ObjGPUData::loadObject(const char* fileName) {
         vTextureList[i][1] = 1 - vTextureList[i][1];
     }
 
+
+    //  Generate tangent vectors for normals
+    //  Sourced from http://www.terathon.com/code/tangent.html
+
+    std::vector<glm::vec3> tan1(vList.size());
+    std::vector<glm::vec3> tan2(vList.size());
+
+    for (unsigned int a = 0; a < fList.size(); a+=3)
+    {
+        GLuint i1 = fList[a + 0];
+        GLuint i2 = fList[a + 1];
+        GLuint i3 = fList[a + 2];
+
+        glm::vec3 v1 = vList[i1];
+        glm::vec3 v2 = vList[i2];
+        glm::vec3 v3 = vList[i3];
+
+        glm::vec2 w1 = vTextureList[i1];
+        glm::vec2 w2 = vTextureList[i2];
+        glm::vec2 w3 = vTextureList[i3];
+
+        float x1 = v2.x - v1.x;
+        float x2 = v3.x - v1.x;
+        float y1 = v2.y - v1.y;
+        float y2 = v3.y - v1.y;
+        float z1 = v2.z - v1.z;
+        float z2 = v3.z - v1.z;
+
+        float s1 = w2.x - w1.x;
+        float s2 = w3.x - w1.x;
+        float t1 = w2.y - w1.y;
+        float t2 = w3.y - w1.y;
+
+        float r = 1.0f / (s1 * t2 - s2 * t1);
+
+        glm::vec3 sdir((t2 * x1 - t1 * x2) * r, (t2 * y1 - t1 * y2) * r, (t2 * z1 - t1 * z2) * r);
+        glm::vec3 tdir((s1 * x2 - s2 * x1) * r, (s1 * y2 - s2 * y1) * r, (s1 * z2 - s2 * z1) * r);
+
+        tan1[i1] += sdir;
+        tan1[i2] += sdir;
+        tan1[i3] += sdir;
+
+        tan2[i1] += tdir;
+        tan2[i2] += tdir;
+        tan2[i3] += tdir;
+    }
+
+    for (unsigned int a = 0; a < vList.size(); a++)
+    {
+        glm::vec3 n = vNormalList[a];
+        glm::vec3 t = tan1[a];
+
+        // Gram-Schmidt orthogonalize
+        glm::vec4 tangent = glm::vec4(glm::normalize(t - n * glm::dot(n, t)), 0.0f);
+
+        // Calculate handedness
+        tangent.w = (glm::dot(glm::cross(n, t), tan2[a]) < 0.0f) ? -1.0f : 1.0f;
+
+        vTangentList.push_back(tangent);
+    }
+
     printf("DONE\n");
 
     return;
@@ -459,6 +567,8 @@ ObjGPUData::mtlDataType ObjGPUData::getMtlDataType(std::string dataTypeString){
         return mtlDataType::mtlDataKS;
     if(dataTypeString.substr(0,3) == "map")
         return mtlDataType::mtlDataMAP;
+    if(dataTypeString.substr(0,4) == "bump")
+        return mtlDataType::mtlDataBUMP;
     if(dataTypeString == "newmtl")
         return mtlDataType::mtlDataNEWMTL;
     else

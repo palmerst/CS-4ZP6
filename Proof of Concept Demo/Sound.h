@@ -13,6 +13,8 @@ class Sound{
     ALuint audioBuffer;    //!< Binding id for sound data storage.
 	ALuint audioSource;    //!< Binding id for position, velocity, etc. of sound source.
 
+	bool loaded;
+
     public:
 
 

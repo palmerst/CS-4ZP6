@@ -6,9 +6,9 @@ in vec2 UV;
 
 layout(location=0) out vec4 finalColor;
 
-uniform sampler2D myTextureSampler;
+uniform sampler2D Texture;
 
 void main()
 {
-	finalColor = texture(myTextureSampler, UV).rgba;
+	finalColor = texture(Texture, UV).rgba;
 }

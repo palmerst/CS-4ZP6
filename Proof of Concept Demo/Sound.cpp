@@ -78,8 +78,10 @@ Sound::Sound(std::string path)
 
     if(!LOAD_OK)
     {
-        printf("Failed to load sound: %s", path);
-        exit(5);
+        printf("Failed to load sound: %s\n", path.c_str());
+        loaded = false;
+    } else {
+        loaded = true;
     }
 }
 
@@ -96,7 +98,9 @@ Sound::~Sound(){
 
 void Sound::play(int loop)
 {
-    alSourcei(audioSource, AL_LOOPING, loop);
-    alSourcePlay(audioSource);
+    if(loaded){
+        alSourcei(audioSource, AL_LOOPING, loop);
+        alSourcePlay(audioSource);
+    }
 }
 

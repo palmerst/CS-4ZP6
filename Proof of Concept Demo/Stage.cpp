@@ -10,32 +10,6 @@ Stage::Stage(int count, char** argv){
   //  cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
 
 
-    /*** Load the shaders and store handle ***/
-
-
-
-//    shaderProgram = loadShaders("objectVertex.glsl", "objectFragment.glsl");
-//
-//    /*** Associate identifiers with locations in shader ***/
-//	MVP_ID = glGetUniformLocation(shaderProgram, "MVP");
-//    MV_ID = glGetUniformLocation(shaderProgram, "ModelViewMatrix");
-//    M_ID = glGetUniformLocation(shaderProgram, "ModelMatrix");
-//    P_ID = glGetUniformLocation(shaderProgram, "ProjectionMatrix");
-//    N_ID = glGetUniformLocation(shaderProgram, "NormalMatrix");
-//    MTL_KA_ID = glGetUniformLocation(shaderProgram, "Material.Ka");
-//    MTL_KD_ID = glGetUniformLocation(shaderProgram, "Material.Kd");
-//    MTL_KS_ID = glGetUniformLocation(shaderProgram, "Material.Ks");
-//    MTL_SHINE_ID = glGetUniformLocation(shaderProgram, "Material.shine");
-//    LPOS_ID = glGetUniformLocation(shaderProgram, "Light.Position");
-//    LA_ID = glGetUniformLocation(shaderProgram, "Light.La");
-//    LD_ID = glGetUniformLocation(shaderProgram, "Light.Ld");
-//    LS_ID = glGetUniformLocation(shaderProgram, "Light.Ls");
-//    texture_ID = glGetUniformLocation(shaderProgram, "myTextureSampler");
-//    subroutine_object = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "object");
-//    subroutine_boundary_xy = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xy");
-//    subroutine_boundary_yz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_yz");
-//    subroutine_boundary_xz = glGetSubroutineIndex(shaderProgram, GL_VERTEX_SHADER, "boundary_xz");
-
     /*** Set up projection and view matrices -- these numbers will probably change ***/
 	Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 18000.0f);
 	//mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
@@ -51,6 +25,7 @@ Stage::Stage(int count, char** argv){
 
 
 	physicsObjects.push_back(new Platform(-1450, -400, 375));
+	physicsObjects.push_back(new Spikes(-1200, -25, 3.141592f));
 	physicsObjects.push_back(new Platform(-700, 1450, 825));
 
 	physicsObjects.push_back(new Wall(-200, 1500, -1475));
@@ -62,7 +37,7 @@ Stage::Stage(int count, char** argv){
 
     physicsObjects.push_back(new Platform(-500, -200, -300));
 
-	boundary = new Boundary(-30000, 30000, -950, BS_SAND);
+	boundary = new Boundary(-30000, 30000, -975, BS_SAND);
     userControlObject = new Hero(-770, 800);
     skybox = new Skybox(0, 0, 1);
 
@@ -87,25 +62,19 @@ void Stage::processContinuousInput(){
     if(keyStates[GLFW_KEY_A])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x <= -1000.0)
-            return;
-        cpBodySetForce(userControlObject->body, cpv(-100000.0, 0.0));
-        return;
+        if(curVel.x >= -1000.0)
+            cpBodySetForce(userControlObject->body, cpv(-100000.0, 0.0));
     }
     if(keyStates[GLFW_KEY_D])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x >= 1000.0)
-            return;
-        cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
-        return;
+        if(curVel.x <= 1000.0)
+            cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x == 0)
-            return;
-        else
+        if(curVel.x != 0)
         {
             curVel.x /= 1.1;
             if(curVel.x > -100 || curVel.x < 100)
@@ -114,43 +83,30 @@ void Stage::processContinuousInput(){
         }
     }
 
+    if(keyStates[GLFW_KEY_SPACE]){
+        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
+        //            if(curVel.y < 0.5 && curVel.y > -0.5){
+        //                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
+        //                soundMap.find("Jump")->second->play();
+        //            }
+        if(userControlObject->canJump){
+            cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
+            soundMap.find("Jump")->second->play();
+        }
+
+    }
+
+
+
 }
 
 void Stage::processKB(int key, int scancode, int action, int mods)
 {
-    switch(key){
-    case GLFW_KEY_A:
-        {
-            if(action == GLFW_PRESS)
-                keyStates[GLFW_KEY_A] = 1;
-            else if(action == GLFW_RELEASE)
-                keyStates[GLFW_KEY_A] = 0;
-            break;
-        }
-    case GLFW_KEY_D:
-        {
-            if(action == GLFW_PRESS)
-                keyStates[GLFW_KEY_D] = 1;
-            else if(action == GLFW_RELEASE)
-                keyStates[GLFW_KEY_D] = 0;
-            break;
-        }
-    case GLFW_KEY_SPACE:
-        {
-            cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-//            if(curVel.y < 0.5 && curVel.y > -0.5){
-//                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
-//                soundMap.find("Jump")->second->play();
-//            }
-            if(userControlObject->canJump){
-                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
-                soundMap.find("Jump")->second->play();
-            }
-            break;
-        }
-    default:
-        break;
-    }
+
+    if(action == GLFW_PRESS)
+        keyStates[key] = 1;
+    else if(action == GLFW_RELEASE)
+        keyStates[key] = 0;
 
 }
 
@@ -183,7 +139,8 @@ void Stage::updateEnvironment(double dt){
 
     cpSpaceStep(envSpace, dt);
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
-    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 500.0f, 2000.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 400.0f, 1000.0f), glm::vec3(controlPos.x, controlPos.y, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    skybox->position = glm::vec3(0.15*controlPos.x, -controlPos.y, 0);
 
 }
 
