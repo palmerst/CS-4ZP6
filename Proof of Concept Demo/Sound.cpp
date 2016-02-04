@@ -3,7 +3,7 @@
 #include <cstdio>
 
 //based on http://ffainelli.github.io/openal-example/
-Sound::Sound(char* path, int loop)
+Sound::Sound(std::string path)
 {
     int LOAD_OK = 1;
 	ALenum  format;
@@ -33,7 +33,7 @@ Sound::Sound(char* path, int loop)
 
 	if(LOAD_OK == 1)
 	{
-        data = alutLoadMemoryFromFile(path,&format,&size,&freq);
+        data = alutLoadMemoryFromFile(path.c_str(),&format,&size,&freq);
 		LOAD_OK =  (data!=NULL) ? 1:0;
 	}
 
@@ -71,7 +71,6 @@ Sound::Sound(char* path, int loop)
 		alSourcef(audioSource, AL_GAIN, 1.0f);
 		alSourcefv(audioSource, AL_POSITION, sourcePosition);
 		alSourcefv(audioSource, AL_VELOCITY, sourceVelocity);
-		alSourcei(audioSource, AL_LOOPING, loop);
 
 		if(alGetError() != AL_NO_ERROR)
 			LOAD_OK = 0;
@@ -95,8 +94,9 @@ Sound::~Sound(){
 
 
 
-void Sound::play()
+void Sound::play(int loop)
 {
+    alSourcei(audioSource, AL_LOOPING, loop);
     alSourcePlay(audioSource);
 }
 

@@ -21,5 +21,5 @@ Platform::Platform(float x1, float x2, float ymid, float thickness) : Surface(cp
 	cpShapeSetFriction(shape, 1.0f);
 	modelScale = glm::vec3(width, height, 500.0f);
 
-	cpShapeSetCollisionType(shape, OBJ_BOUNDARY);
+	cpShapeSetCollisionType(shape, OBJ_SURFACE);
 }

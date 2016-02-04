@@ -6,6 +6,7 @@ glm::mat4 Obj::matProjection = glm::mat4();
 glm::mat4 Obj::matView = glm::mat4();
 ObjGPUDataStore Obj::gpuStore;
 ShaderStore Obj::shaderStore;
+SoundStore Obj::soundStore;
 Shader* Obj::currentShader = 0;
 
 void Obj::render(glm::vec3 pos, float angle){

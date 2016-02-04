@@ -14,6 +14,9 @@ class PhysicsObject : public Obj {
         cpBody* body;           //!< Pointer to Chipmunk 2D body associated with the object.
         cpShape* shape;         //!< Pointer to Chipmunk 2D shape associated with the object.
 
+        cpVect standingNormal;
+        cpVect deathNormal;
+
         void render();
 
 };

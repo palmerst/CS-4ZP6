@@ -2,6 +2,7 @@
 #define SPEAR_H_INCLUDED
 
 #include "DynamicObject.h"
+#include "StaticObject.h"
 
 class Spear : public DynamicObject {
 
@@ -12,7 +13,7 @@ class Spear : public DynamicObject {
 };
 
 
-class Spears : public DynamicObject {
+class Spears : public StaticObject {
 
     public:
 

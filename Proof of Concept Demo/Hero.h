@@ -11,6 +11,10 @@ class Hero : public DynamicObject {
 
         cpVect startPos;
 
+        void death();
+
+        bool canJump;
+
 };
 
 

@@ -2,6 +2,7 @@
 #define SOUND_H
 
 #include "include/AL/alut.h"
+#include <string>
 
 
 /*! The Sound class loads and stores sound data.
@@ -20,9 +21,9 @@ class Sound{
           \param path Path to the sound file that should be loaded.
           \param loop Non-zero if the sound should be played as an infinite loop.
         */
-        Sound(char* path, int loop);
+        Sound(std::string path);
         ~Sound();       //!< Sound destructor
-        void play();    //!< Plays the sound data contained in the class.
+        void play(int loop = 0);    //!< Plays the sound data contained in the class.
 
 };
 

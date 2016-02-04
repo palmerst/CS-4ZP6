@@ -6,11 +6,12 @@
 #include "include/glm/gtx/transform2.hpp"
 #include "ObjGPUDataStore.h"
 #include "ShaderStore.h"
+#include "SoundStore.h"
 
 #include <vector>
 #include <string>
 
-#define OBJ_BOUNDARY 0x0001
+#define OBJ_SURFACE 0x0001
 #define OBJ_BOULDER 0x0002
 #define OBJ_HERO 0x0004
 #define OBJ_HERO_BULLET 0x0008
@@ -28,6 +29,7 @@ class Obj {
 
         static ObjGPUDataStore gpuStore;
         static ShaderStore shaderStore;
+        static SoundStore soundStore;
 
         static Shader* currentShader;
 

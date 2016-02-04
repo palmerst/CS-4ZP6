@@ -21,6 +21,6 @@ Wall::Wall(float y1, float y2, float xmid, float thickness) : Surface(cpv(xmid-t
 	cpShapeSetFriction(shape, 1.0f);
 	modelScale = glm::vec3(width, height, 500.0f);
 
-	cpShapeSetCollisionType(shape, OBJ_BOUNDARY);
+	cpShapeSetCollisionType(shape, OBJ_SURFACE);
 
 }

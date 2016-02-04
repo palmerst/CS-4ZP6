@@ -31,4 +31,8 @@ Surface::Surface(cpVect p1, cpVect p2, bool isRamp, float thickness){
 
     transformOverrides = false;
 
+    cpShapeSetUserData(shape, this);
+
+    standingNormal = cpv(0, 1);
+
 }

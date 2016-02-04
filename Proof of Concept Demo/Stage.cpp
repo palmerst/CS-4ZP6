@@ -57,8 +57,10 @@ Stage::Stage(int count, char** argv){
 	physicsObjects.push_back(new Ramp(1450, 4500, -975, 500));
 
 	physicsObjects.push_back(new Boulder(4200, 900));
-	physicsObjects.push_back(new Spears(-1750, 2000));
+	physicsObjects.push_back(new Spears(-1750, -950));
     physicsObjects.push_back(new Spikes(-800, -950));
+
+    physicsObjects.push_back(new Platform(-500, -200, -300));
 
 	boundary = new Boundary(-30000, 30000, -950, BS_SAND);
     userControlObject = new Hero(-770, 800);
@@ -68,11 +70,10 @@ Stage::Stage(int count, char** argv){
 
     mat_View = glm::lookAt(glm::vec3(0.0f, 500.0f, 2000.0f), glm::vec3(-770.0f, 800.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-    soundMap.insert(std::pair<std::string, Sound*>("Background", new Sound("./data/sound/bm.wav", 1)));
-    soundMap.insert(std::pair<std::string, Sound*>("Bullet", new Sound("./data/sound/bullet.wav", 0)));
-    soundMap.insert(std::pair<std::string, Sound*>("Jump", new Sound("./data/sound/jump.wav", 0)));
+    soundMap.insert(std::pair<std::string, Sound*>("Background", new Sound("./data/sound/bm.wav")));
+    soundMap.insert(std::pair<std::string, Sound*>("Jump", new Sound("./data/sound/jump.wav")));
 
-    soundMap.find("Background")->second->play();                     //play bgm
+    soundMap.find("Background")->second->play(1);                     //play bgm
 }
 
 //clean
@@ -137,7 +138,11 @@ void Stage::processKB(int key, int scancode, int action, int mods)
     case GLFW_KEY_SPACE:
         {
             cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-            if(curVel.y < 0.5 && curVel.y > -0.5){
+//            if(curVel.y < 0.5 && curVel.y > -0.5){
+//                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
+//                soundMap.find("Jump")->second->play();
+//            }
+            if(userControlObject->canJump){
                 cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
                 soundMap.find("Jump")->second->play();
             }
@@ -210,7 +215,7 @@ void Stage::drawEnvironment(){
     }
 
     /*** Draw hero ***/
-    userControlObject->render();
+    static_cast<PhysicsObject*>(userControlObject)->render();
 
     static_cast<PhysicsObject*>(boundary)->render();
 

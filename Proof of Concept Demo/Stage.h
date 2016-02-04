@@ -29,7 +29,7 @@ class Stage : public Environment {
         void drawObj(PhysicsObject currentObj, bool isBoundary = false);
 
         /*** Controlled object ***/
-        DynamicObject* userControlObject;    //!< Pointer to the dynamic object that is controlled by the user (normally the hero object).
+        Hero* userControlObject;    //!< Pointer to the dynamic object that is controlled by the user (normally the hero object).
 
     public:
 

@@ -82,6 +82,7 @@
 		<Unit filename="Skybox.h" />
 		<Unit filename="Sound.cpp" />
 		<Unit filename="Sound.h" />
+		<Unit filename="SoundStore.cpp" />
 		<Unit filename="SoundStore.h" />
 		<Unit filename="Spear.cpp" />
 		<Unit filename="Spear.h" />

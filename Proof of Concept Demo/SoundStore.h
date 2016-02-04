@@ -14,7 +14,7 @@ class SoundStore{
 
         SoundStore();
 
-        void add(std::string path);
+        Sound* add(std::string path);
         Sound* get(std::string path);
 
 };

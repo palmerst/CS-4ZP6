@@ -51,5 +51,7 @@ Ramp::Ramp(float x1, float x2, float y1mid, float y2mid, float thickness) : Surf
 	cpShapeSetFriction(shape, 1.0f);
 	modelScale = glm::vec3(width, height, 500.0f);
 
-	cpShapeSetCollisionType(shape, OBJ_BOUNDARY);
+	cpShapeSetCollisionType(shape, OBJ_SURFACE);
+
+	standingNormal = cpvperp(cpv(dx,dy));
 }
