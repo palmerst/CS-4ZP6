@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="McMaster" webLink="https://github.com/palmerst/CS-4ZP6" view-date="2016-02-04" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="McMaster" webLink="https://github.com/palmerst/CS-4ZP6" view-date="2016-02-14" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.1" locale="en_US">
     <description/>
-    <view zooming-state="default:1" id="gantt-chart">
+    <view zooming-state="default:0" id="gantt-chart">
         <field id="tpd3" name="Name" width="62" order="0"/>
         <field id="tpd4" name="Begin date" width="16" order="1"/>
         <field id="tpd5" name="End date" width="21" order="2"/>
@@ -90,16 +90,16 @@
             <task id="36" name="Compile/Build/Run gUnit" color="#8cb6ce" meeting="false" start="2016-02-08" duration="5" complete="0" expand="true"/>
             <task id="37" name="Compile/Build/Run COVTOOL" color="#8cb6ce" meeting="false" start="2016-02-08" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="106" name="User Experience Survey Round 1" color="#8cb6ce" meeting="false" start="2016-02-23" duration="7" complete="0" expand="true">
+        <task id="106" name="User Experience Survey Round 1" color="#8cb6ce" meeting="false" start="2016-02-23" duration="6" complete="0" expand="true">
             <depend id="409" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="409" name="Implement User Survey Feedback" color="#8cb6ce" meeting="false" start="2016-03-01" duration="15" complete="0" expand="true">
+        <task id="409" name="Implement User Survey Feedback" color="#8cb6ce" meeting="false" start="2016-02-29" duration="15" complete="0" expand="true">
             <depend id="192" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="54" name="Update Problem Statement" color="#8cb6ce" meeting="false" start="2016-02-08" duration="1" complete="0" expand="true">
             <depend id="53" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="192" name="User Experience Survey Round 2" color="#8cb6ce" meeting="false" start="2016-03-16" duration="5" complete="0" expand="true">
+        <task id="192" name="User Experience Survey Round 2" color="#8cb6ce" meeting="false" start="2016-03-15" duration="5" complete="0" expand="true">
             <depend id="94" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="15" name="User's Guide Rev 0" meeting="false" start="2016-02-20" duration="9" complete="0" expand="true">
@@ -129,15 +129,15 @@
             <depend id="56" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="56" name="Update Test Plan" color="#8cb6ce" meeting="false" start="2016-02-25" duration="3" complete="0" thirdDate="2016-02-25" thirdDate-constraint="1" expand="true"/>
-        <task id="104" name="Requirements Testing" color="#8cb6ce" meeting="false" start="2016-02-16" duration="2" complete="0" expand="true">
-            <depend id="20" type="2" difference="0" hardness="Strong"/>
-        </task>
         <task id="40" name="Unit Test Cases" color="#000000" meeting="false" start="2016-02-17" duration="10" complete="0" expand="true">
             <depend id="20" type="2" difference="0" hardness="Strong"/>
             <task id="43" name="Basic Collision Tests" color="#8cb6ce" meeting="false" start="2016-02-17" duration="5" complete="0" expand="true">
                 <depend id="79" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="79" name="Game State Tests" color="#8cb6ce" meeting="false" start="2016-02-22" duration="5" complete="0" expand="true"/>
+        </task>
+        <task id="104" name="Requirements Testing" color="#8cb6ce" meeting="false" start="2016-02-16" duration="2" complete="0" expand="true">
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="20" name="Test Report Rev 0" color="#000000" meeting="false" start="2016-02-29" duration="21" complete="0" expand="true">
             <depend id="21" type="2" difference="0" hardness="Strong"/>
