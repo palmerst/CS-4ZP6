@@ -1,7 +1,0 @@
-#ifndef MOVINGPLATFORM_H_INCLUDED
-#define MOVINGPLATFORM_H_INCLUDED
-
-#include "KinematicObject.h"
-
-
-#endif // MOVINGPLATFORM_H_INCLUDED
