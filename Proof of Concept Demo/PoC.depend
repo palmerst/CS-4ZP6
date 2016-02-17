@@ -586,7 +586,7 @@
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1454577850 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
+1454575767 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\obj.cpp
 	"Obj.h"
 	<iostream>
 
@@ -608,7 +608,7 @@
 	<iostream>
 	<string>
 
-1454642836 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
+1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\environment.h
 	"include/GL/glew.h"
 	"include/chipmunk/chipmunk.h"
 	"include/GLFW/glfw3.h"
@@ -618,7 +618,7 @@
 	"Shader.h"
 	<map>
 
-1454642886 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
+1454397900 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\game.cpp
 	"include/GL/glew.h"
 	"include/GLFW/glfw3.h"
 	"include/AL/alut.h"
@@ -7672,13 +7672,13 @@
 1452487070 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\auxi_snd.h
 	"include/AL/alut.h"
 
-1454674443 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alut.h
+1452975940 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alut.h
 	"alc.h"
 	"al.h"
 
-1454674436 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\al.h
+1447333624 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\al.h
 
-1454669925 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alc.h
+1447333624 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\al\alc.h
 
 1447863886 c:\github\cs-4zp6\proof of concept demo\include\al\alut.h
 	<alc.h>
@@ -8468,7 +8468,7 @@
 1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\wall.h
 	"Surface.h"
 
-1454642836 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.h
+1454553939 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\stage.h
 	"Environment.h"
 
 1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\hero.cpp
@@ -8632,86 +8632,585 @@
 1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\soundstore.cpp
 	"SoundStore.h"
 
-1454406748 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\boulder.cpp
+1454413146 source:f:\working\newgame\newdemo\boulder.cpp
 	"Boulder.h"
 
-1454371672 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\boulder.h
+1454413146 f:\working\newgame\newdemo\boulder.h
 	"DynamicObject.h"
 
-1454406748 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\dynamicobject.h
+1454413146 f:\working\newgame\newdemo\dynamicobject.h
 	"PhysicsObject.h"
 
-1454659900 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\physicsobject.h
-	"chipmunk/chipmunk.h"
+1454530954 f:\working\newgame\newdemo\physicsobject.h
+	"include/chipmunk/chipmunk.h"
 	"Obj.h"
 	"CollisionHandlers.h"
 
-1454659805 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\obj.h
-	"glm/glm.hpp"
-	"glm/gtc/matrix_transform.hpp"
-	"glm/gtx/transform2.hpp"
+1447209462 f:\working\newgame\newdemo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpspatialindex.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cparbiter.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpbody.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpshape.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cppolyshape.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cppinjoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpslidejoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cppivotjoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpgroovejoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpdampedspring.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpdampedrotaryspring.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cprotarylimitjoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpratchetjoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpgearjoint.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpsimplemotor.h
+
+1447209462 f:\working\newgame\newdemo\include\chipmunk\cpspace.h
+
+1454555744 f:\working\newgame\newdemo\obj.h
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"include/glm/gtx/transform2.hpp"
 	"ObjGPUDataStore.h"
 	"ShaderStore.h"
 	"SoundStore.h"
 	<vector>
 	<string>
 
-1454357220 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\objgpudatastore.h
+1447209462 f:\working\newgame\newdemo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447209462 f:\working\newgame\newdemo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\precision.hpp
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\_swizzle.hpp
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\_swizzle_func.hpp
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec2.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec3.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec4.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x2.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x3.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat2x4.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x2.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x3.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat3x4.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x2.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x3.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_mat4x4.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_vec1.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\type_half.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtc\constants.inl
+	<limits>
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtx\transform2.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"transform2.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtx\transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtx\transform.inl
+
+1447209462 f:\working\newgame\newdemo\include\glm\gtx\transform2.inl
+
+1454413146 f:\working\newgame\newdemo\objgpudatastore.h
 	<map>
 	"ObjGPUData.h"
 
-1454659805 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\objgpudata.h
+1454555744 f:\working\newgame\newdemo\objgpudata.h
 	<vector>
 	<string>
-	"GL/glew.h"
-	"glm/glm.hpp"
-	"glm/gtc/matrix_transform.hpp"
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
 
-1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\shaderstore.h
+1447209462 f:\working\newgame\newdemo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1454346040 f:\working\newgame\newdemo\shaderstore.h
 	<map>
 	"Shader.h"
 
-1454659900 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\shader.h
-	"GL/glew.h"
+1452504480 f:\working\newgame\newdemo\shader.h
+	"include/GL/glew.h"
 	<map>
 	<string>
 
-1454553939 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\soundstore.h
+1454530956 f:\working\newgame\newdemo\soundstore.h
 	<map>
 	"Sound.h"
 
-1454659900 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\sound.h
-	"AL/alut.h"
+1455695823 f:\working\newgame\newdemo\sound.h
+	"include/AL/alut.h"
 	<string>
 
-1454553939 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\collisionhandlers.h
+1453127584 f:\working\newgame\newdemo\include\al\alut.h
+	"alc.h"
+	"al.h"
+
+1453127584 f:\working\newgame\newdemo\include\al\alc.h
+
+1453127584 f:\working\newgame\newdemo\include\al\al.h
+
+1454530954 f:\working\newgame\newdemo\collisionhandlers.h
 	"PhysicsObject.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\boundary.cpp
+1454530954 source:f:\working\newgame\newdemo\boundary.cpp
 	"Boundary.h"
 
-1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\boundary.h
+1454413146 f:\working\newgame\newdemo\boundary.h
 	"Surface.h"
 
-1454409881 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\surface.h
+1454413146 f:\working\newgame\newdemo\surface.h
 	"StaticObject.h"
 
-1454410331 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\staticobject.h
+1454413146 f:\working\newgame\newdemo\staticobject.h
 	"PhysicsObject.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\collisionhandlers.cpp
+1454530954 source:f:\working\newgame\newdemo\collisionhandlers.cpp
 	"CollisionHandlers.h"
 	"Hero.h"
 	"Surface.h"
 
-1454553939 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\hero.h
+1454530954 f:\working\newgame\newdemo\hero.h
 	"DynamicObject.h"
 
-1454407866 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\dynamicobject.cpp
+1454413146 source:f:\working\newgame\newdemo\dynamicobject.cpp
 	"DynamicObject.h"
 	<cmath>
 
-1454354347 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\environment.cpp
+1454346040 source:f:\working\newgame\newdemo\environment.cpp
 	"Environment.h"
 	"Loader.h"
 	"Shader.h"
@@ -8719,17 +9218,36 @@
 	<iostream>
 	<string>
 
-1454747311 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\environment.h
-	"GL/glew.h"
-	"chipmunk/chipmunk.h"
-	"GLFW/glfw3.h"
+1455693915 f:\working\newgame\newdemo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"include/GLFW/glfw3.h"
 	"IncludeObjects.h"
 	"ObjGPUData.h"
 	"Sound.h"
 	"Shader.h"
 	<map>
 
-1454410505 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\includeobjects.h
+1447209462 f:\working\newgame\newdemo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1454413146 f:\working\newgame\newdemo\includeobjects.h
 	"Boulder.h"
 	"Boundary.h"
 	"Hero.h"
@@ -8741,66 +9259,66 @@
 	"Spikes.h"
 	"Wall.h"
 
-1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\movingplatform.h
+1454346040 f:\working\newgame\newdemo\movingplatform.h
 	"KinematicObject.h"
 
-1454354347 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\kinematicobject.h
+1454346040 f:\working\newgame\newdemo\kinematicobject.h
 	"PhysicsObject.h"
 
-1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\platform.h
+1454413146 f:\working\newgame\newdemo\platform.h
 	"Surface.h"
 
-1454409909 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\ramp.h
+1454413146 f:\working\newgame\newdemo\ramp.h
 	"Surface.h"
 
-1454558765 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\skybox.h
+1454413146 f:\working\newgame\newdemo\skybox.h
 	"StandardObject.h"
 
-1454387440 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\standardobject.h
+1454413146 f:\working\newgame\newdemo\standardobject.h
 	"Obj.h"
 
-1454553939 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\spear.h
+1454530956 f:\working\newgame\newdemo\spear.h
 	"DynamicObject.h"
 	"StaticObject.h"
 
-1454554855 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\spikes.h
+1454555744 f:\working\newgame\newdemo\spikes.h
 	"StaticObject.h"
 
-1454409860 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\wall.h
+1454413146 f:\working\newgame\newdemo\wall.h
 	"Surface.h"
 
-1454979192 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\loader.h
+1447209462 f:\working\newgame\newdemo\loader.h
 
-1454759170 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\game.cpp
-	"GL/glew.h"
-	"GLFW/glfw3.h"
-	"AL/alut.h"
+1455694225 source:f:\working\newgame\newdemo\game.cpp
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"include/AL/alut.h"
 	<cstdio>
 	<cstdlib>
 	"Game.h"
 	"ObjGPUData.h"
 
-1454659770 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\game.h
-	"GL/glew.h"
-	"GLFW/glfw3.h"
+1455689924 f:\working\newgame\newdemo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
 	"Stage.h"
 	"ObjGPUData.h"
+	"MenuManager.h"
 	<map>
 
-1454746909 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\stage.h
+1455694818 f:\working\newgame\newdemo\stage.h
 	"Environment.h"
-	"Camera.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\hero.cpp
+1454530954 source:f:\working\newgame\newdemo\hero.cpp
 	"Hero.h"
 
-1454659900 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\imgloader.cpp
+1453127584 source:f:\working\newgame\newdemo\imgloader.cpp
 	<fstream>
 	<cstdlib>
-	"GL/glew.h"
+	"include/GL/glew.h"
 
-1455016255 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\loader.cpp
-	"GL/glew.h"
+1447209462 source:f:\working\newgame\newdemo\loader.cpp
+	"include/GL/glew.h"
 	"Loader.h"
 	<fstream>
 	<cstdio>
@@ -8808,15 +9326,15 @@
 	<string>
 	<cstdlib>
 
-1454666169 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\main.cpp
+1453127584 source:f:\working\newgame\newdemo\main.cpp
 	"Game.h"
 	<stdio.h>
 
-1454577850 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\obj.cpp
+1454555744 source:f:\working\newgame\newdemo\obj.cpp
 	"Obj.h"
 	<iostream>
 
-1454570971 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\objgpudata.cpp
+1454555744 source:f:\working\newgame\newdemo\objgpudata.cpp
 	"ObjGPUData.h"
 	"ImgLoader.h"
 	<vector>
@@ -8827,65 +9345,846 @@
 	<sstream>
 	<map>
 
-1447906600 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\imgloader.h
+1447377380 f:\working\newgame\newdemo\imgloader.h
 
-1454357220 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\objgpudatastore.cpp
+1454413146 source:f:\working\newgame\newdemo\objgpudatastore.cpp
 	"ObjGPUDataStore.h"
 
-1454367029 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\physicsobject.cpp
+1454413146 source:f:\working\newgame\newdemo\physicsobject.cpp
 	"PhysicsObject.h"
 
-1454575382 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\platform.cpp
+1454530954 source:f:\working\newgame\newdemo\platform.cpp
 	"Platform.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\ramp.cpp
+1454530954 source:f:\working\newgame\newdemo\ramp.cpp
 	"Ramp.h"
 
-1454397701 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\shader.cpp
+1454413146 source:f:\working\newgame\newdemo\shader.cpp
 	"Shader.h"
 	"Loader.h"
 	<iostream>
 
-1454354347 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\shaderstore.cpp
+1454346040 source:f:\working\newgame\newdemo\shaderstore.cpp
 	"ShaderStore.h"
 
-1454563419 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\skybox.cpp
+1454555744 source:f:\working\newgame\newdemo\skybox.cpp
 	"Skybox.h"
 
-1454554426 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\sound.cpp
+1455695823 source:f:\working\newgame\newdemo\sound.cpp
 	"Sound.h"
 	<cstdlib>
 	<cstdio>
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\soundstore.cpp
+1454530956 source:f:\working\newgame\newdemo\soundstore.cpp
 	"SoundStore.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\spear.cpp
+1454530956 source:f:\working\newgame\newdemo\spear.cpp
 	"Spear.h"
 
-1454554855 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\spikes.cpp
+1454555744 source:f:\working\newgame\newdemo\spikes.cpp
 	"Spikes.h"
 
-1454822515 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\stage.cpp
+1455694937 source:f:\working\newgame\newdemo\stage.cpp
 	"Stage.h"
-	<iostream>
 
-1454387440 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\standardobject.cpp
+1454413146 source:f:\working\newgame\newdemo\standardobject.cpp
 	"StandardObject.h"
 
-1454409755 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\staticobject.cpp
+1454413146 source:f:\working\newgame\newdemo\staticobject.cpp
 	"StaticObject.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\surface.cpp
+1454530956 source:f:\working\newgame\newdemo\surface.cpp
 	"Surface.h"
 
-1454553939 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\wall.cpp
+1454530956 source:f:\working\newgame\newdemo\wall.cpp
 	"Wall.h"
 
-1454758397 c:\users\steve\documents\github\cs-4zp6\proof of concept demo\include\camera.h
-	"glm/glm.hpp"
-	"glm/gtc/matrix_transform.hpp"
+1455693751 source:f:\working\newgame\newdemo\menumanager.cpp
+	"MenuManager.h"
+	"include/GL/glew.h"
+	"Obj.h"
+	"Game.h"
+	<stdio.h>
+	<stdlib.h>
 
-1454758580 source:c:\users\steve\documents\github\cs-4zp6\proof of concept demo\src\camera.cpp
-	"Camera.h"
+1455688710 f:\working\newgame\newdemo\menumanager.h
+	<vector>
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\boulder.cpp
+	"Boulder.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\boulder.h
+	"DynamicObject.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\dynamicobject.h
+	"PhysicsObject.h"
+
+1454577754 d:\users\yc\desktop\newdemo\newdemo\physicsobject.h
+	"include/chipmunk/chipmunk.h"
+	"Obj.h"
+	"CollisionHandlers.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpvect.h
+	"chipmunk_types.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpbb.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cptransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpspatialindex.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cparbiter.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpbody.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpshape.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cppolyshape.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpconstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cppinjoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpslidejoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cppivotjoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpgroovejoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpdampedspring.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpdampedrotaryspring.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cprotarylimitjoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpratchetjoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpgearjoint.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpsimplemotor.h
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\chipmunk\cpspace.h
+
+1454602544 d:\users\yc\desktop\newdemo\newdemo\obj.h
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+	"include/glm/gtx/transform2.hpp"
+	"ObjGPUDataStore.h"
+	"ShaderStore.h"
+	"SoundStore.h"
+	<vector>
+	<string>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\precision.hpp
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\_swizzle.hpp
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\_swizzle_func.hpp
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec2.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec3.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec4.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x2.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x3.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat2x4.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x2.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x3.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat3x4.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x2.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x3.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_mat4x4.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_vec1.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_vector_relational.inl
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\common.hpp
+	"detail/func_common.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\type_half.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtc\constants.inl
+	<limits>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtx\transform2.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"transform2.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtx\transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtx\transform.inl
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glm\gtx\transform2.inl
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\objgpudatastore.h
+	<map>
+	"ObjGPUData.h"
+
+1454602544 d:\users\yc\desktop\newdemo\newdemo\objgpudata.h
+	<vector>
+	<string>
+	"include/GL/glew.h"
+	"include/glm/glm.hpp"
+	"include/glm/gtc/matrix_transform.hpp"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1454392840 d:\users\yc\desktop\newdemo\newdemo\shaderstore.h
+	<map>
+	"Shader.h"
+
+1452551280 d:\users\yc\desktop\newdemo\newdemo\shader.h
+	"include/GL/glew.h"
+	<map>
+	<string>
+
+1454577756 d:\users\yc\desktop\newdemo\newdemo\soundstore.h
+	<map>
+	"Sound.h"
+
+1455742623 d:\users\yc\desktop\newdemo\newdemo\sound.h
+	"include/AL/alut.h"
+	<string>
+
+1453174384 d:\users\yc\desktop\newdemo\newdemo\include\al\alut.h
+	"alc.h"
+	"al.h"
+
+1453174384 d:\users\yc\desktop\newdemo\newdemo\include\al\alc.h
+
+1453174384 d:\users\yc\desktop\newdemo\newdemo\include\al\al.h
+
+1454577754 d:\users\yc\desktop\newdemo\newdemo\collisionhandlers.h
+	"PhysicsObject.h"
+
+1454577754 source:d:\users\yc\desktop\newdemo\newdemo\boundary.cpp
+	"Boundary.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\boundary.h
+	"Surface.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\surface.h
+	"StaticObject.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\staticobject.h
+	"PhysicsObject.h"
+
+1454577754 source:d:\users\yc\desktop\newdemo\newdemo\collisionhandlers.cpp
+	"CollisionHandlers.h"
+	"Hero.h"
+	"Surface.h"
+
+1454577754 d:\users\yc\desktop\newdemo\newdemo\hero.h
+	"DynamicObject.h"
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\dynamicobject.cpp
+	"DynamicObject.h"
+	<cmath>
+
+1454392840 source:d:\users\yc\desktop\newdemo\newdemo\environment.cpp
+	"Environment.h"
+	"Loader.h"
+	"Shader.h"
+	<stdio.h>
+	<iostream>
+	<string>
+
+1455740715 d:\users\yc\desktop\newdemo\newdemo\environment.h
+	"include/GL/glew.h"
+	"include/chipmunk/chipmunk.h"
+	"include/GLFW/glfw3.h"
+	"IncludeObjects.h"
+	"ObjGPUData.h"
+	"Sound.h"
+	"Shader.h"
+	<map>
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\includeobjects.h
+	"Boulder.h"
+	"Boundary.h"
+	"Hero.h"
+	"MovingPlatform.h"
+	"Platform.h"
+	"Ramp.h"
+	"Skybox.h"
+	"Spear.h"
+	"Spikes.h"
+	"Wall.h"
+
+1454392840 d:\users\yc\desktop\newdemo\newdemo\movingplatform.h
+	"KinematicObject.h"
+
+1454392840 d:\users\yc\desktop\newdemo\newdemo\kinematicobject.h
+	"PhysicsObject.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\platform.h
+	"Surface.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\ramp.h
+	"Surface.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\skybox.h
+	"StandardObject.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\standardobject.h
+	"Obj.h"
+
+1454577756 d:\users\yc\desktop\newdemo\newdemo\spear.h
+	"DynamicObject.h"
+	"StaticObject.h"
+
+1454602544 d:\users\yc\desktop\newdemo\newdemo\spikes.h
+	"StaticObject.h"
+
+1454459946 d:\users\yc\desktop\newdemo\newdemo\wall.h
+	"Surface.h"
+
+1447256262 d:\users\yc\desktop\newdemo\newdemo\loader.h
+
+1455741025 source:d:\users\yc\desktop\newdemo\newdemo\game.cpp
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"include/AL/alut.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
+	"ObjGPUData.h"
+
+1455736724 d:\users\yc\desktop\newdemo\newdemo\game.h
+	"include/GL/glew.h"
+	"include/GLFW/glfw3.h"
+	"Stage.h"
+	"ObjGPUData.h"
+	"MenuManager.h"
+	<map>
+
+1455741618 d:\users\yc\desktop\newdemo\newdemo\stage.h
+	"Environment.h"
+
+1455735510 d:\users\yc\desktop\newdemo\newdemo\menumanager.h
+	<vector>
+
+1454577754 source:d:\users\yc\desktop\newdemo\newdemo\hero.cpp
+	"Hero.h"
+
+1453174384 source:d:\users\yc\desktop\newdemo\newdemo\imgloader.cpp
+	<fstream>
+	<cstdlib>
+	"include/GL/glew.h"
+
+1447256262 source:d:\users\yc\desktop\newdemo\newdemo\loader.cpp
+	"include/GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1453174384 source:d:\users\yc\desktop\newdemo\newdemo\main.cpp
+	"Game.h"
+	<stdio.h>
+
+1455740551 source:d:\users\yc\desktop\newdemo\newdemo\menumanager.cpp
+	"MenuManager.h"
+	"include/GL/glew.h"
+	"Obj.h"
+	"Game.h"
+	<stdio.h>
+	<stdlib.h>
+
+1454602544 source:d:\users\yc\desktop\newdemo\newdemo\obj.cpp
+	"Obj.h"
+	<iostream>
+
+1454602544 source:d:\users\yc\desktop\newdemo\newdemo\objgpudata.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1447424180 d:\users\yc\desktop\newdemo\newdemo\imgloader.h
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\objgpudatastore.cpp
+	"ObjGPUDataStore.h"
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\physicsobject.cpp
+	"PhysicsObject.h"
+
+1454577754 source:d:\users\yc\desktop\newdemo\newdemo\platform.cpp
+	"Platform.h"
+
+1454577754 source:d:\users\yc\desktop\newdemo\newdemo\ramp.cpp
+	"Ramp.h"
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\shader.cpp
+	"Shader.h"
+	"Loader.h"
+	<iostream>
+
+1454392840 source:d:\users\yc\desktop\newdemo\newdemo\shaderstore.cpp
+	"ShaderStore.h"
+
+1454602544 source:d:\users\yc\desktop\newdemo\newdemo\skybox.cpp
+	"Skybox.h"
+
+1455742623 source:d:\users\yc\desktop\newdemo\newdemo\sound.cpp
+	"Sound.h"
+	<cstdlib>
+	<cstdio>
+
+1454577756 source:d:\users\yc\desktop\newdemo\newdemo\soundstore.cpp
+	"SoundStore.h"
+
+1454577756 source:d:\users\yc\desktop\newdemo\newdemo\spear.cpp
+	"Spear.h"
+
+1454602544 source:d:\users\yc\desktop\newdemo\newdemo\spikes.cpp
+	"Spikes.h"
+
+1455742687 source:d:\users\yc\desktop\newdemo\newdemo\stage.cpp
+	"Stage.h"
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\standardobject.cpp
+	"StandardObject.h"
+
+1454459946 source:d:\users\yc\desktop\newdemo\newdemo\staticobject.cpp
+	"StaticObject.h"
+
+1454577756 source:d:\users\yc\desktop\newdemo\newdemo\surface.cpp
+	"Surface.h"
+
+1454577756 source:d:\users\yc\desktop\newdemo\newdemo\wall.cpp
+	"Wall.h"
 
