@@ -109,7 +109,7 @@ February 29, 2016 & 1.1 & Finished draft\\
 The purpose of this guide is to provide installation instructions as well as an overview of the game.  The guide is structured as follows:
 
 \begin{itemize}
-  \item The first part of the guide deals with system requirements and offers a step-by-step installation guide (see \hyperref[sec:gettingstarted]{\S\ref*{sec:gettingstarted}}).
+  \item The first part of the guide deals with system requirements and offers step-by-step installation instructions (see \hyperref[sec:gettingstarted]{\S\ref*{sec:gettingstarted}}).
   \item The second part of the guide serves as an instruction manual for the game (see \hyperref[sec:basics]{\S\ref*{sec:basics}}, \hyperref[sec:edit]{\S\ref*{sec:edit}})
   \item The final part of the guide provides additional help in the form of FAQ and troubleshooting sections (see \hyperref[sec:faq]{\S\ref*{sec:faq}}, \hyperref[sec:trouble]{\S\ref*{sec:trouble}})
 \end{itemize}
@@ -166,7 +166,7 @@ A cross-platform compatible installer is included with the game.  To use the ins
   \item Open a command prompt and navigate to the pre-made \texttt{build} directory (\texttt{\justify gamebuilder/source/build/}).
   \item Run the command\\\\
    ${}$\qquad \texttt{cmake -G "MinGW Makefiles" ..}\\\\
-    to invoke cmake.  A makefile (as well as many other files) will be generated in the build directory.
+    to invoke cmake.  A makefile (as well as many other files) will be generated in the \texttt{build} directory.
 
   \item Run the command\\\\
    ${}$\qquad \texttt{mingw32-make}\\\\
@@ -185,7 +185,7 @@ A cross-platform compatible installer is included with the game.  To use the ins
   \item Open a terminal and navigate to the pre-made \texttt{build} directory\\ (\texttt{\justify gamebuilder/source/build/}).
   \item Run the command\\\\
    ${}$\qquad \texttt{cmake -G "Unix Makefiles" ..}\\\\
-    to invoke cmake.  A makefile (as well as many other files) will be generated in the build directory.
+    to invoke cmake.  A makefile (as well as many other files) will be generated in the \texttt{build} directory.
 
   \item Run the command\\\\
    ${}$\qquad \texttt{make}\\\\
@@ -193,11 +193,11 @@ A cross-platform compatible installer is included with the game.  To use the ins
 
   \item Run the command\\\\
   ${}$\qquad \texttt{make install}\\\\
-  to install the game to the \texttt{game} directory.  All of the files required to run the game will be moved to this directory. 
+  to install the game to the \texttt{game} directory.  All of the files required to run the game will be moved to this directory.
 \end{enumerate}
 
 \subsubsection{Other Operating Systems}
-The game must be installed manually on other operating systems.  To perform a manual install you will need to download and compile the following libraries:
+The game must be installed manually on other operating systems.  To perform a manual installation you will need to download and compile the following libraries:
 
 \begin{enumerate}
   \item \href{https://chipmunk-physics.net/}{Chipmunk2D}
@@ -207,10 +207,10 @@ The game must be installed manually on other operating systems.  To perform a ma
   \item \href{https://github.com/vancegroup/freealut}{FreeALUT}
 \end{enumerate}
 
-\noindent The game can then be built using the source files and headers found in the \texttt{src} and \texttt{include} folders of the \texttt{source} directory.  Be sure to merge all of the \texttt{include} folders that come with the libraries with the \texttt{include} folder found in the \texttt{source} directory folder.  All of the aforementioned libraries must be linked to compile the game (as well as any operating system dependent libraries you may require).
+\noindent The game can then be built using the source files and headers located in the \texttt{src} and \texttt{include} folders in the \texttt{source} directory.  Be sure to merge all of the include folders that come with the libraries with the \texttt{include} folder found in the \texttt{source} directory folder.  All of the aforementioned libraries must be linked when compiling the game (as well as any operating system dependent libraries you may require).
 
 \subsection{Running the Game}
-Once the game is installed, it can be run via the executable found in the \texttt{game} directory.  When running the game for the first time, use of the terminal/command prompt is recommended in case any error messages arise.  If an error is encountered, refer to S6 for troubleshooting.
+Once the game is installed, it can be run via the executable found in the \texttt{game} directory.  When running the game for the first time, use of the terminal/command prompt is recommended in case any error messages arise.  If an error is encountered, refer to \hyperref[sec:trouble]{\S\ref*{sec:trouble}} for troubleshooting.
 
 
 \section{Game Basics}
@@ -250,17 +250,17 @@ Spear Trap & Spear traps randomly launch spears up through holes in the ground. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{hazards}
-\caption[Hazards found in the game.]{Hazards found in the game.  (a) Swinging Axe.  (b) Saw Blade.  (c) Boulder.  (d) Javelin.  (e) Spikes.  (f) Spear Trap.} \label{fig:arch}
+\caption[Hazards found in the game.]{Hazards found in the game.  (a) Swinging Axe.  (b) Saw Blade.  (c) Boulder.  (d) Javelin.  (e) Spikes.  (f) Spear Trap.} \label{fig:hazards}
 \end{center}
 \end{figure}
 
 
 \subsubsection{Score}
-When a stage is completed you will receive a score expressed as a star-rating.  This rating ranges from 1 star to 3 stars and is based on the time taken to complete the stage.  Try to achieve a 3-star rating on every level!
+When a stage is completed you will receive a score expressed as a star-rating.  This rating ranges from 1 star to 3 stars and is based on the time taken to complete the stage.  Try to achieve a 3-star rating on every stage!
 
 
 \subsection{Game Controls}
-The default game control are given in \hyperref[tab:ctrl]{Table~\ref*{tab:ctrl}}.  In the current version of the game, the controls cannot be remapped.
+The default game controls are given in \hyperref[tab:ctrl]{Table~\ref*{tab:ctrl}}.  In the current version of the game, the controls cannot be remapped.
 
 
 \begin{table}[H]
@@ -296,7 +296,7 @@ ESC & Open menu (pauses game)\\
 \noindent Ensure that you have \texttt{\bf gcc} installed.  If this is not the issue, refer to the documentation provided at \href{http://www.cmake.org}{cmake.org} for further troubleshooting.
 
 \subsubsection{\emph{The compilation process fails while running the makefile.}}
-\noindent The makefile generated by \texttt{\bf CMake} provides detailed error reporting.  In most cases failure results from a missing function or library.  Instructions for resolving a particular issue 
+\noindent The makefile generated by \texttt{\bf CMake} provides detailed error reporting.  In most cases failure results from a missing function or library.  Instructions for resolving a particular issue can usually be found via an online search of the error message.
 
 \subsubsection{\emph{\texttt{CMake} is using an older/wrong version of \texttt{\bf gcc} or defaulting to a different compiler.}}
 \noindent If you are using Windows, ensure that the desired version of \texttt{\bf gcc} appears before all others in your PATH variable.  If a different compiler is being used by \texttt{\bf CMake}, double check that you are inputting the correct command (the \texttt{MinGW Makefiles} generator should default to \texttt{\bf gcc}).\\
@@ -308,7 +308,7 @@ ${}$\noindent \qquad \texttt{export CXX = path\char`_to\char`_g++}
 
 
 \subsubsection{\emph{I am trying to use a compiler that is not \texttt{gcc} with the installer and it is not working.}}
-\noindent \texttt{\bf gcc} is the only officially supported compiler at this time.  Other compilers may or may not work with the provided installer and their use is not advised.  If you are determined to use a different compiler, manual installation is recommended.  Modifications to the source code of the game or the libraries may be required.
+\noindent \texttt{\bf gcc} is the only officially supported compiler at this time.  Other compilers may or may not work with the provided installer and their use is not advised.  If you are determined to use a different compiler, manual installation is recommended.  Modifications to the source code of the game and/or the libraries may be required.
 
 
 \subsection{Runtime Errors}
@@ -316,7 +316,7 @@ ${}$\noindent \qquad \texttt{export CXX = path\char`_to\char`_g++}
 \noindent This indicates that the game has encountered a startup error.  Try running the game from the terminal/command prompt so that any error messages produced before the game exits remain visible.
 
 \subsubsection{\emph{The game encounters an error while loading an object.}}
-\noindent Check that the data folder in the \texttt{source} directory was copied into the \texttt{game} directory.  
+\noindent Check that the data folder in the \texttt{source} directory was copied into the \texttt{game} directory.
 
 \subsubsection{\emph{The game encounters an error while loading a texture.}}
 \noindent Check that the data folder in the \texttt{source} directory was copied into the \texttt{game} directory.
