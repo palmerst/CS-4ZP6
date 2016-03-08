@@ -1,0 +1,32 @@
+# Blender MTL File: 'spear.blend'
+# Material Count: 3
+
+newmtl Blade
+Ns 194.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.800000 0.800000 0.800000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Steve\\Documents\\metal_seamless_by_hhh316-d4p6v71.jpg
+
+newmtl BladeSupport
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.500000 0.500000 0.500000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Steve\\Documents\\metal_seamless_by_hhh316-d4p6v71.jpg
+
+newmtl Holder
+Ns 1.960784
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.541601 0.508327
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\Steve\\Downloads\\wood4.png

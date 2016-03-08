@@ -1,0 +1,13 @@
+# Blender MTL File: 'spikes.blend'
+# Material Count: 1
+
+newmtl Material.001
+Ns 4
+Ka 0.500000 0.5000000 0.5000000
+Kd 1.0 1.0 1.0
+Ks 0.800000 0.800000 0.800000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Steve\\Documents\\metal_seamless_by_hhh316-d4p6v71.jpg
+bump metal_seamless_by_hhh316-d4p6v71_NRM.jpg

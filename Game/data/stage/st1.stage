@@ -1,4 +1,4 @@
-**level**
+**stage**
 skytype=bluesky
 setting=desert
 gravity=1.0
@@ -7,6 +7,7 @@ startx=-15.5
 starty=35.5
 endx=76
 endy=0
+wrench in the machine
 
 **platforms**
 x=-29 to 29, ytop=50
