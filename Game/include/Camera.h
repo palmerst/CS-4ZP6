@@ -20,10 +20,14 @@ public:
     float inclination;
     float azimuth;
 
+    float zoom;
+
     float radius;
 
     void update(glm::vec3 newPos);
     void moveOrigin(double deltaInclination, double deltaAzimuth);
+    void zoomIn();
+    void zoomOut();
 
 };
 

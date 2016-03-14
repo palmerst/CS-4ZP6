@@ -21,26 +21,27 @@ uniform mat4 ModelMatrix;
 uniform mat3 NormalMatrix;
 uniform mat4 ProjectionMatrix;
 uniform mat4 MVP;
+uniform mat3 ModelView3x3;
 
 
 out vec2 UV;
-out vec3 s;
-out vec3 v;
+//out vec3 normal;
+out vec3 e;
+out vec3 norm;
+out vec3 tang;
+out vec3 binorm;
+
 
 void main(){
 	gl_Position =  MVP * vec4(vertexPosition, 1.0);
-	UV = (ModelMatrix * vec4(vertexPosition, 1.0)).xy/200.0f;
+	UV = (ModelMatrix * vec4(vertexPosition, 1.0)).xy/500.0f;
     
-    vec3 norm = normalize(NormalMatrix * vertexNormal);
-    vec3 tang = normalize(NormalMatrix * vec3(vertexTangent));
-    vec3 binorm = normalize(cross(norm, tang)) * vertexTangent.w;
-    mat3 toObjectLocal = mat3(
-        tang.x, binorm.x, norm.x,
-        tang.y, binorm.y, norm.y,
-        tang.z, binorm.z, norm.z );
+    
+    norm = normalize(ModelView3x3*vertexNormal);
+    tang = normalize(ModelView3x3*vec3(vertexTangent));
+    binorm = normalize(cross(norm, tang)) * vertexTangent.w;
+    
         
-	vec3 eyeCoords = vec3(ModelViewMatrix*vec4(vertexPosition,1.0));
-	s = normalize(toObjectLocal * (Light.Position.xyz - eyeCoords));
-	v = toObjectLocal * normalize(-eyeCoords);
+	e = normalize(vec3(ModelViewMatrix*vec4(vertexPosition, 1.0)));
     
 }

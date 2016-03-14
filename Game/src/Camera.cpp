@@ -10,6 +10,8 @@ Camera::Camera()
     up = glm::vec3(0.0f, 1.0f, 0.0f);
     posToOrigin = glm::vec3(1.0f, 0.0f, 0.0f);
 
+    zoom = 1.0f;
+
     inclination = PI/2;
     azimuth = 0;
 
@@ -38,4 +40,22 @@ void Camera::moveOrigin(double deltaInclination, double deltaAzimuth)
     posToOrigin[1] = cos(inclination);
     posToOrigin[2] = sin(inclination)*sin(azimuth);
 
+}
+
+void Camera::zoomIn(){
+    if(zoom <= 1.0f){
+        zoom = 1.0f;
+        return;
+    }
+
+    zoom /= 1.1f;
+}
+
+void Camera::zoomOut(){
+    if(zoom >= 10.0f){
+        zoom = 10.0f;
+        return;
+    }
+
+    zoom *= 1.1f;
 }

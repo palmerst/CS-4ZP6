@@ -3,16 +3,28 @@
 
 #include <map>
 #include <string>
+#include <fstream>
+#include "IncludeObjects.h"
 
 class StageLoader {
 
     private:
 
-        void reportError(std::string fileName, std::string line);
+        void reportError();
+        std::string stripWhitespace(std::string str);
+        void getNextLine();
+        void checkField(std::string field);
+
+        std::string fileName;
+        int lineNo;
+        std::string curLine;
+        std::string line;
+        std::ifstream inFile;
 
     public:
 
-        StageLoader(std::string fileName);
+        StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox* skybox, Boundary* boundary, Hero* userControlObject);
+
 
         std::map<std::string, std::string> stageInfo;
 

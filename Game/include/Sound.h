@@ -27,6 +27,7 @@ public:
     Sound(std::string path);
     ~Sound();       //!< Sound destructor
     void play(int loop = 0);    //!< Plays the sound data contained in the class.
+    void stop();
 
 };
 
