@@ -13,7 +13,7 @@ class StageLoader {
         void reportError();
         std::string stripWhitespace(std::string str);
         void getNextLine();
-        void checkField(std::string field);
+        std::string checkField(std::string field);
 
         std::string fileName;
         int lineNo;
@@ -23,7 +23,7 @@ class StageLoader {
 
     public:
 
-        StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox* skybox, Boundary* boundary, Hero* userControlObject);
+        StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject);
 
 
         std::map<std::string, std::string> stageInfo;

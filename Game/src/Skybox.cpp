@@ -29,8 +29,8 @@ Skybox::Skybox(float x, float y, int bgNum)
 
     if(bgNum == 2)
     {
-        gpuDataList.push_back(gpuStore.add("./data/obj/skybox2", 3.0f*3.141592f/4.0f));
-        shearOverrideList.push_back(glm::rotate(glm::mat4(1.0f), -3.141592f/8.0f, glm::vec3(1,0,0)));
+        gpuDataList.push_back(gpuStore.add("./data/obj/skybox2"));
+        shearOverrideList.push_back(glm::rotate(glm::mat4(1.0f), 0.0f, glm::vec3(1,0,0)));
     }
 
 

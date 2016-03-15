@@ -24,7 +24,7 @@ public:
       \param type Type of object (different values affect collision routines)
       \param noRotation Flag to ignore angular momentum in the physics calculations (default = false)
     */
-    StaticObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath);
+    StaticObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath, float angle = 0.0f);
 
 };
 

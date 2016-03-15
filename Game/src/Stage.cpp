@@ -24,7 +24,7 @@ Stage::Stage(std::string stageName)
 
     /** STAGE DESIGN GOES BELOW HERE **/
 
-    StageLoader* ns = new StageLoader("./data/stage/st1.stage", physicsObjects, standardObjects, skybox, boundary, userControlObject);
+    StageLoader* ns = new StageLoader("./data/stage/st2.stage", physicsObjects, standardObjects, skybox, boundary, userControlObject);
 
 //    physicsObjects.push_back(new Platform(-1500, 1500, 1525));
 //    physicsObjects.push_back(new Platform(-1450, 1450, -975));
@@ -44,11 +44,13 @@ Stage::Stage(std::string stageName)
 
 //    physicsObjects.push_back(new Platform(-500, -200, -300));
 
-    standardObjects.push_back(new Arch(3800, -975));
+   // standardObjects.push_back(new Arch(3800, -975));
 
-    boundary = new Boundary(-30000, 30000, 0, BS_SAND);
-    userControlObject = new Hero(-770, 1800);
-    skybox = new Skybox(0, 0, 1);
+//    boundary = new Boundary(-30000, 30000, 0, BS_SAND);
+   // userControlObject = new Hero(-770, 1800);
+ //   skybox = new Skybox(0, 0, 1);
+
+  //  physicsObjects.push_back(new Spear(-50, 500, 3.0f*3.141592f/2.0));
 
     /** STAGE DESIGN GOES ABOVE HERE **/
 

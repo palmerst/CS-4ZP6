@@ -10250,7 +10250,7 @@
 1457019300 c:\users\steve\documents\github\cs-4zp6\game\include\surface.h
 	"StaticObject.h"
 
-1457019300 c:\users\steve\documents\github\cs-4zp6\game\include\staticobject.h
+1458060165 c:\users\steve\documents\github\cs-4zp6\game\include\staticobject.h
 	"PhysicsObject.h"
 
 1457945797 source:c:\users\steve\documents\github\cs-4zp6\game\src\camera.cpp
@@ -10337,7 +10337,7 @@
 1457019300 c:\users\steve\documents\github\cs-4zp6\game\include\skybox.h
 	"StandardObject.h"
 
-1457019300 c:\users\steve\documents\github\cs-4zp6\game\include\spear.h
+1458060073 c:\users\steve\documents\github\cs-4zp6\game\include\spear.h
 	"DynamicObject.h"
 	"StaticObject.h"
 
@@ -10427,7 +10427,7 @@
 1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\shaderstore.cpp
 	"ShaderStore.h"
 
-1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\skybox.cpp
+1458056334 source:c:\users\steve\documents\github\cs-4zp6\game\src\skybox.cpp
 	"Skybox.h"
 
 1457944844 source:c:\users\steve\documents\github\cs-4zp6\game\src\sound.cpp
@@ -10438,14 +10438,14 @@
 1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\soundstore.cpp
 	"SoundStore.h"
 
-1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\spear.cpp
+1458060661 source:c:\users\steve\documents\github\cs-4zp6\game\src\spear.cpp
 	"Spear.h"
 
 1457941551 source:c:\users\steve\documents\github\cs-4zp6\game\src\spikes.cpp
 	"Spikes.h"
 	<iostream>
 
-1457946166 source:c:\users\steve\documents\github\cs-4zp6\game\src\stage.cpp
+1458060723 source:c:\users\steve\documents\github\cs-4zp6\game\src\stage.cpp
 	"Stage.h"
 	"StageLoader.h"
 	<iostream>
@@ -10453,7 +10453,7 @@
 1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\standardobject.cpp
 	"StandardObject.h"
 
-1457019300 source:c:\users\steve\documents\github\cs-4zp6\game\src\staticobject.cpp
+1458060367 source:c:\users\steve\documents\github\cs-4zp6\game\src\staticobject.cpp
 	"StaticObject.h"
 
 1457019301 source:c:\users\steve\documents\github\cs-4zp6\game\src\surface.cpp
@@ -10462,13 +10462,13 @@
 1457019301 source:c:\users\steve\documents\github\cs-4zp6\game\src\wall.cpp
 	"Wall.h"
 
-1457938531 c:\users\steve\documents\github\cs-4zp6\game\include\stageloader.h
+1458056246 c:\users\steve\documents\github\cs-4zp6\game\include\stageloader.h
 	<map>
 	<string>
 	<fstream>
 	"IncludeObjects.h"
 
-1457941812 source:c:\users\steve\documents\github\cs-4zp6\game\src\stageloader.cpp
+1458057554 source:c:\users\steve\documents\github\cs-4zp6\game\src\stageloader.cpp
 	"StageLoader.h"
 	<iostream>
 	<cstdlib>

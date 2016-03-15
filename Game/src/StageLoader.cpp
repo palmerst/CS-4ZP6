@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 
-StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox* skybox, Boundary* boundary, Hero* userControlObject){
+StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject){
 
     this->fileName = fileName;
     this->lineNo = 0;
@@ -168,6 +168,16 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
                     physicsObjects.push_back(new Spikes(x, y, rot));
                 }
 
+                else if(hazardString == "upspear" || hazardString == "leftspear" || hazardString == "rightspear"){
+                    if(xyModifiers[0] == 'l') x += 250.0f;
+                    else if(xyModifiers[0] == 'r') x -= 250.0f;
+
+                    if(xyModifiers[1] == 'b') y += 250.0f;
+                    else if(xyModifiers[1] == 't') y -= 250.0f;
+
+                    physicsObjects.push_back(new Boulder(x, y));
+                }
+
             }
 
             continue;
@@ -176,10 +186,24 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
         getNextLine();
     }
 
-    checkField("startx");
-    checkField("starty");
+    userControlObject = new Hero(atof(checkField("startx").c_str()) * scaleFactor, atof(checkField("starty").c_str()) * scaleFactor + 100.0f);
+
+    std::string bg = checkField("background");
+
+    if(bg == "bluesky"){
+        skybox = new Skybox(0, 0, 2);
+    }
+    else if(bg == "");
+
+    std::string setting = checkField("setting");
+
+    if(setting == "desert"){
+        boundary = boundary = new Boundary(-30000, 30000, 0, BS_SAND);
+    }
+
     checkField("endx");
     checkField("endy");
+
 }
 
 std::string StageLoader::stripWhitespace(std::string str){
@@ -202,9 +226,11 @@ void StageLoader::getNextLine(){
     lineNo++;
 }
 
-void StageLoader::checkField(std::string field){
+std::string StageLoader::checkField(std::string field){
     if(stageInfo.find(field) == stageInfo.end()){
         std::cout << "Stage file \"" << fileName << "\" missing required field:  " << field << std::endl;
         exit(3);
     }
+
+    return stageInfo.find(field)->second;
 }

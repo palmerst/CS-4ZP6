@@ -4,12 +4,12 @@
 #include "DynamicObject.h"
 #include "StaticObject.h"
 
-class Spear : public DynamicObject
+class Spear : public StaticObject
 {
 
 public:
 
-    Spear(float x, float y);
+    Spear(float x, float y, float rotation);
 
 };
 
