@@ -37,6 +37,7 @@
 			<Add option="-DGLM_FORCE_RADIANS" />
 			<Add option="-DAL_LIBTYPE_STATIC" />
 			<Add option="-DALUT_STATIC" />
+			<Add option="-D__NO_INLINE__" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>

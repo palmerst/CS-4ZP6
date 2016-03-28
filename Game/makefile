@@ -18,7 +18,7 @@ ifeq "$(OS)" "Windows_NT"
 	EXEEXT=.exe #on windows applications must have .exe extension
 	RM=del #rm command for windows powershell
     LDFLAGS = -Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lalut -lOpenAL32.dll
-    CXXFLAGS = -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -std=c++11
+    CXXFLAGS = -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -DAL_LIBTYPE_STATIC -DALUT_STATIC -std=c++11
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S), Linux)

@@ -50,7 +50,7 @@ Stage::Stage(std::string stageName)
    // userControlObject = new Hero(-770, 1800);
  //   skybox = new Skybox(0, 0, 1);
 
-  //  physicsObjects.push_back(new Spear(-50, 500, 3.0f*3.141592f/2.0));
+    physicsObjects.push_back(new Spear(-50, 500, 3.0f*3.141592f/2.0));
 
     /** STAGE DESIGN GOES ABOVE HERE **/
 

@@ -1,0 +1,26 @@
+**stage**
+background=bluesky
+setting=desert
+startx=0
+starty=0
+endx=100
+endy=0
+
+**platforms**
+
+% list of platforms in 
+    % x = x-left to x-right, y<pos> = y [, thickness = t]
+    %   where <pos> is either top, bot, or mid
+    %   and thickness is optionally specified
+    
+x=-100 to 100, ytop=0
+
+**walls**
+xright=-50, y=0 to 50
+xleft=50, y=0 to 50
+
+%**hazards**
+%boulder, xmid=84, ymid=38
+%upspikes, xmid=-16, ybot=1
+%downspikes, xmid=-24, ytop=26
+%spears, xmid=-35, ybot=0
