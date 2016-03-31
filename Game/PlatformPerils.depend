@@ -11045,20 +11045,21 @@
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\surface.h
 	"StaticObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\staticobject.h
+1459440332 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\staticobject.h
 	"PhysicsObject.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\camera.cpp
+1459450028 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\camera.cpp
 	"Camera.h"
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\camera.h
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
+1459448039 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
 	"CollisionHandlers.h"
 	"Hero.h"
 	"Surface.h"
+	<iostream>
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\hero.h
 	"DynamicObject.h"
@@ -11120,7 +11121,7 @@
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\movingplatform.h
 	"KinematicObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\kinematicobject.h
+1459440332 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\kinematicobject.h
 	"PhysicsObject.h"
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\platform.h
@@ -11132,12 +11133,12 @@
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\skybox.h
 	"StandardObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spear.h
-	"DynamicObject.h"
+1459440393 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spear.h
+	"KinematicObject.h"
 	"StaticObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spikes.h
-	"StaticObject.h"
+1459444515 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spikes.h
+	"KinematicObject.h"
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\wall.h
 	"Surface.h"
@@ -11233,14 +11234,14 @@
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\soundstore.cpp
 	"SoundStore.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spear.cpp
+1459445453 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spear.cpp
 	"Spear.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spikes.cpp
+1459444515 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spikes.cpp
 	"Spikes.h"
 	<iostream>
 
-1459072077 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
+1459450028 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
 	"Stage.h"
 	"StageLoader.h"
 	<iostream>
@@ -11251,7 +11252,7 @@
 	<fstream>
 	"IncludeObjects.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
+1459449830 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
 	"StageLoader.h"
 	<iostream>
 	<cstdlib>
@@ -11259,7 +11260,7 @@
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\standardobject.cpp
 	"StandardObject.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\staticobject.cpp
+1459440332 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\staticobject.cpp
 	"StaticObject.h"
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\surface.cpp
@@ -11267,4 +11268,7 @@
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\wall.cpp
 	"Wall.h"
+
+1459449424 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\kinematicobject.cpp
+	"KinematicObject.h"
 

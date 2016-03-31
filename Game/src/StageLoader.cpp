@@ -122,61 +122,61 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
                 if(line[0] == '*')
                     break;
                 float x,y;
+                float rot = 0.0f;
 
                 char hazardName[20];
 
                 std::string xyModifiers;
 
-                if(sscanf(line.c_str(), "%[^,],xleft=%f,ybot=%f", &hazardName, &x, &y) == 3) xyModifiers = "lb";
-                else if(sscanf(line.c_str(), "%[^,],xleft=%f,ymid=%f", &hazardName, &x, &y) == 3) xyModifiers = "lm";
-                else if(sscanf(line.c_str(), "%[^,],xleft=%f,ytop=%f", &hazardName, &x, &y) == 3) xyModifiers = "lt";
-                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ybot=%f", &hazardName, &x, &y) == 3) xyModifiers = "mb";
-                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ymid=%f", &hazardName, &x, &y) == 3) xyModifiers = "mm";
-                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ytop=%f", &hazardName, &x, &y) == 3) xyModifiers = "mt";
-                else if(sscanf(line.c_str(), "%[^,],xright=%f,ybot=%f", &hazardName, &x, &y) == 3) xyModifiers = "rb";
-                else if(sscanf(line.c_str(), "%[^,],xright=%f,ymid=%f", &hazardName, &x, &y) == 3) xyModifiers = "rm";
-                else if(sscanf(line.c_str(), "%[^,],xright=%f,ytop=%f", &hazardName, &x, &y) == 3) xyModifiers = "rt";
+                if(sscanf(line.c_str(), "%[^,],xleft=%f,ybot=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "lb";
+                else if(sscanf(line.c_str(), "%[^,],xleft=%f,ymid=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "lm";
+                else if(sscanf(line.c_str(), "%[^,],xleft=%f,ytop=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "lt";
+                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ybot=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "mb";
+                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ymid=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "mm";
+                else if(sscanf(line.c_str(), "%[^,],xmid=%f,ytop=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "mt";
+                else if(sscanf(line.c_str(), "%[^,],xright=%f,ybot=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "rb";
+                else if(sscanf(line.c_str(), "%[^,],xright=%f,ymid=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "rm";
+                else if(sscanf(line.c_str(), "%[^,],xright=%f,ytop=%f,rot=%f", &hazardName, &x, &y, &rot) >= 3) xyModifiers = "rt";
                 else reportError();
 
                 x *= scaleFactor;
                 y *= scaleFactor;
+                rot *= 3.141592f/180.0f;
+
 
                 std::string hazardString = hazardName;
 
+                PhysicsObject* newHazard;
+
                 if(hazardString == "boulder"){
-                    if(xyModifiers[0] == 'l') x += 250.0f;
-                    else if(xyModifiers[0] == 'r') x -= 250.0f;
-
-                    if(xyModifiers[1] == 'b') y += 250.0f;
-                    else if(xyModifiers[1] == 't') y -= 250.0f;
-
-                    physicsObjects.push_back(new Boulder(x, y));
+                    newHazard = new Boulder(0, 0);
                 }
 
-                else if(hazardString == "upspikes" || hazardString == "downspikes"){
-                    if(xyModifiers[0] == 'l') x += 239.6f;
-                    else if(xyModifiers[0] == 'r') x -= 239.6f;
-
-                    if(xyModifiers[1] == 'b') y += 190.0f;
-                    else if(xyModifiers[1] == 't') y -= 190.0f;
-
-                    float rot = 0.0f;
-
-                    if(hazardString == "downspikes")
-                        rot = 3.141592f;
-
-                    physicsObjects.push_back(new Spikes(x, y, rot));
+                else if(hazardString == "spikes"){
+                    newHazard = new Spikes(0, 0, rot);
                 }
 
-                else if(hazardString == "upspear" || hazardString == "leftspear" || hazardString == "rightspear"){
-                    if(xyModifiers[0] == 'l') x += 250.0f;
-                    else if(xyModifiers[0] == 'r') x -= 250.0f;
+                else if(hazardString == "spear"){
+                    //if(xyModifiers[0] == 'l') x += 26.25f;
+                    //else if(xyModifiers[0] == 'r') x -= 26.25f;
 
-                    if(xyModifiers[1] == 'b') y += 250.0f;
-                    else if(xyModifiers[1] == 't') y -= 250.0f;
-
-                    physicsObjects.push_back(new Boulder(x, y));
+                    //if(xyModifiers[1] == 'b') y += 250.0f;
+                   // else if(xyModifiers[1] == 't') y -= 250.0f;
+                    newHazard = new Spear(0, 0, rot);
                 }
+
+                cpShapeCacheBB(newHazard->shape);
+                cpBB bb = cpShapeGetBB(newHazard->shape);
+
+                if(xyModifiers[0] == 'l') x -= bb.l;
+                else if(xyModifiers[0] == 'r') x -= bb.r;
+
+                if(xyModifiers[1] == 'b') y -= bb.b;
+                else if(xyModifiers[1] == 't') y -= bb.t;
+
+                cpBodySetPosition(newHazard->body, cpv(x, y));
+
+                physicsObjects.push_back(newHazard);
 
             }
 
@@ -191,7 +191,7 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
     std::string bg = checkField("background");
 
     if(bg == "bluesky"){
-        skybox = new Skybox(0, 0, 2);
+        skybox = new Skybox(0, 0, 1);
     }
     else if(bg == "");
 

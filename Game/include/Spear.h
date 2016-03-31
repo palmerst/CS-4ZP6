@@ -1,10 +1,10 @@
 #ifndef SPEAR_H_INCLUDED
 #define SPEAR_H_INCLUDED
 
-#include "DynamicObject.h"
+#include "KinematicObject.h"
 #include "StaticObject.h"
 
-class Spear : public StaticObject
+class Spear : public KinematicObject
 {
 
 public:

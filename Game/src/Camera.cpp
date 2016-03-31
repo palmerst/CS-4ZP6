@@ -48,14 +48,14 @@ void Camera::zoomIn(){
         return;
     }
 
-    zoom /= 1.1f;
+    zoom /= 1.03f;
 }
 
 void Camera::zoomOut(){
-    if(zoom >= 10.0f){
-        zoom = 10.0f;
+    if(zoom >= 5.0f){
+        zoom = 5.0f;
         return;
     }
 
-    zoom *= 1.1f;
+    zoom *= 1.03f;
 }

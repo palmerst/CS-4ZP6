@@ -17,18 +17,33 @@ x=-10 to 10, ytop=1
 x=10 to 20, ytop=10, thickness=10
 x=40 to 60, ytop=10, thickness=10 
 x=90 to 120, ytop=25, thickness=25
-
+x=150 to 180, ytop=25, thickness=25
+x=70 to 100, ytop=50
+x=90 to 95, ytop=55, thickness=5
+x=85 to 90, ytop=60, thickness=10
+x=80 to 85, ytop=65, thickness=15
+x=70 to 80, ytop=70, thickness=20
+ 
 
 **walls**
-xleft=150, y=0 to 25
+xright=-10, y=0 to 200
+xleft=180, y=0 to 100
+xright=160, y=35 to 61
 
 **ramps**
 x=60 to 90, ytop=10 to 25
+x=120 to 159, ybot=50 to 60
 
 
 **hazards**
-upspikes, xmid=25, ybot=0
-upspikes, xmid=35, ybot=0
-upspikes, xmid=125, ybot=0
-upspikes, xmid=135, ybot=0
-upspikes, xmid=145, ybot=0
+spikes, xmid=25, ybot=0
+spikes, xmid=35, ybot=0
+spikes, xmid=125, ybot=0
+spikes, xmid=135, ybot=0
+spikes, xmid=145, ybot=0
+spear, xright=180, ymid=30, rot=90.0
+spear, xleft=160, ymid=37.5, rot=270.0
+spear, xright=180, ymid=45, rot=90.0
+spear, xleft=160, ymid=52.5, rot=270.0
+spear, xright=180, ymid=60, rot=90.0
+boulder, xright=158, ybot=62

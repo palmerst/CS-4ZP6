@@ -1,9 +1,9 @@
 #ifndef SPIKES_H_INCLUDED
 #define SPIKES_H_INCLUDED
 
-#include "StaticObject.h"
+#include "KinematicObject.h"
 
-class Spikes : public StaticObject
+class Spikes : public KinematicObject
 {
 
 public:

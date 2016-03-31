@@ -87,6 +87,7 @@
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/ImgLoader.cpp" />
+		<Unit filename="src/KinematicObject.cpp" />
 		<Unit filename="src/Loader.cpp" />
 		<Unit filename="src/Obj.cpp" />
 		<Unit filename="src/ObjGPUData.cpp" />

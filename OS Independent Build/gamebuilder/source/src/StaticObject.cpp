@@ -5,7 +5,7 @@ StaticObject::StaticObject(float x, float y, float scale, float elast, float fri
 {
 
 
-    gpuDataList.push_back(gpuStore.add(gpuPath, 3.1415f));
+    gpuDataList.push_back(gpuStore.add(gpuPath, 0.0f));
     shaderList.push_back(shaderStore.add(vPath, fPath));
 
     transformOverrides = false;

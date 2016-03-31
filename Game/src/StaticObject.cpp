@@ -1,7 +1,7 @@
 #include "StaticObject.h"
 
 
-StaticObject::StaticObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath, float angle)
+StaticObject::StaticObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath)
 {
 
 
@@ -28,7 +28,7 @@ StaticObject::StaticObject(float x, float y, float scale, float elast, float fri
 
     for(int i = 0; i < vertCount; i++)
     {
-        glm::vec4 currentVert = glm::translate(glm::mat4(1.0f), pos) * glm::scale(glm::mat4(1.0f), modelScale) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0,0,1)) * gpuData->rotation * gpuData->unitScale * glm::vec4(gpuData->vList[i],0);
+        glm::vec4 currentVert = glm::translate(glm::mat4(1.0f), pos) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale * glm::vec4(gpuData->vList[i],0);
         vertices[i] = cpv(currentVert.x, currentVert.y);
     }
 

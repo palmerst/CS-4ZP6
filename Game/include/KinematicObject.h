@@ -17,7 +17,7 @@ public:
       \param gpuData Pointer to the gpu data associated with the object
       \param type Type of object (different values affect collision routines)
     */
-    KinematicObject(cpSpace* space, cpVect p1, cpVect p2, ObjGPUData* gpuData, int type);
+    KinematicObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath);
 
 };
 

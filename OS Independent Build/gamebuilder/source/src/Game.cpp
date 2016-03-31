@@ -149,7 +149,7 @@ void Game::run()
             if(env->nextEnv)
             {
                 Environment* temp = env->nextEnv;
-                delete env;
+                delete (Stage*)env;
                 env = temp;
             }
             else
@@ -179,7 +179,7 @@ void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 18000.0f));
+    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 30000.0f));
 
     winX = width;
     winY = height;

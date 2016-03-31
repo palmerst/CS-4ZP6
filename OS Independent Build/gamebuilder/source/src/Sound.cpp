@@ -108,3 +108,9 @@ void Sound::play(int loop)
     }
 }
 
+void Sound::stop(){
+    if(loaded)
+    {
+        alSourceStop(audioSource);
+    }
+}

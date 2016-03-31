@@ -3,6 +3,8 @@
 #include "Hero.h"
 #include "Surface.h"
 
+#include <iostream>
+
 void setCollisionHandlers(cpSpace* space)
 {
     cpCollisionHandler* colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_BOULDER);
@@ -11,6 +13,8 @@ void setCollisionHandlers(cpSpace* space)
     colHand->separateFunc = (cpCollisionSeparateFunc) separate_generic_hero_objectsurface;
     colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_FATAL_HAZARD);
     colHand->beginFunc = (cpCollisionBeginFunc) begin_hero_fatal_collision;
+    colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_generic_hero_objectsurface;
+    colHand->separateFunc = (cpCollisionSeparateFunc) separate_generic_hero_objectsurface;
     colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_SURFACE);
     colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_surface;
     colHand->separateFunc = (cpCollisionSeparateFunc) separate_hero_surface;
@@ -90,7 +94,6 @@ int begin_hero_fatal_collision(cpArbiter *arb, cpSpace *space, void *unused)
             return 0;
         }
     }
-
 
     return 1;
 }
