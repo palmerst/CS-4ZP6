@@ -24,7 +24,7 @@ Stage::Stage(std::string stageName)
 
     /** STAGE DESIGN GOES BELOW HERE **/
 
-    StageLoader* ns = new StageLoader("./data/stage/st2.stage", physicsObjects, standardObjects, skybox, boundary, userControlObject);
+    StageLoader* ns = new StageLoader("./data/stage/st2.stage", physicsObjects, kinematicObjects, standardObjects, skybox, boundary, userControlObject);
 
     /** STAGE DESIGN GOES ABOVE HERE **/
 
@@ -87,27 +87,27 @@ void Stage::processContinuousInput()
             cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D] && !keyStates[GLFW_KEY_LEFT] && !keyStates[GLFW_KEY_RIGHT])
-    {
-        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x != 0)
-        {
-            curVel.x /= 1.1;
-            if(curVel.x > -100 || curVel.x < 100)
-                curVel.x = 0;
-            cpBodySetVelocity(userControlObject->body, curVel);
-        }
+   {
+//        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
+//        if(curVel.x != 0)
+//        {
+//            curVel.x /= 1.1;
+//            if(curVel.x > -100 || curVel.x < 100)
+//                curVel.x = 0;
+//            cpBodySetVelocity(userControlObject->body, curVel);
+//        }
+            cpShapeSetFriction(userControlObject->shape, 1.0f);
     }
 
     if(keyStates[GLFW_KEY_SPACE])
     {
-        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         //            if(curVel.y < 0.5 && curVel.y > -0.5){
         //                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
         //                soundMap.find("Jump")->second->play();
         //            }
         if(userControlObject->canJump)
         {
-            cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
+            userControlObject->jump();
             soundMap.find("Jump")->second->play();
         }
 
@@ -142,11 +142,14 @@ void Stage::processContinuousInput()
 void Stage::processKB(int key, int scancode, int action, int mods)
 {
 
-    if(action == GLFW_PRESS)
+    if(action == GLFW_PRESS){
         keyStates[key] = 1;
-    else if(action == GLFW_RELEASE)
+        if(key == GLFW_KEY_LEFT || key == GLFW_KEY_A || key == GLFW_KEY_RIGHT || key == GLFW_KEY_D)
+            cpShapeSetFriction(userControlObject->shape, 0.0f);
+    }
+    else if(action == GLFW_RELEASE){
         keyStates[key] = 0;
-
+    }
 }
 
 
@@ -191,6 +194,9 @@ void Stage::updateEnvironment(double dt)
 {
 
     cpSpaceStep(envSpace, dt);
+    for(KinematicObject* ko : kinematicObjects)
+        ko->update(dt);
+
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
     if(firstPerson)
     {
@@ -228,6 +234,14 @@ void Stage::drawEnvironment()
 
         if(physicsObjects[i]->draw)
             physicsObjects[i]->render();
+
+    }
+
+    for(int i = 0; i < kinematicObjects.size(); i++)
+    {
+
+        if(kinematicObjects[i]->draw)
+            kinematicObjects[i]->render();
 
     }
 

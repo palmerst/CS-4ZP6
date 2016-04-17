@@ -15,6 +15,7 @@ private:
 
     /*** Objects in environment ***/
     std::vector<PhysicsObject*> physicsObjects;
+    std::vector<KinematicObject*> kinematicObjects;
     std::vector<StandardObject*> standardObjects;
 
     Skybox* skybox;

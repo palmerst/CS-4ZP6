@@ -23,7 +23,7 @@ class StageLoader {
 
     public:
 
-        StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject);
+        StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<KinematicObject*>& kinematicObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject);
 
 
         std::map<std::string, std::string> stageInfo;

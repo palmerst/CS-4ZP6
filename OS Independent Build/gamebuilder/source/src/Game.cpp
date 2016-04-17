@@ -144,7 +144,7 @@ void Game::run()
         timeElapsed += timeCurrent - timeLast;
         timeLast = timeCurrent;
 
-        if(timeElapsed >= 0.01667)
+        if(timeElapsed >= 1.0f/60.0f)
         {
             if(env->nextEnv)
             {
@@ -158,7 +158,7 @@ void Game::run()
                 glfwSwapBuffers(window);
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 env->processContinuousInput();
-                env->updateEnvironment(0.01667);
+                env->updateEnvironment(1.0f/60.0f);
                 env->drawEnvironment();
                 timeCurrent = glfwGetTime();
                 timeElapsed += timeCurrent - timeLast;

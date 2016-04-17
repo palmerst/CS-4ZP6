@@ -1,0 +1,13 @@
+# Blender MTL File: 'surface_top.blend'
+# Material Count: 1
+
+newmtl Material.001
+Ns 10
+Ka 0.200000 0.200000 0.200000
+Kd 1.0 1.0 1.0
+Ks 1.00000 1.00000 1.00000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd sand_hhh316-d4hr45u.jpg
+bump sand_bump.dds

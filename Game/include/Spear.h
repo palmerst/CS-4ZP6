@@ -10,6 +10,7 @@ class Spear : public KinematicObject
 public:
 
     Spear(float x, float y, float rotation);
+    void update(float dt);
 
 };
 

@@ -1,8 +1,9 @@
 #include "StageLoader.h"
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
-StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject){
+StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<KinematicObject*>& kinematicObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject){
 
     this->fileName = fileName;
     this->lineNo = 0;
@@ -114,6 +115,68 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
+
+        if(line == "**movingplatforms**"){
+            while(inFile.good()){
+                getNextLine();
+                if(line.empty() || line[0] == '%')
+                    continue;
+                if(line[0] == '*')
+                    break;
+
+                std::vector<cpVect> path;
+                float w, s, t;
+                t = 1;
+
+                if(sscanf(line.c_str(), "w=%f,speed=%f,thickness=%f", &w, &s, &t) >= 2){
+                    while(inFile.good()){
+                        getNextLine();
+                        if(line.empty() || line[0] == '%')
+                            continue;
+                        if(line == "end")
+                            break;
+
+                        float x, y;
+                        std::string xyModifiers;
+
+                        if(sscanf(line.c_str(), "xleft=%f,ybot=%f", &x, &y) == 2) xyModifiers = "lb";
+                        else if(sscanf(line.c_str(), "xleft=%f,ymid=%f", &x, &y) == 2) xyModifiers = "lm";
+                        else if(sscanf(line.c_str(), "xleft=%f,ytop=%f", &x, &y) == 2) xyModifiers = "lt";
+                        else if(sscanf(line.c_str(), "xmid=%f,ybot=%f", &x, &y) == 2) xyModifiers = "mb";
+                        else if(sscanf(line.c_str(), "xmid=%f,ymid=%f", &x, &y) == 2) xyModifiers = "mm";
+                        else if(sscanf(line.c_str(), "xmid=%f,ytop=%f", &x, &y) == 2) xyModifiers = "mt";
+                        else if(sscanf(line.c_str(), "xright=%f,ybot=%f", &x, &y) == 2) xyModifiers = "rb";
+                        else if(sscanf(line.c_str(), "xright=%f,ymid=%f", &x, &y) == 2) xyModifiers = "rm";
+                        else if(sscanf(line.c_str(), "xright=%f,ytop=%f", &x, &y) == 2) xyModifiers = "rt";
+                        else reportError();
+
+                        if(xyModifiers[0] == 'l')
+                            x += w/2.0f;
+                        else if(xyModifiers[0] == 'r')
+                            x -= w/2.0f;
+
+                        if(xyModifiers[1] == 'b')
+                            y += t/2.0f;
+                        else if(xyModifiers[1] == 't')
+                            y -= t/2.0f;
+
+                        x *= scaleFactor;
+                        y *= scaleFactor;
+
+                        path.push_back(cpv(x, y));
+                    }
+
+                    w *= scaleFactor;
+                    s *= scaleFactor;
+                    s = std::min(s, 1000.0f);
+                    t *= scaleFactor;
+
+                    kinematicObjects.push_back(new MovingPlatform(w, s, path, t));
+                }
+                else reportError();
+            }
+        }
+
         if(line == "**hazards**"){
             while(inFile.good()){
                 getNextLine();

@@ -42,5 +42,11 @@ KinematicObject::KinematicObject(float x, float y, float scale, float elast, flo
     cpShapeSetUserData(shape, this);
     cpShapeSetCollisionType(shape, type);
 
+    cpBodySetVelocity(body, cpvzero);
+
     draw = true;
+}
+
+
+void KinematicObject::update(float dt){
 }

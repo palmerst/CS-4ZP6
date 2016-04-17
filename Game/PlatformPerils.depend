@@ -11272,3 +11272,807 @@
 1459449424 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\kinematicobject.cpp
 	"KinematicObject.h"
 
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Arch.cpp
+	"Arch.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Arch.h
+	"StandardObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/StandardObject.h
+	"Obj.h"
+
+1460792256 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Obj.h
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+	"glm/gtx/transform2.hpp"
+	"ObjGPUDataStore.h"
+	"ShaderStore.h"
+	"SoundStore.h"
+	<vector>
+	<string>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/_fixes.hpp
+	<cmath>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/setup.hpp
+	<cassert>
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_float.hpp
+	"setup.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/precision.hpp
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat.hpp
+	"precision.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/vec2.hpp
+	"detail/type_vec2.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/_swizzle.hpp
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/_swizzle_func.hpp
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec2.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/vec3.hpp
+	"detail/type_vec3.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec3.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/vec4.hpp
+	"detail/type_vec4.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec4.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x2.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x3.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat2x4.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x2.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x3.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat3x4.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x2.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x3.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_mat4x4.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_vec1.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/exponential.hpp
+	"detail/func_exponential.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_vector_relational.inl
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/common.hpp
+	"detail/func_common.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/packing.hpp
+	"detail/func_packing.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/type_half.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/geometric.hpp
+	"detail/func_geometric.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/matrix.hpp
+	"detail/func_matrix.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/integer.hpp
+	"detail/func_integer.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/detail/func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtc/matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtc/constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtc/constants.inl
+	<limits>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtc/matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtx/transform2.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"transform2.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtx/transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtx/transform.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/glm/gtx/transform2.inl
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/ObjGPUDataStore.h
+	<map>
+	"ObjGPUData.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/ObjGPUData.h
+	<vector>
+	<string>
+	"GL/glew.h"
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/GL/glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/ShaderStore.h
+	<map>
+	"Shader.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Shader.h
+	"GL/glew.h"
+	<map>
+	<string>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/SoundStore.h
+	<map>
+	"Sound.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Sound.h
+	"AL/alut.h"
+	<string>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/AL/alut.h
+	"alc.h"
+	"al.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/AL/alc.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/AL/al.h
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Boulder.cpp
+	"Boulder.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Boulder.h
+	"DynamicObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/DynamicObject.h
+	"PhysicsObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/PhysicsObject.h
+	"chipmunk/chipmunk.h"
+	"Obj.h"
+	"CollisionHandlers.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+	"malloc.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<ApplicationServices/ApplicationServices.h>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpVect.h
+	"chipmunk_types.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpBB.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpTransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpSpatialIndex.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpArbiter.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpBody.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpShape.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpPolyShape.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpConstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpPinJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpSlideJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpPivotJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpGrooveJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpDampedSpring.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpDampedRotarySpring.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpRotaryLimitJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpRatchetJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpGearJoint.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpSimpleMotor.h
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/chipmunk/cpSpace.h
+
+1460796860 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/CollisionHandlers.h
+	"PhysicsObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Boundary.cpp
+	"Boundary.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Boundary.h
+	"Surface.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Surface.h
+	"StaticObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/StaticObject.h
+	"PhysicsObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Camera.cpp
+	"Camera.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Camera.h
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+
+1460796883 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/CollisionHandlers.cpp
+	"CollisionHandlers.h"
+	"Hero.h"
+	"Surface.h"
+	"MovingPlatform.h"
+	<iostream>
+
+1460795882 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Hero.h
+	"DynamicObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/DynamicObject.cpp
+	"DynamicObject.h"
+	<cmath>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Environment.cpp
+	"Environment.h"
+	"Loader.h"
+	"Shader.h"
+	<stdio.h>
+	<iostream>
+	<string>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Environment.h
+	"GL/glew.h"
+	"chipmunk/chipmunk.h"
+	"GLFW/glfw3.h"
+	"IncludeObjects.h"
+	"ObjGPUData.h"
+	"Sound.h"
+	"Shader.h"
+	<map>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/GLFW/glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/IncludeObjects.h
+	"Arch.h"
+	"Boulder.h"
+	"Boundary.h"
+	"Hero.h"
+	"MovingPlatform.h"
+	"Platform.h"
+	"Ramp.h"
+	"Skybox.h"
+	"Spear.h"
+	"Spikes.h"
+	"Wall.h"
+
+1460790153 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/MovingPlatform.h
+	"KinematicObject.h"
+	<vector>
+
+1460790209 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/KinematicObject.h
+	"PhysicsObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Platform.h
+	"Surface.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Ramp.h
+	"Surface.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Skybox.h
+	"StandardObject.h"
+
+1459458911 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Spear.h
+	"KinematicObject.h"
+	"StaticObject.h"
+
+1459458911 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Spikes.h
+	"KinematicObject.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Wall.h
+	"Surface.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Loader.h
+
+1460838082 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Game.cpp
+	"GL/glew.h"
+	"GLFW/glfw3.h"
+	"AL/alut.h"
+	<cstdio>
+	<cstdlib>
+	"Game.h"
+	"ObjGPUData.h"
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Game.h
+	"GL/glew.h"
+	"GLFW/glfw3.h"
+	"Stage.h"
+	"ObjGPUData.h"
+	<map>
+
+1460790102 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Stage.h
+	"Environment.h"
+	"Camera.h"
+
+1460795902 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Hero.cpp
+	"Hero.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/ImgLoader.cpp
+	<fstream>
+	<cstdlib>
+	"GL/glew.h"
+
+1460796341 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/KinematicObject.cpp
+	"KinematicObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Loader.cpp
+	"GL/glew.h"
+	"Loader.h"
+	<fstream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstdlib>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/main.cpp
+	"Game.h"
+	<stdio.h>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Obj.cpp
+	"Obj.h"
+	<iostream>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/ObjGPUData.cpp
+	"ObjGPUData.h"
+	"ImgLoader.h"
+	<vector>
+	<cstdio>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<sstream>
+	<map>
+
+1459452848 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/ImgLoader.h
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/ObjGPUDataStore.cpp
+	"ObjGPUDataStore.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/PhysicsObject.cpp
+	"PhysicsObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Platform.cpp
+	"Platform.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Ramp.cpp
+	"Ramp.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Shader.cpp
+	"Shader.h"
+	"Loader.h"
+	<iostream>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/ShaderStore.cpp
+	"ShaderStore.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Skybox.cpp
+	"Skybox.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Sound.cpp
+	"Sound.h"
+	<cstdlib>
+	<cstdio>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/SoundStore.cpp
+	"SoundStore.h"
+
+1459458836 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Spear.cpp
+	"Spear.h"
+
+1459458836 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Spikes.cpp
+	"Spikes.h"
+	<iostream>
+
+1460837265 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Stage.cpp
+	"Stage.h"
+	"StageLoader.h"
+	<iostream>
+
+1460837265 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/StageLoader.h
+	<map>
+	<string>
+	<fstream>
+	"IncludeObjects.h"
+
+1460838064 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/StageLoader.cpp
+	"StageLoader.h"
+	<iostream>
+	<cstdlib>
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/StandardObject.cpp
+	"StandardObject.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/StaticObject.cpp
+	"StaticObject.h"
+
+1460790102 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Surface.cpp
+	"Surface.h"
+
+1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Wall.cpp
+	"Wall.h"
+
+1460794784 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/MovingPlatform.cpp
+	"MovingPlatform.h"
+
