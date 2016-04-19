@@ -38,6 +38,7 @@ Stage::Stage(std::string stageName)
 //clean
 Stage::~Stage()
 {
+    printf("FREE SPACE");
     cpSpaceFree(envSpace);
 
 printf("DELETING STAND");
@@ -73,7 +74,7 @@ printf("DELETING KIN");
 //    cpSpaceRemoveShape(envSpace, userControlObject->shape);
 //    cpSpaceRemoveBody(envSpace, userControlObject->body);
 //    cpShapeFree(userControlObject->shape);
-    cpBodyFree(userControlObject->body);
+ //   cpBodyFree(userControlObject->body);
     delete userControlObject;
 
     delete skybox;

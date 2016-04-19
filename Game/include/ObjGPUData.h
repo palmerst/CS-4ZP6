@@ -99,7 +99,7 @@ public:
 
     float whRatio;              //!< Ratio of maximum x-axis vertex separation (width) to maximum y-axis vertex separation (height)
 
-    GLuint texturePlane;
+    GLint texturePlane;
 };
 
 #endif // OBJECT_H

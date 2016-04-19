@@ -22,6 +22,7 @@ uniform mat3 NormalMatrix;
 uniform mat4 ProjectionMatrix;
 uniform mat4 MVP;
 uniform mat3 ModelView3x3;
+uniform int texturePlane;
 
 
 out vec2 UV;
@@ -34,8 +35,13 @@ out vec3 binorm;
 
 void main(){
 	gl_Position =  MVP * vec4(vertexPosition, 1.0);
-	UV = (ModelMatrix * vec4(vertexPosition, 1.0)).zy/500.0f;
     
+    if(texturePlane == 0)
+        UV = (ModelMatrix * vec4(vertexPosition, 1.0)).xy/500.0f;
+    else if(texturePlane == 1)
+        UV = (ModelMatrix * vec4(vertexPosition, 1.0)).zy/500.0f;
+    else
+        UV = (ModelMatrix * vec4(vertexPosition, 1.0)).zx/500.0f;
     
     norm = normalize(ModelView3x3*vertexNormal);
     tang = normalize(ModelView3x3*vec3(vertexTangent));

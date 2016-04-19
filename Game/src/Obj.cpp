@@ -94,7 +94,7 @@ void Obj::render(glm::vec3 pos, float angle)
 
             uniformID = currentShader->uniformIDMap.find("texturePlane");
             if(uniformID != mapEnd)
-                glUniform1ui(uniformID->second, gpuData->texturePlane);
+                glUniform1i(uniformID->second, gpuData->texturePlane);
 
             uniformID = currentShader->uniformIDMap.find("MVP");
             if(uniformID != mapEnd)
