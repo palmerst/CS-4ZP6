@@ -12,6 +12,8 @@ public:
 
     cpVect startPos;
 
+    bool dead;
+
     void death();
 
     bool canJump;
@@ -19,6 +21,10 @@ public:
     cpVect relVel;
 
     void jump();
+
+    bool levelWin;
+
+    void win();
 
 };
 

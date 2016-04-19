@@ -38,6 +38,10 @@ private:
 
     Camera camera;
 
+    int winTimer;
+
+    std::string stageName;
+
 public:
 
 

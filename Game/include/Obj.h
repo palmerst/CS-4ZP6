@@ -16,7 +16,7 @@
 #define OBJ_HERO 0x0004
 #define OBJ_MOVINGPLAT 0x0008
 #define OBJ_FATAL_HAZARD 0x0016
-
+#define OBJ_GOAL 0x0032
 
 /*! The Obj class acts as a base class for static, dynamic, and kinematic objects.  It holds the physics data (Chipmunk 2D) and gpu data of an object.
  */

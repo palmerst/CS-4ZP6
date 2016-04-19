@@ -81,16 +81,24 @@ void Obj::render(glm::vec3 pos, float angle)
             }
 
             /***  Calculate transformations used in rendering the object piece and pass to shaders ***/
+            glm::mat4 modelMatNoTranslate;
             glm::mat4 modelMat;
-            if(transformOverrides)
-                modelMat = glm::translate(glm::mat4(1.0f), pos + translationOverrideList[q]) * shearOverrideList[q] * glm::rotate(glm::mat4(1.0f), angle + rotationOverrideList[q], glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
-            else
-                modelMat = glm::translate(glm::mat4(1.0f), pos) * glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+            if(transformOverrides){
+                modelMatNoTranslate =  shearOverrideList[q] * glm::rotate(glm::mat4(1.0f), angle + rotationOverrideList[q], glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+                modelMat = glm::translate(glm::mat4(1.0f), pos + translationOverrideList[q]) * modelMatNoTranslate;
+            } else {
+                modelMatNoTranslate = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0, 0, 1)) * glm::scale(glm::mat4(1.0f), modelScale) * gpuData->rotation * gpuData->unitScale;
+                modelMat = glm::translate(glm::mat4(1.0f), pos) * modelMatNoTranslate;
+            }
             glm::mat4 modelViewMat = matView*modelMat;
             glm::mat3 modelView3x3 = glm::mat3(modelViewMat);
             glm::mat4 MVP = matProjection*modelViewMat;
             glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
             glm::vec4 primaryLightPos_ViewSpace = matView * primaryLightPos;
+
+            uniformID = currentShader->uniformIDMap.find("parallax");
+            if(uniformID != mapEnd)
+                glUniform1i(uniformID->second, gpuData->parallax);
 
             uniformID = currentShader->uniformIDMap.find("texturePlane");
             if(uniformID != mapEnd)
@@ -111,6 +119,10 @@ void Obj::render(glm::vec3 pos, float angle)
             uniformID = currentShader->uniformIDMap.find("ModelMatrix");
             if(uniformID != mapEnd)
                 glUniformMatrix4fv(uniformID->second, 1, GL_FALSE, &modelMat[0][0]);
+
+            uniformID = currentShader->uniformIDMap.find("ModelMatrixNoTranslate");
+            if(uniformID != mapEnd)
+                glUniformMatrix4fv(uniformID->second, 1, GL_FALSE, &modelMatNoTranslate[0][0]);
 
             uniformID = currentShader->uniformIDMap.find("NormalMatrix");
             if(uniformID != mapEnd)

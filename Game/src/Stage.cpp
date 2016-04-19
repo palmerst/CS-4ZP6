@@ -33,20 +33,24 @@ Stage::Stage(std::string stageName)
     soundMap.insert(std::pair<std::string, Sound*>("Jump", new Sound("./data/sound/jump.wav")));
 
     soundMap.find("Background")->second->play(1);                     //play bgm
+
+    winTimer = -1;
+
+    this->stageName = stageName;
 }
 
 //clean
 Stage::~Stage()
 {
-    printf("FREE SPACE");
+
     cpSpaceFree(envSpace);
 
-printf("DELETING STAND");
+
     while(!standardObjects.empty()){
         delete standardObjects.back();
         standardObjects.pop_back();
     }
-printf("DELETING PHYS");
+
     while(!physicsObjects.empty()){
 //        cpSpaceRemoveShape(envSpace, physicsObjects.back()->shape);
 //        cpSpaceRemoveBody(envSpace, physicsObjects.back()->body);
@@ -55,7 +59,7 @@ printf("DELETING PHYS");
         delete physicsObjects.back();
         physicsObjects.pop_back();
     }
-printf("DELETING KIN");
+
     while(!kinematicObjects.empty()){
 //        cpSpaceRemoveShape(envSpace, kinematicObjects.back()->shape);
 //        cpSpaceRemoveBody(envSpace, kinematicObjects.back()->body);
@@ -88,13 +92,15 @@ printf("DELETING KIN");
 
 void Stage::processContinuousInput()
 {
+    if(userControlObject->levelWin)
+        return;
 
     if(keyStates[GLFW_KEY_A] || keyStates[GLFW_KEY_LEFT])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x > 0)
             cpBodySetVelocity(userControlObject->body, cpv(0, curVel.y));
-        else if(curVel.x >= -1000.0)
+        if(curVel.x >= -1000.0)
             cpBodySetForce(userControlObject->body, cpv(-100000.0, 0.0));
     }
     if(keyStates[GLFW_KEY_D] || keyStates[GLFW_KEY_RIGHT])
@@ -102,7 +108,7 @@ void Stage::processContinuousInput()
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
         if(curVel.x < 0)
             cpBodySetVelocity(userControlObject->body, cpv(0, curVel.y));
-        else if(curVel.x <= 1000.0)
+        if(curVel.x <= 1000.0)
             cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D] && !keyStates[GLFW_KEY_LEFT] && !keyStates[GLFW_KEY_RIGHT])
@@ -213,6 +219,20 @@ void Stage::processMouseClick(int button, int action, int mods)
 /*** Step the space through time dt ***/
 void Stage::updateEnvironment(double dt)
 {
+    if(userControlObject->dead){
+        nextEnv = new Stage(stageName);
+        return;
+    }
+
+    if(winTimer > 0)
+        winTimer--;
+    else if(winTimer == 0){
+        nextEnv = new Menu(false);
+        return;
+    }
+    else if(userControlObject->levelWin)
+        winTimer = 250;
+
     cpSpaceStep(envSpace, dt);
     for(KinematicObject* ko : kinematicObjects)
         ko->update(dt);
@@ -239,6 +259,9 @@ void Stage::updateEnvironment(double dt)
 /*** Draw all objects/boundaries in the environment ***/
 void Stage::drawEnvironment()
 {
+    if(nextEnv)
+        return;
+
     /*** Draw skybox ***/
     glDepthMask(GL_FALSE);
     glFrontFace(GL_CW);

@@ -10482,7 +10482,7 @@
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\standardobject.h
 	"Obj.h"
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\obj.h
+1461054034 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\obj.h
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 	"glm/gtx/transform2.hpp"
@@ -10897,7 +10897,7 @@
 	<map>
 	"ObjGPUData.h"
 
-1461038488 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudata.h
+1461049958 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudata.h
 	<vector>
 	<string>
 	"GL/glew.h"
@@ -11033,7 +11033,7 @@
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpspace.h
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\collisionhandlers.h
+1461054061 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\collisionhandlers.h
 	"PhysicsObject.h"
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\boundary.cpp
@@ -11055,14 +11055,14 @@
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 
-1461034538 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
+1461056242 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
 	"CollisionHandlers.h"
 	"Hero.h"
 	"Surface.h"
 	"MovingPlatform.h"
 	<iostream>
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\hero.h
+1461057966 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\hero.h
 	"DynamicObject.h"
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\dynamicobject.cpp
@@ -11101,10 +11101,11 @@
 	<GL/glext.h>
 	<GL/glu.h>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\includeobjects.h
+1461054102 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\includeobjects.h
 	"Arch.h"
 	"Boulder.h"
 	"Boundary.h"
+	"Goal.h"
 	"Hero.h"
 	"MovingPlatform.h"
 	"Platform.h"
@@ -11142,7 +11143,7 @@
 
 1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\loader.h
 
-1461036510 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\game.cpp
+1461055429 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\game.cpp
 	"GL/glew.h"
 	"GLFW/glfw3.h"
 	"AL/alut.h"
@@ -11157,11 +11158,11 @@
 	"GLFW/glfw3.h"
 	"Environment.h"
 
-1461030082 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stage.h
+1461058014 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stage.h
 	"Environment.h"
 	"Camera.h"
 
-1461034417 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\hero.cpp
+1461057966 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\hero.cpp
 	"Hero.h"
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\imgloader.cpp
@@ -11182,7 +11183,7 @@
 	"Game.h"
 	<stdio.h>
 
-1461038558 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\obj.cpp
+1461050869 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\obj.cpp
 	"Obj.h"
 	<iostream>
 
@@ -11205,10 +11206,10 @@
 1460861223 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\physicsobject.cpp
 	"PhysicsObject.h"
 
-1461038756 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\platform.cpp
+1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\platform.cpp
 	"Platform.h"
 
-1461038446 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\ramp.cpp
+1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\ramp.cpp
 	"Ramp.h"
 
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\shader.cpp
@@ -11237,7 +11238,7 @@
 	"Spikes.h"
 	<iostream>
 
-1461037242 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
+1461058789 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
 	"Stage.h"
 	"StageLoader.h"
 	<iostream>
@@ -11249,7 +11250,7 @@
 	<fstream>
 	"IncludeObjects.h"
 
-1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
+1461055878 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
 	"StageLoader.h"
 	<iostream>
 	<cstdlib>
@@ -11264,7 +11265,7 @@
 1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\surface.cpp
 	"Surface.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\wall.cpp
+1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\wall.cpp
 	"Wall.h"
 
 1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\kinematicobject.cpp
@@ -12070,10 +12071,10 @@
 1461042450 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/MovingPlatform.cpp
 	"MovingPlatform.h"
 
-1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\movingplatform.cpp
+1461050869 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\movingplatform.cpp
 	"MovingPlatform.h"
 
-1461036789 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\menu.cpp
+1461059311 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\menu.cpp
 	"Menu.h"
 	"GL/glew.h"
 	"Obj.h"
@@ -12098,4 +12099,10 @@
 	<stdlib.h>
 	<iostream>
 	"Stage.h"
+
+1461053046 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\goal.h
+	"Surface.h"
+
+1461054034 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\goal.cpp
+	"Goal.h"
 

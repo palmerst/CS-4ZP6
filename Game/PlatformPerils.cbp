@@ -41,7 +41,7 @@
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add option='[[if(PLATFORM == PLATFORM_MSW) {print(&quot;-Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lopenal32 -lalut -lwinmm&quot;); } else if(PLATFORM == PLATFORM_GTK ) {print(&quot;-Llib/linux -lglfw3 -lGLEW -lGL -lchipmunk -lalut -lopenal -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lpthread -ldl -Wl,-R../../lib/linux&quot;); };]]' />
+			<Add option='[[if(PLATFORM == PLATFORM_MSW) {print(&quot;-Llib/win -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lopenal32 -lalut -lwinmm&quot;); } else if(PLATFORM == PLATFORM_GTK ) {print(&quot;-Llib/linux -lglfw3 -lGLEW -lGLU -lGL -lchipmunk -lalut -lopenal -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lpthread -ldl -Wl,-R../../lib/linux&quot;); };]]' />
 		</Linker>
 		<Unit filename="include/Arch.h" />
 		<Unit filename="include/Boulder.h" />
@@ -51,6 +51,7 @@
 		<Unit filename="include/DynamicObject.h" />
 		<Unit filename="include/Environment.h" />
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/Goal.h" />
 		<Unit filename="include/Hero.h" />
 		<Unit filename="include/ImgLoader.h" />
 		<Unit filename="include/IncludeObjects.h" />
@@ -85,10 +86,12 @@
 		<Unit filename="src/DynamicObject.cpp" />
 		<Unit filename="src/Environment.cpp" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Goal.cpp" />
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/ImgLoader.cpp" />
 		<Unit filename="src/KinematicObject.cpp" />
 		<Unit filename="src/Loader.cpp" />
+		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/MovingPlatform.cpp" />
 		<Unit filename="src/Obj.cpp" />
 		<Unit filename="src/ObjGPUData.cpp" />

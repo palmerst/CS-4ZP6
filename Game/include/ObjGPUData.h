@@ -100,6 +100,7 @@ public:
     float whRatio;              //!< Ratio of maximum x-axis vertex separation (width) to maximum y-axis vertex separation (height)
 
     GLint texturePlane;
+    GLboolean parallax = false;
 };
 
 #endif // OBJECT_H

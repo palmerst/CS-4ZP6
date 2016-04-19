@@ -210,7 +210,8 @@ void MenuLevel2Handler(void* pParam)
 //!< <menu>level three
 void MenuLevel3Handler(void* pParam)
 {
-
+    Menu *mgr = (Menu*)pParam;
+    mgr->nextEnv = new Stage("./data/stage/st3.stage");
 }
 
 void MenuLevelBackHandler(void*pParam)
@@ -258,7 +259,7 @@ Menu::Menu(bool inGame)
     s_bkImg = load_bmpdata(szBg,&s_bkImgWdith,&s_bkImgHeight);
 
     addNewItem(szMainNormal,szMainNormal,szMainClicked,10,2,MenuMainHandler,this,0,false,true);
-    addNewItem(szSettingNormal,szSettingNormal,szSettingClicked,120,2,MenuSettingHandler,this,0,false,true);
+ //   addNewItem(szSettingNormal,szSettingNormal,szSettingClicked,120,2,MenuSettingHandler,this,0,false,true);
     addNewItem(szNewgameNormal,szNewgameNormal,szNewgameClicked,0,1,MenuNewgameHandler,this,1,true);
     addNewItem(szLevselectNormal,szLevselectNormal,szLevselectClicked,0,2,MenuLevSelectHandler,this,1,true);
     addNewItem(szContinueNormal,szContinueNormal,szContinueClicked,0,3,MenuContinueHandler,this,1,true);

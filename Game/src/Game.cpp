@@ -140,6 +140,8 @@ Game::~Game()
 void Game::run()
 {
 
+    double frameMin = 1.0/60.0;
+
     while (!glfwWindowShouldClose(window))
     {
         /*** Update environment through elapsed time step and draw ***/
@@ -147,7 +149,7 @@ void Game::run()
         timeElapsed += timeCurrent - timeLast;
         timeLast = timeCurrent;
 
-        if(timeElapsed >= 0.01667)
+        if(timeElapsed >= frameMin)
         {
             Environment* curEnv = env;
             while(curEnv){
@@ -166,12 +168,12 @@ void Game::run()
             glfwSwapBuffers(window);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             env->processContinuousInput();
-            env->updateEnvironment(0.01667);
+            env->updateEnvironment(frameMin);
             env->drawEnvironment();
             Environment* overlay = env->overlay;
             while(overlay){
                 overlay->processContinuousInput();
-                overlay->updateEnvironment(0.01667);
+                overlay->updateEnvironment(frameMin);
                 overlay->drawEnvironment();
                 overlay = overlay->overlay;
             }

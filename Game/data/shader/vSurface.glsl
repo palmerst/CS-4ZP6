@@ -18,11 +18,12 @@ uniform LightInfo Light;
 
 uniform mat4 ModelViewMatrix;
 uniform mat4 ModelMatrix;
+uniform mat4 ModelMatrixNoTranslate;
 uniform mat3 NormalMatrix;
 uniform mat4 ProjectionMatrix;
 uniform mat4 MVP;
 uniform mat3 ModelView3x3;
-uniform uint texturePlane;
+uniform int texturePlane;
 
 
 out vec2 UV;
@@ -40,9 +41,15 @@ void main(){
         UV = (ModelMatrix * vec4(vertexPosition, 1.0)).xy/500.0f;
     else if(texturePlane == 1)
         UV = (ModelMatrix * vec4(vertexPosition, 1.0)).zy/500.0f;
-    else
+    else if(texturePlane == 2)
         UV = (ModelMatrix * vec4(vertexPosition, 1.0)).zx/500.0f;
-    
+    else if(texturePlane == 3)
+        UV = (ModelMatrixNoTranslate * vec4(vertexPosition, 1.0)).xy/500.0f;
+    else if(texturePlane == 4)
+        UV = (ModelMatrixNoTranslate * vec4(vertexPosition, 1.0)).zy/500.0f;
+    else if(texturePlane == 5)
+        UV = (ModelMatrixNoTranslate * vec4(vertexPosition, 1.0)).zx/500.0f;
+  
     norm = normalize(ModelView3x3*vertexNormal);
     tang = normalize(ModelView3x3*vec3(vertexTangent));
     binorm = normalize(cross(norm, tang)) * vertexTangent.w;

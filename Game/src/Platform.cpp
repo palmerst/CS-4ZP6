@@ -10,12 +10,16 @@ Platform::Platform(float x1, float x2, float ymid, float thickness) : Surface(cp
     gpuDataList.back()->texturePlane = 2;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_left", 0, false));
     gpuDataList.back()->texturePlane = 1;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_right", 0, false));
     gpuDataList.back()->texturePlane = 1;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_front", 0, false));
     gpuDataList.back()->texturePlane = 0;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_back", 0, false));
     gpuDataList.back()->texturePlane = 0;
+    gpuDataList.back()->parallax = true;
     shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
     shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
     shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
