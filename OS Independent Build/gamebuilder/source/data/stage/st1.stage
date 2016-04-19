@@ -1,10 +1,12 @@
 **stage**
 background=bluesky
 setting=desert
-startx=-15.5
-starty=35.5
-endx=76
-endy=0
+startx=-25
+starty=0
+
+**goal**
+x=85 to 105, ytop=10, thickness=10
+archpos=left
 
 **platforms**
 
@@ -13,26 +15,24 @@ endy=0
     %   where <pos> is either top, bot, or mid
     %   and thickness is optionally specified
     
-x=-29 to 29, ytop=50
-x=-29 to 29, ytop=1
-x=3 to 14, ytop=20
-x=-29 to -8, ytop=27
-x=-14 to 29, ytop=36
-x=-10 to -4, ytop=13.5
-%x=90 to 95, ytop=30
-%x=85 to 90, ytop=36
-
+x=10 to 15, ytop=10, thickness=10
 
 **walls**
-xright=-29, y=15.5 to 50
 
 **ramps**
-x=29 to 90, ytop=1 to 30
-%x=0 to 85, ytop=70 to 36
+x=-20 to 10, ytop=0 to 10
 
+**movingplatforms**
+w=20, speed=4
+    xleft=15, ytop=10
+    xright=85, ytop=10
+    end
 
 **hazards**
-boulder, xmid=84, ymid=38
-upspikes, xmid=-16, ybot=1
-downspikes, xmid=-24, ytop=26
-%spears, xmid=-35, ybot=0
+spikes, xmid=20, ybot=0
+spikes, xmid=30, ybot=0
+spikes, xmid=40, ybot=0
+spikes, xmid=50, ybot=0
+spikes, xmid=60, ybot=0
+spikes, xmid=70, ybot=0
+spikes, xmid=80, ybot=0

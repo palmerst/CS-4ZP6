@@ -18,6 +18,7 @@ struct MaterialInfo {
 };
 uniform MaterialInfo Material;
 
+uniform bool parallax;
 uniform sampler2D Texture;
 uniform sampler2D Bump;
 
@@ -26,6 +27,7 @@ in vec3 norm;
 in vec3 tang;
 in vec3 binorm;
 in vec3 e;
+
 
 //in vec3 s;
 //in vec3 v;
@@ -80,7 +82,11 @@ void main()
     
     float height = texture(Bump, UV).a;
     float v = height * 0.08 - 0.04;
-    vec2 UVadj = UV + (e_TSpace.xy * v);
+    vec2 UVadj;
+    if(parallax)
+        UVadj = UV + (e_TSpace.xy * v);
+    else
+        UVadj = UV;
     vec4 texColor = texture(Texture, UVadj).rgba;
 	if(texColor.a == 0){
 		discard;
