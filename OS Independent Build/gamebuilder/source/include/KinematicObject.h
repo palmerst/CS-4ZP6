@@ -9,6 +9,8 @@ class KinematicObject : public PhysicsObject
 {
 
 public:
+
+    KinematicObject() {}
     //! DynamicObject constructor
     /*!
       \param space Chipmunk 2D space to attach object to
@@ -19,6 +21,7 @@ public:
     */
     KinematicObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath);
 
+    virtual void update(float dt);
 };
 
 #endif // KINEMATICOBJECT_H_INCLUDED

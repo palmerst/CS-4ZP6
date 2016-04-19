@@ -2,6 +2,13 @@
 
 cpSpace* PhysicsObject::space = 0;
 
+PhysicsObject::~PhysicsObject(){
+
+    cpBodyFree(body);
+    cpShapeFree(shape);
+
+}
+
 void PhysicsObject::render()
 {
 

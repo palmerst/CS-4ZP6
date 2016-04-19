@@ -92,6 +92,10 @@ void Obj::render(glm::vec3 pos, float angle)
             glm::mat3 normalMat = glm::transpose(glm::inverse(glm::mat3(modelViewMat)));
             glm::vec4 primaryLightPos_ViewSpace = matView * primaryLightPos;
 
+            uniformID = currentShader->uniformIDMap.find("texturePlane");
+            if(uniformID != mapEnd)
+                glUniform1ui(uniformID->second, gpuData->texturePlane);
+
             uniformID = currentShader->uniformIDMap.find("MVP");
             if(uniformID != mapEnd)
                 glUniformMatrix4fv(uniformID->second, 1, GL_FALSE, &MVP[0][0]);

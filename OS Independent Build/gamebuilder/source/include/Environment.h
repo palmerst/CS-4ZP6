@@ -40,6 +40,8 @@ protected:
 
 public:
 
+    virtual ~Environment(){}
+
     int keyStates[GLFW_KEY_LAST] = {0};  //!< Array that keeps track of keyboard keys currently pressed down.
 
     //! Pure virtual function (i.e. defined by derived classes) for updating the environment.

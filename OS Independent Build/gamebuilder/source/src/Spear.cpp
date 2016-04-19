@@ -12,6 +12,9 @@ Spear::Spear(float x, float y, float rotation) : KinematicObject(x, y, 500.0f, 0
     cpBodySetAngle(body, rotation);
 }
 
+void Spear::update(float dt){
+}
+
 Spears::Spears(float x, float y) : StaticObject(x, y, 500.0f, 0.05f, 1.0f, OBJ_FATAL_HAZARD, "./data/obj/spears", "./data/shader/vObject.glsl", "./data/shader/fObject.glsl")
 {
     deathNormal = cpv(0, 1);

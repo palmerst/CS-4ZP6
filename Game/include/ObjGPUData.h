@@ -98,6 +98,8 @@ public:
     glm::mat4 rotation;         //!< Rotation about y-axis to adjust objects initial rotational centering (if required:  this is what the optional constructor argument sets)
 
     float whRatio;              //!< Ratio of maximum x-axis vertex separation (width) to maximum y-axis vertex separation (height)
+
+    GLuint texturePlane;
 };
 
 #endif // OBJECT_H

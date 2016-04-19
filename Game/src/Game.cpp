@@ -5,8 +5,8 @@
 #include <cstdlib>
 
 #include "Game.h"
-#include "ObjGPUData.h"
-
+#include "Stage.h"
+#include "Menu.h"
 
 Game::Game(int count, char** argv)
 {
@@ -20,10 +20,10 @@ Game::Game(int count, char** argv)
 
     /*** Use multisampling ***/
     glfwWindowHint(GLFW_SAMPLES, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+//    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     /*** Create a windowed mode window and its OpenGL context ***/
     window = glfwCreateWindow(1800, 1200, "Untitled Game", NULL, NULL);
@@ -34,7 +34,7 @@ Game::Game(int count, char** argv)
     }
 
     winX = 1800;
-    winY = 1000;
+    winY = 1200;
 
     /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
@@ -115,10 +115,13 @@ Game::Game(int count, char** argv)
     glfwSetCursorPosCallback(window, mposfunc);
     glfwSetMouseButtonCallback(window, mbutfunc);
 
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+  //  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     /*** Associate an environment with the game ***/
-    env = new Stage(std::string());
+   // env = new Stage(std::string());
+//   Environment::screenHeight = 1000;
+//   Environment::screenWidth = 1800;
+    env = new Menu(false);
 
     glfwSetWindowSize(window, 1800, 1000);
 
@@ -146,30 +149,43 @@ void Game::run()
 
         if(timeElapsed >= 0.01667)
         {
-            if(env->nextEnv)
-            {
-                Environment* temp = env->nextEnv;
-                delete (Stage*)env;
-                env = temp;
+            Environment* curEnv = env;
+            while(curEnv){
+                if(curEnv->nextEnv)
+                {
+                    Environment* temp = curEnv->nextEnv;
+                    delete env;
+                    env = temp;
+                }
+
+                curEnv = curEnv->overlay;
             }
-            else
-            {
-                timeElapsed = 0;
-                glfwSwapBuffers(window);
-                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-                env->processContinuousInput();
-                env->updateEnvironment(0.01667);
-                env->drawEnvironment();
-                timeCurrent = glfwGetTime();
-                timeElapsed += timeCurrent - timeLast;
-                timeLast = timeCurrent;
+
+
+            timeElapsed = 0;
+            glfwSwapBuffers(window);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            env->processContinuousInput();
+            env->updateEnvironment(0.01667);
+            env->drawEnvironment();
+            Environment* overlay = env->overlay;
+            while(overlay){
+                overlay->processContinuousInput();
+                overlay->updateEnvironment(0.01667);
+                overlay->drawEnvironment();
+                overlay = overlay->overlay;
             }
+//            timeCurrent = glfwGetTime();
+//            timeElapsed += timeCurrent - timeLast;
+//            timeLast = timeCurrent;
+
         }
 
 
         /*** Poll for and process events ***/
         glfwPollEvents();
     }
+
 
     glfwTerminate();
 }
@@ -179,10 +195,15 @@ void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 30000.0f));
+    Environment::screenWidth = width;
+    Environment::screenHeight = height;
 
-    winX = width;
-    winY = height;
+    env->updateScreenSize();
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->updateScreenSize();
+        overlay = overlay->overlay;
+    }
 }
 
 
@@ -192,14 +213,29 @@ void Game::key_callback(GLFWwindow* window, int key, int scancode, int action, i
     if(key == GLFW_KEY_ESCAPE)
         exit(0);
     env->processKB(key, scancode, action, mods);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processKB(key, scancode, action, mods);
+        overlay = overlay->overlay;
+    }
 }
 
 void Game::mouse_pos_callback(GLFWwindow* window, float xpos, float ypos)
 {
-    env->processMousePosition(xpos, ypos, winX, winY);
+    env->processMousePosition(xpos, ypos);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processMousePosition(xpos, ypos);
+        overlay = overlay->overlay;
+    }
 }
 
 void Game::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    env->processMouseClick(button, action, mods, winX, winY);
+    env->processMouseClick(button, action, mods);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processMouseClick(button, action, mods);
+        overlay = overlay->overlay;
+    }
 }

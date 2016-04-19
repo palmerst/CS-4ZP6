@@ -5,7 +5,10 @@ Spikes::Spikes(float x, float y, float rotation) : KinematicObject(x, y, 380.0f,
 {
     // width to height = 1.26114
     // width @ 380 height = 479.2
-
     deathNormal = cpv(0, 1);
     cpBodySetAngle(body, rotation);
+}
+
+
+void Spikes::update(float dt){
 }

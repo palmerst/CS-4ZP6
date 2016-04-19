@@ -34,6 +34,27 @@ xright=160, y=35 to 61
 x=60 to 90, ytop=10 to 25
 x=120 to 159, ybot=50 to 60
 
+**movingplatforms**
+w=10, speed=5
+    xright=70, ytop=70
+    xleft=35, ytop=70
+    end
+w=10, speed=5
+    xleft=0, ytop=77.5
+    xright=35, ytop=77.5
+    end
+w=10, speed=5
+    xright=70, ytop=85
+    xleft=35, ytop=85
+    end
+w=10, speed=5
+    xleft=0, ytop=92.5
+    xright=35, ytop=92.5
+    end
+w=10, speed=5
+    xright=70, ytop=85
+    xleft=35, ytop=85
+    end
 
 **hazards**
 spikes, xmid=25, ybot=0

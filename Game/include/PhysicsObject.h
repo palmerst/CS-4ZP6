@@ -10,6 +10,8 @@ class PhysicsObject : public Obj
 
 public:
 
+    virtual ~PhysicsObject();
+
     static cpSpace* space;
 
     cpBody* body;           //!< Pointer to Chipmunk 2D body associated with the object.

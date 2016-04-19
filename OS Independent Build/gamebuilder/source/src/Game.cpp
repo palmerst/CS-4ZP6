@@ -34,7 +34,7 @@ Game::Game(int count, char** argv)
     }
 
     winX = 1800;
-    winY = 1000;
+    winY = 1200;
 
     /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
@@ -144,12 +144,12 @@ void Game::run()
         timeElapsed += timeCurrent - timeLast;
         timeLast = timeCurrent;
 
-        if(timeElapsed >= 1.0f/60.0f)
+        if(timeElapsed >= 0.01667)
         {
             if(env->nextEnv)
             {
                 Environment* temp = env->nextEnv;
-                delete (Stage*)env;
+                delete env;
                 env = temp;
             }
             else
@@ -158,7 +158,7 @@ void Game::run()
                 glfwSwapBuffers(window);
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 env->processContinuousInput();
-                env->updateEnvironment(1.0f/60.0f);
+                env->updateEnvironment(0.01667);
                 env->drawEnvironment();
                 timeCurrent = glfwGetTime();
                 timeElapsed += timeCurrent - timeLast;

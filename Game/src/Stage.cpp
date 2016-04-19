@@ -1,6 +1,7 @@
 #include "Stage.h"
 #include "StageLoader.h"
 #include <iostream>
+#include "Menu.h"
 
 Stage::Stage(std::string stageName)
 {
@@ -14,17 +15,17 @@ Stage::Stage(std::string stageName)
 
 
     /*** Set up projection and view matrices -- these numbers will probably change ***/
-    Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, 1.0f, 10.0f, 30000.0f);
+    Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, Environment::screenWidth/Environment::screenHeight, 10.0f, 30000.0f);
     //mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 
-    overlay = 0;
+    overlay = new Menu(true);
     nextEnv = 0;
 
     setCollisionHandlers(envSpace);
 
     /** STAGE DESIGN GOES BELOW HERE **/
 
-    StageLoader* ns = new StageLoader("./data/stage/st2.stage", physicsObjects, kinematicObjects, standardObjects, skybox, boundary, userControlObject);
+    StageLoader* ns = new StageLoader(stageName.c_str(), physicsObjects, kinematicObjects, standardObjects, skybox, boundary, userControlObject);
 
     /** STAGE DESIGN GOES ABOVE HERE **/
 
@@ -37,36 +38,49 @@ Stage::Stage(std::string stageName)
 //clean
 Stage::~Stage()
 {
+    cpSpaceFree(envSpace);
+
+printf("DELETING STAND");
     while(!standardObjects.empty()){
-        delete(standardObjects.back());
+        delete standardObjects.back();
         standardObjects.pop_back();
     }
-
+printf("DELETING PHYS");
     while(!physicsObjects.empty()){
-        cpSpaceRemoveShape(envSpace, physicsObjects.back()->shape);
-        cpSpaceRemoveBody(envSpace, physicsObjects.back()->body);
-        cpShapeFree(physicsObjects.back()->shape);
-        cpBodyFree(physicsObjects.back()->body);
-        delete(physicsObjects.back());
+//        cpSpaceRemoveShape(envSpace, physicsObjects.back()->shape);
+//        cpSpaceRemoveBody(envSpace, physicsObjects.back()->body);
+//        cpShapeFree(physicsObjects.back()->shape);
+//        cpBodyFree(physicsObjects.back()->body);
+        delete physicsObjects.back();
         physicsObjects.pop_back();
     }
+printf("DELETING KIN");
+    while(!kinematicObjects.empty()){
+//        cpSpaceRemoveShape(envSpace, kinematicObjects.back()->shape);
+//        cpSpaceRemoveBody(envSpace, kinematicObjects.back()->body);
+//        cpShapeFree(kinematicObjects.back()->shape);
+//        cpBodyFree(kinematicObjects.back()->body);
+        delete kinematicObjects.back();
+        kinematicObjects.pop_back();
+    }
 
-    cpSpaceRemoveShape(envSpace, boundary->shape);
-    cpSpaceRemoveBody(envSpace, boundary->body);
-    cpShapeFree(boundary->shape);
-    cpBodyFree(boundary->body);
-    delete(boundary);
+//    cpSpaceRemoveShape(envSpace, boundary->shape);
+//    cpSpaceRemoveBody(envSpace, boundary->body);
+//    cpShapeFree(boundary->shape);
+//    cpBodyFree(boundary->body);
+    delete boundary;
 
-    cpSpaceRemoveShape(envSpace, userControlObject->shape);
-    cpSpaceRemoveBody(envSpace, userControlObject->body);
-    cpShapeFree(userControlObject->shape);
+//    cpSpaceRemoveShape(envSpace, userControlObject->shape);
+//    cpSpaceRemoveBody(envSpace, userControlObject->body);
+//    cpShapeFree(userControlObject->shape);
     cpBodyFree(userControlObject->body);
-    delete(userControlObject);
+    delete userControlObject;
 
-    delete(skybox);
+    delete skybox;
 
-    cpSpaceFree(envSpace);
-    delete(envSpace);
+//    cpSpaceFree(envSpace);
+
+    delete overlay;
 
     soundMap.find("Background")->second->stop();
 }
@@ -77,13 +91,17 @@ void Stage::processContinuousInput()
     if(keyStates[GLFW_KEY_A] || keyStates[GLFW_KEY_LEFT])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x >= -1000.0)
+        if(curVel.x > 0)
+            cpBodySetVelocity(userControlObject->body, cpv(0, curVel.y));
+        else if(curVel.x >= -1000.0)
             cpBodySetForce(userControlObject->body, cpv(-100000.0, 0.0));
     }
     if(keyStates[GLFW_KEY_D] || keyStates[GLFW_KEY_RIGHT])
     {
         cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-        if(curVel.x <= 1000.0)
+        if(curVel.x < 0)
+            cpBodySetVelocity(userControlObject->body, cpv(0, curVel.y));
+        else if(curVel.x <= 1000.0)
             cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D] && !keyStates[GLFW_KEY_LEFT] && !keyStates[GLFW_KEY_RIGHT])
@@ -141,6 +159,8 @@ void Stage::processContinuousInput()
 
 void Stage::processKB(int key, int scancode, int action, int mods)
 {
+     if(nextEnv)
+        return;
 
     if(action == GLFW_PRESS){
         keyStates[key] = 1;
@@ -153,12 +173,12 @@ void Stage::processKB(int key, int scancode, int action, int mods)
 }
 
 
-bool Stage::processMousePosition(float xpos, float ypos, float winX, float winY)
+bool Stage::processMousePosition(float xpos, float ypos)
 {
 
     if(firstPerson)
     {
-        camera.moveOrigin((float)(ypos - mouseY)/500.0f, (float)(xpos - mouseX)/500.0f);
+        camera.moveOrigin((float)(screenHeight - mouseY)/500.0f, (float)(screenWidth - mouseX)/500.0f);
     }
 
     mouseX = xpos;
@@ -170,7 +190,7 @@ bool Stage::processMousePosition(float xpos, float ypos, float winX, float winY)
 
 
 
-void Stage::processMouseClick(int button, int action, int mods, float winX, float winY)
+void Stage::processMouseClick(int button, int action, int mods)
 {
 //    winX -= 1;
 //    winY -= 1;
@@ -192,7 +212,6 @@ void Stage::processMouseClick(int button, int action, int mods, float winX, floa
 /*** Step the space through time dt ***/
 void Stage::updateEnvironment(double dt)
 {
-
     cpSpaceStep(envSpace, dt);
     for(KinematicObject* ko : kinematicObjects)
         ko->update(dt);
@@ -219,7 +238,6 @@ void Stage::updateEnvironment(double dt)
 /*** Draw all objects/boundaries in the environment ***/
 void Stage::drawEnvironment()
 {
-
     /*** Draw skybox ***/
     glDepthMask(GL_FALSE);
     glFrontFace(GL_CW);
@@ -262,7 +280,7 @@ void Stage::drawEnvironment()
 
 
 /*** Update the projection matrix ***/
-void Environment::updateProjection(glm::mat4 newProjection)
+void Stage::updateScreenSize()
 {
-    Obj::matProjection = newProjection;
+    Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, Environment::screenWidth/Environment::screenHeight, 10.0f, 30000.0f);
 }

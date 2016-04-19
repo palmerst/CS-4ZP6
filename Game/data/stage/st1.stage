@@ -33,6 +33,6 @@ x=29 to 90, ytop=1 to 30
 
 **hazards**
 boulder, xmid=84, ymid=38
-upspikes, xmid=-16, ybot=1
-downspikes, xmid=-24, ytop=26
+spikes, xmid=-16, ybot=1
+spikes, xmid=-24, ytop=26
 %spears, xmid=-35, ybot=0

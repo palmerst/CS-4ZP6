@@ -50,7 +50,7 @@ int begin_hero_boulder_collision(cpArbiter *arb, cpSpace *space, void *unused)
     {
 
         hero->death();
-        return 0;
+        return 1;
     }
 
     return 1;
@@ -117,7 +117,7 @@ int begin_hero_fatal_collision(cpArbiter *arb, cpSpace *space, void *unused)
         if(cpvdot(cpArbiterGetNormal(arb), pObj->deathNormal) < 0)
         {
             hero->death();
-            return 0;
+            return 1;
         }
     }
 

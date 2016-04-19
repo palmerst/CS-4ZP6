@@ -16,6 +16,10 @@ public:
 
     bool canJump;
 
+    cpVect relVel;
+
+    void jump();
+
 };
 
 

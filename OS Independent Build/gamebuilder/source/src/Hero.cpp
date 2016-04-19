@@ -1,6 +1,6 @@
 #include "Hero.h"
 
-Hero::Hero(float x, float y) : DynamicObject(x, y, 200.0f, 100.0f, 0.0f, 0.0f, OBJ_HERO, "./data/obj/testchar", "./data/shader/vObject.glsl", "./data/shader/fObject.glsl")
+Hero::Hero(float x, float y) : DynamicObject(x, y, 200.0f, 100.0f, 0.0f, 1.0f, OBJ_HERO, "./data/obj/testchar", "./data/shader/vObject.glsl", "./data/shader/fObject.glsl")
 {
 
     cpBodySetMoment(body, INFINITY);
@@ -17,5 +17,16 @@ void Hero::death()
     sound->play();
     cpBodySetPosition(body, startPos);
     cpBodySetVelocity(body, cpvzero);
+
+}
+
+
+void Hero::jump()
+{
+    cpVect vel = cpBodyGetVelocity(body);
+
+    if(canJump){
+        cpBodySetVelocity(body, cpv(vel.x, relVel.y + 1150.0));
+    }
 
 }

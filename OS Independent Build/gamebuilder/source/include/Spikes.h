@@ -9,6 +9,7 @@ class Spikes : public KinematicObject
 public:
 
     Spikes(float x, float y, float rotation = 0.0f);
+    void update(float dt);
 
 };
 
