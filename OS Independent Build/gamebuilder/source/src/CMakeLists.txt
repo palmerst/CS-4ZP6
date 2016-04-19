@@ -30,7 +30,7 @@ endif()
 
 if(UNIX AND NOT APPLE)
 
-    target_link_libraries(game glfw glew GL chipmunk freealut openal X11 Xi Xrandr Xxf86vm Xinerama Xcursor pthread dl)
+    target_link_libraries(game glfw glew GLU GL chipmunk freealut openal X11 Xi Xrandr Xxf86vm Xinerama Xcursor pthread dl)
     
 endif()
 

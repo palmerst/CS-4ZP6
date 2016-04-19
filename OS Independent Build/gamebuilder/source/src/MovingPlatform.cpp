@@ -29,17 +29,27 @@ MovingPlatform::MovingPlatform(float w, float speed, std::vector<cpVect>& path, 
     standingNormal = cpv(0, 1);
 
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_top", 0, false));
+    gpuDataList.back()->texturePlane = 5;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_bot", 0, false));
+    gpuDataList.back()->texturePlane = 5;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_left", 0, false));
+    gpuDataList.back()->texturePlane = 4;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_right", 0, false));
+    gpuDataList.back()->texturePlane = 4;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_front", 0, false));
+    gpuDataList.back()->texturePlane = 3;
+    gpuDataList.back()->parallax = true;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_back", 0, false));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceXZ.glsl", "./data/shader/fObject.glsl"));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceXZ.glsl", "./data/shader/fObject.glsl"));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceYZ.glsl", "./data/shader/fObject.glsl"));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceYZ.glsl", "./data/shader/fObject.glsl"));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceXY.glsl", "./data/shader/fObject.glsl"));
-    shaderList.push_back(shaderStore.add("./data/shader/vSurfaceXY.glsl", "./data/shader/fObject.glsl"));
+    gpuDataList.back()->texturePlane = 3;
+    gpuDataList.back()->parallax = true;
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
+    shaderList.push_back(shaderStore.add("./data/shader/vSurface.glsl", "./data/shader/fObject.glsl"));
 
 
     cpShapeSetElasticity(shape, 0.5f);

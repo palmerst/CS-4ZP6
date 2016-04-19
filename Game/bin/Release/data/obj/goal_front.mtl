@@ -1,0 +1,13 @@
+# Blender MTL File: 'surface_left.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 80
+Ka 0.500000 0.500000 0.500000
+Kd 1.0000 1.0000 1.0000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Tileable_Checkered_Floor.dds
+bump Tileable_Checkered_Floor_BUMP.dds

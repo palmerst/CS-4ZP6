@@ -3,9 +3,7 @@
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-#include "Stage.h"
-#include "ObjGPUData.h"
-#include <map>
+#include "Environment.h"
 
 /*! The Game class is a representation of the game on the highest level.  It handles all exchanges between the user and the game code.  It keeps a reference to the game window as well as the current environment of the game (main menu, stage, etc) and acts as a bridge between the two.
  *  User inputs are intercepted through GLFW callbacks in this class and passed on for processing by the current game environment.

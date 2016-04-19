@@ -9,6 +9,7 @@ int begin_single_deletion_collision(cpArbiter*, cpSpace*, cpDataPointer);
 int begin_hero_boulder_collision(cpArbiter*, cpSpace*, cpDataPointer);
 int begin_hero_fatal_collision(cpArbiter*, cpSpace*, cpDataPointer);
 int presolve_hero_surface(cpArbiter*, cpSpace*, cpDataPointer);
+int presolve_hero_goal(cpArbiter*, cpSpace*, cpDataPointer);
 int presolve_hero_movingplat(cpArbiter*, cpSpace*, cpDataPointer);
 void separate_hero_surface(cpArbiter*, cpSpace*, cpDataPointer);
 int begin_knockback(cpArbiter*, cpSpace*, void*);

@@ -4,6 +4,7 @@
 #include "Arch.h"
 #include "Boulder.h"
 #include "Boundary.h"
+#include "Goal.h"
 #include "Hero.h"
 #include "MovingPlatform.h"
 #include "Platform.h"

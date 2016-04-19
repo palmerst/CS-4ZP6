@@ -78,7 +78,7 @@ public:
       \param xpos Mouse cursor x-position
       \param ypos Mouse cursor y-position
     */
-    virtual bool processMousePosition(float xpos, float ypos, float winX, float winY) = 0;
+    virtual bool processMousePosition(float xpos, float ypos) = 0;
 
     //! Pure virtual function (i.e. defined by derived classes) for mouse input processing.
     /*!
@@ -88,17 +88,19 @@ public:
       \param winX Mouse cursor x-position
       \param winY Mouse cursor y-position
     */
-    virtual void processMouseClick(int button, int action, int mods, float winX, float winY) = 0;
+    virtual void processMouseClick(int button, int action, int mods) = 0;
 
     //! Updates the projection matrix.
     /*!
       \param newProjection New matrix to replace previous.
     */
-    void updateProjection(glm::mat4 newProjection);
-
+    virtual void updateScreenSize() = 0;
 
     Environment* overlay;           //!< Environment to overlay the current environment (in-game menu).
     Environment* nextEnv;           //!< Next environment (if non-null takes effect on next frame).
+
+    static float screenWidth;
+    static float screenHeight;
 
 };
 

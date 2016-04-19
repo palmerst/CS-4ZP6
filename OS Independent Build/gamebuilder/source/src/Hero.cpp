@@ -7,6 +7,8 @@ Hero::Hero(float x, float y) : DynamicObject(x, y, 200.0f, 100.0f, 0.0f, 1.0f, O
     startPos = cpv(x, y);
 
     canJump = false;
+    levelWin = false;
+    dead = false;
 
 }
 
@@ -15,8 +17,7 @@ void Hero::death()
 
     Sound* sound = soundStore.add("./data/sound/scream.wav");
     sound->play();
-    cpBodySetPosition(body, startPos);
-    cpBodySetVelocity(body, cpvzero);
+    dead = true;
 
 }
 
@@ -29,4 +30,15 @@ void Hero::jump()
         cpBodySetVelocity(body, cpv(vel.x, relVel.y + 1150.0));
     }
 
+}
+
+void Hero::win(){
+
+    if(levelWin)
+        return;
+    levelWin = true;
+    Sound* sound = soundStore.add("./data/sound/fanfare.wav");
+    sound->play();
+    cpBodySetVelocity(body, cpvzero);
+    cpBodySetForce(body, cpvzero);
 }

@@ -42,6 +42,47 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
+        if(line == "**goal**"){
+            while(inFile.good()){
+                getNextLine();
+                if(line.empty() || line[0] == '%')
+                    continue;
+                if(line[0] == '*')
+                    break;
+                float x1, x2, y, t;
+                int pos = 0;
+                t = 1;
+
+                if(sscanf(line.c_str(), "x=%fto%f,ytop=%f,thickness=%f", &x1, &x2, &y, &t) >= 3)
+                    y -= t/2.0f;
+                else if(sscanf(line.c_str(), "x=%fto%f,ybot=%f,thickness=%f", &x1, &x2, &y, &t) >= 3)
+                    y += t/2.0f;
+                else if(sscanf(line.c_str(), "x=%fto%f,ymid=%f,thickness=%f", &x1, &x2, &y, &t) >= 3);
+                else reportError();
+
+                while(inFile.good()){
+                    getNextLine();
+                    if(line.empty() || line[0] == '%')
+                        continue;
+                    if(line[0] == '*')
+                        break;
+                    if(line == "archpos=left")
+                        pos = -1;
+                    else if(line == "archpos=right")
+                        pos = 1;
+                }
+
+                physicsObjects.push_back(new Goal(x1 * scaleFactor, x2 * scaleFactor, y * scaleFactor, t * scaleFactor));
+                if(pos == -1)
+                    standardObjects.push_back(new Arch(x1 * scaleFactor + scaleFactor, y * scaleFactor + t * scaleFactor/2.0f));
+                else if(pos == 1)
+                    standardObjects.push_back(new Arch(x2 * scaleFactor - scaleFactor, y * scaleFactor + t * scaleFactor/2.0f, true));
+                break;
+
+            }
+
+            continue;
+        }
         if(line == "**platforms**"){
             while(inFile.good()){
                 getNextLine();
@@ -263,10 +304,6 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
     if(setting == "desert"){
         boundary = boundary = new Boundary(-30000, 30000, 0, BS_SAND);
     }
-
-    checkField("endx");
-    checkField("endy");
-
 }
 
 std::string StageLoader::stripWhitespace(std::string str){

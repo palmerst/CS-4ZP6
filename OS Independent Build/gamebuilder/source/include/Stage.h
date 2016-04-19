@@ -38,6 +38,10 @@ private:
 
     Camera camera;
 
+    int winTimer;
+
+    std::string stageName;
+
 public:
 
 
@@ -68,7 +72,7 @@ public:
       \param xpos Mouse cursor x-position
       \param ypos Mouse cursor y-position
     */
-    bool processMousePosition(float xpos, float ypos, float winX, float winY);
+    bool processMousePosition(float xpos, float ypos);
 
     //! Function for mouse input processing.
     /*!
@@ -78,7 +82,7 @@ public:
       \param winX Mouse cursor x-position
       \param winY Mouse cursor y-position
     */
-    void processMouseClick(int button, int action, int mods, float winX, float winY);
+    void processMouseClick(int button, int action, int mods);
 
     //! Function checks if stage is complete.
     /*!
@@ -86,7 +90,7 @@ public:
     */
     bool checkCompletion();
 
-
+    void updateScreenSize();
 };
 
 #endif // STAGE_H_INCLUDED

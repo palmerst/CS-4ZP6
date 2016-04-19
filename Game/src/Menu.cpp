@@ -260,9 +260,9 @@ Menu::Menu(bool inGame)
 
     addNewItem(szMainNormal,szMainNormal,szMainClicked,10,2,MenuMainHandler,this,0,false,true);
  //   addNewItem(szSettingNormal,szSettingNormal,szSettingClicked,120,2,MenuSettingHandler,this,0,false,true);
-    addNewItem(szNewgameNormal,szNewgameNormal,szNewgameClicked,0,1,MenuNewgameHandler,this,1,true);
+  //  addNewItem(szNewgameNormal,szNewgameNormal,szNewgameClicked,0,1,MenuNewgameHandler,this,1,true);
     addNewItem(szLevselectNormal,szLevselectNormal,szLevselectClicked,0,2,MenuLevSelectHandler,this,1,true);
-    addNewItem(szContinueNormal,szContinueNormal,szContinueClicked,0,3,MenuContinueHandler,this,1,true);
+  //  addNewItem(szContinueNormal,szContinueNormal,szContinueClicked,0,3,MenuContinueHandler,this,1,true);
     addNewItem(szQuitNormal,szQuitNormal,szQuitClicked,0,4,MenuQuitHandler,this,1,true);
    // addNewItem(szMusiconNormal,szMusiconNormal,szMusiconClicked,0,1,MenuMusicHandler,this,2);
    // addNewItem(szSoundonNormal,szSoundonNormal,szSoundonClicked,0,2,MenuSoundHandler,this,2);

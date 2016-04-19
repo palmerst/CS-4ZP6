@@ -22,6 +22,8 @@ void setCollisionHandlers(cpSpace* space)
         colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_MOVINGPLAT);
     colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_movingplat;
     colHand->separateFunc = (cpCollisionSeparateFunc) separate_hero_surface;
+        colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_GOAL);
+    colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_goal;
     //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_SURFACE);
     // colHand->beginFunc = (cpCollisionBeginFunc) begin_single_deletion_collision;
     //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_ENEMY);
@@ -50,7 +52,7 @@ int begin_hero_boulder_collision(cpArbiter *arb, cpSpace *space, void *unused)
     {
 
         hero->death();
-        return 0;
+        return 1;
     }
 
     return 1;
@@ -117,7 +119,7 @@ int begin_hero_fatal_collision(cpArbiter *arb, cpSpace *space, void *unused)
         if(cpvdot(cpArbiterGetNormal(arb), pObj->deathNormal) < 0)
         {
             hero->death();
-            return 0;
+            return 1;
         }
     }
 
@@ -162,6 +164,20 @@ void separate_hero_surface(cpArbiter *arb, cpSpace *space, void *unused)
     hero->canJump = false;
 }
 
+
+int presolve_hero_goal(cpArbiter *arb, cpSpace *space, void *unused)
+{
+    CP_ARBITER_GET_SHAPES(arb, a, b);
+    Hero* hero = static_cast<Hero*> (cpShapeGetUserData(a));
+    Surface* surface = static_cast<Surface*> (cpShapeGetUserData(b));
+
+    if(cpvdot(cpArbiterGetNormal(arb), surface->standingNormal) < 0)
+    {
+        hero->win();
+    }
+
+    return 1;
+}
 
 //int begin_hero_boulder_collision(cpArbiter *arb, cpSpace *space, void *unused)
 //{
