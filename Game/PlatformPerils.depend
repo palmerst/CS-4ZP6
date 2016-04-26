@@ -10473,16 +10473,16 @@
 	<iostream>
 	<cstdlib>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\arch.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\arch.cpp
 	"Arch.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\arch.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\arch.h
 	"StandardObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\standardobject.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\standardobject.h
 	"Obj.h"
 
-1461054034 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\obj.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\obj.h
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 	"glm/gtx/transform2.hpp"
@@ -10492,7 +10492,7 @@
 	<vector>
 	<string>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\glm.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\glm.hpp
 	"detail/_fixes.hpp"
 	<cmath>
 	<climits>
@@ -10521,20 +10521,20 @@
 	"vector_relational.hpp"
 	"integer.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_fixes.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_fixes.hpp
 	<cmath>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\fwd.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\fwd.hpp
 	"detail/type_int.hpp"
 	"detail/type_float.hpp"
 	"detail/type_vec.hpp"
 	"detail/type_mat.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_int.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_int.hpp
 	"setup.hpp"
 	<cstdint>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\setup.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\setup.hpp
 	<cassert>
 	<cuda.h>
 	<intrin.h>
@@ -10544,50 +10544,50 @@
 	<pmmintrin.h>
 	<emmintrin.h>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_float.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_float.hpp
 	"setup.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec.hpp
 	"precision.hpp"
 	"type_int.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\precision.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\precision.hpp
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat.hpp
 	"precision.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec2.hpp
 	"detail/type_vec2.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec2.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec2.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_swizzle.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_swizzle.hpp
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_swizzle_func.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_swizzle_func.hpp
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec2.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec2.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec3.hpp
 	"detail/type_vec3.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec3.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec3.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec3.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec3.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vec4.hpp
 	"detail/type_vec4.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec4.hpp
 	"setup.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -10595,24 +10595,24 @@
 	<cstddef>
 	"type_vec4.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec4.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec4.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x2.hpp
 	"detail/type_mat2x2.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat2x2.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x2.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x2.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x3.hpp
 	"detail/type_mat2x3.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x3.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -10620,12 +10620,12 @@
 	<limits>
 	"type_mat2x3.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x3.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x3.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat2x4.hpp
 	"detail/type_mat2x4.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x4.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -10633,12 +10633,12 @@
 	<limits>
 	"type_mat2x4.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x4.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat2x4.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x2.hpp
 	"detail/type_mat3x2.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -10646,24 +10646,24 @@
 	<limits>
 	"type_mat3x2.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x2.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x2.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x3.hpp
 	"detail/type_mat3x3.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_mat.hpp"
 	<limits>
 	"type_mat3x3.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x3.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x3.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat3x4.hpp
 	"detail/type_mat3x4.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x4.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -10671,12 +10671,12 @@
 	<limits>
 	"type_mat3x4.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x4.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat3x4.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x2.hpp
 	"detail/type_mat4x2.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -10684,12 +10684,12 @@
 	<limits>
 	"type_mat4x2.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x2.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x2.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x3.hpp
 	"detail/type_mat4x3.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x3.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -10697,12 +10697,12 @@
 	<limits>
 	"type_mat4x3.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x3.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x3.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\mat4x4.hpp
 	"detail/type_mat4x4.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x4.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x4.hpp
 	"../fwd.hpp"
 	"type_vec4.hpp"
 	"type_mat.hpp"
@@ -10710,26 +10710,26 @@
 	<cstddef>
 	"type_mat4x4.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x4.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_mat4x4.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\trigonometric.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\trigonometric.hpp
 	"detail/func_trigonometric.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_trigonometric.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_trigonometric.hpp
 	"func_trigonometric.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_trigonometric.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_trigonometric.inl
 	"_vectorize.hpp"
 	<cmath>
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_vectorize.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\_vectorize.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec1.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec1.hpp
 	"../fwd.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -10737,12 +10737,12 @@
 	<cstddef>
 	"type_vec1.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec1.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_vec1.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\exponential.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\exponential.hpp
 	"detail/func_exponential.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_exponential.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_exponential.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -10750,31 +10750,31 @@
 	<cmath>
 	"func_exponential.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_exponential.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_exponential.inl
 	"func_vector_relational.hpp"
 	"_vectorize.hpp"
 	<limits>
 	<cassert>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_vector_relational.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_vector_relational.hpp
 	"precision.hpp"
 	"setup.hpp"
 	"func_vector_relational.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_vector_relational.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_vector_relational.inl
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\common.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\common.hpp
 	"detail/func_common.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_common.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_common.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"type_int.hpp"
 	"_fixes.hpp"
 	"func_common.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_common.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_common.inl
 	"func_vector_relational.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -10782,43 +10782,43 @@
 	"_vectorize.hpp"
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\packing.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\packing.hpp
 	"detail/func_packing.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_packing.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_packing.hpp
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"func_packing.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_packing.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_packing.inl
 	"func_common.hpp"
 	"type_half.hpp"
 	"../fwd.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_half.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_half.hpp
 	"setup.hpp"
 	"type_half.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_half.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\type_half.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\geometric.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\geometric.hpp
 	"detail/func_geometric.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_geometric.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_geometric.hpp
 	"type_vec3.hpp"
 	"func_geometric.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_geometric.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_geometric.inl
 	"func_exponential.hpp"
 	"func_common.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"type_float.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\matrix.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\matrix.hpp
 	"detail/func_matrix.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_matrix.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_matrix.hpp
 	"../detail/precision.hpp"
 	"../detail/setup.hpp"
 	"../detail/type_mat.hpp"
@@ -10836,21 +10836,21 @@
 	"../mat4x4.hpp"
 	"func_matrix.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_matrix.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_matrix.inl
 	"../geometric.hpp"
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vector_relational.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\vector_relational.hpp
 	"detail/func_vector_relational.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\integer.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\integer.hpp
 	"detail/func_integer.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_integer.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_integer.hpp
 	"setup.hpp"
 	"func_integer.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_integer.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\detail\func_integer.inl
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -10859,7 +10859,7 @@
 	<intrin.h>
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\matrix_transform.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\matrix_transform.hpp
 	"../mat4x4.hpp"
 	"../vec2.hpp"
 	"../vec3.hpp"
@@ -10867,44 +10867,44 @@
 	"../gtc/constants.hpp"
 	"matrix_transform.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\constants.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\constants.hpp
 	"../detail/setup.hpp"
 	"constants.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\constants.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\constants.inl
 	<limits>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\matrix_transform.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtc\matrix_transform.inl
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform2.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform2.hpp
 	"../glm.hpp"
 	"../gtx/transform.hpp"
 	"transform2.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform.hpp
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform.hpp
 	"../glm.hpp"
 	"../gtc/matrix_transform.hpp"
 	"transform.inl"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform2.inl
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glm\gtx\transform2.inl
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudatastore.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudatastore.h
 	<map>
 	"ObjGPUData.h"
 
-1461049958 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudata.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\objgpudata.h
 	<vector>
 	<string>
 	"GL/glew.h"
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\gl\glew.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\gl\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -10913,46 +10913,46 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\shaderstore.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\shaderstore.h
 	<map>
 	"Shader.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\shader.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\shader.h
 	"GL/glew.h"
 	<map>
 	<string>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\soundstore.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\soundstore.h
 	<map>
 	"Sound.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\sound.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\sound.h
 	"AL/alut.h"
 	<string>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\alut.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\alut.h
 	"alc.h"
 	"al.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\alc.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\alc.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\al.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\al\al.h
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\boulder.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\boulder.cpp
 	"Boulder.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\boulder.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\boulder.h
 	"DynamicObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\dynamicobject.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\dynamicobject.h
 	"PhysicsObject.h"
 
-1460861223 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\physicsobject.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\physicsobject.h
 	"chipmunk/chipmunk.h"
 	"Obj.h"
 	"CollisionHandlers.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\chipmunk.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\chipmunk.h
 	<stdlib.h>
 	<math.h>
 	<malloc.h>
@@ -10970,36 +10970,36 @@
 	"cpSpace.h"
 	"malloc.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\chipmunk_types.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\chipmunk_types.h
 	<stdint.h>
 	<float.h>
 	<math.h>
 	"TargetConditionals.h"
 	<ApplicationServices/ApplicationServices.h>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpvect.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpvect.h
 	"chipmunk_types.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpbb.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpbb.h
 	"chipmunk_types.h"
 	"cpVect.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cptransform.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cptransform.h
 	"chipmunk_types.h"
 	"cpVect.h"
 	"cpBB.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpspatialindex.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpspatialindex.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cparbiter.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cparbiter.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpbody.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpbody.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpshape.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpshape.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppolyshape.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppolyshape.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpconstraint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpconstraint.h
 	"cpPinJoint.h"
 	"cpSlideJoint.h"
 	"cpPivotJoint.h"
@@ -11011,68 +11011,68 @@
 	"cpGearJoint.h"
 	"cpSimpleMotor.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppinjoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppinjoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpslidejoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpslidejoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppivotjoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cppivotjoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpgroovejoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpgroovejoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpdampedspring.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpdampedspring.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpdampedrotaryspring.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpdampedrotaryspring.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cprotarylimitjoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cprotarylimitjoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpratchetjoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpratchetjoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpgearjoint.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpgearjoint.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpsimplemotor.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpsimplemotor.h
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpspace.h
+1461646361 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\chipmunk\cpspace.h
 
-1461054061 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\collisionhandlers.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\collisionhandlers.h
 	"PhysicsObject.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\boundary.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\boundary.cpp
 	"Boundary.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\boundary.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\boundary.h
 	"Surface.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\surface.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\surface.h
 	"StaticObject.h"
 
-1459440332 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\staticobject.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\staticobject.h
 	"PhysicsObject.h"
 
-1459450028 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\camera.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\camera.cpp
 	"Camera.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\camera.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\camera.h
 	"glm/glm.hpp"
 	"glm/gtc/matrix_transform.hpp"
 
-1461056242 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\collisionhandlers.cpp
 	"CollisionHandlers.h"
 	"Hero.h"
 	"Surface.h"
 	"MovingPlatform.h"
 	<iostream>
 
-1461057966 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\hero.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\hero.h
 	"DynamicObject.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\dynamicobject.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\dynamicobject.cpp
 	"DynamicObject.h"
 	<cmath>
 
-1461030718 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\environment.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\environment.cpp
 	"Environment.h"
 
-1461030034 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\environment.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\environment.h
 	"GL/glew.h"
 	"chipmunk/chipmunk.h"
 	"GLFW/glfw3.h"
@@ -11082,7 +11082,7 @@
 	"Shader.h"
 	<map>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glfw\glfw3.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\glfw\glfw3.h
 	<stddef.h>
 	<OpenGL/gl3.h>
 	<OpenGL/gl3ext.h>
@@ -11101,7 +11101,7 @@
 	<GL/glext.h>
 	<GL/glu.h>
 
-1461054102 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\includeobjects.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\includeobjects.h
 	"Arch.h"
 	"Boulder.h"
 	"Boundary.h"
@@ -11115,35 +11115,35 @@
 	"Spikes.h"
 	"Wall.h"
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\movingplatform.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\movingplatform.h
 	"KinematicObject.h"
 	<vector>
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\kinematicobject.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\kinematicobject.h
 	"PhysicsObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\platform.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\platform.h
 	"Surface.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\ramp.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\ramp.h
 	"Surface.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\skybox.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\skybox.h
 	"StandardObject.h"
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spear.h
+1461648211 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spear.h
 	"KinematicObject.h"
 	"StaticObject.h"
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spikes.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\spikes.h
 	"KinematicObject.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\wall.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\wall.h
 	"Surface.h"
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\loader.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\loader.h
 
-1461055429 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\game.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\game.cpp
 	"GL/glew.h"
 	"GLFW/glfw3.h"
 	"AL/alut.h"
@@ -11153,24 +11153,24 @@
 	"Stage.h"
 	"Menu.h"
 
-1461030905 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\game.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\game.h
 	"GL/glew.h"
 	"GLFW/glfw3.h"
 	"Environment.h"
 
-1461058014 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stage.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stage.h
 	"Environment.h"
 	"Camera.h"
 
-1461057966 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\hero.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\hero.cpp
 	"Hero.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\imgloader.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\imgloader.cpp
 	<fstream>
 	<cstdlib>
 	"GL/glew.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\loader.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\loader.cpp
 	"GL/glew.h"
 	"Loader.h"
 	<fstream>
@@ -11179,15 +11179,15 @@
 	<string>
 	<cstdlib>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\main.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\main.cpp
 	"Game.h"
 	<stdio.h>
 
-1461050869 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\obj.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\obj.cpp
 	"Obj.h"
 	<iostream>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\objgpudata.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\objgpudata.cpp
 	"ObjGPUData.h"
 	"ImgLoader.h"
 	<vector>
@@ -11198,77 +11198,77 @@
 	<sstream>
 	<map>
 
-1459071987 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\imgloader.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\imgloader.h
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\objgpudatastore.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\objgpudatastore.cpp
 	"ObjGPUDataStore.h"
 
-1460861223 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\physicsobject.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\physicsobject.cpp
 	"PhysicsObject.h"
 
-1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\platform.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\platform.cpp
 	"Platform.h"
 
-1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\ramp.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\ramp.cpp
 	"Ramp.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\shader.cpp
+1461648211 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\shader.cpp
 	"Shader.h"
 	"Loader.h"
 	<iostream>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\shaderstore.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\shaderstore.cpp
 	"ShaderStore.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\skybox.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\skybox.cpp
 	"Skybox.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\sound.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\sound.cpp
 	"Sound.h"
 	<cstdlib>
 	<cstdio>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\soundstore.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\soundstore.cpp
 	"SoundStore.h"
 
-1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spear.cpp
+1461648211 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spear.cpp
 	"Spear.h"
 
-1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spikes.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\spikes.cpp
 	"Spikes.h"
 	<iostream>
 
-1461058789 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stage.cpp
 	"Stage.h"
 	"StageLoader.h"
 	<iostream>
 	"Menu.h"
 
-1460856673 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stageloader.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\stageloader.h
 	<map>
 	<string>
 	<fstream>
 	"IncludeObjects.h"
 
-1461055878 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\stageloader.cpp
 	"StageLoader.h"
 	<iostream>
 	<cstdlib>
 	<cmath>
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\standardobject.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\standardobject.cpp
 	"StandardObject.h"
 
-1459440332 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\staticobject.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\staticobject.cpp
 	"StaticObject.h"
 
-1459071988 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\surface.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\surface.cpp
 	"Surface.h"
 
-1461050097 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\wall.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\wall.cpp
 	"Wall.h"
 
-1460856673 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\kinematicobject.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\kinematicobject.cpp
 	"KinematicObject.h"
 
 1459452849 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/Arch.cpp
@@ -12072,10 +12072,10 @@
 1461059731 source:/home/steve/Desktop/zp6 newest/CS-4ZP6/Game/src/MovingPlatform.cpp
 	"MovingPlatform.h"
 
-1461050869 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\movingplatform.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\movingplatform.cpp
 	"MovingPlatform.h"
 
-1461059311 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\menu.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\menu.cpp
 	"Menu.h"
 	"GL/glew.h"
 	"Obj.h"
@@ -12084,7 +12084,7 @@
 	<iostream>
 	"Stage.h"
 
-1461035772 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\menu.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\menu.h
 	<vector>
 	"Environment.h"
 
@@ -12101,10 +12101,10 @@
 	<iostream>
 	"Stage.h"
 
-1461053046 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\goal.h
+1461646360 c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\include\goal.h
 	"Surface.h"
 
-1461054034 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\goal.cpp
+1461646361 source:c:\users\steve\desktop\mcmaster\4zp6\github\cs-4zp6\game\src\goal.cpp
 	"Goal.h"
 
 1461059731 /home/steve/Desktop/zp6 newest/CS-4ZP6/Game/include/Goal.h

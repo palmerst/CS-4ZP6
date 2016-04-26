@@ -14,14 +14,4 @@ public:
 
 };
 
-
-class Spears : public StaticObject
-{
-
-public:
-
-    Spears(float x, float y);
-
-};
-
 #endif // SPEAR_H_INCLUDED

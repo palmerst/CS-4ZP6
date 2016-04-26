@@ -1,0 +1,208 @@
+\hypertarget{class_environment}{}\section{Environment Class Reference}
+\label{class_environment}\index{Environment@{Environment}}
+
+
+{\ttfamily \#include $<$Environment.\+h$>$}
+
+Inheritance diagram for Environment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_environment}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_environment_afbc95329581e994ed49a678c814657ea}{update\+Environment} (double dt)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for updating the environment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_environment_abcb85d008742da90125199da254c2c02}{draw\+Environment} ()=0\hypertarget{class_environment_abcb85d008742da90125199da254c2c02}{}\label{class_environment_abcb85d008742da90125199da254c2c02}
+
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for drawing the environment. \end{DoxyCompactList}\item 
+void \hyperlink{class_environment_ac3b35b4c49e51075063e4dbed67845fb}{change\+Shader} (\hyperlink{class_shader}{Shader} $\ast$next\+Shader)
+\begin{DoxyCompactList}\small\item\em Changes the shader program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_environment_a3a105533fb7592615f6b4321aafc5545}{process\+KB} (int key, int scancode, int action, int mods)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for keyboard input processing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_environment_ac8157c702f012ecbdf42fc868d5164a8}{process\+Continuous\+Input} ()=0\hypertarget{class_environment_ac8157c702f012ecbdf42fc868d5164a8}{}\label{class_environment_ac8157c702f012ecbdf42fc868d5164a8}
+
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for continuous input processing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_environment_a6a5f1ed78138fb882a06081992c8b34a}{process\+Mouse\+Position} (float xpos, float ypos)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for mouse position change processing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_environment_ae4d9f0521de194cbfd8894d97bd4cfa9}{process\+Mouse\+Click} (int button, int action, int mods, float winX, float winY)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function (i.\+e. defined by derived classes) for mouse input processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_environment_a46e963ec1448396e116809558774ea83}{update\+Projection} (glm\+::mat4 new\+Projection)
+\begin{DoxyCompactList}\small\item\em Updates the projection matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_environment_adb416d41b33612a7aeb2cd6a7aa46952}{key\+States} \mbox{[}G\+L\+F\+W\+\_\+\+K\+E\+Y\+\_\+\+L\+A\+ST\mbox{]} = \{0\}\hypertarget{class_environment_adb416d41b33612a7aeb2cd6a7aa46952}{}\label{class_environment_adb416d41b33612a7aeb2cd6a7aa46952}
+
+\begin{DoxyCompactList}\small\item\em Array that keeps track of keyboard keys currently pressed down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$ $>$ \hyperlink{class_environment_a63e85f9e330d8b15341d74e41445de72}{gpu\+Map}\hypertarget{class_environment_a63e85f9e330d8b15341d74e41445de72}{}\label{class_environment_a63e85f9e330d8b15341d74e41445de72}
+
+\begin{DoxyCompactList}\small\item\em Stored object data used by the G\+PU (i.\+e. meshes/texture mappings/etc.). \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{class_sound}{Sound} $\ast$ $>$ \hyperlink{class_environment_a69466b733dc5de97a737179db3622fc4}{sound\+Map}\hypertarget{class_environment_a69466b733dc5de97a737179db3622fc4}{}\label{class_environment_a69466b733dc5de97a737179db3622fc4}
+
+\begin{DoxyCompactList}\small\item\em Stored sound data. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{class_shader}{Shader} $\ast$ $>$ \hyperlink{class_environment_a88eac0ec0201cebf3dba08a7bccfbd9d}{shader\+Map}\hypertarget{class_environment_a88eac0ec0201cebf3dba08a7bccfbd9d}{}\label{class_environment_a88eac0ec0201cebf3dba08a7bccfbd9d}
+
+\begin{DoxyCompactList}\small\item\em Stored shaders. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{class_environment_ab30f0315cb97e5826fe81c2baee9ba2a}{mat\+\_\+\+Projection}\hypertarget{class_environment_ab30f0315cb97e5826fe81c2baee9ba2a}{}\label{class_environment_ab30f0315cb97e5826fe81c2baee9ba2a}
+
+\begin{DoxyCompactList}\small\item\em Projection matrix. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{class_environment_a584ebdf6c3c8590b4d353735b3a9d873}{mat\+\_\+\+View}\hypertarget{class_environment_a584ebdf6c3c8590b4d353735b3a9d873}{}\label{class_environment_a584ebdf6c3c8590b4d353735b3a9d873}
+
+\begin{DoxyCompactList}\small\item\em View matrix. \end{DoxyCompactList}\item 
+\hyperlink{class_shader}{Shader} $\ast$ \hyperlink{class_environment_aa432f1d0568f9e8c235328a3dc6059ac}{current\+Shader}\hypertarget{class_environment_aa432f1d0568f9e8c235328a3dc6059ac}{}\label{class_environment_aa432f1d0568f9e8c235328a3dc6059ac}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the shader that is currently bound. \end{DoxyCompactList}\item 
+float \hyperlink{class_environment_a6feeed21f89f92b386262a105bb40f63}{mouseX}\hypertarget{class_environment_a6feeed21f89f92b386262a105bb40f63}{}\label{class_environment_a6feeed21f89f92b386262a105bb40f63}
+
+\begin{DoxyCompactList}\small\item\em Current position of the mouse x-\/coordinate. \end{DoxyCompactList}\item 
+float \hyperlink{class_environment_afeb8f2ac0e33127ef04aa1ae710ef27c}{mouseY}\hypertarget{class_environment_afeb8f2ac0e33127ef04aa1ae710ef27c}{}\label{class_environment_afeb8f2ac0e33127ef04aa1ae710ef27c}
+
+\begin{DoxyCompactList}\small\item\em Current position of the mouse y-\/coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_environment}{Environment} class is an abstract class that holds information about the current game state and provides function calls to update and draw the game to the screen. The \hyperlink{class_stage}{Stage} and \hyperlink{class_menu}{Menu} classes are derived from this class. 
+
+\subsection{Member Function Documentation}
+\index{Environment@{Environment}!change\+Shader@{change\+Shader}}
+\index{change\+Shader@{change\+Shader}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{change\+Shader(\+Shader $\ast$next\+Shader)}{changeShader(Shader *nextShader)}}]{\setlength{\rightskip}{0pt plus 5cm}void Environment\+::change\+Shader (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader} $\ast$}]{next\+Shader}
+\end{DoxyParamCaption}
+)}\hypertarget{class_environment_ac3b35b4c49e51075063e4dbed67845fb}{}\label{class_environment_ac3b35b4c49e51075063e4dbed67845fb}
+
+
+Changes the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+Shader} & New shader to be bound. \\
+\hline
+\end{DoxyParams}
+\index{Environment@{Environment}!process\+KB@{process\+KB}}
+\index{process\+KB@{process\+KB}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{process\+K\+B(int key, int scancode, int action, int mods)=0}{processKB(int key, int scancode, int action, int mods)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Environment\+::process\+KB (
+\begin{DoxyParamCaption}
+\item[{int}]{key, }
+\item[{int}]{scancode, }
+\item[{int}]{action, }
+\item[{int}]{mods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_environment_a3a105533fb7592615f6b4321aafc5545}{}\label{class_environment_a3a105533fb7592615f6b4321aafc5545}
+
+
+Pure virtual function (i.\+e. defined by derived classes) for keyboard input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to which the action corresponds. \\
+\hline
+{\em scancode} & System specific key code. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_menu_a936bec79e70b42707578af8f7d7bc1b2}{Menu}, and \hyperlink{class_stage_ab0ac39aba2fa162499d2599c981ca3ed}{Stage}.
+
+\index{Environment@{Environment}!process\+Mouse\+Click@{process\+Mouse\+Click}}
+\index{process\+Mouse\+Click@{process\+Mouse\+Click}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Click(int button, int action, int mods, float win\+X, float win\+Y)=0}{processMouseClick(int button, int action, int mods, float winX, float winY)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Environment\+::process\+Mouse\+Click (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{action, }
+\item[{int}]{mods, }
+\item[{float}]{winX, }
+\item[{float}]{winY}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_environment_ae4d9f0521de194cbfd8894d97bd4cfa9}{}\label{class_environment_ae4d9f0521de194cbfd8894d97bd4cfa9}
+
+
+Pure virtual function (i.\+e. defined by derived classes) for mouse input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Mouse button to which the action corresponds. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+{\em winX} & Mouse cursor x-\/position \\
+\hline
+{\em winY} & Mouse cursor y-\/position \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_menu_af88e7e50de87e47c3ec841ddc6fa455a}{Menu}, and \hyperlink{class_stage_a2c54bf08d29f9f117541bf4006f58c10}{Stage}.
+
+\index{Environment@{Environment}!process\+Mouse\+Position@{process\+Mouse\+Position}}
+\index{process\+Mouse\+Position@{process\+Mouse\+Position}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Position(float xpos, float ypos)=0}{processMousePosition(float xpos, float ypos)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Environment\+::process\+Mouse\+Position (
+\begin{DoxyParamCaption}
+\item[{float}]{xpos, }
+\item[{float}]{ypos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_environment_a6a5f1ed78138fb882a06081992c8b34a}{}\label{class_environment_a6a5f1ed78138fb882a06081992c8b34a}
+
+
+Pure virtual function (i.\+e. defined by derived classes) for mouse position change processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpos} & Mouse cursor x-\/position \\
+\hline
+{\em ypos} & Mouse cursor y-\/position \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_menu_ae6c6c98bf02a32ee3f87cc3a0350e6d3}{Menu}, and \hyperlink{class_stage_ae7a66771756db91c1c0bbe6ed469b9d4}{Stage}.
+
+\index{Environment@{Environment}!update\+Environment@{update\+Environment}}
+\index{update\+Environment@{update\+Environment}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{update\+Environment(double dt)=0}{updateEnvironment(double dt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Environment\+::update\+Environment (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_environment_afbc95329581e994ed49a678c814657ea}{}\label{class_environment_afbc95329581e994ed49a678c814657ea}
+
+
+Pure virtual function (i.\+e. defined by derived classes) for updating the environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step to be used for the update (time since last update) in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_menu_a1efe72e89e793c1c6f67d16c513499e1}{Menu}, and \hyperlink{class_stage_a3b0abe7d74c6d38cfedeab84a7506816}{Stage}.
+
+\index{Environment@{Environment}!update\+Projection@{update\+Projection}}
+\index{update\+Projection@{update\+Projection}!Environment@{Environment}}
+\subsubsection[{\texorpdfstring{update\+Projection(glm\+::mat4 new\+Projection)}{updateProjection(glm::mat4 newProjection)}}]{\setlength{\rightskip}{0pt plus 5cm}void Environment\+::update\+Projection (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4}]{new\+Projection}
+\end{DoxyParamCaption}
+)}\hypertarget{class_environment_a46e963ec1448396e116809558774ea83}{}\label{class_environment_a46e963ec1448396e116809558774ea83}
+
+
+Updates the projection matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Projection} & New matrix to replace previous. \\
+\hline
+\end{DoxyParams}

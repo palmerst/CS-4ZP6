@@ -1,0 +1,37 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{xcolor} % for different colour comments
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{DS}{#1}} %You had a little mistake here, the initials were wrong
+
+\begin{document}
+
+\title{\bf Platform Perils\\[\baselineskip]\Large Problem Statement}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\date{\today}
+	
+\maketitle
+
+\begin{center}
+\Large \bf Problem Statement
+\end{center}
+
+Courses with a focus on game design have become commonplace at most colleges and universities.  McMaster University is no exception and currently offers a game design course to its third-year software engineering students.  A game developed specifically as an example for a course of this type could act as an excellent aid in the learning experience.  In particular, a game featuring a modular design would allow the students to make modifications to certain parts of the code and visualize the result.  
+
+To simplify the implementation of the game, the Chipmunk2D physics library will be used.  This library handles both simulated Newtonian physics and collision detection. The game software will have compatibility across the major PC operating systems (Windows, Linux, and Mac OS X) to ensure ease of use for all of those involved.
+
+Major stakeholders include: the current and future instructors of the game design course at McMaster who would benefit from a better instructional tool; and the students who will eventually take the course who would benefit from a more hands-on learning experience.  Other stakeholders include the development team and future developers, who would benefit from the learning experience provided through the project development process.
+
+\end{document}

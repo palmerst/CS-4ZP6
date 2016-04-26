@@ -1,0 +1,253 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{xcolor} % for different colour comments
+\usepackage{tabto}
+\usepackage{mdframed}
+\mdfsetup{nobreak=true}
+\usepackage{xkeyval}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[skip=2pt, labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{enumitem}
+\usepackage{placeins}
+
+%% the following adds another section level by redefining the paragraph
+%% source:  http://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+%% Comments
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{DS}{#1}}
+
+
+\newcounter{ModList}
+\newcommand{\printMod}{
+    \stepcounter{ModList}
+    \arabic{ModList}.
+}
+
+\newcommand{\getCurrentSectionNumber}{%
+  \ifnum\c@section=0 %
+  \thechapter
+  \else
+  \ifnum\c@subsection=0 %
+  \thesection
+  \else
+  \ifnum\c@subsubsection=0 %
+  \thesubsection
+  \else
+  \thesubsubsection
+  \fi
+  \fi
+  \fi
+}
+
+
+
+\makeatother
+
+
+
+\begin{document}
+\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large System Architecture}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\date{\today}
+	
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+
+\begin{table}[hTB]
+\caption*{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+January 10, 2015 & 1.0 & Created document\\
+January 11, 2015 & 1.1 & Major additions to all sections\\
+January 11, 2015 & 1.2 & rev0 final version\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+\subsection{Overview}
+This document is provides a synopsis of our proposed design considerations that will be used to implement our game.  The document is split into two parts:  the system architecture which gives a more general overview of the design goal and intended module interactions, as well as the detailed design which covers the intended implementation in greater detail.
+
+
+
+\subsection{Document Template}
+The Parnas template of the Module Guide and Module Interface Specification was followed in creating this document.  Adherence to this template was not 100\%, and in some cases the provided marking scheme was used as a supplement to modify the template.
+
+
+\section{Design Principle}
+The Model-View-Controller architectural pattern will be used as the main principle of design for this project.  As such the main consideration of the design will be to fully separate the operation of the game in terms of user control, the audiovisual output, and the game model.  Using this model will allow for efficient implementation and testing of functional requirements because it will enable testing of the core game code in isolation from the input and output mechanisms (the majority of functional requirements relate to the game code).
+
+
+
+\section{Anticipated Changes}
+\subsection{Likely Changes}
+There are no likely changes to the game at this point.
+
+\subsection{Unlikely Changes}
+The following changes are unlikely to occur:
+\begin{enumerate}[label=UC\arabic*]
+  \item The way sound files are loaded and stored is unlikely to change.
+  \item The way object files are loaded and stored as GPU data is unlikely to change.
+  \item The way shader files are loaded and stored is unlikely to change.
+  \item The game controller is unlikely to change.
+  \item The rendering function is unlikely to change.
+\end{enumerate}
+
+\ds{Is that it?}
+
+\section{Module Decomposition}
+The decomposition of the project into modules with respect to the model-view-controller design principle is given in the following subsections.
+
+\subsection{Modules}
+The modules that will be used to implement the game are given in \hyperref[tab:modules]{Table~\ref*{tab:modules}} and \hyperref[tab:modules2]{Table~\ref*{tab:modules2}}.
+
+\begin{table}[h]
+\caption{\bf List of Modules Part 1} \label{tab:modules}
+\begin{tabularx}{\textwidth}{p{0.4cm}p{3.5cm}p{6cm}X}
+\toprule & {\bf Module} & {\bf Function} & {\bf System}\\
+\midrule
+\printMod & Game & Links user input to game code; main game loop & Controller\\
+\printMod & ObjGPUData & Loads and stores object gpu data & Model\\
+\printMod & ObjGPUDataStore & Stores collection of loaded ObjGPUData & Model\\
+\printMod & Obj & Stores game object information; base for all objects & Model\\
+\printMod & PhysicsObject & Subclass of Obj for physics based objects; base for all physics objects & Model\\
+\printMod & StaticObject & Subclass of PhysicsObject for static objects; base for all static objects & Model\\
+\printMod & Surface & Subclass of StaticObject for surfaces that the hero can stand on; base for all surface objects & Model\\
+\printMod & Platform & Platform object; subclass of Surface & Model\\
+\printMod & Wall & Wall object; subclass of Surface & Model\\
+\printMod & Ramp & Ramp object; subclass of Surface & Model\\
+\printMod & Goal & Goal object; subclass of Surface & Model\\
+\printMod & KinematicObject & Subclass of PhysicsObject for kinematic objects; base for all kinematic objects & Model\\
+\printMod & Spikes & Spike hazard; subclass of KinematicObject & Model\\
+\printMod & Spear & Spear hazard; subclass of KinematicObject & Model\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[h]
+\caption{\bf List of Modules Part 2} \label{tab:modules2}
+\begin{tabularx}{\textwidth}{p{0.4cm}p{3.5cm}p{6cm}X}
+\toprule & {\bf Module} & {\bf Function} & {\bf System}\\
+\midrule
+\printMod & MovingPlatform & Moving platform object; subclass of KinematicObject & Model\\
+\printMod & DynamicObject & Subclass of PhysicObject for dynamic objects; base for all dynamic objects & Model\\
+\printMod & Hero & Hero object for playable character; subclass of DynamicObject & Model\\
+\printMod & Boulder & Boulder hazard; subclass of DynamicObject & Model\\
+\printMod & StandardObject & Subclass of Obj for non-physics objects; base for all non-physics objects & Model\\
+\printMod & Skybox & Skybox object for background; subclass of StandardObject & Model\\
+\printMod & Arch & Arch object; subclass of StandardObject & Model\\
+\printMod & Environment & Core of the game; handles gamestate; abstract class & Model\\
+\printMod & Menu & Implementation of Environment for the menu system & Model\\
+\printMod & Stage & Implementation of Environment for the stages & Model\\
+\printMod & StageLoader & Loads and parses level scripts & Model\\
+\printMod & Camera & Stores view matrices & Model\\
+\printMod & Sound & Loads and stores sounds & Model\\
+\printMod & SoundStore & Stores collection of loaded sounds & Model\\
+\printMod & Shader & Loads and stores shaders & Model\\
+\printMod & ShaderStore & Stores collection of loaded shaders & Model\\
+\\
+ & Hardware & Outputs audiovisual & View\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\FloatBarrier
+
+\subsection{Uses Diagram}
+A uses diagram is given in \hyperref[fig:usesdiagram]{Figure~\ref*{fig:usesdiagram}} to show how the modules interact.  This diagram has been partitioned to show how the modules fit the model-view-controller design principle.  Note that in an effort to save space and maintain clarity, only base classes are shown for classes with children.  This does not affect the uses diagram since child classes use only the classes used by the parent class.
+\begin{figure}[hTB]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{usesdiagram}
+\caption{Uses diagram with MVC partitioning.} \label{fig:usesdiagram}
+\end{center}
+\end{figure}
+
+\section{Traceability}
+\subsection{Requirements}
+A traceability matrix showing the correspondence between requirements and modules is given in \hyperref[tab:reqtrace]{Table~\ref*{tab:reqtrace}}.
+
+\begin{table}[h]
+\caption{\bf Requirements Traceability} \label{tab:reqtrace}
+\centering
+\begin{tabularx}{0.6\textwidth}{p{4cm}X}
+\toprule {\bf Requirement} & {\bf Module(s)}\\
+\midrule
+1	&	23	\\
+2	&	23	\\
+3	&	23, 24, 25	\\
+4	&	23, 24	\\
+5	&	1, 17, 24	\\
+6	&	1, 17, 24	\\
+7	&	1, 17, 24	\\
+8	&	1, 17, 24	\\
+9	&	5, 16, 17 \\
+10	&	7, 8, 9, 10	\\
+11	&	N/A	\\
+12	&	1, 24, 26	\\
+13	&	1, 24, 26	\\
+14	&	4, 5, 6, 7, 8, 9, 10, 11, 12	\\
+15	&	4, 6, 7, 9	\\
+16	&	4, 5, 12, 13, 14, 16, 17, 18	\\
+17	&	17, 24	\\
+18	&	11, 17, 24	\\
+19	&	23	\\
+20	&	2, 3, 29, 30	\\
+21	&	N/A	\\
+22	&	2, 3, 29, 30	\\
+23	&	27, 28	\\
+24	&	N/A	\\
+25	&	N/A	\\
+26	&	N/A	\\
+27	&	1, 2, 3, 29, 30	\\
+28  &   N/A  \\
+29  &    23   \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Changes}
+There are no anticipated changes at this time.
+
+
+
+\end{document}
