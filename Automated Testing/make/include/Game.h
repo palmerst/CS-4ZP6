@@ -3,9 +3,7 @@
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-#include "Stage.h"
-#include "ObjGPUData.h"
-#include <map>
+#include "Environment.h"
 
 /*! The Game class is a representation of the game on the highest level.  It handles all exchanges between the user and the game code.  It keeps a reference to the game window as well as the current environment of the game (main menu, stage, etc) and acts as a bridge between the two.
  *  User inputs are intercepted through GLFW callbacks in this class and passed on for processing by the current game environment.
@@ -18,9 +16,6 @@ class Game
     GLFWwindow* window;     //!< Reference to the GLFWwindow (the window)
     Environment* env;       //!< Reference to the current Environment
 
-//    std::map<std::string, ObjGPUData*> objMap;  //!< Data for objects that are used by the GPU (i.e. meshes/texture mappings/etc.)
-//                                                //!< Stored as key/value pairs where the key is a string description for ease of tracking and accessing stored objects while coding
-
     double timeLast;        //!< Last time that was polled;  used for framerate control
     double timeElapsed;     //!< Time elapsed since last polling of time;  used for framerate control
 
@@ -28,8 +23,8 @@ class Game
     float winY;     //!< Stores y-coordinate maximum of the window
 
 public:
-    Game(int, char**);         //!< Game class constructor
-    ~Game();        //!< Game class destructor
+    Game();         //!< Game class constructor
+    ~Game();    //!< Game class destructor
 
     void run();     //!< Runs the game until the application is terminated (infinite loop)
 

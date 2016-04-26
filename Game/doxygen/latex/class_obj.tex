@@ -1,0 +1,127 @@
+\hypertarget{class_obj}{}\section{Obj Class Reference}
+\label{class_obj}\index{Obj@{Obj}}
+
+
+{\ttfamily \#include $<$Obj.\+h$>$}
+
+
+
+Inheritance diagram for Obj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_obj__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Obj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_obj__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_obj_a710c7db836923b39447b6ff05dba82d6}{render} (glm\+::vec3 pos, float angle)
+\begin{DoxyCompactList}\small\item\em Renders an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$ $>$ \hyperlink{class_obj_a7de9c5a2918104312df951a5eaf86275}{gpu\+Data\+List}\hypertarget{class_obj_a7de9c5a2918104312df951a5eaf86275}{}\label{class_obj_a7de9c5a2918104312df951a5eaf86275}
+
+\begin{DoxyCompactList}\small\item\em Vector of meshes associated with this object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_shader}{Shader} $\ast$ $>$ \hyperlink{class_obj_ae7d7eef0d9eeb26a6ec1e2dc0ba524a5}{shader\+List}\hypertarget{class_obj_ae7d7eef0d9eeb26a6ec1e2dc0ba524a5}{}\label{class_obj_ae7d7eef0d9eeb26a6ec1e2dc0ba524a5}
+
+\begin{DoxyCompactList}\small\item\em Vector of shaders associated with this object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_obj_a9f1eca3c0db3d8065ce14c040a94273f}{transform\+Overrides} = false\hypertarget{class_obj_a9f1eca3c0db3d8065ce14c040a94273f}{}\label{class_obj_a9f1eca3c0db3d8065ce14c040a94273f}
+
+\begin{DoxyCompactList}\small\item\em Flag to activate override transformations. \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{class_obj_a10c45b9d87ea8e9aeb47674d519bf712}{translation\+Override\+List}\hypertarget{class_obj_a10c45b9d87ea8e9aeb47674d519bf712}{}\label{class_obj_a10c45b9d87ea8e9aeb47674d519bf712}
+
+\begin{DoxyCompactList}\small\item\em List of translation overrides (one for each mesh). \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{class_obj_a34c8ffef2156e8035eaba4696ec090c8}{rotation\+Override\+List}\hypertarget{class_obj_a34c8ffef2156e8035eaba4696ec090c8}{}\label{class_obj_a34c8ffef2156e8035eaba4696ec090c8}
+
+\begin{DoxyCompactList}\small\item\em List of rotation overrides (one for each mesh). \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::mat4 $>$ \hyperlink{class_obj_a424c94c66d586640bd88cf19c031c756}{shear\+Override\+List}\hypertarget{class_obj_a424c94c66d586640bd88cf19c031c756}{}\label{class_obj_a424c94c66d586640bd88cf19c031c756}
+
+\begin{DoxyCompactList}\small\item\em List of shear overrides (one for each mesh). \end{DoxyCompactList}\item 
+float \hyperlink{class_obj_ae3f4e1cecebf1ac2c5706fe4ddc3cd5b}{height}\hypertarget{class_obj_ae3f4e1cecebf1ac2c5706fe4ddc3cd5b}{}\label{class_obj_ae3f4e1cecebf1ac2c5706fe4ddc3cd5b}
+
+\begin{DoxyCompactList}\small\item\em Height of the object. \end{DoxyCompactList}\item 
+float \hyperlink{class_obj_ae91c4644ff64eb08a2d18dc1a9bbd315}{width}\hypertarget{class_obj_ae91c4644ff64eb08a2d18dc1a9bbd315}{}\label{class_obj_ae91c4644ff64eb08a2d18dc1a9bbd315}
+
+\begin{DoxyCompactList}\small\item\em Width of the object. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{class_obj_af20f949768dcdb4ee23c63ac02563786}{model\+Scale}\hypertarget{class_obj_af20f949768dcdb4ee23c63ac02563786}{}\label{class_obj_af20f949768dcdb4ee23c63ac02563786}
+
+\begin{DoxyCompactList}\small\item\em Initial scaling matrix to be applied the model. \end{DoxyCompactList}\item 
+bool \hyperlink{class_obj_adf0f7b5c8ca61c7cfee46c832288fa19}{draw} = true\hypertarget{class_obj_adf0f7b5c8ca61c7cfee46c832288fa19}{}\label{class_obj_adf0f7b5c8ca61c7cfee46c832288fa19}
+
+\begin{DoxyCompactList}\small\item\em Flag for whether the object should be drawn or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static glm\+::mat4 \hyperlink{class_obj_a0d33aa0d20b93246b216c819e5b6bc11}{mat\+Projection}\hypertarget{class_obj_a0d33aa0d20b93246b216c819e5b6bc11}{}\label{class_obj_a0d33aa0d20b93246b216c819e5b6bc11}
+
+\begin{DoxyCompactList}\small\item\em The projection matrix. \end{DoxyCompactList}\item 
+static glm\+::mat4 \hyperlink{class_obj_a751d111d1f33000d06431a65527c99f0}{mat\+View}\hypertarget{class_obj_a751d111d1f33000d06431a65527c99f0}{}\label{class_obj_a751d111d1f33000d06431a65527c99f0}
+
+\begin{DoxyCompactList}\small\item\em The view matrix. \end{DoxyCompactList}\item 
+static glm\+::vec4 \hyperlink{class_obj_ad4050341a504f2d9102445c4a0d92a3f}{primary\+Light\+Pos}\hypertarget{class_obj_ad4050341a504f2d9102445c4a0d92a3f}{}\label{class_obj_ad4050341a504f2d9102445c4a0d92a3f}
+
+\begin{DoxyCompactList}\small\item\em The primary light position. \end{DoxyCompactList}\item 
+static glm\+::vec3 \hyperlink{class_obj_a38ac917bd30e136a2841a2800e8f3036}{primary\+Light\+La}\hypertarget{class_obj_a38ac917bd30e136a2841a2800e8f3036}{}\label{class_obj_a38ac917bd30e136a2841a2800e8f3036}
+
+\begin{DoxyCompactList}\small\item\em The primary ambient light vector. \end{DoxyCompactList}\item 
+static glm\+::vec3 \hyperlink{class_obj_af69c1fd6d6bd9b7229fcf42c54375d1c}{primary\+Light\+Ld}\hypertarget{class_obj_af69c1fd6d6bd9b7229fcf42c54375d1c}{}\label{class_obj_af69c1fd6d6bd9b7229fcf42c54375d1c}
+
+\begin{DoxyCompactList}\small\item\em The primary diffuse light vector. \end{DoxyCompactList}\item 
+static glm\+::vec3 \hyperlink{class_obj_ae3253599256afffada1325a44da148a0}{primary\+Light\+Ls}\hypertarget{class_obj_ae3253599256afffada1325a44da148a0}{}\label{class_obj_ae3253599256afffada1325a44da148a0}
+
+\begin{DoxyCompactList}\small\item\em The primary spectral light vector. \end{DoxyCompactList}\item 
+static \hyperlink{class_obj_g_p_u_data_store}{Obj\+G\+P\+U\+Data\+Store} \hyperlink{class_obj_a4e15bc90d96cfa160419902cfb472b5d}{gpu\+Store}\hypertarget{class_obj_a4e15bc90d96cfa160419902cfb472b5d}{}\label{class_obj_a4e15bc90d96cfa160419902cfb472b5d}
+
+\begin{DoxyCompactList}\small\item\em Collection of loaded meshes. \end{DoxyCompactList}\item 
+static \hyperlink{class_shader_store}{Shader\+Store} \hyperlink{class_obj_a9669a57ca6d316e1dd80c9315034c762}{shader\+Store}\hypertarget{class_obj_a9669a57ca6d316e1dd80c9315034c762}{}\label{class_obj_a9669a57ca6d316e1dd80c9315034c762}
+
+\begin{DoxyCompactList}\small\item\em Collection of loaded shaders. \end{DoxyCompactList}\item 
+static \hyperlink{class_sound_store}{Sound\+Store} \hyperlink{class_obj_a5aae696952a7ebd5a74480b000fb30e7}{sound\+Store}\hypertarget{class_obj_a5aae696952a7ebd5a74480b000fb30e7}{}\label{class_obj_a5aae696952a7ebd5a74480b000fb30e7}
+
+\begin{DoxyCompactList}\small\item\em Collection of loaded sounds. \end{DoxyCompactList}\item 
+static \hyperlink{class_shader}{Shader} $\ast$ \hyperlink{class_obj_a5c4454f79f8a8ba8fb13b9f830be3505}{current\+Shader}\hypertarget{class_obj_a5c4454f79f8a8ba8fb13b9f830be3505}{}\label{class_obj_a5c4454f79f8a8ba8fb13b9f830be3505}
+
+\begin{DoxyCompactList}\small\item\em The shader currently being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_obj}{Obj} class acts as a base class for static, dynamic, and kinematic objects. It holds the physics data (Chipmunk 2D) and gpu data of an object. 
+
+\subsection{Member Function Documentation}
+\index{Obj@{Obj}!render@{render}}
+\index{render@{render}!Obj@{Obj}}
+\subsubsection[{\texorpdfstring{render(glm\+::vec3 pos, float angle)}{render(glm::vec3 pos, float angle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Obj\+::render (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{pos, }
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obj_a710c7db836923b39447b6ff05dba82d6}{}\label{class_obj_a710c7db836923b39447b6ff05dba82d6}
+
+
+Renders an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Object position \\
+\hline
+{\em angle} & Rotation about z axis \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Obj.\+h\end{DoxyCompactItemize}

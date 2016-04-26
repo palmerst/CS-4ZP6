@@ -1,0 +1,71 @@
+\hypertarget{class_obj_g_p_u_data_store}{}\section{Obj\+G\+P\+U\+Data\+Store Class Reference}
+\label{class_obj_g_p_u_data_store}\index{Obj\+G\+P\+U\+Data\+Store@{Obj\+G\+P\+U\+Data\+Store}}
+
+
+{\ttfamily \#include $<$Obj\+G\+P\+U\+Data\+Store.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_obj_g_p_u_data_store_a548c764aab1fe4fd622c924dd1c7eb89}{Obj\+G\+P\+U\+Data\+Store} ()\hypertarget{class_obj_g_p_u_data_store_a548c764aab1fe4fd622c924dd1c7eb89}{}\label{class_obj_g_p_u_data_store_a548c764aab1fe4fd622c924dd1c7eb89}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$ \hyperlink{class_obj_g_p_u_data_store_aa92191fb7db9147b05e89c983bf294db}{add} (std\+::string path, float angle=0.\+0, bool scaling\+Mode=true)
+\begin{DoxyCompactList}\small\item\em Adds a new mesh/texture to the store\+: if not in the store, it loads and stores; if already present, it does nothing. \end{DoxyCompactList}\item 
+\hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$ \hyperlink{class_obj_g_p_u_data_store_a3b54d794f6aaa9cd1478934b018d47e9}{get} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Retrieves gpu data from the store. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_obj_g_p_u_data}{Obj\+G\+P\+U\+Data} $\ast$ $>$ \hyperlink{class_obj_g_p_u_data_store_a3872d9f1ae3877eafd8b068c3aba4694}{gpu\+Map}\hypertarget{class_obj_g_p_u_data_store_a3872d9f1ae3877eafd8b068c3aba4694}{}\label{class_obj_g_p_u_data_store_a3872d9f1ae3877eafd8b068c3aba4694}
+
+\begin{DoxyCompactList}\small\item\em Map translates object file name to stored data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_obj_g_p_u_data_store}{Obj\+G\+P\+U\+Data\+Store} class acts as a storage class for loaded object mesh/texture data. 
+
+\subsection{Member Function Documentation}
+\index{Obj\+G\+P\+U\+Data\+Store@{Obj\+G\+P\+U\+Data\+Store}!add@{add}}
+\index{add@{add}!Obj\+G\+P\+U\+Data\+Store@{Obj\+G\+P\+U\+Data\+Store}}
+\subsubsection[{\texorpdfstring{add(std\+::string path, float angle=0.\+0, bool scaling\+Mode=true)}{add(std::string path, float angle=0.0, bool scalingMode=true)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obj\+G\+P\+U\+Data}$\ast$ Obj\+G\+P\+U\+Data\+Store\+::add (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path, }
+\item[{float}]{angle = {\ttfamily 0.0}, }
+\item[{bool}]{scaling\+Mode = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obj_g_p_u_data_store_aa92191fb7db9147b05e89c983bf294db}{}\label{class_obj_g_p_u_data_store_aa92191fb7db9147b05e89c983bf294db}
+
+
+Adds a new mesh/texture to the store\+: if not in the store, it loads and stores; if already present, it does nothing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to object file \\
+\hline
+{\em angle} & Initial y-\/axis rotation in radians (optional\+: default 0.\+0) \\
+\hline
+{\em scaling\+Mode} & Flag specifies if object should be scaled to unit height when loaded (default true) \\
+\hline
+\end{DoxyParams}
+\index{Obj\+G\+P\+U\+Data\+Store@{Obj\+G\+P\+U\+Data\+Store}!get@{get}}
+\index{get@{get}!Obj\+G\+P\+U\+Data\+Store@{Obj\+G\+P\+U\+Data\+Store}}
+\subsubsection[{\texorpdfstring{get(std\+::string path)}{get(std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obj\+G\+P\+U\+Data}$\ast$ Obj\+G\+P\+U\+Data\+Store\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obj_g_p_u_data_store_a3b54d794f6aaa9cd1478934b018d47e9}{}\label{class_obj_g_p_u_data_store_a3b54d794f6aaa9cd1478934b018d47e9}
+
+
+Retrieves gpu data from the store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to object file to search for \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Obj\+G\+P\+U\+Data\+Store.\+h\end{DoxyCompactItemize}

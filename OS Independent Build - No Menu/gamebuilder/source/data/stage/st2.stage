@@ -1,0 +1,35 @@
+**stage**
+background=bluesky
+setting=desert
+startx=0
+starty=150
+
+**goal**
+x=-65 to -50, ytop=15
+archpos=left
+
+**platforms**
+
+% list of platforms in 
+    % x = x-left to x-right, y<pos> = y [, thickness = t]
+    %   where <pos> is either top, bot, or mid
+    %   and thickness is optionally specified
+x=-120 to -100, ytop=7, thickness=7
+
+
+**walls**
+xright=-50, y=15 to 50
+xleft=-120, y=7 to 30
+xright=-25, y=159 to 180
+xleft=120, y=89 to 110
+
+**ramps**
+x=-25 to 60, ytop=160 to 75
+x=-50 to 120, ytop=0 to 90
+
+**movingplatforms**
+
+
+**hazards**
+boulder, xleft=-25, ybot=155
+boulder, xright=120, ybot=90

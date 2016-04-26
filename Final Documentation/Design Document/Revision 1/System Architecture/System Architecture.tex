@@ -76,8 +76,8 @@
 
 
 \begin{document}
-\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large System Architecture}
-\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\title{\bf Platform Perils\\[\baselineskip]\Large System Architecture}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
 \date{\today}
 	
 \maketitle
@@ -96,6 +96,7 @@
 January 10, 2015 & 1.0 & Created document\\
 January 11, 2015 & 1.1 & Major additions to all sections\\
 January 11, 2015 & 1.2 & rev0 final version\\
+April 25, 2015 & 1.3 & rev1 final version\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -130,16 +131,15 @@ The following changes are unlikely to occur:
   \item The way object files are loaded and stored as GPU data is unlikely to change.
   \item The way shader files are loaded and stored is unlikely to change.
   \item The game controller is unlikely to change.
-  \item The rendering function is unlikely to change.
+  \item The object hierarchy is unlikely to change.
+  \item The object rendering function is unlikely to change.
 \end{enumerate}
-
-\ds{Is that it?}
 
 \section{Module Decomposition}
 The decomposition of the project into modules with respect to the model-view-controller design principle is given in the following subsections.
 
 \subsection{Modules}
-The modules that will be used to implement the game are given in \hyperref[tab:modules]{Table~\ref*{tab:modules}} and \hyperref[tab:modules2]{Table~\ref*{tab:modules2}}.
+The modules that were used to implement the game are given in \hyperref[tab:modules]{Table~\ref*{tab:modules}} and \hyperref[tab:modules2]{Table~\ref*{tab:modules2}}.
 
 \begin{table}[h]
 \caption{\bf List of Modules Part 1} \label{tab:modules}
@@ -193,14 +193,8 @@ The modules that will be used to implement the game are given in \hyperref[tab:m
 
 \FloatBarrier
 
-\subsection{Uses Diagram}
-A uses diagram is given in \hyperref[fig:usesdiagram]{Figure~\ref*{fig:usesdiagram}} to show how the modules interact.  This diagram has been partitioned to show how the modules fit the model-view-controller design principle.  Note that in an effort to save space and maintain clarity, only base classes are shown for classes with children.  This does not affect the uses diagram since child classes use only the classes used by the parent class.
-\begin{figure}[hTB]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{usesdiagram}
-\caption{Uses diagram with MVC partitioning.} \label{fig:usesdiagram}
-\end{center}
-\end{figure}
+\subsection{Class Hierarchy Diagram}
+All class hierarchy diagrams are contained in the MIS/MID document.
 
 \section{Traceability}
 \subsection{Requirements}
@@ -209,7 +203,7 @@ A traceability matrix showing the correspondence between requirements and module
 \begin{table}[h]
 \caption{\bf Requirements Traceability} \label{tab:reqtrace}
 \centering
-\begin{tabularx}{0.6\textwidth}{p{4cm}X}
+\begin{tabularx}{0.7\textwidth}{p{4cm}X}
 \toprule {\bf Requirement} & {\bf Module(s)}\\
 \midrule
 1	&	23	\\

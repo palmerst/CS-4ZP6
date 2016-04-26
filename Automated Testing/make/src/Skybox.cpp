@@ -3,7 +3,6 @@
 
 Skybox::Skybox(float x, float y, int bgNum)
 {
-
     position = glm::vec3(x, y, 0);
     angle = 0;
 
@@ -32,8 +31,4 @@ Skybox::Skybox(float x, float y, int bgNum)
         gpuDataList.push_back(gpuStore.add("./data/obj/skybox2"));
         shearOverrideList.push_back(glm::rotate(glm::mat4(1.0f), 0.0f, glm::vec3(1,0,0)));
     }
-
-
-
-
 }

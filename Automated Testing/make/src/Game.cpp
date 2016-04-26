@@ -5,10 +5,10 @@
 #include <cstdlib>
 
 #include "Game.h"
-#include "ObjGPUData.h"
+#include "Stage.h"
+#include "Menu.h"
 
-
-Game::Game(int count, char** argv)
+Game::Game()
 {
 
     /*** Initialize glfw ***/
@@ -20,21 +20,22 @@ Game::Game(int count, char** argv)
 
     /*** Use multisampling ***/
     glfwWindowHint(GLFW_SAMPLES, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+//    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+
+    winX = Environment::screenWidth = 800;
+    winY = Environment::screenHeight = 600;
 
     /*** Create a windowed mode window and its OpenGL context ***/
-    window = glfwCreateWindow(1800, 1200, "Untitled Game", NULL, NULL);
+    window = glfwCreateWindow(winX, winY, "Platform Perils", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
         exit(2);
     }
-
-    winX = 1800;
-    winY = 1000;
 
     /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
@@ -53,10 +54,10 @@ Game::Game(int count, char** argv)
 
     alutInit(0,NULL);
 
-    // Clear the error code.
+    /*** Clear AL error code ***/
     alGetError();
 
-    //source setting
+    /*** Set AL source info ***/
     ALfloat listenerPosition[] = {0.0f, 0.0f, 0.0f};
     ALfloat listenerVelocity[] = {0.0f, 0.0f, 0.0f};
     ALfloat listenerOrientation[] = {0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f};
@@ -115,18 +116,15 @@ Game::Game(int count, char** argv)
     glfwSetCursorPosCallback(window, mposfunc);
     glfwSetMouseButtonCallback(window, mbutfunc);
 
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-    /*** Associate an environment with the game ***/
-    env = new Stage(std::string());
-
-    glfwSetWindowSize(window, 1800, 1000);
+    /*** Initialize the game environment to the main menu ***/
+    env = new Menu(false);
 
     /*** Set time to current ***/
     timeLast = glfwGetTime();
     timeElapsed = 0;
 }
 
+/*** Can leave destructor empty since Game class is only destroyed when game is terminated ***/
 Game::~Game()
 {
 
@@ -137,6 +135,8 @@ Game::~Game()
 void Game::run()
 {
 
+    double frameMin = 1.0/60.0;
+
     while (!glfwWindowShouldClose(window))
     {
         /*** Update environment through elapsed time step and draw ***/
@@ -144,25 +144,33 @@ void Game::run()
         timeElapsed += timeCurrent - timeLast;
         timeLast = timeCurrent;
 
-        if(timeElapsed >= 0.01667)
+        if(timeElapsed >= frameMin)
         {
-            if(env->nextEnv)
-            {
-                Environment* temp = env->nextEnv;
-                delete (Stage*)env;
-                env = temp;
+            Environment* curEnv = env;
+            while(curEnv){
+                if(curEnv->nextEnv)
+                {
+                    Environment* temp = curEnv->nextEnv;
+                    delete env;
+                    env = temp;
+                }
+
+                curEnv = curEnv->overlay;
             }
-            else
-            {
-                timeElapsed = 0;
-                glfwSwapBuffers(window);
-                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-                env->processContinuousInput();
-                env->updateEnvironment(0.01667);
-                env->drawEnvironment();
-                timeCurrent = glfwGetTime();
-                timeElapsed += timeCurrent - timeLast;
-                timeLast = timeCurrent;
+
+
+            timeElapsed = 0;
+            glfwSwapBuffers(window);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            env->processContinuousInput();
+            env->updateEnvironment(frameMin);
+            env->drawEnvironment();
+            Environment* overlay = env->overlay;
+            while(overlay){
+                overlay->processContinuousInput();
+                overlay->updateEnvironment(frameMin);
+                overlay->drawEnvironment();
+                overlay = overlay->overlay;
             }
         }
 
@@ -170,6 +178,7 @@ void Game::run()
         /*** Poll for and process events ***/
         glfwPollEvents();
     }
+
 
     glfwTerminate();
 }
@@ -179,10 +188,15 @@ void Game::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    env->updateProjection(glm::perspective(60.0f*3.1415f/180.0f, (float)width/(float)height, 10.0f, 30000.0f));
+    Environment::screenWidth = width;
+    Environment::screenHeight = height;
 
-    winX = width;
-    winY = height;
+    env->updateScreenSize();
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->updateScreenSize();
+        overlay = overlay->overlay;
+    }
 }
 
 
@@ -192,14 +206,29 @@ void Game::key_callback(GLFWwindow* window, int key, int scancode, int action, i
     if(key == GLFW_KEY_ESCAPE)
         exit(0);
     env->processKB(key, scancode, action, mods);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processKB(key, scancode, action, mods);
+        overlay = overlay->overlay;
+    }
 }
 
 void Game::mouse_pos_callback(GLFWwindow* window, float xpos, float ypos)
 {
-    env->processMousePosition(xpos, ypos, winX, winY);
+    env->processMousePosition(xpos, ypos);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processMousePosition(xpos, ypos);
+        overlay = overlay->overlay;
+    }
 }
 
 void Game::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    env->processMouseClick(button, action, mods, winX, winY);
+    env->processMouseClick(button, action, mods);
+    Environment* overlay = env->overlay;
+    while(overlay){
+        overlay->processMouseClick(button, action, mods);
+        overlay = overlay->overlay;
+    }
 }

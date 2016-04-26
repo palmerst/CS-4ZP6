@@ -17,6 +17,7 @@
 }
 \usepackage[skip=2pt, labelfont=bf]{caption}
 \usepackage{titlesec}
+\usepackage{placeins}
 \usepackage{graphicx}
 \graphicspath{ {image/} }
 
@@ -156,6 +157,7 @@
 \midrule
 March 24, 2016 & 1.0 & Created document skeleton\\
 March 28, 2016 & 1.1 & Final version for rev 0\\
+April 25, 2016 & 1.2 & Final version for rev 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -170,6 +172,22 @@ March 28, 2016 & 1.1 & Final version for rev 0\\
 This document provides a report of the results of the testing performed on the Platform Perils application.  Both system testing and quality testing are covered. Traceability between testing and both requirements and modules is given in the final section.
 
 Note that the tests that were carried out in this report are all described in the Test Plan document.  Please refer to this document for further information.
+
+\subsection{List of Constants}
+Constants used in this document are listed in \hyperref[tab:constants]{Table~\ref*{tab:constants}}.
+\begin{table}[ht]
+\caption{List of constants} \label{tab:constants}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Constant} & {\bf Value} & {\bf Description}\\
+\midrule
+$\sigma$ & 60 & Frame rate target\\
+$\Theta$ & 6 & User testing entertainment target\\
+$\Psi$ & 2 & User testing challenge range\\
+$\Omega$ & 8 & User testing controls target\\
+$\Phi$ & 250 & Dynamic object limit\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \section{Proof of Concept Test}
 
@@ -485,43 +503,49 @@ The objects used by the game can be broken down into two main categories:  dynam
 
 Plots showing the variation in framerate with respect to the number of objects present in a stage are given in \hyperref[fig:frdynamic]{Figure~\ref*{fig:frdynamic}} (dynamic) and \hyperref[fig:frstat]{Figure~\ref*{fig:frstat}} (static).  The results show that a large number of objects can be incorporated into a stage before performance begins to be affected:  the high performance system maintained a framerate of 60 fps until roughly 1500 dynamic objects or 3000 static objects were introduced.  Even the low performance system was able to maintain a framerate above 60 until around 300 dynamics objects.  This means that the game will likely be able to run at 60 fps on most systems since the number of objects in a single stage is unlikely to approach 300.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{frameratedynamic}
 \caption{Framerate vs. number of dynamic objects} \label{fig:frdynamic}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{frameratestatic}
 \caption{Framerate vs. number of static objects} \label{fig:frstat}
 \end{figure}
+
+\FloatBarrier
 
 A plot showing the variation in framerate with respect to the number of platforms was also produced and is shown in \hyperref[fig:frplat]{Figure~\ref*{fig:frplat}}.  The results of this test show a drastic drop in framerate with very few objects, and this framerate drop appears to be consistent between the high end and low end systems.  This suggests that the problem is in using multiple shaders:  switching shaders is a resource intensive procedure and the consistencies in framerate between the two systems can be explained by the fact that the amount of time required for switching a shader would be approximately constant between the two systems.  This problem was fixed by combining the three platform shaders into one shader.  This change required only minor minor changes to the rendering code.
 
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{framerateplat}
 \caption{Framerate vs. number of platform objects} \label{fig:frplat}
 \end{figure}
+\FloatBarrier
 
-\begin{figure}[h]
+
+Additional testing was performed to assess whether the framerate was predominantly affected by procedures involving physics calculations or rendering.  The results of these tests are given in \hyperref[fig:isohi]{Figure~\ref*{fig:isohi}} and \hyperref[fig:isolo]{Figure~\ref*{fig:isolo}} for the high and low performance systems, respectively.  Interestingly, from the plot of the high performance system it appears that neither is a dominant factor:  both make a roughly equal contribution to the overall framerate.  This does not appear to be the case in the low performance system, where it is clear that the rendering step limits the framerate.
+
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{isolatedhigh}
 \caption{Effects of physics update and render on framerate on high performance system} \label{fig:isohi}
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{isolatedlo}
 \caption{Effects of physics update and render on framerate on low performance system} \label{fig:isolo}
 \end{figure}
 
-Additional testing was performed to assess whether the framerate was predominantly affected by procedures involving physics calculations or rendering.  The results of these tests are given in \hyperref[fig:isohi]{Figure~\ref*{fig:isohi}} and \hyperref[fig:isolo]{Figure~\ref*{fig:isolo}} for the high and low performance systems, respectively.  Interestingly, from the plot of the high performance system it appears that neither is a dominant factor:  both make a roughly equal contribution to the overall framerate.  This does not appear to be the case in the low performance system, where it is clear that the rendering step limits the framerate.
+\FloatBarrier
 
 \testmanual{
     name = Hardware requirements,
@@ -532,8 +556,9 @@ Additional testing was performed to assess whether the framerate was predominant
     result = \textcolor{Orange}{Borderline PASS due to platform shader performance}
 }
 
+\section{Future Testing}
 \subsection{Usability Testing}
-A user experience survey will be used to assess useability.  This survey will be administered in the future and will not .
+A user experience survey will be carried out to assess useability.  This survey will be administered in the future (date to be determined) and the results will therefore not be a part of the project submission.  
 
 \testmanual{
     name = {Entertainment},
@@ -568,16 +593,14 @@ Robustness of the application with regard to erroneous input was not formally te
 Robustness tests in the form of stress testing were covered under performance testing.
 
 \section{Summary of Changes}
-Few changes were made to the game as a result of the tests described in this document.  This is due to the fact that informal testing was performed constantly as the game was being developed.  Every time changes were made to the game code or new features were added, the game was compiled and played by the development team to ensure that everything was working as intended.
-
-A summary of the changes made in response to testing are given in \hyperref[tab:changes]{Table~\ref*{tab:changes}}.\\
+A summary of the changes made in response to testing are given in \hyperref[tab:changes]{Table~\ref*{tab:changes}}.  Few changes were made to the game as a result of the tests described in this document.  This is due to the fact that informal testing was performed constantly as the game was being developed.  Every time changes were made to the game code or new features were added, the game was compiled and played by the development team to ensure that everything was working as intended.  Anything that did not work properly was fixed on the spot.
 
 \begin{table}[ht]
 \caption{Changes made in response to testing} \label{tab:changes}
 \begin{tabularx}{\textwidth}{p{5cm}X}
 \toprule {\bf Test} & {\bf Changes Made}\\
 \midrule
-\\
+28 & Surface objects were originally rendered using three separate shaders to handle texture wrapping in different planes.  The shaders were combined into one shader that uses different pathways depending on a variable passed in by the game.  This required only minor modifications to the Obj class render function.\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -629,7 +652,8 @@ A trace between modules and testing is given in \hyperref[tab:tracemod]{Table~\r
 
 \begin{table}[ht]
 \caption{Trace between modules and tests} \label{tab:tracemod}
-\begin{tabularx}{\textwidth}{p{5cm}X}
+\centering
+\begin{tabularx}{0.55\textwidth}{p{5cm}X}
 \toprule {\bf Module} & {\bf Test(s)}\\
 \midrule
 1	&	28	\\

@@ -34,7 +34,7 @@ CXXFLAGS += -g -Os -DWIN32 -DGLM_FORCE_RADIANS -DGLEW_STATIC -DAL_LIBTYPE_STATIC
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = sample1_unittest
+TESTS = $(PROGRAM_NAME)
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -76,12 +76,5 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-sample1.o : $(USER_DIR)/sample1.cc $(USER_DIR)/sample1.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sample1.cc
-
-sample1_unittest.o : $(USER_DIR)/sample1_unittest.cc \
-                     $(USER_DIR)/sample1.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sample1_unittest.cc
-
-sample1_unittest : $(OBJS) gtest.a
+$(PROGRAM_NAME) : $(OBJS) gtest.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@ -Llib -lpthread -lglfw3 -lglew32 -lopengl32 -lglu32 -lgdi32 -lchipmunk -lalut -lOpenAL32 -lwinmm

@@ -40,7 +40,7 @@ protected:
 
 public:
 
-    virtual ~Environment(){}
+    virtual ~Environment(){} //!< Virtual destructor.
 
     int keyStates[GLFW_KEY_LAST] = {0};  //!< Array that keeps track of keyboard keys currently pressed down.
 
@@ -50,7 +50,6 @@ public:
     */
     virtual void updateEnvironment(double dt) = 0;
 
-    /*** Draw all objects in the environment ***/
     virtual void drawEnvironment() = 0;  //!< Pure virtual function (i.e. defined by derived classes) for drawing the environment.
 
     //! Changes the shader program.
@@ -85,22 +84,16 @@ public:
       \param button Mouse button to which the action corresponds.
       \param action The action (i.e. button up, down, held, etc.)
       \param mods Active modifiers (i.e. shift, control, etc.)
-      \param winX Mouse cursor x-position
-      \param winY Mouse cursor y-position
     */
     virtual void processMouseClick(int button, int action, int mods) = 0;
 
-    //! Updates the projection matrix.
-    /*!
-      \param newProjection New matrix to replace previous.
-    */
-    virtual void updateScreenSize() = 0;
+    virtual void updateScreenSize() = 0;   //!< Pure virtual function (i.e. defined by derived classes) for updating screen size.
 
     Environment* overlay;           //!< Environment to overlay the current environment (in-game menu).
     Environment* nextEnv;           //!< Next environment (if non-null takes effect on next frame).
 
-    static float screenWidth;
-    static float screenHeight;
+    static float screenWidth;   //!< The current width of the screen in pixels.
+    static float screenHeight;  //!< The current height of the screen in pixels.
 
 };
 

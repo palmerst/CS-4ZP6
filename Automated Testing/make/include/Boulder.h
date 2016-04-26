@@ -3,11 +3,19 @@
 
 #include "DynamicObject.h"
 
+/*! The Boulder class implements the boulder hazard.
+ */
+
 class Boulder : public DynamicObject
 {
 
 public:
 
+    //! Boulder constructor.
+    /*!
+      \param x The x coordinate of the boulder.
+      \param y The y coordinate of the boulder.
+    */
     Boulder(float x, float y);
 
 };

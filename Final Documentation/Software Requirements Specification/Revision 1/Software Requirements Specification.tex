@@ -17,6 +17,7 @@
 }
 \usepackage[singlelinecheck=off, skip=2pt, labelfont=bf]{caption}
 \usepackage{titlesec}
+\usepackage{placeins}
 \usepackage{graphicx}
 \graphicspath{ {image/} }
 
@@ -213,7 +214,7 @@ The following constraints are mandated by the developers:
 
 
 \subsection{Naming Conventions and Terminology}
-The terminology used in this project is given in \hyperref[tab:terminology]{Table~\ref*{tab:terminology}}.
+The terminology used in this project is given in \hyperref[tab:terminology]{Table~\ref*{tab:terminology}}.  A list of constants is provided in \hyperref[tab:constants]{Table~\ref*{tab:constants}}.
 \begin{table}[h]
 \caption{List of terminology} \label{tab:terminology}
 \begin{tabularx}{\textwidth}{p{3cm}X}
@@ -242,6 +243,8 @@ $\Omega$ & 8 & User testing controls target\\
 \end{tabularx}
 \end{table}
 
+\FloatBarrier
+
 \newpage
 \section{Functional Requirements}
 \subsection{The Scope of the Work and the Product}
@@ -253,7 +256,7 @@ A context diagram of the the work is given in \hyperref[fig:context]{Figure~\ref
 \includegraphics[width=\textwidth]{context}
 \caption{Context diagram of the work} \label{fig:context}
 \end{figure}
-
+\FloatBarrier
 
 \subsubsection{Work Partitioning}
 The flow diagram in \hyperref[fig:gameflow]{Figure~\ref*{fig:gameflow}} gives a rough representation of the operation of the envisioned game.  The user interfaces include a main menu as well as an in-game menu, and an in-game interface in which all game play takes place.  The events are listed in \hyperref[tab:events]{Table~\ref*{tab:events}}.
@@ -280,7 +283,7 @@ The flow diagram in \hyperref[fig:gameflow]{Figure~\ref*{fig:gameflow}} gives a 
 \bottomrule
 \end{tabularx}
 \end{table}
-
+\FloatBarrier
 \subsubsection{Individual Product Use Cases}
 
 Due to the nature of the project, the product use cases are essentially equivalent to the events identified in the work partitioning.
@@ -513,7 +516,7 @@ Due to the nature of the project, the product use cases are essentially equivale
         priority = Low,
         conf = None,
         supp = None,
-        hist = {Created April 24, 2015}
+        hist = {Created April 24, 2016}
 }
 
 \req{
@@ -527,7 +530,7 @@ Due to the nature of the project, the product use cases are essentially equivale
         priority = Low,
         conf = None,
         supp = None,
-        hist = {Created April 24, 2015}
+        hist = {Created April 24, 2016}
 }
 
 \req{
@@ -714,7 +717,7 @@ Due to the nature of the project, the product use cases are essentially equivale
         priority = High,
         conf = None,
         supp = None,
-        hist = {Created October 7, 2015}
+        hist = {Updated April 25, 2015}
 }
 \subsection{Operational and Environmental Requirements}
 There are no operational and environmental requirements related to this project.
@@ -778,7 +781,7 @@ There is no product being replaced, and thus no migration is required.
 \subsection{Risks}
 The successful completion of the project depends on overcoming the following significant risks:
 \begin{enumerate}
-  \item In order to use the Chipmunk2D library it must first be successfully compiled.  Since we intend for the game to be compatible with Windows 7, Mac OS X, and Ubuntu, there is a significant risk for the project to fail if compilation is not achieved on all three operating systems.
+  \item In order to use the Chipmunk2D library it must first be successfully compiled.  Since we intend for the game to be compatible with Windows 7, Mac OS X, and Arch Linux, there is a significant risk for the project to fail if compilation is not achieved on all three operating systems.
   \item Chipmunk2D is a large library and its use is not straight forward.  Successful implementation of the library features is crucial to the success of the project and the failure of this poses another significant risk.
 \end{enumerate}
 \subsection{Costs}
@@ -786,7 +789,7 @@ There are no costs associated with this project.
 \subsection{User Documentation and Training}
 User documentation will be created as per the CS~4ZP6 guidelines.  No training will be required.
 \subsection{Waiting Room}
-There are no backlogged requirements at this time.  
+There are no backlogged requirements at this time.
 \subsection{Ideas for Solutions}
-There are no ideas for solutions at this time.  
+There are no ideas for solutions at this time.
 \end{document}

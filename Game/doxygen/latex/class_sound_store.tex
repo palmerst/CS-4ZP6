@@ -1,0 +1,65 @@
+\hypertarget{class_sound_store}{}\section{Sound\+Store Class Reference}
+\label{class_sound_store}\index{Sound\+Store@{Sound\+Store}}
+
+
+{\ttfamily \#include $<$Sound\+Store.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_store_a14e85794e6633aa83dbab0b1cb72826a}{Sound\+Store} ()\hypertarget{class_sound_store_a14e85794e6633aa83dbab0b1cb72826a}{}\label{class_sound_store_a14e85794e6633aa83dbab0b1cb72826a}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_sound}{Sound} $\ast$ \hyperlink{class_sound_store_acad2fc70afd94cb00618e3bbea29976c}{add} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Adds a new sound to the store\+: if not in the store, it loads and stores; if already present, it does nothing. \end{DoxyCompactList}\item 
+\hyperlink{class_sound}{Sound} $\ast$ \hyperlink{class_sound_store_a5694dfe7d0a1d4d10b6a6aa6d7828a92}{get} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Retrieves gpu data from the store. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_sound}{Sound} $\ast$ $>$ \hyperlink{class_sound_store_a33cb077cb9c34febb095fc3a528db0a5}{sound\+Map}\hypertarget{class_sound_store_a33cb077cb9c34febb095fc3a528db0a5}{}\label{class_sound_store_a33cb077cb9c34febb095fc3a528db0a5}
+
+\begin{DoxyCompactList}\small\item\em Map translates sound file name to stored data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_sound_store}{Sound\+Store} class acts as a storage class for loaded sounds. 
+
+\subsection{Member Function Documentation}
+\index{Sound\+Store@{Sound\+Store}!add@{add}}
+\index{add@{add}!Sound\+Store@{Sound\+Store}}
+\subsubsection[{\texorpdfstring{add(std\+::string path)}{add(std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound}$\ast$ Sound\+Store\+::add (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sound_store_acad2fc70afd94cb00618e3bbea29976c}{}\label{class_sound_store_acad2fc70afd94cb00618e3bbea29976c}
+
+
+Adds a new sound to the store\+: if not in the store, it loads and stores; if already present, it does nothing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to sound file \\
+\hline
+\end{DoxyParams}
+\index{Sound\+Store@{Sound\+Store}!get@{get}}
+\index{get@{get}!Sound\+Store@{Sound\+Store}}
+\subsubsection[{\texorpdfstring{get(std\+::string path)}{get(std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound}$\ast$ Sound\+Store\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sound_store_a5694dfe7d0a1d4d10b6a6aa6d7828a92}{}\label{class_sound_store_a5694dfe7d0a1d4d10b6a6aa6d7828a92}
+
+
+Retrieves gpu data from the store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to sound file \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Sound\+Store.\+h\end{DoxyCompactItemize}

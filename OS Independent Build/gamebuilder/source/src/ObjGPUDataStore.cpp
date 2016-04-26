@@ -1,6 +1,6 @@
 #include "ObjGPUDataStore.h"
 
-ObjGPUDataStore::ObjGPUDataStore() {};
+ObjGPUDataStore::ObjGPUDataStore() {}
 
 ObjGPUData* ObjGPUDataStore::add(std::string path, float angle, bool scalingMode)
 {

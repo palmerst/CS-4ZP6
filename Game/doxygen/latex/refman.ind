@@ -1,0 +1,180 @@
+\begin{theindex}
+
+  \item {add}
+    \subitem {Obj\+G\+P\+U\+Data\+Store}, \hyperpage{36}
+    \subitem {Shader\+Store}, \hyperpage{43}
+    \subitem {Sound\+Store}, \hyperpage{46}
+  \item {Arch}, \hyperpage{5}
+    \subitem {Arch}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Boulder}, \hyperpage{7}
+    \subitem {Boulder}, \hyperpage{8}
+  \item {Boundary}, \hyperpage{8}
+    \subitem {Boundary}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Camera}, \hyperpage{11}
+  \item {change\+Shader}
+    \subitem {Environment}, \hyperpage{15}
+  \item {check\+Completion}
+    \subitem {Stage}, \hyperpage{53}
+  \item {check\+Field}
+    \subitem {Stage\+Loader}, \hyperpage{56}
+
+  \indexspace
+
+  \item {draw\+Obj}
+    \subitem {Stage}, \hyperpage{53}
+  \item {Dynamic\+Object}, \hyperpage{12}
+    \subitem {Dynamic\+Object}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Environment}, \hyperpage{13}
+    \subitem {change\+Shader}, \hyperpage{15}
+    \subitem {process\+KB}, \hyperpage{16}
+    \subitem {process\+Mouse\+Click}, \hyperpage{16}
+    \subitem {process\+Mouse\+Position}, \hyperpage{16}
+    \subitem {update\+Environment}, \hyperpage{16}
+
+  \indexspace
+
+  \item {Game}, \hyperpage{17}
+  \item {get}
+    \subitem {Obj\+G\+P\+U\+Data\+Store}, \hyperpage{36}
+    \subitem {Shader\+Store}, \hyperpage{43}
+    \subitem {Sound\+Store}, \hyperpage{46}
+  \item {get\+Data\+Type}
+    \subitem {Obj\+G\+P\+U\+Data}, \hyperpage{35}
+  \item {get\+Mtl\+Data\+Type}
+    \subitem {Obj\+G\+P\+U\+Data}, \hyperpage{35}
+  \item {Goal}, \hyperpage{18}
+    \subitem {Goal}, \hyperpage{20}
+
+  \indexspace
+
+  \item {Hero}, \hyperpage{21}
+    \subitem {Hero}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Kinematic\+Object}, \hyperpage{23}
+    \subitem {Kinematic\+Object}, \hyperpage{24}
+    \subitem {update}, \hyperpage{25}
+
+  \indexspace
+
+  \item {load\+Object}
+    \subitem {Obj\+G\+P\+U\+Data}, \hyperpage{35}
+
+  \indexspace
+
+  \item {Menu}, \hyperpage{25}
+    \subitem {process\+KB}, \hyperpage{27}
+    \subitem {process\+Mouse\+Click}, \hyperpage{27}
+    \subitem {process\+Mouse\+Position}, \hyperpage{27}
+    \subitem {show\+Level\+Sub\+Menu}, \hyperpage{28}
+    \subitem {Show\+Sub\+Menu}, \hyperpage{28}
+    \subitem {update\+Environment}, \hyperpage{28}
+  \item {Moving\+Platform}, \hyperpage{28}
+    \subitem {Moving\+Platform}, \hyperpage{30}
+    \subitem {update}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Obj}, \hyperpage{31}
+    \subitem {render}, \hyperpage{33}
+  \item {Obj\+G\+P\+U\+Data}, \hyperpage{33}
+    \subitem {get\+Data\+Type}, \hyperpage{35}
+    \subitem {get\+Mtl\+Data\+Type}, \hyperpage{35}
+    \subitem {load\+Object}, \hyperpage{35}
+    \subitem {Obj\+G\+P\+U\+Data}, \hyperpage{34}
+  \item {Obj\+G\+P\+U\+Data\+Store}, \hyperpage{35}
+    \subitem {add}, \hyperpage{36}
+    \subitem {get}, \hyperpage{36}
+
+  \indexspace
+
+  \item {Physics\+Object}, \hyperpage{36}
+  \item {Platform}, \hyperpage{38}
+    \subitem {Platform}, \hyperpage{39}
+  \item {process\+KB}
+    \subitem {Environment}, \hyperpage{16}
+    \subitem {Menu}, \hyperpage{27}
+    \subitem {Stage}, \hyperpage{54}
+  \item {process\+Mouse\+Click}
+    \subitem {Environment}, \hyperpage{16}
+    \subitem {Menu}, \hyperpage{27}
+    \subitem {Stage}, \hyperpage{54}
+  \item {process\+Mouse\+Position}
+    \subitem {Environment}, \hyperpage{16}
+    \subitem {Menu}, \hyperpage{27}
+    \subitem {Stage}, \hyperpage{54}
+
+  \indexspace
+
+  \item {Ramp}, \hyperpage{40}
+    \subitem {Ramp}, \hyperpage{41}
+  \item {render}
+    \subitem {Obj}, \hyperpage{33}
+
+  \indexspace
+
+  \item {Shader}, \hyperpage{42}
+    \subitem {Shader}, \hyperpage{42}
+  \item {Shader\+Store}, \hyperpage{42}
+    \subitem {add}, \hyperpage{43}
+    \subitem {get}, \hyperpage{43}
+  \item {show\+Level\+Sub\+Menu}
+    \subitem {Menu}, \hyperpage{28}
+  \item {Show\+Sub\+Menu}
+    \subitem {Menu}, \hyperpage{28}
+  \item {Skybox}, \hyperpage{43}
+    \subitem {Skybox}, \hyperpage{45}
+  \item {Sound}, \hyperpage{45}
+    \subitem {Sound}, \hyperpage{45}
+  \item {Sound\+Store}, \hyperpage{46}
+    \subitem {add}, \hyperpage{46}
+    \subitem {get}, \hyperpage{46}
+  \item {Spear}, \hyperpage{47}
+    \subitem {Spear}, \hyperpage{48}
+  \item {Spikes}, \hyperpage{49}
+    \subitem {Spikes}, \hyperpage{50}
+  \item {Stage}, \hyperpage{51}
+    \subitem {check\+Completion}, \hyperpage{53}
+    \subitem {draw\+Obj}, \hyperpage{53}
+    \subitem {process\+KB}, \hyperpage{54}
+    \subitem {process\+Mouse\+Click}, \hyperpage{54}
+    \subitem {process\+Mouse\+Position}, \hyperpage{54}
+    \subitem {update\+Environment}, \hyperpage{54}
+  \item {Stage\+Loader}, \hyperpage{55}
+    \subitem {check\+Field}, \hyperpage{56}
+    \subitem {Stage\+Loader}, \hyperpage{56}
+    \subitem {strip\+Whitespace}, \hyperpage{56}
+  \item {Standard\+Object}, \hyperpage{57}
+  \item {Static\+Object}, \hyperpage{58}
+    \subitem {Static\+Object}, \hyperpage{59}
+  \item {strip\+Whitespace}
+    \subitem {Stage\+Loader}, \hyperpage{56}
+  \item {Surface}, \hyperpage{60}
+    \subitem {Surface}, \hyperpage{61}
+
+  \indexspace
+
+  \item {update}
+    \subitem {Kinematic\+Object}, \hyperpage{25}
+    \subitem {Moving\+Platform}, \hyperpage{30}
+  \item {update\+Environment}
+    \subitem {Environment}, \hyperpage{16}
+    \subitem {Menu}, \hyperpage{28}
+    \subitem {Stage}, \hyperpage{54}
+
+  \indexspace
+
+  \item {Wall}, \hyperpage{62}
+    \subitem {Wall}, \hyperpage{63}
+
+\end{theindex}

@@ -32,17 +32,16 @@ typedef struct _MenuItem
 }MenuItem;
 
 
-
 /*! The Menu class is derived from the Environment class and holds and handles changes to the game state when the user is not playing a stage (i.e. is in a menu of some kind).
  */
 class Menu : public Environment
 {
 
 private:
-    std::vector<MenuItem*> vecMenuItem; //!< save all menu
+    std::vector<MenuItem*> vecMenuItem; //!< Stores menu buttons.
 
-    void hover_menuitem(MenuItem*);     //!< call this function when mouse location changed
-    void click_menuitem(MenuItem*);     //!< call this function when mouse release or press
+    void hover_menuitem(MenuItem*);     //!< Called when mouse position is changes to detect hover over buttons.
+    void click_menuitem(MenuItem*);     //!< Called when mouse is clicked to detect click on buttons.
 
 public:
 
@@ -65,6 +64,7 @@ public:
       \param mods Active modifiers (i.e. shift, control, etc.)
     */
     void processKB(int key, int scancode, int action, int mods);
+
     void processContinuousInput();   //!< Function for continuous input processing.
 
     //! Function for mouse position change processing.
@@ -79,18 +79,26 @@ public:
       \param button Mouse button to which the action corresponds.
       \param action The action (i.e. button up, down, held, etc.)
       \param mods Active modifiers (i.e. shift, control, etc.)
-      \param winX Mouse cursor x-position
-      \param winY Mouse cursor y-position
     */
     void processMouseClick(int button, int action, int mods);
 
+    //! Displays main menu.
+    /*!
+      \param level Menu depth.
+      \param bShow Flag specifies whether buttons should be drawn.
+    */
+    void ShowSubMenu(int level,bool bShow=true);
 
-    void ShowSubMenu(int level,bool bShow=true);  //!< main menu
-
+    //! Displays level select menu.
+    /*!
+      \param bShow Flag specifies whether buttons should be drawn.
+    */
     void showLevelSubMenu(bool bShow);
 
+    //! Changes layout due to screen size update.
     void updateScreenSize();
 
+    //! Adds button to the menu.
     void addNewItem(char* szNormal,char* szHover,char* szSelected,
                     int posX,int posY,
                     MenuItemHandler handler,void *param,

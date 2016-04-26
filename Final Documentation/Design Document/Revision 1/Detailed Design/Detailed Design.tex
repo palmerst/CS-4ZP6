@@ -72,8 +72,8 @@
 
 
 \begin{document}
-\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large Detailed Design}
-\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\title{\bf Platform Perils\\[\baselineskip]\Large Detailed Design}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
 \date{\today}
 	
 \maketitle
@@ -90,6 +90,8 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 January 10, 2015 & 1.0 & Created document\\
+January 11, 2015 & 1.1 & Rev 0 submission\\
+April 25, 2016 & 1.2 & Rev 1 submission\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -137,15 +139,14 @@ The main menu of the game will be the level select screen.  An example of what t
 \end{figure}
 
 \begin{enumerate}
-  \item The grey color indicates that this level has already been unlocked.  The player can start from this level directly.
-  \item The white color indicates that this level has not been unlocked yet.  The player must start complete the level that precedes it in order to unlock it.
+  \item When the game is launched, the user begins at the main menu.  From here, a stage may be selected to be played.
 \end{enumerate}
 
 
 
 \subsubsection{Game Stages}
 
-Samples of possible stages are given in Figures~\ref*{fig:stage1}~-~\ref*{fig:stage3}.  Each figure is used to highlight some of the intended features that will appear in the game.
+Snapshots of the game stages are given in Figures~\ref*{fig:stage1}~-~\ref*{fig:stage3}.  Each figure is used to highlight some of the features that appear in the game.
 
 \newpage
 
@@ -157,11 +158,11 @@ Samples of possible stages are given in Figures~\ref*{fig:stage1}~-~\ref*{fig:st
 \end{figure}
 
 \begin{enumerate}
-  \item The initial position of the hero when the stage starts. When the hero is killed, play will resume at this position.
-  \item An spike hazard: the hero will be killed if contact is made.
-  \item The timer increases from zero when the stage begins.  The rating achieved when the level is completed is based on the elapsed time.
-  \item Boundary/platform:  the hero can stand/move safely on boundaries/platforms.
-  \item The goal of the stage is to reach the door safely.
+  \item The hero character that is controlled by the user.
+  \item A moving platform: transports the hero on a fixed path.
+  \item A spike hazard: the hero will be killed if contact is made.
+  \item The goal:  the hero must reach this platform to complete the stage.
+  \item A button to exit the stage and return to the main menu.
 \end{enumerate}
 
 \newpage
@@ -175,10 +176,8 @@ Samples of possible stages are given in Figures~\ref*{fig:stage1}~-~\ref*{fig:st
 
 
 \begin{enumerate}
-  \item A swinging axe hazard: the hero will be killed if contact is made.
-  \item A spear trap: spears will randomly pop out of the spear trap killing the hero on contact.  When the spears are retracted it acts as a platform.
-  \item A circular saw blade hazard: the saw blade will move back and forth on a linear path continuously, killing the hero on contact.
-  \item A projectile trap: shoots single spears which kill the hero on contact.
+  \item A boulder hazard:  rolls freely and crushes the hero if caught in its path.
+  \item A ramp:  allows the hero to climb to new heights.
 \end{enumerate}
 
 \newpage
@@ -192,13 +191,13 @@ Samples of possible stages are given in Figures~\ref*{fig:stage1}~-~\ref*{fig:st
 
 
 \begin{enumerate}
-  \item Rock trap: the rock drops and falls/rolls freely, crushing the hero if contact is made.
-  \item Trigger: activates the rock trap (or other types of traps) if touched by the hero.
-  \item Ice platform: changes friction factors for more difficult control when the hero is in contact.
+  \item A platform:  the hero is supported by platforms and can move freely across them.
+  \item A wall:  obstructs the hero's path.
+  \item A spear hazard:  the pointy end impales the hero, but the wood shaft can be used as a platform.
 \end{enumerate}
 
 \subsection{Object Meshes}
-Creating meshes that accurately portray the objects they represent is an important consideration related to the user interface.   Samples of object meshes that have been created for use in the game are given in Figures~\ref*{fig:axe}~-~\ref*{fig:spikes} in \hyperref[sec:app]{Appendix A}.
+Creating meshes that accurately portray the objects they represent is an important consideration related to the user interface.   Samples of object meshes that have been created for use in the game are given in Figures~\ref*{fig:door}~-~\ref*{fig:spikes} in \hyperref[sec:app]{Appendix A}.
 
 
 \section{Key Algorithms}

@@ -1,0 +1,111 @@
+\hypertarget{class_kinematic_object}{}\section{Kinematic\+Object Class Reference}
+\label{class_kinematic_object}\index{Kinematic\+Object@{Kinematic\+Object}}
+
+
+{\ttfamily \#include $<$Kinematic\+Object.\+h$>$}
+
+
+
+Inheritance diagram for Kinematic\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_kinematic_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Kinematic\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_kinematic_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_kinematic_object_a633cbc2ebe42be4d0a5fd8ddf99a1b72}{Kinematic\+Object} ()\hypertarget{class_kinematic_object_a633cbc2ebe42be4d0a5fd8ddf99a1b72}{}\label{class_kinematic_object_a633cbc2ebe42be4d0a5fd8ddf99a1b72}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_kinematic_object}{Kinematic\+Object} default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_kinematic_object_a28d858a369fffd904d9dd031b2c70197}{Kinematic\+Object} (float x, float y, float scale, float elast, float fric, int type, std\+::string gpu\+Path, std\+::string v\+Path, std\+::string f\+Path)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_kinematic_object}{Kinematic\+Object} constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_kinematic_object_a41b3cb111b8862cdeaace5857b62bfdd}{update} (float dt)
+\begin{DoxyCompactList}\small\item\em Updates kinematic object (position, velocity, etc) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_kinematic_object}{Kinematic\+Object} class is derived from the \hyperlink{class_physics_object}{Physics\+Object} class. This type of object is identical to static objects except that it can be moved by directly changing position, velocity, force, etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Kinematic\+Object@{Kinematic\+Object}!Kinematic\+Object@{Kinematic\+Object}}
+\index{Kinematic\+Object@{Kinematic\+Object}!Kinematic\+Object@{Kinematic\+Object}}
+\subsubsection[{\texorpdfstring{Kinematic\+Object(float x, float y, float scale, float elast, float fric, int type, std\+::string gpu\+Path, std\+::string v\+Path, std\+::string f\+Path)}{KinematicObject(float x, float y, float scale, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath)}}]{\setlength{\rightskip}{0pt plus 5cm}Kinematic\+Object\+::\+Kinematic\+Object (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{scale, }
+\item[{float}]{elast, }
+\item[{float}]{fric, }
+\item[{int}]{type, }
+\item[{std\+::string}]{gpu\+Path, }
+\item[{std\+::string}]{v\+Path, }
+\item[{std\+::string}]{f\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_kinematic_object_a28d858a369fffd904d9dd031b2c70197}{}\label{class_kinematic_object_a28d858a369fffd904d9dd031b2c70197}
+
+
+\hyperlink{class_kinematic_object}{Kinematic\+Object} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the dynamic object \\
+\hline
+{\em y} & The y-\/coordinate of the dynamic object \\
+\hline
+{\em scale} & Scalar factor by which to scale the object during G\+PU rendering \\
+\hline
+{\em elast} & Elasticity of the object \\
+\hline
+{\em fric} & Friction factor of the object \\
+\hline
+{\em type} & Type of object (different values affect collision routines) \\
+\hline
+{\em gpu\+Path} & The path to the obj file for the object \\
+\hline
+{\em v\+Path} & The path to the vertex shader for the object \\
+\hline
+{\em f\+Path} & The path to the fragment shader for the object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Kinematic\+Object@{Kinematic\+Object}!update@{update}}
+\index{update@{update}!Kinematic\+Object@{Kinematic\+Object}}
+\subsubsection[{\texorpdfstring{update(float dt)}{update(float dt)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Kinematic\+Object\+::update (
+\begin{DoxyParamCaption}
+\item[{float}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_kinematic_object_a41b3cb111b8862cdeaace5857b62bfdd}{}\label{class_kinematic_object_a41b3cb111b8862cdeaace5857b62bfdd}
+
+
+Updates kinematic object (position, velocity, etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The timestep to move the object through. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_moving_platform_a9eb48b9e90a70b28f6c71ec2673a66cc}{Moving\+Platform}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Kinematic\+Object.\+h\end{DoxyCompactItemize}

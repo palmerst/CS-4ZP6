@@ -1,0 +1,64 @@
+\hypertarget{class_physics_object}{}\section{Physics\+Object Class Reference}
+\label{class_physics_object}\index{Physics\+Object@{Physics\+Object}}
+
+
+{\ttfamily \#include $<$Physics\+Object.\+h$>$}
+
+
+
+Inheritance diagram for Physics\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{$\sim$\+Physics\+Object} ()\hypertarget{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{}\label{class_physics_object_ade6588d8622cff10e979118e0f8a076e}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_physics_object}{Physics\+Object} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_physics_object_a37fcb312275149e32e30ade97c30ff8d}{render} ()\hypertarget{class_physics_object_a37fcb312275149e32e30ade97c30ff8d}{}\label{class_physics_object_a37fcb312275149e32e30ade97c30ff8d}
+
+\begin{DoxyCompactList}\small\item\em Renders the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cp\+Body $\ast$ \hyperlink{class_physics_object_ae836920d09d47b9b046c69c3fdd8dba1}{body}\hypertarget{class_physics_object_ae836920d09d47b9b046c69c3fdd8dba1}{}\label{class_physics_object_ae836920d09d47b9b046c69c3fdd8dba1}
+
+\begin{DoxyCompactList}\small\item\em Pointer to Chipmunk 2D body associated with the object. \end{DoxyCompactList}\item 
+cp\+Shape $\ast$ \hyperlink{class_physics_object_a1c41c18cdfe7fababf08210dd36c4d52}{shape}\hypertarget{class_physics_object_a1c41c18cdfe7fababf08210dd36c4d52}{}\label{class_physics_object_a1c41c18cdfe7fababf08210dd36c4d52}
+
+\begin{DoxyCompactList}\small\item\em Pointer to Chipmunk 2D shape associated with the object. \end{DoxyCompactList}\item 
+cp\+Vect \hyperlink{class_physics_object_a732744541b96297fe68bcdd4eb15eadc}{standing\+Normal}\hypertarget{class_physics_object_a732744541b96297fe68bcdd4eb15eadc}{}\label{class_physics_object_a732744541b96297fe68bcdd4eb15eadc}
+
+\begin{DoxyCompactList}\small\item\em Normal used in collision handler to determine if hero can jump. \end{DoxyCompactList}\item 
+cp\+Vect \hyperlink{class_physics_object_ad4320fa83060bd24c85e5f7a06d07650}{death\+Normal}\hypertarget{class_physics_object_ad4320fa83060bd24c85e5f7a06d07650}{}\label{class_physics_object_ad4320fa83060bd24c85e5f7a06d07650}
+
+\begin{DoxyCompactList}\small\item\em Normal used in collision handler to determine if hero should be killed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static cp\+Space $\ast$ \hyperlink{class_physics_object_af51d68e507cb0a7796241695b1c78046}{space}\hypertarget{class_physics_object_af51d68e507cb0a7796241695b1c78046}{}\label{class_physics_object_af51d68e507cb0a7796241695b1c78046}
+
+\begin{DoxyCompactList}\small\item\em Pointer to current Chipmunk 2D space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_physics_object}{Physics\+Object} class is derived from the \hyperlink{class_obj}{Obj} class and is the parent to all objects associated with Chipmunk2D. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Object.\+h\end{DoxyCompactItemize}

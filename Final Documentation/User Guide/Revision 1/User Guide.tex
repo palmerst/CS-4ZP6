@@ -91,14 +91,15 @@
 \listoffigures
 
 
-\begin{table}[b]
+\begin{table}[t]
 \caption*{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 February 28, 2016 & 1.0 & Created document\\
 February 29, 2016 & 1.1 & Finished draft\\
-February 29, 2016 & rev0 & Rev 0 final\\
+February 29, 2016 & 1.2 & Rev 0 final\\
+April 25, 2016 & 1.3 & Rev 1 final\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -149,7 +150,7 @@ Platform Perils is compatible with the following operating systems:
   \item \texttt{Mac OS X 10.6 and higher}
   \item \texttt{Linux (confirmed working on the Arch Linux distribution)}
 \end{itemize}
-
+\newpage
 \noindent The following software will be required to install the game:
 \begin{itemize}
   \item \texttt{CMake}
@@ -195,7 +196,7 @@ A cross-platform compatible installer is included with the game.  To use the ins
   \item Run the command\\\\
    ${}$\qquad \texttt{make}\\\\
     to begin building the libraries and the game.  This will build all of the necessary libraries as well as the game.  The build process should take 1 to 2 minutes.
-
+\newpage
   \item Run the command\\\\
   ${}$\qquad \texttt{make install}\\\\
   to install the game to the \texttt{game} directory.  All of the files required to run the game will be moved to this directory.
@@ -258,7 +259,7 @@ Spears & Spears are  The\\
 \end{center}
 \end{figure}
 
-
+\newpage
 \subsection{Game Controls}
 The default game controls are given in \hyperref[tab:ctrl]{Table~\ref*{tab:ctrl}}.
 
@@ -285,22 +286,20 @@ S & Zoom out\\
 Once you have finished the three stages that come with game, the fun continues!  Stages are defined in level scripts found in \texttt{/data/stage/} (starting from the \texttt{game} directory), which can be edited to create custom stages.  The remainder of this section provides information about the level script format.
 
 \subsection{Basics}
-The shorthand used to explain script syntax is given in \hyperref[tab:notation]{Table~\ref*{tab:notation}}.
+The shorthand used to explain script syntax is given in \hyperref[tab:notation]{Table~\ref*{tab:notation}}.  The fields encountered in the scripts are given in \hyperref[tab:fields]{Table~\ref*{tab:fields}}.
 
 \begin{table}[h]
 \caption{Shorthand used to explain script syntax} \label{tab:notation}
 \centering
-\begin{tabularx}{\textwidth}{p{3cm}p{3cm}X}
+\begin{tabularx}{\textwidth}{p{5cm}p{3cm}X}
 \toprule {\bf Shorthand} & {\bf Meaning} & {\bf Example}\\
 \midrule
 \{opt1|opt2|opt3\} & Choice & opt1 {\bf or} opt2 {\bf or} opt3\\
 opt1[, opt2] & Optional & opt1 {\bf or} opt1, opt2\\
-<float> & Decimal & 30.00\\
+$\langle$float$\rangle$ & Decimal & 30.00\\
 \bottomrule
 \end{tabularx}
 \end{table}
-
-Finally, we define some common fields encountered in the scripts in \hyperref[tab:fields]{Table~\ref*{tab:fields}}.
 
 \begin{table}[h]
 \caption{Level script fields} \label{tab:fields}
@@ -308,6 +307,11 @@ Finally, we define some common fields encountered in the scripts in \hyperref[ta
 \begin{tabularx}{\textwidth}{p{2cm}X}
 \toprule {\bf Field} & {\bf Meaning}\\
 \midrule
+background & Defines the stage background (bluesky is currently the only choice)\\
+setting & Defines the stage setting (desert is currently the only choice);  note that the setting surface is positioned at y=0\\
+startx & The x position that the hero begins at\\
+starty & The y position that the hero begins at\\
+archpos & Position of the arch on the goal platform (left or right)\\
 xleft & Sets x position of the left side of the object's bounding box\\
  xmid & Sets x position of the x-axis center of the object's bounding box\\
  xright & Sets x position of the right side of the object's bounding box\\
@@ -316,6 +320,8 @@ xleft & Sets x position of the left side of the object's bounding box\\
  ytop & Sets y position of the top of the object's bounding box\\
  thickness & Thickness of platform/goal (vertical thickness) or wall (horizontal thickness);  defaults to 1.0\\
  rot & Rotation of object about the z-axis (in degrees)\\
+ w & Moving platform width\\
+ speed & Moving platform speed (1-10)\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -325,7 +331,7 @@ xleft & Sets x position of the left side of the object's bounding box\\
 
 
 \subsection{Stage Section}
-The stage section begins with the header \texttt{**stage**} and defines basic information about the stage.  The stage section has the following form:
+The stage section begins with the header \texttt{**stage**} and defines basic information about the stage.  The stage section has the following form:\\
 
 \noindent ${}$\qquad \texttt{**stage**}\\
 ${}$\qquad \texttt{background=bluesky}\\
@@ -335,7 +341,86 @@ ${}$\qquad \texttt{starty=<float>}\\
 
 \noindent This section is required.
 
+\subsection{Goal Section}
+The goal section begins with the header \texttt{**goal**} and defines the location of the goal.  The goal has the following form:\\
 
+\noindent ${}$\qquad \texttt{**goal**}\\
+${}$\qquad \texttt{x=<float> to <float>, \{ybot|ymid|ytop\}=<float>[, thickness=<float>]}\\
+${}$\qquad \texttt{archpos=\{left|right\}}\\
+
+\noindent Example:\\
+
+\noindent ${}$\qquad \texttt{**goal**}\\
+${}$\qquad \texttt{x=45 to 60, ytop=22, thickness=22}\\
+${}$\qquad \texttt{archpos=left}\\
+
+\noindent Note that the x range should be specified from left to right.
+
+\subsection{Platforms Section (Optional)}
+The platforms section begins with the header \texttt{**platforms**} and defines the platforms contained in the stage.  The following syntax is used to define platforms:\\
+
+\noindent ${}$\qquad \texttt{x=<float> to <float>, \{ybot|ymid|ytop\}=<float>[, thickness=<float>]}\\
+
+\noindent Example:\\
+
+\noindent ${}$\qquad \texttt{**platforms**}\\
+${}$\qquad \texttt{x=45 to 60, ytop=22, thickness=22}\\
+${}$\qquad \texttt{x=-80 to -60, ybot=55}\\
+${}$\qquad \texttt{x=-45 to 0, ymid=78.5}\\
+
+\noindent Note that the x range should be specified from left to right.
+
+\newpage
+\subsection{Walls Section (Optional)}
+The walls section begins with the header \texttt{**walls**} and defines the walls contained in the stage.  The following syntax is used to define walls:\\
+
+\noindent ${}$\qquad \texttt{\{xleft|xmid|xright\}=<float>, y=<float> to <float>[, thickness=<float>]}\\
+
+\noindent Example:\\
+
+\noindent ${}$\qquad \texttt{**walls**}\\
+${}$\qquad \texttt{xleft=20, y=22 to 40, thickness=10}\\
+${}$\qquad \texttt{xmid=80, y=0 to 160}\\
+
+\noindent Note that the y range should be specified from bottom to top.
+
+\subsection{Ramps Section (Optional)}
+The ramps section begins with the header \texttt{**ramps**} and defines the ramps contained in the stage.  The following syntax is used to define ramps:\\
+
+\noindent ${}$\qquad \texttt{x=<float> to <float>, \{ybot|ymid|ytop\}=<float> to <float>}\\
+
+\noindent Example:\\
+
+\noindent ${}$\qquad \texttt{**ramps**}\\
+${}$\qquad \texttt{x=20 to 50, ytop=22 to 30}\\
+${}$\qquad \texttt{x=500.1 to 145.7, ybot=0 to 160}\\
+
+\noindent Note that the x range should be specified from left to right and the y range should be specified from bottom to top.
+
+\newpage
+\subsection{Moving Platforms Section (Optional)}
+The moving platforms section begins with the header \texttt{**movingplatforms**} and defines the moving platforms contained in the stage.  The following syntax is used to define moving platforms:\\
+
+\noindent ${}$\qquad \texttt{w=<float>, speed=<float>}\\
+${}$\qquad${}$\qquad \texttt{\{xleft|xmid|xright\}=<float>, \{ybot|ymid|ytop\}=<float>}\\
+${}$\qquad${}$\qquad \texttt{...}\\
+${}$\qquad${}$\qquad \texttt{\{xleft|xmid|xright\}=<float>, \{ybot|ymid|ytop\}=<float>}\\
+${}$\qquad${}$\qquad \texttt{end}\\
+
+\noindent Example:\\
+
+\noindent ${}$\qquad \texttt{**movingplatforms**}\\
+${}$\qquad \texttt{w=15, speed=5}\\
+${}$\qquad${}$\qquad \texttt{xleft=8, ybot=50.75}\\
+${}$\qquad${}$\qquad \texttt{xleft=8, ybot=10}\\
+${}$\qquad${}$\qquad \texttt{xmid=99, ytop=67}\\
+${}$\qquad${}$\qquad \texttt{end}\\
+${}$\qquad \texttt{w=5, speed=7}\\
+${}$\qquad${}$\qquad \texttt{xleft=66, ybot=100}\\
+${}$\qquad${}$\qquad \texttt{xleft=44, ybot=110}\\
+${}$\qquad${}$\qquad \texttt{end}\\
+
+\noindent Note that the number of nodes that define the path is unlimited.
 
 \subsection{Hazards Section (Optional)}
 The hazards section begins with the header \texttt{**hazards**} and defines the hazards contained in the stage.  The following syntax is used to define hazards:\\

@@ -1,0 +1,219 @@
+\hypertarget{class_menu}{}\section{Menu Class Reference}
+\label{class_menu}\index{Menu@{Menu}}
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_menu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_menu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_menu_a7570644ca93aaf710f7ded2e20e36186}{Menu} (bool in\+Game)\hypertarget{class_menu_a7570644ca93aaf710f7ded2e20e36186}{}\label{class_menu_a7570644ca93aaf710f7ded2e20e36186}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_menu}{Menu} constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{$\sim$\+Menu} ()\hypertarget{class_menu_a831387f51358cfb88cd018e1777bc980}{}\label{class_menu_a831387f51358cfb88cd018e1777bc980}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_menu}{Menu} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a1efe72e89e793c1c6f67d16c513499e1}{update\+Environment} (double dt)
+\begin{DoxyCompactList}\small\item\em Function for updating the environment. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_ac1403e071d911bf4c3b43d344d46ee4f}{draw\+Environment} ()\hypertarget{class_menu_ac1403e071d911bf4c3b43d344d46ee4f}{}\label{class_menu_ac1403e071d911bf4c3b43d344d46ee4f}
+
+\begin{DoxyCompactList}\small\item\em Function for drawing the environment. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a936bec79e70b42707578af8f7d7bc1b2}{process\+KB} (int key, int scancode, int action, int mods)
+\begin{DoxyCompactList}\small\item\em Function for keyboard input processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a2ff354c6e9693f559f3778d78a34e405}{process\+Continuous\+Input} ()\hypertarget{class_menu_a2ff354c6e9693f559f3778d78a34e405}{}\label{class_menu_a2ff354c6e9693f559f3778d78a34e405}
+
+\begin{DoxyCompactList}\small\item\em Function for continuous input processing. \end{DoxyCompactList}\item 
+bool \hyperlink{class_menu_a98aa69e5ed8eb5a80cd19b4dd6c9482c}{process\+Mouse\+Position} (float xpos, float ypos)
+\begin{DoxyCompactList}\small\item\em Function for mouse position change processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_acf97e448b5fbe3fefca5e6459e841438}{process\+Mouse\+Click} (int button, int action, int mods)
+\begin{DoxyCompactList}\small\item\em Function for mouse input processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_adc7835954b600003eea158e03a0108d4}{Show\+Sub\+Menu} (int level, bool b\+Show=true)
+\begin{DoxyCompactList}\small\item\em Displays main menu. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a0f4426bd7323a84c24fc764a76f0b557}{show\+Level\+Sub\+Menu} (bool b\+Show)
+\begin{DoxyCompactList}\small\item\em Displays level select menu. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a6599ad763c91acb0a1683be542f8e095}{update\+Screen\+Size} ()\hypertarget{class_menu_a6599ad763c91acb0a1683be542f8e095}{}\label{class_menu_a6599ad763c91acb0a1683be542f8e095}
+
+\begin{DoxyCompactList}\small\item\em Changes layout due to screen size update. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a085252eb220290c5492a3afca26fa2a1}{add\+New\+Item} (char $\ast$sz\+Normal, char $\ast$sz\+Hover, char $\ast$sz\+Selected, int posX, int posY, Menu\+Item\+Handler handler, void $\ast$param, short level, bool active=false, bool fixed=false)\hypertarget{class_menu_a085252eb220290c5492a3afca26fa2a1}{}\label{class_menu_a085252eb220290c5492a3afca26fa2a1}
+
+\begin{DoxyCompactList}\small\item\em Adds button to the menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_menu_a7e39cf7f3f6404eb670e34f4e4303f92}{hover\+\_\+menuitem} (Menu\+Item $\ast$)\hypertarget{class_menu_a7e39cf7f3f6404eb670e34f4e4303f92}{}\label{class_menu_a7e39cf7f3f6404eb670e34f4e4303f92}
+
+\begin{DoxyCompactList}\small\item\em Called when mouse position is changes to detect hover over buttons. \end{DoxyCompactList}\item 
+void \hyperlink{class_menu_a1bc5693b23c0545f153b8d472256b672}{click\+\_\+menuitem} (Menu\+Item $\ast$)\hypertarget{class_menu_a1bc5693b23c0545f153b8d472256b672}{}\label{class_menu_a1bc5693b23c0545f153b8d472256b672}
+
+\begin{DoxyCompactList}\small\item\em Called when mouse is clicked to detect click on buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Menu\+Item $\ast$ $>$ \hyperlink{class_menu_a5392cc6eccd7473ee634e976106466d9}{vec\+Menu\+Item}\hypertarget{class_menu_a5392cc6eccd7473ee634e976106466d9}{}\label{class_menu_a5392cc6eccd7473ee634e976106466d9}
+
+\begin{DoxyCompactList}\small\item\em Stores menu buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_menu}{Menu} class is derived from the \hyperlink{class_environment}{Environment} class and holds and handles changes to the game state when the user is not playing a stage (i.\+e. is in a menu of some kind). 
+
+\subsection{Member Function Documentation}
+\index{Menu@{Menu}!process\+KB@{process\+KB}}
+\index{process\+KB@{process\+KB}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{process\+K\+B(int key, int scancode, int action, int mods)}{processKB(int key, int scancode, int action, int mods)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::process\+KB (
+\begin{DoxyParamCaption}
+\item[{int}]{key, }
+\item[{int}]{scancode, }
+\item[{int}]{action, }
+\item[{int}]{mods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_menu_a936bec79e70b42707578af8f7d7bc1b2}{}\label{class_menu_a936bec79e70b42707578af8f7d7bc1b2}
+
+
+Function for keyboard input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to which the action corresponds. \\
+\hline
+{\em scancode} & System specific key code. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a3a105533fb7592615f6b4321aafc5545}{Environment}.
+
+\index{Menu@{Menu}!process\+Mouse\+Click@{process\+Mouse\+Click}}
+\index{process\+Mouse\+Click@{process\+Mouse\+Click}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Click(int button, int action, int mods)}{processMouseClick(int button, int action, int mods)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::process\+Mouse\+Click (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{action, }
+\item[{int}]{mods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_menu_acf97e448b5fbe3fefca5e6459e841438}{}\label{class_menu_acf97e448b5fbe3fefca5e6459e841438}
+
+
+Function for mouse input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Mouse button to which the action corresponds. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a19cf4bbbe86528759e0ad79e19025732}{Environment}.
+
+\index{Menu@{Menu}!process\+Mouse\+Position@{process\+Mouse\+Position}}
+\index{process\+Mouse\+Position@{process\+Mouse\+Position}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Position(float xpos, float ypos)}{processMousePosition(float xpos, float ypos)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Menu\+::process\+Mouse\+Position (
+\begin{DoxyParamCaption}
+\item[{float}]{xpos, }
+\item[{float}]{ypos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_menu_a98aa69e5ed8eb5a80cd19b4dd6c9482c}{}\label{class_menu_a98aa69e5ed8eb5a80cd19b4dd6c9482c}
+
+
+Function for mouse position change processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpos} & Mouse cursor x-\/position \\
+\hline
+{\em ypos} & Mouse cursor y-\/position \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a92819bf5a6aa5877c0f89fd65a4d7554}{Environment}.
+
+\index{Menu@{Menu}!show\+Level\+Sub\+Menu@{show\+Level\+Sub\+Menu}}
+\index{show\+Level\+Sub\+Menu@{show\+Level\+Sub\+Menu}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{show\+Level\+Sub\+Menu(bool b\+Show)}{showLevelSubMenu(bool bShow)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::show\+Level\+Sub\+Menu (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\+Show}
+\end{DoxyParamCaption}
+)}\hypertarget{class_menu_a0f4426bd7323a84c24fc764a76f0b557}{}\label{class_menu_a0f4426bd7323a84c24fc764a76f0b557}
+
+
+Displays level select menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Show} & Flag specifies whether buttons should be drawn. \\
+\hline
+\end{DoxyParams}
+\index{Menu@{Menu}!Show\+Sub\+Menu@{Show\+Sub\+Menu}}
+\index{Show\+Sub\+Menu@{Show\+Sub\+Menu}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{Show\+Sub\+Menu(int level, bool b\+Show=true)}{ShowSubMenu(int level, bool bShow=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::\+Show\+Sub\+Menu (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{bool}]{b\+Show = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_menu_adc7835954b600003eea158e03a0108d4}{}\label{class_menu_adc7835954b600003eea158e03a0108d4}
+
+
+Displays main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \hyperlink{class_menu}{Menu} depth. \\
+\hline
+{\em b\+Show} & Flag specifies whether buttons should be drawn. \\
+\hline
+\end{DoxyParams}
+\index{Menu@{Menu}!update\+Environment@{update\+Environment}}
+\index{update\+Environment@{update\+Environment}!Menu@{Menu}}
+\subsubsection[{\texorpdfstring{update\+Environment(double dt)}{updateEnvironment(double dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::update\+Environment (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_menu_a1efe72e89e793c1c6f67d16c513499e1}{}\label{class_menu_a1efe72e89e793c1c6f67d16c513499e1}
+
+
+Function for updating the environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step to be used for the update (time since last update) in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_afbc95329581e994ed49a678c814657ea}{Environment}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Menu.\+h\end{DoxyCompactItemize}

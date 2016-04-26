@@ -14,12 +14,12 @@ private:
     cpSpace* envSpace;      //!< Pointer to the chipmunk space associated with the stage.
 
     /*** Objects in environment ***/
-    std::vector<PhysicsObject*> physicsObjects;
-    std::vector<KinematicObject*> kinematicObjects;
-    std::vector<StandardObject*> standardObjects;
+    std::vector<PhysicsObject*> physicsObjects;         //!< List of physics objects (excluding kinematic) in stage.
+    std::vector<KinematicObject*> kinematicObjects;     //!< List of kinematic objects in stage.
+    std::vector<StandardObject*> standardObjects;       //!< List of standard objects in stage.
 
-    Skybox* skybox;
-    Boundary* boundary;
+    Skybox* skybox;         //!< The skybox object provides the backdrop of the stage.
+    Boundary* boundary;     //!< The boundary object provides the surface setting.
 
     float stageTime;     //!< Time elapsed since beginning the stage.
 
@@ -34,13 +34,11 @@ private:
     /*** Controlled object ***/
     Hero* userControlObject;    //!< Pointer to the dynamic object that is controlled by the user (normally the hero object).
 
-    bool firstPerson = false;
+    Camera camera;      //!< Used to control the view.
 
-    Camera camera;
+    int winTimer;       //!< Countdown timer set when stage is won;  determines when exit to menu occurs.
 
-    int winTimer;
-
-    std::string stageName;
+    std::string stageName;  //!< Name of current stage file (used for reseting stage).
 
 public:
 
@@ -65,6 +63,7 @@ public:
       \param mods Active modifiers (i.e. shift, control, etc.)
     */
     void processKB(int key, int scancode, int action, int mods);
+
     void processContinuousInput(); //!< Function for continuous input processing.
 
     //! Function for mouse position change processing.
@@ -79,17 +78,16 @@ public:
       \param button Mouse button to which the action corresponds.
       \param action The action (i.e. button up, down, held, etc.)
       \param mods Active modifiers (i.e. shift, control, etc.)
-      \param winX Mouse cursor x-position
-      \param winY Mouse cursor y-position
     */
     void processMouseClick(int button, int action, int mods);
 
-    //! Function checks if stage is complete.
+    //! Checks if stage is complete.
     /*!
       \return True if stage is complete, else false.
     */
     bool checkCompletion();
 
+    //! Updates the projection matrix when screen size is changed.
     void updateScreenSize();
 };
 

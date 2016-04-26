@@ -3,18 +3,18 @@
 
 #include "StaticObject.h"
 
-/*! The StaticObject class is derived from the Obj class.  Physics calculations are generally ignored for static objects.  Used primarily for boundaries and stationary platforms.
+/*! The Surface class is derived from the StaticObject class.  Used primarily for stationary platforms.
  */
 class Surface : public StaticObject
 {
 
 public:
-    //! StaticObject constructor
+    //! Surface constructor
     /*!
-      \param space Chipmunk 2D space to attach object to
       \param p1 Bottom left coordinate of bounding box
       \param p2 Upper right coordinate of bounding box
-      \param gpuData Pointer to the gpu data associated with the object
+      \param isRamp Flag specifies if surface is a ramp
+      \param thickness Thickness of the surface
     */
     Surface(cpVect p1, cpVect p2, bool isRamp, float thickness = 50.0f);
 

@@ -35,7 +35,6 @@ KinematicObject::KinematicObject(float x, float y, float scale, float elast, flo
     cpVect *hullVerts = (cpVect *)calloc(vertCount, sizeof(cpVect));
     int hullCount = cpConvexHull(vertCount, vertices, hullVerts, 0, 0.0);
 
-   // shape = cpSpaceAddShape(space, (cpShape*) cpPolyShapeInitRaw(cpPolyShapeAlloc(), body, vertCount, vertices, 1.0f));
     shape = cpSpaceAddShape(space, (cpShape*) cpPolyShapeNew(body, hullCount, hullVerts, cpTransformIdentity, 0.0f));
     cpShapeSetElasticity(shape, elast);
     cpShapeSetFriction(shape, fric);

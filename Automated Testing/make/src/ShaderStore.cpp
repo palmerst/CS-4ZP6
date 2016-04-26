@@ -4,7 +4,6 @@ ShaderStore::ShaderStore() {};
 
 Shader* ShaderStore::add(std::string vpath, std::string fpath)
 {
-
     std::map<std::string, Shader*>::iterator it = shaderMap.find(vpath + fpath);
     Shader* shader;
 
@@ -19,7 +18,6 @@ Shader* ShaderStore::add(std::string vpath, std::string fpath)
     }
 
     return shader;
-
 }
 
 Shader* ShaderStore::get(std::string vpath, std::string fpath)

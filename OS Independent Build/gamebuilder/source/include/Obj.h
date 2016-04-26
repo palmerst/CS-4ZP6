@@ -25,38 +25,43 @@ class Obj
 
 public:
 
-    static glm::mat4 matProjection;
-    static glm::mat4 matView;
+    static glm::mat4 matProjection;  //!< The projection matrix.
+    static glm::mat4 matView;  //!< The view matrix.
 
 
-    static glm::vec4 primaryLightPos;
-    static glm::vec3 primaryLightLa;
-    static glm::vec3 primaryLightLd;
-    static glm::vec3 primaryLightLs;
+    static glm::vec4 primaryLightPos;  //!< The primary light position.
+    static glm::vec3 primaryLightLa;  //!< The primary ambient light vector.
+    static glm::vec3 primaryLightLd;  //!< The primary diffuse light vector.
+    static glm::vec3 primaryLightLs;  //!< The primary spectral light vector.
 
 
-    static ObjGPUDataStore gpuStore;
-    static ShaderStore shaderStore;
-    static SoundStore soundStore;
+    static ObjGPUDataStore gpuStore;  //!< Collection of loaded meshes.
+    static ShaderStore shaderStore;  //!< Collection of loaded shaders.
+    static SoundStore soundStore;  //!< Collection of loaded sounds.
 
-    static Shader* currentShader;
+    static Shader* currentShader;  //!< The shader currently being used.
 
-    std::vector<ObjGPUData*> gpuDataList;
-    std::vector<Shader*> shaderList;
+    std::vector<ObjGPUData*> gpuDataList;  //!< Vector of meshes associated with this object.
+    std::vector<Shader*> shaderList;  //!< Vector of shaders associated with this object.
 
-    bool transformOverrides = false;
-    std::vector<glm::vec3> translationOverrideList;
-    std::vector<float> rotationOverrideList;
-    std::vector<glm::mat4> shearOverrideList;
-    //    ObjGPUData* gpuData;    //!< Pointer to the gpu data associated with the object.
+    bool transformOverrides = false;  //!< Flag to activate override transformations.
+    std::vector<glm::vec3> translationOverrideList;  //!< List of translation overrides (one for each mesh).
+    std::vector<float> rotationOverrideList;  //!< List of rotation overrides (one for each mesh).
+    std::vector<glm::mat4> shearOverrideList; //!< List of shear overrides (one for each mesh).
 
     float height;           //!< Height of the object.
     float width;            //!< Width of the object.
 
-    glm::vec3 modelScale;
+    glm::vec3 modelScale;  //!< Initial scaling matrix to be applied the model.
 
     bool draw = true;              //!< Flag for whether the object should be drawn or not.
 
+
+    //! Renders an object
+    /*!
+      \param pos Object position
+      \param angle Rotation about z axis
+    */
     void render(glm::vec3 pos, float angle);
 };
 

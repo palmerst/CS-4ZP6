@@ -11,80 +11,52 @@ Stage::Stage(std::string stageName)
     cpSpaceSetIterations(envSpace, 10);
     cpSpaceSetGravity(envSpace, cpv(0, -1500));
     PhysicsObject::space = envSpace;
-    //  cpSpaceSetSleepTimeThreshold(envSpace, 5.0f);
 
-
-    /*** Set up projection and view matrices -- these numbers will probably change ***/
+    /*** Set up projection and view matrices ***/
     Obj::matProjection = glm::perspective(60.0f*3.1415f/180.0f, Environment::screenWidth/Environment::screenHeight, 10.0f, 30000.0f);
-    //mat_Projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, 10.0f, 300.0f);
 
     overlay = new Menu(true);
     nextEnv = 0;
 
     setCollisionHandlers(envSpace);
 
-    /** STAGE DESIGN GOES BELOW HERE **/
-
     StageLoader* ns = new StageLoader(stageName.c_str(), physicsObjects, kinematicObjects, standardObjects, skybox, boundary, userControlObject);
-
-    /** STAGE DESIGN GOES ABOVE HERE **/
 
     soundMap.insert(std::pair<std::string, Sound*>("Background", new Sound("./data/sound/bm.wav")));
     soundMap.insert(std::pair<std::string, Sound*>("Jump", new Sound("./data/sound/jump.wav")));
 
-    soundMap.find("Background")->second->play(1);                     //play bgm
+    soundMap.find("Background")->second->play(1);
 
     winTimer = -1;
 
     this->stageName = stageName;
 }
 
-//clean
 Stage::~Stage()
 {
-
     cpSpaceFree(envSpace);
 
-
-    while(!standardObjects.empty()){
+    while(!standardObjects.empty())
+    {
         delete standardObjects.back();
         standardObjects.pop_back();
     }
 
-    while(!physicsObjects.empty()){
-//        cpSpaceRemoveShape(envSpace, physicsObjects.back()->shape);
-//        cpSpaceRemoveBody(envSpace, physicsObjects.back()->body);
-//        cpShapeFree(physicsObjects.back()->shape);
-//        cpBodyFree(physicsObjects.back()->body);
+    while(!physicsObjects.empty())
+    {
         delete physicsObjects.back();
         physicsObjects.pop_back();
     }
 
-    while(!kinematicObjects.empty()){
-//        cpSpaceRemoveShape(envSpace, kinematicObjects.back()->shape);
-//        cpSpaceRemoveBody(envSpace, kinematicObjects.back()->body);
-//        cpShapeFree(kinematicObjects.back()->shape);
-//        cpBodyFree(kinematicObjects.back()->body);
+    while(!kinematicObjects.empty())
+    {
         delete kinematicObjects.back();
         kinematicObjects.pop_back();
     }
 
-//    cpSpaceRemoveShape(envSpace, boundary->shape);
-//    cpSpaceRemoveBody(envSpace, boundary->body);
-//    cpShapeFree(boundary->shape);
-//    cpBodyFree(boundary->body);
     delete boundary;
-
-//    cpSpaceRemoveShape(envSpace, userControlObject->shape);
-//    cpSpaceRemoveBody(envSpace, userControlObject->body);
-//    cpShapeFree(userControlObject->shape);
- //   cpBodyFree(userControlObject->body);
     delete userControlObject;
-
     delete skybox;
-
-//    cpSpaceFree(envSpace);
-
     delete overlay;
 
     soundMap.find("Background")->second->stop();
@@ -112,43 +84,18 @@ void Stage::processContinuousInput()
             cpBodySetForce(userControlObject->body, cpv(100000.0, 0.0));
     }
     if(!keyStates[GLFW_KEY_A] && !keyStates[GLFW_KEY_D] && !keyStates[GLFW_KEY_LEFT] && !keyStates[GLFW_KEY_RIGHT])
-   {
-//        cpVect curVel = cpBodyGetVelocity(userControlObject->body);
-//        if(curVel.x != 0)
-//        {
-//            curVel.x /= 1.1;
-//            if(curVel.x > -100 || curVel.x < 100)
-//                curVel.x = 0;
-//            cpBodySetVelocity(userControlObject->body, curVel);
-//        }
-            cpShapeSetFriction(userControlObject->shape, 1.0f);
+    {
+        cpShapeSetFriction(userControlObject->shape, 1.0f);
     }
 
     if(keyStates[GLFW_KEY_SPACE])
     {
-        //            if(curVel.y < 0.5 && curVel.y > -0.5){
-        //                cpBodySetVelocity(userControlObject->body, cpvadd(curVel, cpv(0.0, 1150.0)));
-        //                soundMap.find("Jump")->second->play();
-        //            }
         if(userControlObject->canJump)
         {
             userControlObject->jump();
             soundMap.find("Jump")->second->play();
         }
 
-    }
-
-    if(keyStates[GLFW_KEY_E])
-    {
-        firstPerson = !firstPerson;
-        camera = Camera();
-        keyStates[GLFW_KEY_E] = 0;
-    }
-
-    if(keyStates[GLFW_KEY_P])
-    {
-        nextEnv = new Stage(std::string());
-        keyStates[GLFW_KEY_P] = 0;
     }
 
     if(keyStates[GLFW_KEY_W])
@@ -166,15 +113,17 @@ void Stage::processContinuousInput()
 
 void Stage::processKB(int key, int scancode, int action, int mods)
 {
-     if(nextEnv)
+    if(nextEnv)
         return;
 
-    if(action == GLFW_PRESS){
+    if(action == GLFW_PRESS)
+    {
         keyStates[key] = 1;
         if(key == GLFW_KEY_LEFT || key == GLFW_KEY_A || key == GLFW_KEY_RIGHT || key == GLFW_KEY_D)
             cpShapeSetFriction(userControlObject->shape, 0.0f);
     }
-    else if(action == GLFW_RELEASE){
+    else if(action == GLFW_RELEASE)
+    {
         keyStates[key] = 0;
     }
 }
@@ -182,11 +131,6 @@ void Stage::processKB(int key, int scancode, int action, int mods)
 
 bool Stage::processMousePosition(float xpos, float ypos)
 {
-
-    if(firstPerson)
-    {
-        camera.moveOrigin((float)(screenHeight - mouseY)/500.0f, (float)(screenWidth - mouseX)/500.0f);
-    }
 
     mouseX = xpos;
     mouseY = ypos;
@@ -199,34 +143,23 @@ bool Stage::processMousePosition(float xpos, float ypos)
 
 void Stage::processMouseClick(int button, int action, int mods)
 {
-//    winX -= 1;
-//    winY -= 1;
-//
-//    if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS){
-//        cpVect controlPos = cpBodyGetPosition(userControlObject->body);
-//        cpVect mousePos = cpv(mouseX - winX/2, mouseY - winY/2);
-//        cpVect bulletVel = cpvmult(cpvnormalize(mousePos),225.0);
-//        cpFloat bulletAngle = cpvtoangle(mousePos) - 3.141592/2.0;
-//        DynamicObject* bullet = new DynamicObject(envSpace, glm::vec2(controlPos.x, controlPos.y), 3, 3, 0.5, 1, gpuMap.find("Bullet")->second, OBJ_HERO_BULLET);
-//        cpBodySetVelocity(bullet->body, bulletVel);
-//        cpBodySetAngle(bullet->body, bulletAngle);
-//        dynamicObjects.push_back(bullet);
-//        soundMap.find("Bullet")->second->play();
-//    }
+    return;
 }
 
 
 /*** Step the space through time dt ***/
 void Stage::updateEnvironment(double dt)
 {
-    if(userControlObject->dead){
+    if(userControlObject->dead)
+    {
         nextEnv = new Stage(stageName);
         return;
     }
 
     if(winTimer > 0)
         winTimer--;
-    else if(winTimer == 0){
+    else if(winTimer == 0)
+    {
         nextEnv = new Menu(false);
         return;
     }
@@ -238,20 +171,10 @@ void Stage::updateEnvironment(double dt)
         ko->update(dt);
 
     cpVect controlPos = cpBodyGetPosition(userControlObject->body);
-    if(firstPerson)
-    {
-        camera.update(glm::vec3(controlPos.x, controlPos.y + userControlObject->height/4.0f, 0.0f));
-        Obj::matView = glm::lookAt(camera.pos, camera.origin, camera.up);
-    }
-    else{
-        Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 400.0f * camera.zoom, 1000.0f * camera.zoom), glm::vec3(controlPos.x, controlPos.y, 0.0f), camera.up);
-    }
+    Obj::matView = glm::lookAt(glm::vec3(controlPos.x, controlPos.y + 400.0f * camera.zoom, 1000.0f * camera.zoom), glm::vec3(controlPos.x, controlPos.y, 0.0f), camera.up);
+
 
     skybox->position = glm::vec3(controlPos.x, controlPos.y, 0);
-
-    if(false){
-        physicsObjects.push_back(new Boulder(0, 100));
-    }
 
 }
 
@@ -273,24 +196,19 @@ void Stage::drawEnvironment()
     /*** Draw all dynamic objects ***/
     for(int i = 0; i < physicsObjects.size(); i++)
     {
-
         if(physicsObjects[i]->draw)
             physicsObjects[i]->render();
-
     }
 
     for(int i = 0; i < kinematicObjects.size(); i++)
     {
-
         if(kinematicObjects[i]->draw)
             kinematicObjects[i]->render();
-
     }
 
     /*** Draw all standard objects ***/
     for(int i = 0; i < standardObjects.size(); i++)
     {
-
         if(standardObjects[i]->draw)
             standardObjects[i]->render();
     }

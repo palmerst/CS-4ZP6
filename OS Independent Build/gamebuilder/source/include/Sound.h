@@ -9,12 +9,10 @@
  */
 class Sound
 {
-
-
     ALuint audioBuffer;    //!< Binding id for sound data storage.
     ALuint audioSource;    //!< Binding id for position, velocity, etc. of sound source.
 
-    bool loaded;
+    bool loaded;    //!< Flag specifies if sound is loaded.
 
 public:
 
@@ -22,13 +20,11 @@ public:
     //! Sound constructor
     /*!
       \param path Path to the sound file that should be loaded.
-      \param loop Non-zero if the sound should be played as an infinite loop.
     */
     Sound(std::string path);
     ~Sound();       //!< Sound destructor
     void play(int loop = 0);    //!< Plays the sound data contained in the class.
-    void stop();
-
+    void stop();    //!< Stops playing sound.
 };
 
 #endif // SOUND_H

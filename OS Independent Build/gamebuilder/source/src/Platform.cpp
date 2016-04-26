@@ -2,8 +2,6 @@
 
 Platform::Platform(float x1, float x2, float ymid, float thickness) : Surface(cpv(x1,ymid-thickness/2), cpv(x2,ymid+thickness/2), false, thickness)
 {
-
-
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_top", 0, false));
     gpuDataList.back()->texturePlane = 2;
     gpuDataList.push_back(gpuStore.add("./data/obj/surface_bot", 0, false));

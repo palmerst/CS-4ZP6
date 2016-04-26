@@ -1,0 +1,71 @@
+\hypertarget{class_shader_store}{}\section{Shader\+Store Class Reference}
+\label{class_shader_store}\index{Shader\+Store@{Shader\+Store}}
+
+
+{\ttfamily \#include $<$Shader\+Store.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shader_store_acfd6bbef381749aa2d5d0efa6f176a14}{Shader\+Store} ()\hypertarget{class_shader_store_acfd6bbef381749aa2d5d0efa6f176a14}{}\label{class_shader_store_acfd6bbef381749aa2d5d0efa6f176a14}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_shader}{Shader} $\ast$ \hyperlink{class_shader_store_a05d990118a05385a515c06d50ee2843f}{add} (std\+::string vpath, std\+::string fpath)
+\begin{DoxyCompactList}\small\item\em Adds a new shader to the store\+: if not in the store, it loads and stores; if already present, it does nothing. \end{DoxyCompactList}\item 
+\hyperlink{class_shader}{Shader} $\ast$ \hyperlink{class_shader_store_ab4d641d0e399f7a4ca47a74f5ab4d66e}{get} (std\+::string vpath, std\+::string fpath)
+\begin{DoxyCompactList}\small\item\em Retrieves gpu data from the store. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_shader}{Shader} $\ast$ $>$ \hyperlink{class_shader_store_a23586974751c0c4fc9ce52eb3fa42985}{shader\+Map}\hypertarget{class_shader_store_a23586974751c0c4fc9ce52eb3fa42985}{}\label{class_shader_store_a23586974751c0c4fc9ce52eb3fa42985}
+
+\begin{DoxyCompactList}\small\item\em Map translates sound file name to shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_shader_store}{Shader\+Store} class acts as a storage class for loaded shaders. 
+
+\subsection{Member Function Documentation}
+\index{Shader\+Store@{Shader\+Store}!add@{add}}
+\index{add@{add}!Shader\+Store@{Shader\+Store}}
+\subsubsection[{\texorpdfstring{add(std\+::string vpath, std\+::string fpath)}{add(std::string vpath, std::string fpath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shader}$\ast$ Shader\+Store\+::add (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{vpath, }
+\item[{std\+::string}]{fpath}
+\end{DoxyParamCaption}
+)}\hypertarget{class_shader_store_a05d990118a05385a515c06d50ee2843f}{}\label{class_shader_store_a05d990118a05385a515c06d50ee2843f}
+
+
+Adds a new shader to the store\+: if not in the store, it loads and stores; if already present, it does nothing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vpath} & Path to vertex shader \\
+\hline
+{\em fpath} & Path to fragment shader \\
+\hline
+\end{DoxyParams}
+\index{Shader\+Store@{Shader\+Store}!get@{get}}
+\index{get@{get}!Shader\+Store@{Shader\+Store}}
+\subsubsection[{\texorpdfstring{get(std\+::string vpath, std\+::string fpath)}{get(std::string vpath, std::string fpath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shader}$\ast$ Shader\+Store\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{vpath, }
+\item[{std\+::string}]{fpath}
+\end{DoxyParamCaption}
+)}\hypertarget{class_shader_store_ab4d641d0e399f7a4ca47a74f5ab4d66e}{}\label{class_shader_store_ab4d641d0e399f7a4ca47a74f5ab4d66e}
+
+
+Retrieves gpu data from the store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vpath} & Path to vertex shader \\
+\hline
+{\em fpath} & Path to fragment shader \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Shader\+Store.\+h\end{DoxyCompactItemize}

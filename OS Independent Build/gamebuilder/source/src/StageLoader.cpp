@@ -3,7 +3,8 @@
 #include <cstdlib>
 #include <cmath>
 
-StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<KinematicObject*>& kinematicObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject){
+StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& physicsObjects, std::vector<KinematicObject*>& kinematicObjects, std::vector<StandardObject*>& standardObjects, Skybox*& skybox, Boundary*& boundary, Hero*& userControlObject)
+{
 
     this->fileName = fileName;
     this->lineNo = 0;
@@ -11,7 +12,8 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
     float scaleFactor = 50.0f;
 
     inFile.open(fileName.c_str());
-    if(!inFile.is_open()){
+    if(!inFile.is_open())
+    {
         std::cout << "Stage file \"" << fileName << "\" does not exist" << std::endl;
         exit(3);
     }
@@ -20,13 +22,15 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
      **  Find the **stage** header
      **/
 
-    getNextLine(); // get line from file
+    getNextLine();
 
     while(inFile.good())
     {
 
-        if(line == "**stage**"){
-            while(inFile.good()){
+        if(line == "**stage**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -42,8 +46,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
-        if(line == "**goal**"){
-            while(inFile.good()){
+        if(line == "**goal**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -60,7 +66,8 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
                 else if(sscanf(line.c_str(), "x=%fto%f,ymid=%f,thickness=%f", &x1, &x2, &y, &t) >= 3);
                 else reportError();
 
-                while(inFile.good()){
+                while(inFile.good())
+                {
                     getNextLine();
                     if(line.empty() || line[0] == '%')
                         continue;
@@ -83,8 +90,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
-        if(line == "**platforms**"){
-            while(inFile.good()){
+        if(line == "**platforms**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -106,8 +115,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
-        if(line == "**walls**"){
-            while(inFile.good()){
+        if(line == "**walls**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -129,8 +140,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
             continue;
         }
-        if(line == "**ramps**"){
-            while(inFile.good()){
+        if(line == "**ramps**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -139,11 +152,13 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
                 float x1, x2, y1, y2, t;
                 t = 1;
 
-                if(sscanf(line.c_str(), "x=%fto%f,ytop=%fto%f,thickness=%f", &x1, &x2, &y1, &y2, &t) >= 4){
+                if(sscanf(line.c_str(), "x=%fto%f,ytop=%fto%f,thickness=%f", &x1, &x2, &y1, &y2, &t) >= 4)
+                {
                     y1 -= t/2.0f;
                     y2 -= t/2.0f;
                 }
-                else if(sscanf(line.c_str(), "x=%fto%f,ybot=%fto%f,thickness=%f", &x1, &x2, &y1, &y2, &t) >= 4){
+                else if(sscanf(line.c_str(), "x=%fto%f,ybot=%fto%f,thickness=%f", &x1, &x2, &y1, &y2, &t) >= 4)
+                {
                     y1 += t/2.0f;
                     y2 += t/2.0f;
                 }
@@ -157,8 +172,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
             continue;
         }
 
-        if(line == "**movingplatforms**"){
-            while(inFile.good()){
+        if(line == "**movingplatforms**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -169,8 +186,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
                 float w, s, t;
                 t = 1;
 
-                if(sscanf(line.c_str(), "w=%f,speed=%f,thickness=%f", &w, &s, &t) >= 2){
-                    while(inFile.good()){
+                if(sscanf(line.c_str(), "w=%f,speed=%f,thickness=%f", &w, &s, &t) >= 2)
+                {
+                    while(inFile.good())
+                    {
                         getNextLine();
                         if(line.empty() || line[0] == '%')
                             continue;
@@ -218,8 +237,10 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
             }
         }
 
-        if(line == "**hazards**"){
-            while(inFile.good()){
+        if(line == "**hazards**")
+        {
+            while(inFile.good())
+            {
                 getNextLine();
                 if(line.empty() || line[0] == '%')
                     continue;
@@ -252,20 +273,18 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
                 PhysicsObject* newHazard;
 
-                if(hazardString == "boulder"){
+                if(hazardString == "boulder")
+                {
                     newHazard = new Boulder(0, 0);
                 }
 
-                else if(hazardString == "spikes"){
+                else if(hazardString == "spikes")
+                {
                     newHazard = new Spikes(0, 0, rot);
                 }
 
-                else if(hazardString == "spear"){
-                    //if(xyModifiers[0] == 'l') x += 26.25f;
-                    //else if(xyModifiers[0] == 'r') x -= 26.25f;
-
-                    //if(xyModifiers[1] == 'b') y += 250.0f;
-                   // else if(xyModifiers[1] == 't') y -= 250.0f;
+                else if(hazardString == "spear")
+                {
                     newHazard = new Spear(0, 0, rot);
                 }
 
@@ -294,20 +313,24 @@ StageLoader::StageLoader(std::string fileName, std::vector<PhysicsObject*>& phys
 
     std::string bg = checkField("background");
 
-    if(bg == "bluesky"){
+    if(bg == "bluesky")
+    {
         skybox = new Skybox(0, 0, 1);
     }
     else if(bg == "");
 
     std::string setting = checkField("setting");
 
-    if(setting == "desert"){
+    if(setting == "desert")
+    {
         boundary = boundary = new Boundary(-30000, 30000, 0, BS_SAND);
     }
 }
 
-std::string StageLoader::stripWhitespace(std::string str){
-    for(std::string::iterator it = str.begin(); it != str.end(); it++){
+std::string StageLoader::stripWhitespace(std::string str)
+{
+    for(std::string::iterator it = str.begin(); it != str.end(); it++)
+    {
         if(*it == ' ' || *it == '\t')
             // clear if whitespace, set iterator to previous
             it = str.erase(it) - 1;
@@ -315,19 +338,23 @@ std::string StageLoader::stripWhitespace(std::string str){
     return str;
 }
 
-void StageLoader::reportError(){
+void StageLoader::reportError()
+{
     std::cout << "Error while reading stage \"" << fileName << "\"\n\tat line " << lineNo << ": " << curLine << std::endl;
     exit(4);
 }
 
-void StageLoader::getNextLine(){
+void StageLoader::getNextLine()
+{
     getline(inFile, curLine);
     line = stripWhitespace(curLine);
     lineNo++;
 }
 
-std::string StageLoader::checkField(std::string field){
-    if(stageInfo.find(field) == stageInfo.end()){
+std::string StageLoader::checkField(std::string field)
+{
+    if(stageInfo.find(field) == stageInfo.end())
+    {
         std::cout << "Stage file \"" << fileName << "\" missing required field:  " << field << std::endl;
         exit(3);
     }

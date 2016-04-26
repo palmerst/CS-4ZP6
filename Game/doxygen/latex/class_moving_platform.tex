@@ -1,0 +1,108 @@
+\hypertarget{class_moving_platform}{}\section{Moving\+Platform Class Reference}
+\label{class_moving_platform}\index{Moving\+Platform@{Moving\+Platform}}
+
+
+{\ttfamily \#include $<$Moving\+Platform.\+h$>$}
+
+
+
+Inheritance diagram for Moving\+Platform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_moving_platform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Moving\+Platform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moving_platform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_moving_platform_ac33dba37c6bbd2e496f157ac5f2fcf6b}{Moving\+Platform} (float w, float \hyperlink{class_moving_platform_a71db6ff1f8e4b94445e096ca62d79df4}{speed}, std\+::vector$<$ cp\+Vect $>$ \&\hyperlink{class_moving_platform_a35dc1c58256404b865365f634588ce38}{path}, float thickness=50.\+0f)
+\begin{DoxyCompactList}\small\item\em Creates a new moving platform. \end{DoxyCompactList}\item 
+void \hyperlink{class_moving_platform_a9eb48b9e90a70b28f6c71ec2673a66cc}{update} (float dt)
+\begin{DoxyCompactList}\small\item\em Updates platform position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_moving_platform_a58664732e195a862557bf26f68b7a8ef}{dir}\hypertarget{class_moving_platform_a58664732e195a862557bf26f68b7a8ef}{}\label{class_moving_platform_a58664732e195a862557bf26f68b7a8ef}
+
+\begin{DoxyCompactList}\small\item\em Direction of movement. \end{DoxyCompactList}\item 
+float \hyperlink{class_moving_platform_a71db6ff1f8e4b94445e096ca62d79df4}{speed}\hypertarget{class_moving_platform_a71db6ff1f8e4b94445e096ca62d79df4}{}\label{class_moving_platform_a71db6ff1f8e4b94445e096ca62d79df4}
+
+\begin{DoxyCompactList}\small\item\em Speed of movement. \end{DoxyCompactList}\item 
+int \hyperlink{class_moving_platform_af5cbf79f35bbaf062069d66ac0d566ea}{destination\+Node}\hypertarget{class_moving_platform_af5cbf79f35bbaf062069d66ac0d566ea}{}\label{class_moving_platform_af5cbf79f35bbaf062069d66ac0d566ea}
+
+\begin{DoxyCompactList}\small\item\em Node that the platform is headed to. \end{DoxyCompactList}\item 
+std\+::vector$<$ cp\+Vect $>$ \hyperlink{class_moving_platform_a35dc1c58256404b865365f634588ce38}{path}\hypertarget{class_moving_platform_a35dc1c58256404b865365f634588ce38}{}\label{class_moving_platform_a35dc1c58256404b865365f634588ce38}
+
+\begin{DoxyCompactList}\small\item\em The path the platform takes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_moving_platform}{Moving\+Platform} class implements moving platforms. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Moving\+Platform@{Moving\+Platform}!Moving\+Platform@{Moving\+Platform}}
+\index{Moving\+Platform@{Moving\+Platform}!Moving\+Platform@{Moving\+Platform}}
+\subsubsection[{\texorpdfstring{Moving\+Platform(float w, float speed, std\+::vector$<$ cp\+Vect $>$ \&path, float thickness=50.\+0f)}{MovingPlatform(float w, float speed, std::vector< cpVect > &path, float thickness=50.0f)}}]{\setlength{\rightskip}{0pt plus 5cm}Moving\+Platform\+::\+Moving\+Platform (
+\begin{DoxyParamCaption}
+\item[{float}]{w, }
+\item[{float}]{speed, }
+\item[{std\+::vector$<$ cp\+Vect $>$ \&}]{path, }
+\item[{float}]{thickness = {\ttfamily 50.0f}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_moving_platform_ac33dba37c6bbd2e496f157ac5f2fcf6b}{}\label{class_moving_platform_ac33dba37c6bbd2e496f157ac5f2fcf6b}
+
+
+Creates a new moving platform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Width of platform \\
+\hline
+{\em speed} & Speed of platform \\
+\hline
+{\em path} & The path the platform takes \\
+\hline
+{\em thickness} & The vertical thickness of the platform \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Moving\+Platform@{Moving\+Platform}!update@{update}}
+\index{update@{update}!Moving\+Platform@{Moving\+Platform}}
+\subsubsection[{\texorpdfstring{update(float dt)}{update(float dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Moving\+Platform\+::update (
+\begin{DoxyParamCaption}
+\item[{float}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_moving_platform_a9eb48b9e90a70b28f6c71ec2673a66cc}{}\label{class_moving_platform_a9eb48b9e90a70b28f6c71ec2673a66cc}
+
+
+Updates platform position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The timestep to move the platform through. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_kinematic_object_a41b3cb111b8862cdeaace5857b62bfdd}{Kinematic\+Object}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Moving\+Platform.\+h\end{DoxyCompactItemize}

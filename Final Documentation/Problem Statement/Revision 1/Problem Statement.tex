@@ -1,7 +1,17 @@
 \documentclass[12pt, titlepage]{article}
 
 \usepackage{xcolor} % for different colour comments
-
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[singlelinecheck=off, skip=2pt, labelfont=bf]{caption}
 %% Comments
 \newif\ifcomments\commentstrue
 
@@ -24,11 +34,23 @@
 	
 \maketitle
 
+\begin{table}[tp]
+\caption*{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+September, 2015 & 1.0 & Created document\\
+September, 2015 & 1.1 & Final version for rev 0 hand-in\\
+April 25, 2016 & 1.2 & Final version for rev 1 hand-in\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \begin{center}
 \Large \bf Problem Statement
 \end{center}
 
-Courses with a focus on game design have become commonplace at most colleges and universities.  McMaster University is no exception and currently offers a game design course to its third-year software engineering students.  A game developed specifically as an example for a course of this type could act as an excellent aid in the learning experience.  In particular, a game featuring a modular design would allow the students to make modifications to certain parts of the code and visualize the result.  
+Courses with a focus on game design have become commonplace at most colleges and universities.  McMaster University is no exception and currently offers a game design course to its third-year software engineering students.  A game developed specifically as an example for a course of this type could act as an excellent aid in the learning experience.  In particular, a game featuring a modular design would allow the students to make modifications to certain parts of the code and visualize the result.
 
 To simplify the implementation of the game, the Chipmunk2D physics library will be used.  This library handles both simulated Newtonian physics and collision detection. The game software will have compatibility across the major PC operating systems (Windows, Linux, and Mac OS X) to ensure ease of use for all of those involved.
 

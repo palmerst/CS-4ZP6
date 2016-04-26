@@ -1,0 +1,131 @@
+\hypertarget{class_stage_loader}{}\section{Stage\+Loader Class Reference}
+\label{class_stage_loader}\index{Stage\+Loader@{Stage\+Loader}}
+
+
+{\ttfamily \#include $<$Stage\+Loader.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stage_loader_ac3db92090726b0394a18345e5a781a9d}{Stage\+Loader} (std\+::string \hyperlink{class_stage_loader_a3574f9ea01596806f37b196849bbefae}{file\+Name}, std\+::vector$<$ \hyperlink{class_physics_object}{Physics\+Object} $\ast$ $>$ \&physics\+Objects, std\+::vector$<$ \hyperlink{class_kinematic_object}{Kinematic\+Object} $\ast$ $>$ \&kinematic\+Objects, std\+::vector$<$ \hyperlink{class_standard_object}{Standard\+Object} $\ast$ $>$ \&standard\+Objects, \hyperlink{class_skybox}{Skybox} $\ast$\&skybox, \hyperlink{class_boundary}{Boundary} $\ast$\&boundary, \hyperlink{class_hero}{Hero} $\ast$\&user\+Control\+Object)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stage_loader}{Stage\+Loader} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_stage_loader_a4a9e517ca2cc71f73819caac034fc5a6}{strip\+Whitespace} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Strips all whitespace from string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_stage_loader_ad69aac2054f04e4ea393ae0b992416c5}{check\+Field} (std\+::string field)
+\begin{DoxyCompactList}\small\item\em Checks if stage\+Info contains a key; if not reports error. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_loader_a686383910433f0d5a8109e01b1ede249}{report\+Error} ()\hypertarget{class_stage_loader_a686383910433f0d5a8109e01b1ede249}{}\label{class_stage_loader_a686383910433f0d5a8109e01b1ede249}
+
+\begin{DoxyCompactList}\small\item\em Reports error at current line. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_loader_a691e32f2cea41a78d6a6e99611acb0a6}{get\+Next\+Line} ()\hypertarget{class_stage_loader_a691e32f2cea41a78d6a6e99611acb0a6}{}\label{class_stage_loader_a691e32f2cea41a78d6a6e99611acb0a6}
+
+\begin{DoxyCompactList}\small\item\em Retrieves next line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_stage_loader_a3574f9ea01596806f37b196849bbefae}{file\+Name}\hypertarget{class_stage_loader_a3574f9ea01596806f37b196849bbefae}{}\label{class_stage_loader_a3574f9ea01596806f37b196849bbefae}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stage}{Stage} file path. \end{DoxyCompactList}\item 
+int \hyperlink{class_stage_loader_a69303db8d3e7d91e0de14b6f7c2c08ab}{line\+No}\hypertarget{class_stage_loader_a69303db8d3e7d91e0de14b6f7c2c08ab}{}\label{class_stage_loader_a69303db8d3e7d91e0de14b6f7c2c08ab}
+
+\begin{DoxyCompactList}\small\item\em Current line number. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_stage_loader_a8413ef9f88df043d287d92afe55f9e7a}{cur\+Line}\hypertarget{class_stage_loader_a8413ef9f88df043d287d92afe55f9e7a}{}\label{class_stage_loader_a8413ef9f88df043d287d92afe55f9e7a}
+
+\begin{DoxyCompactList}\small\item\em Current line being parsed. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_stage_loader_a9387427e7e4ca5a9210bfac081dc048b}{line}\hypertarget{class_stage_loader_a9387427e7e4ca5a9210bfac081dc048b}{}\label{class_stage_loader_a9387427e7e4ca5a9210bfac081dc048b}
+
+\begin{DoxyCompactList}\small\item\em Current line being parsed, stripped of whitespace. \end{DoxyCompactList}\item 
+std\+::ifstream \hyperlink{class_stage_loader_a9d71f768884e3dd10f9c773a41af83e0}{in\+File}\hypertarget{class_stage_loader_a9d71f768884e3dd10f9c773a41af83e0}{}\label{class_stage_loader_a9d71f768884e3dd10f9c773a41af83e0}
+
+\begin{DoxyCompactList}\small\item\em File stream of the input file. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_stage_loader_a53604a9fc34a15e90a13abbc9813297a}{stage\+Info}\hypertarget{class_stage_loader_a53604a9fc34a15e90a13abbc9813297a}{}\label{class_stage_loader_a53604a9fc34a15e90a13abbc9813297a}
+
+\begin{DoxyCompactList}\small\item\em Map that stores stage information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_stage_loader}{Stage\+Loader} class parses stage files to create levels at runtime. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Stage\+Loader@{Stage\+Loader}!Stage\+Loader@{Stage\+Loader}}
+\index{Stage\+Loader@{Stage\+Loader}!Stage\+Loader@{Stage\+Loader}}
+\subsubsection[{\texorpdfstring{Stage\+Loader(std\+::string file\+Name, std\+::vector$<$ Physics\+Object $\ast$ $>$ \&physics\+Objects, std\+::vector$<$ Kinematic\+Object $\ast$ $>$ \&kinematic\+Objects, std\+::vector$<$ Standard\+Object $\ast$ $>$ \&standard\+Objects, Skybox $\ast$\&skybox, Boundary $\ast$\&boundary, Hero $\ast$\&user\+Control\+Object)}{StageLoader(std::string fileName, std::vector< PhysicsObject * > &physicsObjects, std::vector< KinematicObject * > &kinematicObjects, std::vector< StandardObject * > &standardObjects, Skybox *&skybox, Boundary *&boundary, Hero *&userControlObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Stage\+Loader\+::\+Stage\+Loader (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name, }
+\item[{std\+::vector$<$ {\bf Physics\+Object} $\ast$ $>$ \&}]{physics\+Objects, }
+\item[{std\+::vector$<$ {\bf Kinematic\+Object} $\ast$ $>$ \&}]{kinematic\+Objects, }
+\item[{std\+::vector$<$ {\bf Standard\+Object} $\ast$ $>$ \&}]{standard\+Objects, }
+\item[{{\bf Skybox} $\ast$\&}]{skybox, }
+\item[{{\bf Boundary} $\ast$\&}]{boundary, }
+\item[{{\bf Hero} $\ast$\&}]{user\+Control\+Object}
+\end{DoxyParamCaption}
+)}\hypertarget{class_stage_loader_ac3db92090726b0394a18345e5a781a9d}{}\label{class_stage_loader_ac3db92090726b0394a18345e5a781a9d}
+
+
+\hyperlink{class_stage_loader}{Stage\+Loader} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The path to the stage file. \\
+\hline
+{\em physics\+Objects} & Reference to vector to be filled with physics objects. \\
+\hline
+{\em kinematic\+Objects} & Reference to vector to be filled with kinematic objects. \\
+\hline
+{\em standard\+Objects} & Reference to vector to be filled with standard objects. \\
+\hline
+{\em skybox} & Reference to \hyperlink{class_skybox}{Skybox} to be populated by skybox object. \\
+\hline
+{\em boundary} & Reference to \hyperlink{class_boundary}{Boundary} to be populated by boundary object. \\
+\hline
+{\em user\+Control\+Object} & Reference to \hyperlink{class_hero}{Hero} to be populated with the hero object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Stage\+Loader@{Stage\+Loader}!check\+Field@{check\+Field}}
+\index{check\+Field@{check\+Field}!Stage\+Loader@{Stage\+Loader}}
+\subsubsection[{\texorpdfstring{check\+Field(std\+::string field)}{checkField(std::string field)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Stage\+Loader\+::check\+Field (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_stage_loader_ad69aac2054f04e4ea393ae0b992416c5}{}\label{class_stage_loader_ad69aac2054f04e4ea393ae0b992416c5}
+
+
+Checks if stage\+Info contains a key; if not reports error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & The field to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value paired with the key. 
+\end{DoxyReturn}
+\index{Stage\+Loader@{Stage\+Loader}!strip\+Whitespace@{strip\+Whitespace}}
+\index{strip\+Whitespace@{strip\+Whitespace}!Stage\+Loader@{Stage\+Loader}}
+\subsubsection[{\texorpdfstring{strip\+Whitespace(std\+::string str)}{stripWhitespace(std::string str)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Stage\+Loader\+::strip\+Whitespace (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_stage_loader_a4a9e517ca2cc71f73819caac034fc5a6}{}\label{class_stage_loader_a4a9e517ca2cc71f73819caac034fc5a6}
+
+
+Strips all whitespace from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be stripped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whitespace stripped string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Stage\+Loader.\+h\end{DoxyCompactItemize}

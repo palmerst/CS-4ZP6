@@ -16,9 +16,6 @@ class Game
     GLFWwindow* window;     //!< Reference to the GLFWwindow (the window)
     Environment* env;       //!< Reference to the current Environment
 
-//    std::map<std::string, ObjGPUData*> objMap;  //!< Data for objects that are used by the GPU (i.e. meshes/texture mappings/etc.)
-//                                                //!< Stored as key/value pairs where the key is a string description for ease of tracking and accessing stored objects while coding
-
     double timeLast;        //!< Last time that was polled;  used for framerate control
     double timeElapsed;     //!< Time elapsed since last polling of time;  used for framerate control
 
@@ -26,8 +23,8 @@ class Game
     float winY;     //!< Stores y-coordinate maximum of the window
 
 public:
-    Game(int, char**);         //!< Game class constructor
-    ~Game();        //!< Game class destructor
+    Game();         //!< Game class constructor
+    ~Game();    //!< Game class destructor
 
     void run();     //!< Runs the game until the application is terminated (infinite loop)
 

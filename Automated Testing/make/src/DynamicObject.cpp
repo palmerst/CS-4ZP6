@@ -11,8 +11,6 @@ DynamicObject::DynamicObject()
 
 DynamicObject::DynamicObject(float x, float y, float scale, float mass, float elast, float fric, int type, std::string gpuPath, std::string vPath, std::string fPath)
 {
-
-
     gpuDataList.push_back(gpuStore.add(gpuPath, 3.1415f));
     shaderList.push_back(shaderStore.add(vPath, fPath));
 

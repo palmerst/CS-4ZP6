@@ -1,25 +1,25 @@
 #ifndef SPEAR_H_INCLUDED
 #define SPEAR_H_INCLUDED
 
-#include "DynamicObject.h"
+#include "KinematicObject.h"
 #include "StaticObject.h"
 
-class Spear : public StaticObject
+
+/*! The Spear class implements the spear hazard.
+ */
+class Spear : public KinematicObject
 {
 
 public:
 
-    Spear(float x, float y, float rotation);
+    //! Spear constructor.
+    /*!
+      \param x The x coordinate of the spear.
+      \param y The y coordinate of the spear.
+      \param rotation The rotation of the spear about the z-axis.
+    */
+    Spear(float x, float y, float rotation = 0.0f);
 
-};
-
-
-class Spears : public StaticObject
-{
-
-public:
-
-    Spears(float x, float y);
 
 };
 

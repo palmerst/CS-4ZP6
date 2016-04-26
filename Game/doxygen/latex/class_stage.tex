@@ -1,0 +1,238 @@
+\hypertarget{class_stage}{}\section{Stage Class Reference}
+\label{class_stage}\index{Stage@{Stage}}
+
+
+{\ttfamily \#include $<$Stage.\+h$>$}
+
+
+
+Inheritance diagram for Stage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_stage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stage_a2ea3892c2b58307b9b47c9ef154bf4ab}{Stage} (std\+::string \hyperlink{class_stage_a6db07a70fa2bbc7ef6e92be5d43181b9}{stage\+Name})\hypertarget{class_stage_a2ea3892c2b58307b9b47c9ef154bf4ab}{}\label{class_stage_a2ea3892c2b58307b9b47c9ef154bf4ab}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stage}{Stage} constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_stage_af769a51df1efaaa5fca98008fb6f0c16}{$\sim$\+Stage} ()\hypertarget{class_stage_af769a51df1efaaa5fca98008fb6f0c16}{}\label{class_stage_af769a51df1efaaa5fca98008fb6f0c16}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stage}{Stage} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_a3b0abe7d74c6d38cfedeab84a7506816}{update\+Environment} (double dt)
+\begin{DoxyCompactList}\small\item\em Function for updating the environment. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_a550f7504d9f1eb45a1f0a24c29b58fc8}{draw\+Environment} ()\hypertarget{class_stage_a550f7504d9f1eb45a1f0a24c29b58fc8}{}\label{class_stage_a550f7504d9f1eb45a1f0a24c29b58fc8}
+
+\begin{DoxyCompactList}\small\item\em Function for drawing the environment. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_ab0ac39aba2fa162499d2599c981ca3ed}{process\+KB} (int key, int scancode, int action, int mods)
+\begin{DoxyCompactList}\small\item\em Function for keyboard input processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_a92feebde5c5fd84711ce19f0e4d07552}{process\+Continuous\+Input} ()\hypertarget{class_stage_a92feebde5c5fd84711ce19f0e4d07552}{}\label{class_stage_a92feebde5c5fd84711ce19f0e4d07552}
+
+\begin{DoxyCompactList}\small\item\em Function for continuous input processing. \end{DoxyCompactList}\item 
+bool \hyperlink{class_stage_ad3210cb8d424925079ced7a8b4bb6398}{process\+Mouse\+Position} (float xpos, float ypos)
+\begin{DoxyCompactList}\small\item\em Function for mouse position change processing. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_a7b45f13e5fa53354af729d022842a4de}{process\+Mouse\+Click} (int button, int action, int mods)
+\begin{DoxyCompactList}\small\item\em Function for mouse input processing. \end{DoxyCompactList}\item 
+bool \hyperlink{class_stage_a6f65f2412b7f72e508ac46889dcca0b6}{check\+Completion} ()
+\begin{DoxyCompactList}\small\item\em Checks if stage is complete. \end{DoxyCompactList}\item 
+void \hyperlink{class_stage_a51e37b7168f0af367ae6cc7dca5949b3}{update\+Screen\+Size} ()\hypertarget{class_stage_a51e37b7168f0af367ae6cc7dca5949b3}{}\label{class_stage_a51e37b7168f0af367ae6cc7dca5949b3}
+
+\begin{DoxyCompactList}\small\item\em Updates the projection matrix when screen size is changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_stage_a737a4dd0f7e54b3a97ddd13b88a0516e}{draw\+Obj} (\hyperlink{class_physics_object}{Physics\+Object} current\+Obj, bool is\+Boundary=false)
+\begin{DoxyCompactList}\small\item\em Draws an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cp\+Space $\ast$ \hyperlink{class_stage_a76084dcddff87933d320310c0dd3e0c9}{env\+Space}\hypertarget{class_stage_a76084dcddff87933d320310c0dd3e0c9}{}\label{class_stage_a76084dcddff87933d320310c0dd3e0c9}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the chipmunk space associated with the stage. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_physics_object}{Physics\+Object} $\ast$ $>$ \hyperlink{class_stage_a2eff484024263e8dac366acceaf39d80}{physics\+Objects}\hypertarget{class_stage_a2eff484024263e8dac366acceaf39d80}{}\label{class_stage_a2eff484024263e8dac366acceaf39d80}
+
+\begin{DoxyCompactList}\small\item\em List of physics objects (excluding kinematic) in stage. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_kinematic_object}{Kinematic\+Object} $\ast$ $>$ \hyperlink{class_stage_ae19e1e3837dbfce1b5b56baea357257c}{kinematic\+Objects}\hypertarget{class_stage_ae19e1e3837dbfce1b5b56baea357257c}{}\label{class_stage_ae19e1e3837dbfce1b5b56baea357257c}
+
+\begin{DoxyCompactList}\small\item\em List of kinematic objects in stage. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_standard_object}{Standard\+Object} $\ast$ $>$ \hyperlink{class_stage_a24a06cb21b7049ff40def14328cd9ff7}{standard\+Objects}\hypertarget{class_stage_a24a06cb21b7049ff40def14328cd9ff7}{}\label{class_stage_a24a06cb21b7049ff40def14328cd9ff7}
+
+\begin{DoxyCompactList}\small\item\em List of standard objects in stage. \end{DoxyCompactList}\item 
+\hyperlink{class_skybox}{Skybox} $\ast$ \hyperlink{class_stage_a6f4ee2ce2aa9c87d5f97088b7e303fd6}{skybox}\hypertarget{class_stage_a6f4ee2ce2aa9c87d5f97088b7e303fd6}{}\label{class_stage_a6f4ee2ce2aa9c87d5f97088b7e303fd6}
+
+\begin{DoxyCompactList}\small\item\em The skybox object provides the backdrop of the stage. \end{DoxyCompactList}\item 
+\hyperlink{class_boundary}{Boundary} $\ast$ \hyperlink{class_stage_a7e88ab3e92a9e1b4d12fc867a22ad99f}{boundary}\hypertarget{class_stage_a7e88ab3e92a9e1b4d12fc867a22ad99f}{}\label{class_stage_a7e88ab3e92a9e1b4d12fc867a22ad99f}
+
+\begin{DoxyCompactList}\small\item\em The boundary object provides the surface setting. \end{DoxyCompactList}\item 
+float \hyperlink{class_stage_ad88ab19f6d546610c52c564d4326092d}{stage\+Time}\hypertarget{class_stage_ad88ab19f6d546610c52c564d4326092d}{}\label{class_stage_ad88ab19f6d546610c52c564d4326092d}
+
+\begin{DoxyCompactList}\small\item\em Time elapsed since beginning the stage. \end{DoxyCompactList}\item 
+\hyperlink{class_hero}{Hero} $\ast$ \hyperlink{class_stage_a756489b3e5916985247b3e411a9f8622}{user\+Control\+Object}\hypertarget{class_stage_a756489b3e5916985247b3e411a9f8622}{}\label{class_stage_a756489b3e5916985247b3e411a9f8622}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the dynamic object that is controlled by the user (normally the hero object). \end{DoxyCompactList}\item 
+\hyperlink{class_camera}{Camera} \hyperlink{class_stage_a88bbb5be32cbda115a81dab24b2d4339}{camera}\hypertarget{class_stage_a88bbb5be32cbda115a81dab24b2d4339}{}\label{class_stage_a88bbb5be32cbda115a81dab24b2d4339}
+
+\begin{DoxyCompactList}\small\item\em Used to control the view. \end{DoxyCompactList}\item 
+int \hyperlink{class_stage_a3f43ef5fd16f416045a8a5f073d5edd6}{win\+Timer}\hypertarget{class_stage_a3f43ef5fd16f416045a8a5f073d5edd6}{}\label{class_stage_a3f43ef5fd16f416045a8a5f073d5edd6}
+
+\begin{DoxyCompactList}\small\item\em Countdown timer set when stage is won; determines when exit to menu occurs. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_stage_a6db07a70fa2bbc7ef6e92be5d43181b9}{stage\+Name}\hypertarget{class_stage_a6db07a70fa2bbc7ef6e92be5d43181b9}{}\label{class_stage_a6db07a70fa2bbc7ef6e92be5d43181b9}
+
+\begin{DoxyCompactList}\small\item\em Name of current stage file (used for reseting stage). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_stage}{Stage} class is derived from the \hyperlink{class_environment}{Environment} class and holds and handles changes to the game state when the user is playing a stage. 
+
+\subsection{Member Function Documentation}
+\index{Stage@{Stage}!check\+Completion@{check\+Completion}}
+\index{check\+Completion@{check\+Completion}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{check\+Completion()}{checkCompletion()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Stage\+::check\+Completion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_stage_a6f65f2412b7f72e508ac46889dcca0b6}{}\label{class_stage_a6f65f2412b7f72e508ac46889dcca0b6}
+
+
+Checks if stage is complete. 
+
+\begin{DoxyReturn}{Returns}
+True if stage is complete, else false. 
+\end{DoxyReturn}
+\index{Stage@{Stage}!draw\+Obj@{draw\+Obj}}
+\index{draw\+Obj@{draw\+Obj}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{draw\+Obj(\+Physics\+Object current\+Obj, bool is\+Boundary=false)}{drawObj(PhysicsObject currentObj, bool isBoundary=false)}}]{\setlength{\rightskip}{0pt plus 5cm}void Stage\+::draw\+Obj (
+\begin{DoxyParamCaption}
+\item[{{\bf Physics\+Object}}]{current\+Obj, }
+\item[{bool}]{is\+Boundary = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_stage_a737a4dd0f7e54b3a97ddd13b88a0516e}{}\label{class_stage_a737a4dd0f7e54b3a97ddd13b88a0516e}
+
+
+Draws an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Obj} & Object that should be drawn. \\
+\hline
+{\em is\+Boundary} & Flag for boundaries (default = false); boundaries are drawn slightly differently. \\
+\hline
+\end{DoxyParams}
+\index{Stage@{Stage}!process\+KB@{process\+KB}}
+\index{process\+KB@{process\+KB}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{process\+K\+B(int key, int scancode, int action, int mods)}{processKB(int key, int scancode, int action, int mods)}}]{\setlength{\rightskip}{0pt plus 5cm}void Stage\+::process\+KB (
+\begin{DoxyParamCaption}
+\item[{int}]{key, }
+\item[{int}]{scancode, }
+\item[{int}]{action, }
+\item[{int}]{mods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_stage_ab0ac39aba2fa162499d2599c981ca3ed}{}\label{class_stage_ab0ac39aba2fa162499d2599c981ca3ed}
+
+
+Function for keyboard input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to which the action corresponds. \\
+\hline
+{\em scancode} & System specific key code. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a3a105533fb7592615f6b4321aafc5545}{Environment}.
+
+\index{Stage@{Stage}!process\+Mouse\+Click@{process\+Mouse\+Click}}
+\index{process\+Mouse\+Click@{process\+Mouse\+Click}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Click(int button, int action, int mods)}{processMouseClick(int button, int action, int mods)}}]{\setlength{\rightskip}{0pt plus 5cm}void Stage\+::process\+Mouse\+Click (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{action, }
+\item[{int}]{mods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_stage_a7b45f13e5fa53354af729d022842a4de}{}\label{class_stage_a7b45f13e5fa53354af729d022842a4de}
+
+
+Function for mouse input processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Mouse button to which the action corresponds. \\
+\hline
+{\em action} & The action (i.\+e. button up, down, held, etc.) \\
+\hline
+{\em mods} & Active modifiers (i.\+e. shift, control, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a19cf4bbbe86528759e0ad79e19025732}{Environment}.
+
+\index{Stage@{Stage}!process\+Mouse\+Position@{process\+Mouse\+Position}}
+\index{process\+Mouse\+Position@{process\+Mouse\+Position}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{process\+Mouse\+Position(float xpos, float ypos)}{processMousePosition(float xpos, float ypos)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Stage\+::process\+Mouse\+Position (
+\begin{DoxyParamCaption}
+\item[{float}]{xpos, }
+\item[{float}]{ypos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_stage_ad3210cb8d424925079ced7a8b4bb6398}{}\label{class_stage_ad3210cb8d424925079ced7a8b4bb6398}
+
+
+Function for mouse position change processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpos} & Mouse cursor x-\/position \\
+\hline
+{\em ypos} & Mouse cursor y-\/position \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_a92819bf5a6aa5877c0f89fd65a4d7554}{Environment}.
+
+\index{Stage@{Stage}!update\+Environment@{update\+Environment}}
+\index{update\+Environment@{update\+Environment}!Stage@{Stage}}
+\subsubsection[{\texorpdfstring{update\+Environment(double dt)}{updateEnvironment(double dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Stage\+::update\+Environment (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_stage_a3b0abe7d74c6d38cfedeab84a7506816}{}\label{class_stage_a3b0abe7d74c6d38cfedeab84a7506816}
+
+
+Function for updating the environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step to be used for the update (time since last update) in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_environment_afbc95329581e994ed49a678c814657ea}{Environment}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Stage.\+h\end{DoxyCompactItemize}

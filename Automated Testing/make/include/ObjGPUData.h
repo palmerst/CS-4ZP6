@@ -16,8 +16,6 @@ typedef unsigned int GLuint;
  *  Each object is defined by three files which are loaded by this class:  an object file (.obj) which contains information about vertices, faces, normals, and texture coordinates;
  *  a material file (.mtl) which contains texture and lighting information;
  *  and an image file(s) (.dds) which contain the texture images.
- *
- *
  */
 class ObjGPUData
 {
@@ -54,6 +52,7 @@ public:
     /*!
       \param objFile Object and material file path (these should have the same name) without extension
       \param angle Initial y-axis rotation in radians (optional:  default 0.0)
+      \param scalingMode Flag specifies whether loaded object should be scaled to unit height (default = true)
     */
     ObjGPUData(const char* objFile, float angle = 0.0f, bool scalingMode = true);
 
@@ -82,7 +81,7 @@ public:
     std::vector<glm::vec3> vList;           //!< Stores vertex coordinates loaded from .obj file
     std::vector<glm::vec2> vTextureList;    //!< Stores texture coordinates loaded from .obj file
     std::vector<glm::vec3> vNormalList;     //!< Stores vertex normals loaded from .obj file
-    std::vector<glm::vec4> vTangentList;
+    std::vector<glm::vec4> vTangentList;    //!< Stores vertex tangents (calculated)
     std::vector<GLuint> fList;              //!< Stores faces loaded from .obj file
     std::vector<int> materialIndices;       //!< Marks divisions of different materials given in the .obj file (and defined in .mtl file)
     std::vector<Material> materials;        //!< Stores material information loaded from .mtl file
@@ -92,12 +91,15 @@ public:
     GLuint vertexBuffer;        //!< Name to bind the vertex buffer object
     GLuint textureBuffer;       //!< Name to bind the texture coordinate buffer object
     GLuint normalBuffer;        //!< Name to bind the vertex normal buffer object
-    GLuint tangentBuffer;
+    GLuint tangentBuffer;       //!< Name to bind the vertex tangent buffer object
 
     glm::mat4 unitScale;        //!< Scaling factor to adjust object to size 1.0 in y-axis (height)
     glm::mat4 rotation;         //!< Rotation about y-axis to adjust objects initial rotational centering (if required:  this is what the optional constructor argument sets)
 
     float whRatio;              //!< Ratio of maximum x-axis vertex separation (width) to maximum y-axis vertex separation (height)
+
+    GLint texturePlane;         //!< Used for surface shader;  specifies which plane the face falls in for texturing
+    GLboolean parallax = false;  //!< Used for surface shader;  flag specifies if parallax mapping should be used
 };
 
 #endif // OBJECT_H

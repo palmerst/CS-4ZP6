@@ -19,25 +19,12 @@ void setCollisionHandlers(cpSpace* space)
     colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_SURFACE);
     colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_surface;
     colHand->separateFunc = (cpCollisionSeparateFunc) separate_hero_surface;
-        colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_MOVINGPLAT);
+    colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_MOVINGPLAT);
     colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_movingplat;
     colHand->separateFunc = (cpCollisionSeparateFunc) separate_hero_surface;
-        colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_GOAL);
+    colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_GOAL);
     colHand->preSolveFunc = (cpCollisionPreSolveFunc) presolve_hero_goal;
-    //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO_BULLET, OBJ_SURFACE);
-    // colHand->beginFunc = (cpCollisionBeginFunc) begin_single_deletion_collision;
-    //  colHand = cpSpaceAddCollisionHandler(space, OBJ_HERO, OBJ_ENEMY);
-    //  colHand->beginFunc = (cpCollisionBeginFunc) begin_knockback;
-}
 
-int begin_single_deletion_collision(cpArbiter *arb, cpSpace *space, void *unused)
-{
-    cpShape *a, *b;
-    cpArbiterGetShapes(arb, &a, &b);
-
-    cpSpaceAddPostStepCallback(space, (cpPostStepFunc)deleteObject, a, cpShapeGetUserData(a));
-
-    return 0;
 }
 
 int begin_hero_boulder_collision(cpArbiter *arb, cpSpace *space, void *unused)
@@ -111,9 +98,6 @@ int begin_hero_fatal_collision(cpArbiter *arb, cpSpace *space, void *unused)
     Hero* hero = static_cast<Hero*> (cpShapeGetUserData(a));
     KinematicObject* pObj = static_cast<KinematicObject*> (cpShapeGetUserData(b));
 
-    std::cout << pObj->deathNormal.x << " " << pObj->deathNormal.y << std::endl;
-    std::cout << cpArbiterGetNormal(arb).x << " " << cpArbiterGetNormal(arb).y << std::endl;
-
     if(!cpveql(pObj->deathNormal, cpvzero))
     {
         if(cpvdot(cpArbiterGetNormal(arb), pObj->deathNormal) < 0)
@@ -177,49 +161,4 @@ int presolve_hero_goal(cpArbiter *arb, cpSpace *space, void *unused)
     }
 
     return 1;
-}
-
-//int begin_hero_boulder_collision(cpArbiter *arb, cpSpace *space, void *unused)
-//{
-//  cpShape *a, *b;
-//  cpArbiterGetShapes(arb, &a, &b);
-//
-//  PhysicsObject* boulder = static_cast<PhysicsObject*> (cpShapeGetUserData(b));
-//  PhysicsObject* hero = static_cast<PhysicsObject*> (cpShapeGetUserData(a));
-//
-//  cpVect bulVel = cpBodyGetVelocity(bullet->body);
-//  cpVect enemyVel = cpBodyGetVelocity(enemy->body);
-//  cpBodySetVelocity(enemy->body, cpvadd(enemyVel, cpvmult(cpvnormalize(bulVel), 150.0)));
-//
-//  cpSpaceAddPostStepCallback(space, (cpPostStepFunc)deleteObject, a, cpShapeGetUserData(a));
-//
-//  return 0;
-//}
-
-int begin_knockback(cpArbiter *arb, cpSpace *space, void *unused)
-{
-    cpShape *a, *b;
-    cpArbiterGetShapes(arb, &a, &b);
-
-    PhysicsObject* hero = static_cast<PhysicsObject*> (cpShapeGetUserData(a));
-
-    cpVect heroVel = cpBodyGetVelocity(hero->body);
-
-    cpBodySetVelocity(hero->body, cpvmult(cpvnormalize(cpvneg(heroVel)), 150.0));
-
-    return 0;
-}
-
-
-void deleteObject(cpSpace *space, void *obj, void *data)
-{
-
-    PhysicsObject* temp = static_cast<PhysicsObject*>(data);
-
-    if(cpSpaceContainsShape(space, temp->shape))
-        cpSpaceRemoveShape(space, temp->shape);
-    if(cpSpaceContainsBody(space, temp->body))
-        cpSpaceRemoveBody(space, temp->body);
-
-    temp->draw = false;
 }

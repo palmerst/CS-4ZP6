@@ -8,7 +8,7 @@
 #include "Stage.h"
 #include "Menu.h"
 
-Game::Game(int count, char** argv)
+Game::Game()
 {
 
     /*** Initialize glfw ***/
@@ -25,16 +25,17 @@ Game::Game(int count, char** argv)
 //    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 //    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+
+    winX = Environment::screenWidth = 800;
+    winY = Environment::screenHeight = 600;
+
     /*** Create a windowed mode window and its OpenGL context ***/
-    window = glfwCreateWindow(1800, 1200, "Platform Perils", NULL, NULL);
+    window = glfwCreateWindow(winX, winY, "Platform Perils", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
         exit(2);
     }
-
-    winX = 1800;
-    winY = 1200;
 
     /*** Make the window's context current ***/
     glfwMakeContextCurrent(window);
@@ -53,10 +54,10 @@ Game::Game(int count, char** argv)
 
     alutInit(0,NULL);
 
-    // Clear the error code.
+    /*** Clear AL error code ***/
     alGetError();
 
-    //source setting
+    /*** Set AL source info ***/
     ALfloat listenerPosition[] = {0.0f, 0.0f, 0.0f};
     ALfloat listenerVelocity[] = {0.0f, 0.0f, 0.0f};
     ALfloat listenerOrientation[] = {0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f};
@@ -115,21 +116,15 @@ Game::Game(int count, char** argv)
     glfwSetCursorPosCallback(window, mposfunc);
     glfwSetMouseButtonCallback(window, mbutfunc);
 
-  //  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-    /*** Associate an environment with the game ***/
-   // env = new Stage(std::string());
-//   Environment::screenHeight = 1000;
-//   Environment::screenWidth = 1800;
+    /*** Initialize the game environment to the main menu ***/
     env = new Menu(false);
-
-    glfwSetWindowSize(window, 1800, 1000);
 
     /*** Set time to current ***/
     timeLast = glfwGetTime();
     timeElapsed = 0;
 }
 
+/*** Can leave destructor empty since Game class is only destroyed when game is terminated ***/
 Game::~Game()
 {
 
@@ -177,10 +172,6 @@ void Game::run()
                 overlay->drawEnvironment();
                 overlay = overlay->overlay;
             }
-//            timeCurrent = glfwGetTime();
-//            timeElapsed += timeCurrent - timeLast;
-//            timeLast = timeCurrent;
-
         }
 
 

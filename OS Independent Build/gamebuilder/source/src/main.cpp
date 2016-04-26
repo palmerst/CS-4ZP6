@@ -5,7 +5,7 @@
 int main(int argc, char** argv)
 {
     /*** Start new game ***/
-    Game* gameInstance = new Game(argc, argv);
+    Game* gameInstance = new Game();
 
     /*** Run the game ***/
     gameInstance->run();

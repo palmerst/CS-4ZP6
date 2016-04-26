@@ -60,9 +60,8 @@ MovingPlatform::MovingPlatform(float w, float speed, std::vector<cpVect>& path, 
 
     destinationNode = 0;
     dir = 1;
-   // cpBodySetVelocity(body, cpvmult(cpvnormalize(cpvsub(path[1], path[0])), speed);
 
-   cpShapeSetUserData(shape, this);
+    cpShapeSetUserData(shape, this);
 
 }
 

@@ -4,29 +4,24 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
+/*! The Camera class controls the view of the stage.
+ */
 class Camera
 {
 
 public:
 
+    //! Camera constructor.
     Camera();
 
-    glm::vec3 pos;
-    glm::vec3 origin;
-    glm::vec3 up;
+    glm::vec3 up;  //!< The up vector.
 
-    glm::vec3 posToOrigin;
+    float zoom;  //!< Current zoom level.
 
-    float inclination;
-    float azimuth;
-
-    float zoom;
-
-    float radius;
-
-    void update(glm::vec3 newPos);
-    void moveOrigin(double deltaInclination, double deltaAzimuth);
+    //! Zoom the view in.
     void zoomIn();
+
+    //! Zoom the view out.
     void zoomOut();
 
 };

@@ -140,8 +140,8 @@
 }
 
 \begin{document}
-\title{\bf Physics-Based Chipmunk2D Game\\[\baselineskip]\Large Test Plan}
-\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Emaad Fazal\\$\langle$fazale$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
+\title{\bf Platform Perils\\[\baselineskip]\Large Test Plan}
+\author{Steven Palmer\\$\langle$palmes4$\rangle$\\Chao Ye\\$\langle$yec6$\rangle$}
 \date{\today}
 	
 \maketitle
@@ -160,6 +160,7 @@
 October 25, 2015 & 1.0 & Created document\\
 October 31, 2015 & 1.1 & Major additions to all sections\\
 November 1, 2015 & 1.2 & Final version for rev 0\\
+April 25, 2015 & 1.3 & Final version for rev 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -212,10 +213,6 @@ gUnit & Unit testing framework & Unit testing\\
 
 \subsection{Manual Testing}
 Manual tests will be used for testing all aspects of the game that are not covered by the automated unit testing suite (the time that would be required to develop automated tests for these test cases would be prohibitive).  The game development team will carry out these tests as the game is developed.
-
-\subsubsection{User Experience Testing}
-\label{sec:userexp}
-Manual testing will also be used to assess the user experience of the game.  User experience testing will be completed by a testing group consisting of $\hyperref[tab:constants]{\delta}$ individuals who were not involved in the development of the game.  The testing group will be given a copy of the game and asked to complete a survey (see \hyperref[sec:survey]{Appendix A}) after having played the game to provide feedback.
 
 
 \subsection{List of Constants}
@@ -279,7 +276,6 @@ The proof of concept is given in test case format to adhere with the presentatio
     pass = {Successful development of a small demonstration which makes use of the Chipmunk2D physics engine and runs on Windows 7, Mac OS X, and Ubuntu}
 }
 
-\newpage
 \section{System Testing}
 \label{sec:testing}
 The testing of the system is broken down into game mechanics testing and game design testing phases.  The game mechanics will be developed and tested first.  Once the game mechanics systems are in place, the game design development and testing phase will begin.
@@ -442,7 +438,6 @@ The following manual tests will be carried out to provide testing for game mecha
     pass = Collisions appear to behave correctly
 }
 
-\newpage
 
 
 \subsection{Game Design Testing}
@@ -549,8 +544,10 @@ The following tests will be carried out to ensure all requirements not tested un
 }
 
 
-\subsubsection{User Experience Testing}
-The following tests will be carried out via a user experience survey administered to a testing group (see \hyperref[sec:userexp]{\S\ref*{sec:userexp}}).  Note that the user experience tests are planned for a
+\section{Future Testing}
+\subsection{User Experience Testing}
+\label{sec:userexp}
+User experience testing will be completed by a testing group consisting of $\hyperref[tab:constants]{\delta}$ individuals who were not involved in the development of the game.  The testing group will be given a copy of the game and asked to complete a survey (see \hyperref[sec:survey]{Appendix A}) after having played the game to provide feedback.  Due to time constraints, these tests will be carried out subsequent to the revision 1 project submission.
 
 \testmanual{
     name = {Entertainment},
@@ -576,15 +573,13 @@ The following tests will be carried out via a user experience survey administere
     pass = {Average survey score of at least $\hyperref[tab:constants]{\Omega}$}
 }
 
-
-\newpage
 \section{Trace to Requirements}
 \label{sec:reqtesting}
 
 
 
 \subsection{Functional Requirements}
-A trace between tests and functional requirements is provided in
+A trace between tests and functional requirements is provided in \hyperref[tab:reqtrace]{Table~\ref*{tab:reqtrace}}.
 
 \begin{table}[h]
 \caption{\bf Requirements Traceability} \label{tab:reqtrace}
@@ -626,10 +621,10 @@ A trace between tests and functional requirements is provided in
 \end{table}
 
 
-\newpage
+\FloatBarrier 
 \section{Timeline}
 \label{sec:timeline}
-This document is structured to roughly match the anticipated chronology of testing.  A proposed testing timeline is given in \hyperref[tab:timeline]{Table~\ref*{tab:timeline}}.
+This document is structured to roughly match the anticipated chronology of testing.  The testing timeline is given in \hyperref[tab:timeline]{Table~\ref*{tab:timeline}}.
 
 
 \begin{table}[ht]

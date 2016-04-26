@@ -13,7 +13,8 @@
 typedef unsigned int    dword;
 typedef int             mLong;
 typedef unsigned short  word;
-typedef struct tagMyBITMAPINFOHEADER{
+typedef struct tagMyBITMAPINFOHEADER
+{
     dword      biSize;
     mLong      biWidth;
     mLong      biHeight;
@@ -96,7 +97,6 @@ void MenuSettingHandler(void* pParam)
 void MenuNewgameHandler(void* pParam)
 {
     Menu *mgr = (Menu*)pParam;
-    mgr->nextEnv = new Stage("./data/stage/st2.stage");
 }
 
 void MenuLevSelectHandler(void* pParam)
@@ -110,7 +110,7 @@ void MenuContinueHandler(void* pParam)
     Menu *mgr = (Menu*)pParam;
     mgr->ShowSubMenu(1,false);
 
-   // s_theGame->GameStart();
+    // s_theGame->GameStart();
     if(s_bkImg!=NULL)
     {
         free(s_bkImg);
@@ -152,7 +152,7 @@ void MenuMusicHandler(void* pParam)
     item->imgHover  = load_bmpdata(szNormal,&w,&h);
     item->imgClicked = load_bmpdata(szClicked,&w,&h);
 
-  //theGame->MusicSetting();
+    //theGame->MusicSetting();
 }
 
 void MenuSoundHandler(void* pParam)
@@ -184,7 +184,7 @@ void MenuSoundHandler(void* pParam)
     item->imgHover  = load_bmpdata(szNormal,&w,&h);
     item->imgClicked = load_bmpdata(szClicked,&w,&h);
 
-   // theGame->SoundSetting();
+    // theGame->SoundSetting();
 }
 
 void MenuBackHandler(void* pParam)
@@ -251,21 +251,18 @@ Menu::Menu(bool inGame)
     char szLevel3Normal[] = "./data/menu/level3_normal.bmp";
     char szLevel3Clicked[] = "./data/menu/level3_clicked.bmp";
 
-
     char szBg[] = "./data/menu/menu_bk.bmp";
-
-  //  s_theGame = game;
 
     s_bkImg = load_bmpdata(szBg,&s_bkImgWdith,&s_bkImgHeight);
 
     addNewItem(szMainNormal,szMainNormal,szMainClicked,10,2,MenuMainHandler,this,0,false,true);
- //   addNewItem(szSettingNormal,szSettingNormal,szSettingClicked,120,2,MenuSettingHandler,this,0,false,true);
-  //  addNewItem(szNewgameNormal,szNewgameNormal,szNewgameClicked,0,1,MenuNewgameHandler,this,1,true);
+//   addNewItem(szSettingNormal,szSettingNormal,szSettingClicked,120,2,MenuSettingHandler,this,0,false,true);
+    //  addNewItem(szNewgameNormal,szNewgameNormal,szNewgameClicked,0,1,MenuNewgameHandler,this,1,true);
     addNewItem(szLevselectNormal,szLevselectNormal,szLevselectClicked,0,2,MenuLevSelectHandler,this,1,true);
-  //  addNewItem(szContinueNormal,szContinueNormal,szContinueClicked,0,3,MenuContinueHandler,this,1,true);
+    //  addNewItem(szContinueNormal,szContinueNormal,szContinueClicked,0,3,MenuContinueHandler,this,1,true);
     addNewItem(szQuitNormal,szQuitNormal,szQuitClicked,0,4,MenuQuitHandler,this,1,true);
-   // addNewItem(szMusiconNormal,szMusiconNormal,szMusiconClicked,0,1,MenuMusicHandler,this,2);
-   // addNewItem(szSoundonNormal,szSoundonNormal,szSoundonClicked,0,2,MenuSoundHandler,this,2);
+    // addNewItem(szMusiconNormal,szMusiconNormal,szMusiconClicked,0,1,MenuMusicHandler,this,2);
+    // addNewItem(szSoundonNormal,szSoundonNormal,szSoundonClicked,0,2,MenuSoundHandler,this,2);
     addNewItem(szBackNormal,szBackNormal,szBackClicked,0,3,MenuBackHandler,this,2);
 
     addNewItem(szLevel1Normal,szLevel1Normal,szLevel1Clicked,0,1,MenuLevel1Handler,this,3);
@@ -273,7 +270,8 @@ Menu::Menu(bool inGame)
     addNewItem(szLevel3Normal,szLevel3Normal,szLevel3Clicked,0,3,MenuLevel3Handler,this,3);
     addNewItem(szBackNormal,szBackNormal,szBackClicked,0,4,MenuLevelBackHandler,this,3);
 
-    if(inGame){
+    if(inGame)
+    {
         ShowSubMenu(1,false);
         free(s_bkImg);
         s_bkImg = NULL;
@@ -284,7 +282,7 @@ Menu::Menu(bool inGame)
 Menu::~Menu()
 {
     size_t count = vecMenuItem.size();
-    for(size_t idx=0;idx<count;idx++)
+    for(size_t idx=0; idx<count; idx++)
     {
         MenuItem *item = vecMenuItem[idx];
         free(item->imgNormal);
@@ -301,7 +299,7 @@ void Menu::updateScreenSize()
 {
     int oldHeight = Environment::screenHeight;
     size_t count = vecMenuItem.size();
-    for(size_t idx=0;idx<count;idx++)
+    for(size_t idx=0; idx<count; idx++)
     {
         MenuItem *item = vecMenuItem[idx];
         if(item->posFixed==true)
@@ -318,10 +316,10 @@ void Menu::updateScreenSize()
 }
 
 void Menu::addNewItem(char* szNormal,char* szHover,char* szSelected,
-                    int posX,int posY,
-                    MenuItemHandler handler,void *param,
-                    short level,
-                    bool active,bool fixed)
+                      int posX,int posY,
+                      MenuItemHandler handler,void *param,
+                      short level,
+                      bool active,bool fixed)
 {
     MenuItem *item = new MenuItem;
     int width,height;
@@ -369,7 +367,7 @@ bool Menu::processMousePosition(float xpos, float ypos)
     mouseY = ypos;
 
     size_t count = vecMenuItem.size();
-    for(size_t idx=0;idx<count;idx++)
+    for(size_t idx=0; idx<count; idx++)
     {
         if(vecMenuItem[idx]->active)
             hover_menuitem(vecMenuItem[idx]);
@@ -386,15 +384,15 @@ void Menu::processMouseClick(int button,int action, int mods)
         {
         case GLFW_PRESS:
         case GLFW_RELEASE:
+        {
+            size_t count = vecMenuItem.size();
+            for(size_t idx=0; idx<count; idx++)
             {
-                size_t count = vecMenuItem.size();
-                for(size_t idx=0;idx<count;idx++)
-                {
-                    if(vecMenuItem[idx]->active)
-                        click_menuitem(vecMenuItem[idx]);
-                }
+                if(vecMenuItem[idx]->active)
+                    click_menuitem(vecMenuItem[idx]);
             }
-            break;
+        }
+        break;
         default:
             break;
         }
@@ -404,7 +402,7 @@ void Menu::processMouseClick(int button,int action, int mods)
 void Menu::hover_menuitem(MenuItem* item)
 {
     if(item->x < mouseX && mouseX <(item->x + item->width) &&
-       item->y < mouseY && mouseY <(item->y + item->height))
+            item->y < mouseY && mouseY <(item->y + item->height))
     {
         if(item->clicked==false)
             item->imgCurrent = item->imgHover;
@@ -422,7 +420,7 @@ void Menu::hover_menuitem(MenuItem* item)
 void Menu::click_menuitem(MenuItem* item)
 {
     if(item->x < mouseX && mouseX <(item->x + item->width) &&
-       item->y < mouseY && mouseY <(item->y + item->height))
+            item->y < mouseY && mouseY <(item->y + item->height))
     {
         if(item->clicked==false)
         {
@@ -445,37 +443,37 @@ void Menu::drawEnvironment()
 
     //!< <menu> push opengl to stack
     glPushAttrib(GL_LIGHTING_BIT|GL_DEPTH_BUFFER_BIT|GL_TEXTURE_BIT|GL_CURRENT_BIT);
-        //!< clost opengl texture light and depth test
-        glDisable(GL_TEXTURE_2D);
-        glDisable(GL_LIGHTING);
-        glDisable(GL_DEPTH_TEST);
+    //!< clost opengl texture light and depth test
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_LIGHTING);
+    glDisable(GL_DEPTH_TEST);
 
-        glMatrixMode(GL_PROJECTION);
-        glPushMatrix();
-            glLoadIdentity();
-            gluOrtho2D( 0.0, screenWidth, 0.0, screenHeight);
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    gluOrtho2D( 0.0, screenWidth, 0.0, screenHeight);
 
-            if(s_bkImg!=NULL)
-            {
-                glRasterPos2i(0, 0);
-                glPixelZoom((GLfloat) screenWidth / (GLfloat)s_bkImgWdith, screenHeight / (GLfloat)s_bkImgHeight);     //picture rezise
-                glDrawPixels(s_bkImgWdith, s_bkImgHeight, GL_RGBA, GL_UNSIGNED_BYTE, s_bkImg);
-            }
+    if(s_bkImg!=NULL)
+    {
+        glRasterPos2i(0, 0);
+        glPixelZoom((GLfloat) screenWidth / (GLfloat)s_bkImgWdith, screenHeight / (GLfloat)s_bkImgHeight);     //picture rezise
+        glDrawPixels(s_bkImgWdith, s_bkImgHeight, GL_RGBA, GL_UNSIGNED_BYTE, s_bkImg);
+    }
 
-            glPixelZoom(1.0f,1.0f);
+    glPixelZoom(1.0f,1.0f);
 
-            size_t count = vecMenuItem.size();
-            for(size_t idx=0;idx<count;idx++)
-            {
-                MenuItem *item = vecMenuItem[idx];
-                if(item->active)
-                {
-                    glRasterPos2i(item->xPos,item->yPos);
-                    glDrawPixels(item->width,item->height,GL_RGBA,GL_UNSIGNED_BYTE,item->imgCurrent);
-                }
-            }
-        glPopMatrix();
-        glMatrixMode(GL_MODELVIEW);
+    size_t count = vecMenuItem.size();
+    for(size_t idx=0; idx<count; idx++)
+    {
+        MenuItem *item = vecMenuItem[idx];
+        if(item->active)
+        {
+            glRasterPos2i(item->xPos,item->yPos);
+            glDrawPixels(item->width,item->height,GL_RGBA,GL_UNSIGNED_BYTE,item->imgCurrent);
+        }
+    }
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
     glPopAttrib();
 }
 
@@ -487,7 +485,7 @@ void Menu::ShowSubMenu(int level,bool bShow)
 //        s_theGame->ContinueGame();
 
     size_t count = vecMenuItem.size();
-    for(size_t idx=0;idx<count;idx++)
+    for(size_t idx=0; idx<count; idx++)
     {
         MenuItem *item = vecMenuItem[idx];
         if(item->level==0)
@@ -504,7 +502,7 @@ void Menu::ShowSubMenu(int level,bool bShow)
 void Menu::showLevelSubMenu(bool bShow)
 {
     size_t count = vecMenuItem.size();
-    for(size_t idx=0;idx<count;idx++)
+    for(size_t idx=0; idx<count; idx++)
     {
         MenuItem *item = vecMenuItem[idx];
         if(item->level==3)
@@ -519,7 +517,7 @@ void Menu::showLevelSubMenu(bool bShow)
 }
 
 
-void Menu::updateEnvironment(double dt){}
+void Menu::updateEnvironment(double dt) {}
 
-void Menu::processKB(int key, int scancode, int action, int mods){}
-void Menu::processContinuousInput(){}
+void Menu::processKB(int key, int scancode, int action, int mods) {}
+void Menu::processContinuousInput() {}
